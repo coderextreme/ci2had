@@ -12,6 +12,12 @@ def get_node_index(parent, cis):
             return index
     return None
 
+def split_every_third(lst):
+    result = []
+    for i in range(0, len(lst), 3):
+        result.append(lst[i:i + 3])
+    return result
+
 X3D = xml.etree.ElementTree.parse("../resources/Jaw_Drop.x3d")
 root = X3D.getroot()
 head = root.find('head')
@@ -64,9 +70,16 @@ for cis in root.iter('CoordinateInterpolator'):
                 COORDDEF = route.get("toNode");
                 coords = root.findall(".//*[@DEF='"+COORDDEF+"']")
                 for coord in coords:
-                    parent = find_parent(root, coord)
-                    if parent is not None:
-                        coordIndex = parent.get("coordIndex")
-                        new_node.set("coordIndex", coordIndex)
+                    ifs = find_parent(root, coord)
+                    if ifs is not None:
+                        coordinate_node = ifs.find("Coordinate")
+                        points = coordinate_node.get("point").split()
+                        pointsMatrix = split_every_third(points)
+                        baseMatrix = split_every_third(base)
+                        coordIndex = []
+                        for i, point in enumerate(baseMatrix):
+                            if point in pointsMatrix:
+                                coordIndex.append(str(i))
+                        new_node.set("coordIndex", " ".join(coordIndex))
 
 X3D.write("../resources/Jaw_Drop_Output.x3d")
