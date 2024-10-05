@@ -184,14 +184,6 @@ def process_file(file_input, file_output):
         if displacer.tag == "HAnimDisplacer":
             sacrum.remove(displacer)
 
-    mainClock = xml.etree.ElementTree.Element('TimeSensor')
-    mainClock.text = "\n"
-    mainClock.tail = "\n"
-    mainClock.set("DEF", "MainClock")
-    mainClock.set("cycleInterval", "10")
-    mainClock.set("enabled", "true")
-    scene.append(mainClock)
-
     sensor = xml.etree.ElementTree.Element('ProximitySensor')
     sensor.text = "\n"
     sensor.tail = "\n"
@@ -199,21 +191,12 @@ def process_file(file_input, file_output):
     sensor.set("size", "1000000 1000000 1000000")
     scene.append(sensor)
 
-    sensorToClock = xml.etree.ElementTree.Element('ROUTE')
-    sensorToClock.text = "\n"
-    sensorToClock.tail = "\n"
-    sensorToClock.set("fromNode", "MainSensor")
-    sensorToClock.set("fromField", "enterTime")
-    sensorToClock.set("toNode", "MainClock")
-    sensorToClock.set("toField", "set_startTime")
-    scene.append(sensorToClock)
-
     for ts in root.iter('TimeSensor'):
         route = xml.etree.ElementTree.Element('ROUTE')
         route.text = "\n"
         route.tail = "\n"
-        route.set("fromNode", "MainClock")
-        route.set("fromField", "startTime")
+        route.set("fromNode", "MainSensor")
+        route.set("fromField", "enterTime")
         route.set("toNode", ts.get("DEF"))
         route.set("toField", "set_startTime")
         scene.append(route)
