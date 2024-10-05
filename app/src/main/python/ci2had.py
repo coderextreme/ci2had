@@ -35,6 +35,8 @@ def process_file(file_input, file_output):
     component = xml.etree.ElementTree.Element('component')
     component.set("name", "HAnim")
     component.set("level", "3")
+    component.text = "\n"
+    component.tail = "\n"
     head.insert(0, component)
 
     humanoid = xml.etree.ElementTree.Element('HAnimHumanoid')
@@ -168,6 +170,13 @@ def process_file(file_input, file_output):
             elif not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
                 par.remove(element)
                 segment.append(element)
+            elif element.tag == 'Coordinate':
+                coordinate = xml.etree.ElementTree.Element('Coordinate')
+                coordinate.set("USE", element.get("DEF"))
+                coordinate.set("containerField", "coord")
+                coordinate.text = "\n"
+                coordinate.tail = "\n"
+                segment.append(coordinate)
 
     # Remove the HAnimDisplacer from 'sacrum' after moving elements 
     for displacer in list(sacrum):
