@@ -101,13 +101,14 @@ for cis in root.iter('CoordinateInterpolator'):
         index = get_node_index(parent, cis)
         # replace the coordinate interpolator
         if index is not None:
+            # Add the HAnimDisplacer to the 'sacrum' segment
             sacrum.append(new_node)
-            # replace set_fraction wiht weight
+            # replace set_fraction with weight
             routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
             for route in routes:
                 route.set("toField", "weight")
 
-            # replace value_changed wiht weight
+            # replace value_changed with weight
             routes = root.findall(".//ROUTE[@fromField='value_changed'][@fromNode='"+DEF+"']")
             for route in routes:
                 # route.set("fromField", "weight")
@@ -130,6 +131,7 @@ for cis in root.iter('CoordinateInterpolator'):
                 par = find_parent(root, route)
                 par.remove(route)
 
+# Move other elements into the 'sacrum' segment
 for element in list(scene):
     if not element.tag in ("HAnimHumanoid", "HAnimJoint", "HAnimSegment", "HAnimDisplacer") and element.tag != "ROUTE":
         sacrum.append(element)
@@ -157,9 +159,9 @@ for prefix in def_prefixes:
             par.remove(element)
             segment.append(element)
 
+# Remove the HAnimDisplacer from 'sacrum' after moving elements 
 for displacer in list(sacrum):
     if displacer.tag == "HAnimDisplacer":
         sacrum.remove(displacer)
-
 
 X3D.write("../resources/Jaw_Drop_Output.x3d")
