@@ -18,6 +18,14 @@ def split_every_third(lst):
         result.append(lst[i:i + 3])
     return result
 
+def find_elements_by_prefix(root, prefix):
+    matched_elements = []
+    for elem in root.iter():
+        def_value = elem.get("DEF")
+        if def_value and def_value.startswith(prefix):
+            matched_elements.append(elem)
+    return matched_elements
+
 X3D = xml.etree.ElementTree.parse("../resources/Jaw_Drop.x3d")
 root = X3D.getroot()
 head = root.find('head')
@@ -46,11 +54,11 @@ humanoid.append(humanoid_root_use)
 sacrum = xml.etree.ElementTree.Element('HAnimSegment')
 sacrum.text = "\n"
 sacrum.tail = "\n"
+sacrum.set('DEF', "sacrum")
 humanoid_root.insert(0, sacrum)
 
 skullbase = xml.etree.ElementTree.Element('HAnimJoint')
 skullbase.set("DEF", "skullbase")
-skullbase.set("containerField", "children")
 skullbase.text = "\n"
 skullbase.tail = "\n"
 humanoid_root.append(skullbase)
@@ -87,19 +95,20 @@ for cis in root.iter('CoordinateInterpolator'):
     print(displacements)
     parent = find_parent(root, cis)
     new_node.set("displacements", " ".join(displacements))
-    new_node.set("DEF", DEF)
+    new_node.set("DEF", DEF+"_displacer")
     if parent is not None:
         index = get_node_index(parent, cis)
         # replace the coordinate interpolator
         if index is not None:
             # parent.insert(index, new_node)
             sacrum.append(new_node)
-            parent.remove(cis)
+            # parent.remove(cis)
 
             # replace set_fraction wiht weight
-            routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
-            for route in routes:
-                route.set("toField", "weight")
+            # TODO
+            #routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
+            #for route in routes:
+                #route.set("toField", "weight")
 
             # replace value_changed wiht weight
             routes = root.findall(".//ROUTE[@fromField='value_changed'][@fromNode='"+DEF+"']")
@@ -120,8 +129,10 @@ for cis in root.iter('CoordinateInterpolator'):
                             if point in pointsMatrix:
                                 coordIndex.append(str(i))
                         new_node.set("coordIndex", " ".join(coordIndex))
+                # remove unnecessary ROUTE
                 par = find_parent(root, route)
-                par.remove(route)
+                # TODO
+                # par.remove(route)
 
 for element in list(scene):
     if not element.tag.startswith("HAnim") and element.tag != "ROUTE":
@@ -130,5 +141,25 @@ for element in list(scene):
     elif element.tag == 'ROUTE':
         scene.remove(element)
         scene.append(element)
+
+def_prefixes = ['Center_lower_vermillion_lip', 'Chin', 'Glabella', 'Left_bulbar_conjunctiva', 'Left_cheek', 'Left_dorsum', 'Left_ear', 'Left_eyebrow', 'Left_forehead', 'Left_lower_eyelid', 'Left_lower_vermillion_lip', 'Left_nasolabial_cheek', 'Left_nostril', 'Left_pupil', 'Left_temple', 'Left_upper_cutaneous_lip', 'Left_upper_eyelid', 'Left_upper_vermillion_lip', 'Lower_teeth', 'Mid_forehead', 'Mid_nasal_dorsum', 'Mid_upper_vermillion_lip', 'Nasal_tip', 'Neck', 'Occipital_scalp', 'Philtrum', 'Right_bulbar_conjunctiva', 'Right_cheek', 'Right_dorsum', 'Right_ear', 'Right_eyebrow', 'Right_forehead', 'Right_lower_eyelid', 'Right_lower_vermillion_lip', 'Right_nasolabial_cheek', 'Right_nostril', 'Right_pupil', 'Right_temple', 'Right_upper_cutaneous_lip', 'Right_upper_eyelid', 'Right_upper_vermillion_lip', 'Tongue', 'Upper_teeth']
+
+for prefix in def_prefixes:
+    elements = find_elements_by_prefix(root, prefix)
+    segment = xml.etree.ElementTree.Element('HAnimSegment')
+    segment.text = "\n"
+    segment.tail = "\n"
+    segment.set('DEF', prefix+"_segment")
+    skullbase.append(segment)
+    for element in elements:
+        if not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
+            par = find_parent(root, element)
+            par.remove(element)
+            segment.append(element)
+
+for displacer in list(sacrum):
+    if displacer.tag == "HAnimDisplacer":
+        sacrum.remove(displacer)
+
 
 X3D.write("../resources/Jaw_Drop_Output.x3d")
