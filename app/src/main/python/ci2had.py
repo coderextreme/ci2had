@@ -102,8 +102,7 @@ def process_file(file_input, file_output):
         # print(displacements)
         parent = find_parent(root, cis)
         new_node.set("displacements", " ".join(displacements))
-        # TODO
-        new_node.set("DEF", DEF+"_displacer")
+        new_node.set("DEF", DEF)
 
         if parent is not None:
             index = get_node_index(parent, cis)
@@ -112,10 +111,9 @@ def process_file(file_input, file_output):
                 sacrum.append(new_node)
 
                 # Replace set_fraction with weight
-                # TODO
-                #routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
-                #for route in routes:
-                #    route.set("toField", "weight")
+                routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
+                for route in routes:
+                    route.set("toField", "weight")
 
                 # Replace value_changed with weight
                 routes = root.findall(".//ROUTE[@fromField='value_changed'][@fromNode='"+DEF+"']")
@@ -140,8 +138,8 @@ def process_file(file_input, file_output):
                             new_node.set("coordIndex", " ".join(coordIndex))
                     # Remove the unnecessary ROUTE
                     # TODO
-                    #par = find_parent(root, route)
-                    #par.remove(route)
+                    par = find_parent(root, route)
+                    par.remove(route)
 
                 # Remove the CoordinateInterpolator
                 # parent.remove(cis)
@@ -168,10 +166,8 @@ def process_file(file_input, file_output):
             par = find_parent(root, element)
             if element.tag == 'CoordinateInterpolator':
                 par.remove(element)
-                # TOOD
-                # comment = xml.etree.ElementTree.Comment(xml.etree.ElementTree.tostring(element))
-                # should append comment
-                segment.append(element)
+                comment = xml.etree.ElementTree.Comment(xml.etree.ElementTree.tostring(element))
+                segment.append(comment)
             elif not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
                 par.remove(element)
                 segment.append(element)
@@ -192,8 +188,7 @@ def process_file(file_input, file_output):
     mainClock.text = "\n"
     mainClock.tail = "\n"
     mainClock.set("DEF", "MainClock")
-    mainClock.set("cycleInterval", "4")
-    mainClock.set("loop", "true")
+    mainClock.set("cycleInterval", "10")
     mainClock.set("enabled", "true")
     scene.append(mainClock)
 
@@ -218,7 +213,7 @@ def process_file(file_input, file_output):
         route.text = "\n"
         route.tail = "\n"
         route.set("fromNode", "MainClock")
-        route.set("fromField", "stopTime")
+        route.set("fromField", "startTime")
         route.set("toNode", ts.get("DEF"))
         route.set("toField", "set_startTime")
         scene.append(route)

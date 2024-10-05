@@ -1023,5 +1023,99 @@
 <ROUTE fromField="value_changed" fromNode="Right_lower_vermillion_lip_AnimationAdapter" toField="weight" toNode="Right_lower_vermillion_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_lower_vermillion_lip_Clock" toField="set_fraction" toNode="Right_lower_vermillion_lip_AnimationAdapter" />
 
+<TimeSensor DEF="MainClock" cycleInterval="10" enabled="true">
+</TimeSensor>
+<ProximitySensor DEF="MainSensor" size="1000000 1000000 1000000">
+</ProximitySensor>
+<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="MainClock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Center_lower_vermillion_lip_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Chin_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Glabella_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_bulbar_conjunctiva_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_cheek_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_dorsum_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_ear_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_eyebrow_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_forehead_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_lower_eyelid_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_lower_vermillion_lip_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_nasolabial_cheek_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_nostril_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_pupil_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_temple_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_upper_cutaneous_lip_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_upper_eyelid_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Left_upper_vermillion_lip_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Lower_teeth_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Mid_forehead_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Mid_nasal_dorsum_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Mid_upper_vermillion_lip_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Nasal_tip_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Neck_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Occipital_scalp_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Philtrum_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_bulbar_conjunctiva_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_cheek_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_dorsum_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_ear_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_eyebrow_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_forehead_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_lower_eyelid_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_lower_vermillion_lip_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_nasolabial_cheek_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_nostril_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_pupil_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_temple_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_upper_cutaneous_lip_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_upper_eyelid_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Right_upper_vermillion_lip_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Tongue_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="Upper_teeth_Clock" toField="set_startTime">
+</ROUTE>
+<ROUTE fromNode="MainClock" fromField="startTime" toNode="MainClock" toField="set_startTime">
+</ROUTE>
 </Scene>
 </X3D>
