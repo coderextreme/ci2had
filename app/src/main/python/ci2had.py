@@ -170,7 +170,8 @@ def process_file(file_input, file_output):
             if element.tag == 'CoordinateInterpolator':
                 par.remove(element)
                 # TODO
-                comment = xml.etree.ElementTree.Comment(xml.etree.ElementTree.tostring(element))
+                comment = xml.etree.ElementTree.Comment(str(xml.etree.ElementTree.tostring(element))[2:-3])
+                comment.tail = "\n"
                 segment.append(comment)
                 # segment.append(element)
             elif not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
