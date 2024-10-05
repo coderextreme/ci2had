@@ -102,7 +102,8 @@ def process_file(file_input, file_output):
         # print(displacements)
         parent = find_parent(root, cis)
         new_node.set("displacements", " ".join(displacements))
-        new_node.set("DEF", DEF)
+        # TODO
+        new_node.set("DEF", DEF+"_displacer")
 
         if parent is not None:
             index = get_node_index(parent, cis)
@@ -111,9 +112,10 @@ def process_file(file_input, file_output):
                 sacrum.append(new_node)
 
                 # Replace set_fraction with weight
-                routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
-                for route in routes:
-                    route.set("toField", "weight")
+                # TODO
+                #routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
+                #for route in routes:
+                #    route.set("toField", "weight")
 
                 # Replace value_changed with weight
                 routes = root.findall(".//ROUTE[@fromField='value_changed'][@fromNode='"+DEF+"']")
@@ -137,8 +139,9 @@ def process_file(file_input, file_output):
                                         # break # Assume a base point only maps to one point
                             new_node.set("coordIndex", " ".join(coordIndex))
                     # Remove the unnecessary ROUTE
-                    par = find_parent(root, route)
-                    par.remove(route)
+                    # TODO
+                    #par = find_parent(root, route)
+                    #par.remove(route)
 
                 # Remove the CoordinateInterpolator
                 # parent.remove(cis)
@@ -165,8 +168,10 @@ def process_file(file_input, file_output):
             par = find_parent(root, element)
             if element.tag == 'CoordinateInterpolator':
                 par.remove(element)
-                comment = xml.etree.ElementTree.Comment(xml.etree.ElementTree.tostring(element))
-                segment.append(comment)
+                # TOOD
+                # comment = xml.etree.ElementTree.Comment(xml.etree.ElementTree.tostring(element))
+                # should append comment
+                segment.append(element)
             elif not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
                 par.remove(element)
                 segment.append(element)
@@ -182,6 +187,41 @@ def process_file(file_input, file_output):
     for displacer in list(sacrum):
         if displacer.tag == "HAnimDisplacer":
             sacrum.remove(displacer)
+
+    mainClock = xml.etree.ElementTree.Element('TimeSensor')
+    mainClock.text = "\n"
+    mainClock.tail = "\n"
+    mainClock.set("DEF", "MainClock")
+    mainClock.set("cycleInterval", "4")
+    mainClock.set("loop", "true")
+    mainClock.set("enabled", "true")
+    scene.append(mainClock)
+
+    sensor = xml.etree.ElementTree.Element('ProximitySensor')
+    sensor.text = "\n"
+    sensor.tail = "\n"
+    sensor.set("DEF", "MainSensor")
+    sensor.set("size", "1000000 1000000 1000000")
+    scene.append(sensor)
+
+    sensorToClock = xml.etree.ElementTree.Element('ROUTE')
+    sensorToClock.text = "\n"
+    sensorToClock.tail = "\n"
+    sensorToClock.set("fromNode", "MainSensor")
+    sensorToClock.set("fromField", "enterTime")
+    sensorToClock.set("toNode", "MainClock")
+    sensorToClock.set("toField", "set_startTime")
+    scene.append(sensorToClock)
+
+    for ts in root.iter('TimeSensor'):
+        route = xml.etree.ElementTree.Element('ROUTE')
+        route.text = "\n"
+        route.tail = "\n"
+        route.set("fromNode", "MainClock")
+        route.set("fromField", "stopTime")
+        route.set("toNode", ts.get("DEF"))
+        route.set("toField", "set_startTime")
+        scene.append(route)
 
     X3D.write(file_output)
 
