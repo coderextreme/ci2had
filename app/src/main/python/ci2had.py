@@ -1,5 +1,6 @@
 import xml.etree.ElementTree
 import os
+import re
 
 def find_parent(root, child):
     for parent in root.iter():
@@ -23,7 +24,7 @@ def find_elements_by_prefix(root, prefix):
     matched_elements = []
     for elem in root.iter():
         def_value = elem.get("DEF")
-        if def_value and def_value.startswith(prefix):
+        if def_value and re.match("("+prefix+"$|"+prefix+"[-_])", def_value):
             matched_elements.append(elem)
     return matched_elements
 

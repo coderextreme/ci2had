@@ -398,11 +398,9 @@
 </Transform>
 <Coordinate USE="Left_upper_vermillion_lip-COORD" containerField="coord">
 </Coordinate>
-<Coordinate USE="Left_upper_vermillion_lip001-COORD" containerField="coord">
-</Coordinate>
 <!--b'<CoordinateInterpolator DEF="Left_upper_vermillion_lip_MorphInterpolator" key="0 0.5 1" keyValue=" 0.5699 -18.23 5.612 0.5699 -18.76 4.854 1.036 -18.3 5.333 3.732 -18.46 3.475  0.5699 -18.23 5.612 0.5699 -18.76 4.854 1.036 -18.3 5.333 3.732 -18.46 3.475  0.5699 -18.23 5.612 0.5699 -18.76 4.854 1.036 -18.3 5.333 4.908 -18.33 3.1" />\n'--><ScalarInterpolator DEF="Left_upper_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_upper_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
-<!--b'<CoordinateInterpolator DEF="Left_upper_vermillion_lip001_MorphInterpolator" key="0 0.5 1" keyValue=" -0.5699 -18.23 5.612 -0.5699 -18.76 4.854 -1.036 -18.3 5.333 -3.732 -18.46 3.475  -0.5699 -18.23 5.612 -0.5699 -18.76 4.854 -1.036 -18.3 5.333 -3.732 -18.46 3.475  -0.5699 -18.23 5.612 -0.5699 -18.76 4.854 -1.036 -18.3 5.333 -4.908 -18.33 3.1" />\n'--></HAnimSegment>
+</HAnimSegment>
 <HAnimSegment DEF="Left_upper_vermillion_lip001_segment">
 <HAnimDisplacer displacements="0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 -1.1760000000000002 0.13000000000000256 -0.375" DEF="Left_upper_vermillion_lip001_MorphInterpolator" coordIndex="0 1 2 3">
 </HAnimDisplacer>
@@ -422,7 +420,7 @@
 
 <Coordinate USE="Left_upper_vermillion_lip001-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_upper_vermillion_lip001_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
+<!--b'<CoordinateInterpolator DEF="Left_upper_vermillion_lip001_MorphInterpolator" key="0 0.5 1" keyValue=" -0.5699 -18.23 5.612 -0.5699 -18.76 4.854 -1.036 -18.3 5.333 -3.732 -18.46 3.475  -0.5699 -18.23 5.612 -0.5699 -18.76 4.854 -1.036 -18.3 5.333 -3.732 -18.46 3.475  -0.5699 -18.23 5.612 -0.5699 -18.76 4.854 -1.036 -18.3 5.333 -4.908 -18.33 3.1" />\n'--><ScalarInterpolator DEF="Left_upper_vermillion_lip001_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_upper_vermillion_lip001_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Lower_teeth_segment">
