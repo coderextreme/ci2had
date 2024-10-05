@@ -103,6 +103,7 @@ def process_file(file_input, file_output):
         # print(displacements)
         parent = find_parent(root, cis)
         new_node.set("displacements", " ".join(displacements))
+        # TODO
         new_node.set("DEF", DEF)
 
         if parent is not None:
@@ -112,6 +113,7 @@ def process_file(file_input, file_output):
                 sacrum.append(new_node)
 
                 # Replace set_fraction with weight
+                # TODO
                 routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
                 for route in routes:
                     route.set("toField", "weight")
@@ -167,8 +169,10 @@ def process_file(file_input, file_output):
             par = find_parent(root, element)
             if element.tag == 'CoordinateInterpolator':
                 par.remove(element)
+                # TODO
                 comment = xml.etree.ElementTree.Comment(xml.etree.ElementTree.tostring(element))
                 segment.append(comment)
+                # segment.append(element)
             elif not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
                 par.remove(element)
                 segment.append(element)
