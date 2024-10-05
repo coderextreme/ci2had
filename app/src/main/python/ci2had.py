@@ -95,20 +95,17 @@ for cis in root.iter('CoordinateInterpolator'):
     print(displacements)
     parent = find_parent(root, cis)
     new_node.set("displacements", " ".join(displacements))
-    new_node.set("DEF", DEF+"_displacer")
+    # new_node.set("DEF", DEF+"_displacer")
+    new_node.set("DEF", DEF)
     if parent is not None:
         index = get_node_index(parent, cis)
         # replace the coordinate interpolator
         if index is not None:
-            # parent.insert(index, new_node)
             sacrum.append(new_node)
-            # parent.remove(cis)
-
             # replace set_fraction wiht weight
-            # TODO
-            #routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
-            #for route in routes:
-                #route.set("toField", "weight")
+            routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
+            for route in routes:
+                route.set("toField", "weight")
 
             # replace value_changed wiht weight
             routes = root.findall(".//ROUTE[@fromField='value_changed'][@fromNode='"+DEF+"']")
@@ -131,11 +128,10 @@ for cis in root.iter('CoordinateInterpolator'):
                         new_node.set("coordIndex", " ".join(coordIndex))
                 # remove unnecessary ROUTE
                 par = find_parent(root, route)
-                # TODO
-                # par.remove(route)
+                par.remove(route)
 
 for element in list(scene):
-    if not element.tag.startswith("HAnim") and element.tag != "ROUTE":
+    if not element.tag in ("HAnimHumanoid", "HAnimJoint", "HAnimSegment", "HAnimDisplacer") and element.tag != "ROUTE":
         sacrum.append(element)
         scene.remove(element)
     elif element.tag == 'ROUTE':
@@ -152,8 +148,12 @@ for prefix in def_prefixes:
     segment.set('DEF', prefix+"_segment")
     skullbase.append(segment)
     for element in elements:
-        if not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
-            par = find_parent(root, element)
+        par = find_parent(root, element)
+        if element.tag == 'CoordinateInterpolator':
+            par.remove(element)
+            comment = xml.etree.ElementTree.Comment(xml.etree.ElementTree.tostring(element))
+            segment.append(comment)
+        elif not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
             par.remove(element)
             segment.append(element)
 
