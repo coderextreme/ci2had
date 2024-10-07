@@ -280,7 +280,7 @@
 <TimeSensor DEF="Left_nasolabial_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Left_nostril_segment">
-<HAnimDisplacer displacements="0.38491 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0" DEF="Left_nostril_MorphInterpolator" coordIndex="0 1 2 3 4">
+<HAnimDisplacer DEF="Left_nostril_MorphInterpolator" coordIndex="0" displacements="0.38491 0.0 0.0">
 </HAnimDisplacer>
 <Transform DEF="Left_nostril" translation="0.7684 11.22 15.04" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -464,7 +464,7 @@
 <TimeSensor DEF="Mid_upper_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Nasal_tip_segment">
-<HAnimDisplacer displacements="0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.38489999999999996 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 -0.38489999999999996 0.0 0.0" DEF="Nasal_tip_MorphInterpolator" coordIndex="0 1 2 3 4 5 6 7 8">
+<HAnimDisplacer DEF="Nasal_tip_MorphInterpolator" coordIndex="3 8" displacements="0.38489999999999996 0.0 0.0 -0.38489999999999996 0.0 0.0">
 </HAnimDisplacer>
 <Transform DEF="Nasal_tip" translation="0 11.35 16.23" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -702,7 +702,7 @@
 <TimeSensor DEF="Right_nasolabial_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Right_nostril_segment">
-<HAnimDisplacer displacements="-0.38491 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0" DEF="Right_nostril_MorphInterpolator" coordIndex="0 1 2 3 4">
+<HAnimDisplacer DEF="Right_nostril_MorphInterpolator" coordIndex="0" displacements="-0.38491 0.0 0.0">
 </HAnimDisplacer>
 <Transform DEF="Right_nostril" translation="-0.7684 11.22 15.04" rotation="0 0 0 0" scale="1 1 1">
 <Shape>

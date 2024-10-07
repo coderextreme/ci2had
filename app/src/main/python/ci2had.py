@@ -2,6 +2,16 @@ import xml.etree.ElementTree
 import os
 import re
 
+import sys
+
+epsilon = sys.float_info.epsilon
+
+def non_zero(num):
+    if abs(float(num)) > epsilon:
+        return True
+    else:
+        return False
+
 def find_parent(root, child):
     for parent in root.iter():
         if child in parent:
@@ -76,7 +86,8 @@ def process_file(file_input, file_output):
     humanoid.append(skullbase_use)
 
     for it in root.iter('ImageTexture'):
-        it.set("url", "\""+it.get("url")+"\"")
+        if it.get("url"):
+            it.set("url", "\""+it.get("url")+"\"")
     for cis in root.iter('CoordinateInterpolator'):
         DEF = cis.get("DEF")
         # print(DEF)
@@ -99,16 +110,13 @@ def process_file(file_input, file_output):
         for i in range(len(base)):
             difference = float(extension[i]) - float(base[i])
             displacements.append(str(difference))
-            if new_node is None and difference != 0.0:
+            if new_node is None and non_zero(difference):
                 new_node = xml.etree.ElementTree.Element('HAnimDisplacer')
                 new_node.text = "\n"
                 new_node.tail = "\n"
 
         if new_node is not None:
-            new_node.set("displacements", " ".join(displacements))
-            # TODO
             new_node.set("DEF", DEF)
-            # print(displacements)
 
         parent = find_parent(root, cis)
         if parent is not None:
@@ -127,7 +135,7 @@ def process_file(file_input, file_output):
                 for route in routes:
                     # route.set("fromField", "weight")
                     # Set coordIndex of the new HAnimDisplacer node.
-                    COORDDEF = route.get("toNode");
+                    COORDDEF = route.get("toNode")
                     coords = root.findall(".//*[@DEF='"+COORDDEF+"']")
                     for coord in coords:
                         ifs = find_parent(root, coord)
@@ -136,14 +144,23 @@ def process_file(file_input, file_output):
                             points = coordinate_node.get("point").split()
                             pointsMatrix = split_every_third(points)
                             baseMatrix = split_every_third(base)
+                            displacementsMatrix = split_every_third(displacements)
                             coordIndex = []
+                            newDisplacements = []
                             for i, point in enumerate(pointsMatrix): # Loop through Coordinate points
                                 for j, base_point in enumerate(baseMatrix):
-                                    if point == base_point:
+                                    if point == base_point and (non_zero(displacementsMatrix[j][0]) or non_zero(displacementsMatrix[j][1]) or non_zero(displacementsMatrix[j][2])):
                                         coordIndex.append(str(i))
+                                        dis = " ".join(displacementsMatrix[j])
+                                        # print(dis)
+                                        newDisplacements.append(dis)
                                         # break # Assume a base point only maps to one point
+                                    #elif not (non_zero(displacementsMatrix[j][0]) or non_zero(displacementsMatrix[j][1]) or non_zero(displacementsMatrix[j][2])):
+                                    #    print("Found a zero point")
                             if new_node is not None:
                                 new_node.set("coordIndex", " ".join(coordIndex))
+                                new_node.set("displacements", " ".join(newDisplacements))
+                                # print(displacements)
                     # Remove the unnecessary ROUTE
                     # TODO
                     par = find_parent(root, route)
@@ -218,7 +235,7 @@ def process_file(file_input, file_output):
 
 files = os.scandir("C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/")
 
-for input_file in files:
+def processAFile(input_file):
     output_file = os.path.join("../resources/",os.path.basename(input_file))
     if output_file.endswith(".x3d"):
         output_file = output_file[:-4]+"_Output.x3d"
@@ -226,3 +243,8 @@ for input_file in files:
             process_file(input_file, output_file)
         except xml.etree.ElementTree.ParseError:
             print(f"The file {output_file} has a parse error")
+
+for input_file in files:
+    processAFile(input_file)
+
+# processAFile("../resources/JoeKick.x3d")
