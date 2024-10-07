@@ -118,6 +118,8 @@ def process_file(file_input, file_output):
 
         if new_node is not None:
             new_node.set("DEF", DEF)
+            new_node.set("weight", "0")
+            new_node.set("containerField", "displacers")
 
         parent = find_parent(root, cis)
         if parent is not None:
@@ -156,7 +158,7 @@ def process_file(file_input, file_output):
                                             newDisplacements.append(dis)
                                             # break # Assume a base point only maps to one point
                                 new_node.set("coordIndex", " ".join(coordIndex))
-                                new_node.set("displacements", " ".join(newDisplacements))
+                                new_node.set("displacements", ", ".join(newDisplacements))
                         # remove route from CoordinateInterpolator to Coordinate
                         par = find_parent(root, route)
                         par.remove(route)
@@ -168,9 +170,9 @@ def process_file(file_input, file_output):
         if not element.tag in ("HAnimHumanoid", "HAnimJoint", "HAnimSegment", "HAnimDisplacer") and element.tag != "ROUTE":
             sacrum.append(element)
             scene.remove(element)
-        elif element.tag == 'ROUTE':
-            scene.remove(element)
-            scene.append(element)
+        #elif element.tag == 'ROUTE':
+        #    scene.remove(element)
+        #    scene.append(element)
 
     def_prefixes = ["Hair", "__0", "__2", "__4", "Center_lower_vermillion_lip", "Chin", "Glabella", "Left_bulbar_conjunctiva", "Left_cheek", "Left_dorsum", "Left_ear", "Left_eyebrow", "Left_forehead", "Left_lower_eyelid", "Left_lower_vermillion_lip", "Left_nasolabial_cheek", "Left_nostril", "Left_pupil", "Left_temple", "Left_upper_cutaneous_lip", "Left_upper_eyelid", "Left_upper_vermillion_lip", "Left_upper_vermillion_lip001", "Lower_teeth", "Mid_forehead", "Mid_nasal_dorsum", "Mid_upper_vermillion_lip", "Nasal_tip", "Neck", "Occipital_scalp", "Philtrum", "Right_bulbar_conjunctiva", "Right_cheek", "Right_dorsum", "Right_ear", "Right_eyebrow", "Right_forehead", "Right_lower_eyelid", "Right_lower_vermillion_lip", "Right_nasolabial_cheek", "Right_nostril", "Right_pupil", "Right_temple", "Right_upper_cutaneous_lip", "Right_upper_eyelid", "Right_upper_vermillion_lip", "Tongue", "Upper_teeth"]
 
@@ -184,12 +186,11 @@ def process_file(file_input, file_output):
         for element in elements:
             par = find_parent(root, element)
             if element.tag == 'CoordinateInterpolator':
-                #par.remove(element)
-                # TODO
                 #comment = xml.etree.ElementTree.Comment(str(xml.etree.ElementTree.tostring(element))[2:-3])
                 #comment.tail = "\n"
-                # segment.append(comment)
-                # segment.append(element)
+                #segment.append(comment)
+                par.remove(element)
+                segment.append(element)
                 pass
             elif not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
                 par.remove(element)
@@ -207,22 +208,22 @@ def process_file(file_input, file_output):
         if displacer.tag == "HAnimDisplacer":
             sacrum.remove(displacer)
 
-    sensor = xml.etree.ElementTree.Element('ProximitySensor')
-    sensor.text = "\n"
-    sensor.tail = "\n"
-    sensor.set("DEF", "MainSensor")
-    sensor.set("size", "1000000 1000000 1000000")
-    scene.append(sensor)
+#    sensor = xml.etree.ElementTree.Element('ProximitySensor')
+#    sensor.text = "\n"
+#    sensor.tail = "\n"
+#    sensor.set("DEF", "MainSensor")
+#    sensor.set("size", "1000000 1000000 1000000")
+#    scene.append(sensor)
 
-    for ts in root.iter('TimeSensor'):
-        route = xml.etree.ElementTree.Element('ROUTE')
-        route.text = "\n"
-        route.tail = "\n"
-        route.set("fromNode", "MainSensor")
-        route.set("fromField", "enterTime")
-        route.set("toNode", ts.get("DEF"))
-        route.set("toField", "set_startTime")
-        scene.append(route)
+#    for ts in root.iter('TimeSensor'):
+#        route = xml.etree.ElementTree.Element('ROUTE')
+#        route.text = "\n"
+#        route.tail = "\n"
+#        route.set("fromNode", "MainSensor")
+#        route.set("fromField", "enterTime")
+#        route.set("toNode", ts.get("DEF"))
+#        route.set("toField", "set_startTime")
+#        scene.append(route)
 
     X3D.write(file_output)
 

@@ -176,7 +176,7 @@
 <TimeSensor DEF="Left_ear_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Left_eyebrow_segment">
-<HAnimDisplacer DEF="Left_eyebrow_MorphInterpolator" coordIndex="7 8" displacements="0.0 -0.4631 0.0 0.0 -0.4632 0.0">
+<HAnimDisplacer DEF="Left_eyebrow_MorphInterpolator" weight="0" containerField="displacers" coordIndex="7 8" displacements="0.0 -0.4631 0.0, 0.0 -0.4632 0.0">
 </HAnimDisplacer>
 <Transform DEF="Left_eyebrow" translation="5.691 19.58 13.13" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -215,7 +215,7 @@
 <TimeSensor DEF="Left_forehead_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Left_lower_eyelid_segment">
-<HAnimDisplacer DEF="Left_lower_eyelid_MorphInterpolator" coordIndex="0 1 2 3 4 10 11 12" displacements="0.0 0.6387 0.7019 0.0 0.3839 0.263 0.0 0.499 0.4721 0.0 0.7235 0.3988 0.0 0.6387 0.398 0.0 0.6386 0.399 0.0 -0.078 0.0 0.0 -0.078 0.0">
+<HAnimDisplacer DEF="Left_lower_eyelid_MorphInterpolator" weight="0" containerField="displacers" coordIndex="0 1 2 3 4 10 11 12" displacements="0.0 0.6387 0.7019, 0.0 0.3839 0.263, 0.0 0.499 0.4721, 0.0 0.7235 0.3988, 0.0 0.6387 0.398, 0.0 0.6386 0.399, 0.0 -0.078 0.0, 0.0 -0.078 0.0">
 </HAnimDisplacer>
 <Transform DEF="Left_lower_eyelid" translation="6.11 16.45 11.32" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -311,7 +311,7 @@
 <TimeSensor DEF="Left_pupil_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Left_temple_segment">
-<HAnimDisplacer DEF="Left_temple_MorphInterpolator" coordIndex="8 11" displacements="0.0 -0.4529 0.0 0.0 -0.077 0.0">
+<HAnimDisplacer DEF="Left_temple_MorphInterpolator" weight="0" containerField="displacers" coordIndex="8 11" displacements="0.0 -0.4529 0.0, 0.0 -0.077 0.0">
 </HAnimDisplacer>
 <Transform DEF="Left_temple" translation="10.95 20.56 6.406" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -350,7 +350,7 @@
 <TimeSensor DEF="Left_upper_cutaneous_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Left_upper_eyelid_segment">
-<HAnimDisplacer DEF="Left_upper_eyelid_MorphInterpolator" coordIndex="1 3 4 5 6 10 12" displacements="0.0 -0.5962 0.0 0.0 -0.7726 -0.115 0.0 -0.7324 0.0 0.0 -0.0775 0.0 0.0 -0.463 0.0 0.0 -0.464 0.0 0.0 -0.0776 0.0">
+<HAnimDisplacer DEF="Left_upper_eyelid_MorphInterpolator" weight="0" containerField="displacers" coordIndex="1 3 4 5 6 10 12" displacements="0.0 -0.5962 0.0, 0.0 -0.7726 -0.115, 0.0 -0.7324 0.0, 0.0 -0.0775 0.0, 0.0 -0.463 0.0, 0.0 -0.464 0.0, 0.0 -0.0776 0.0">
 </HAnimDisplacer>
 <Transform DEF="Left_upper_eyelid" translation="5.53 17.96 12.21" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -619,7 +619,7 @@
 <TimeSensor DEF="Right_ear_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Right_eyebrow_segment">
-<HAnimDisplacer DEF="Right_eyebrow_MorphInterpolator" coordIndex="7 8" displacements="0.0 -0.4631 0.0 0.0 -0.4632 0.0">
+<HAnimDisplacer DEF="Right_eyebrow_MorphInterpolator" weight="0" containerField="displacers" coordIndex="7 8" displacements="0.0 -0.4631 0.0, 0.0 -0.4632 0.0">
 </HAnimDisplacer>
 <Transform DEF="Right_eyebrow" translation="-5.691 19.58 13.13" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -658,7 +658,7 @@
 <TimeSensor DEF="Right_forehead_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Right_lower_eyelid_segment">
-<HAnimDisplacer DEF="Right_lower_eyelid_MorphInterpolator" coordIndex="0 1 2 3 4 10 11 12" displacements="0.0 0.6387 0.7019 0.0 0.3839 0.263 0.0 0.499 0.4721 0.0 0.7235 0.3988 0.0 0.6387 0.398 0.0 0.6386 0.399 0.0 -0.078 0.0 0.0 -0.078 0.0">
+<HAnimDisplacer DEF="Right_lower_eyelid_MorphInterpolator" weight="0" containerField="displacers" coordIndex="0 1 2 3 4 10 11 12" displacements="0.0 0.6387 0.7019, 0.0 0.3839 0.263, 0.0 0.499 0.4721, 0.0 0.7235 0.3988, 0.0 0.6387 0.398, 0.0 0.6386 0.399, 0.0 -0.078 0.0, 0.0 -0.078 0.0">
 </HAnimDisplacer>
 <Transform DEF="Right_lower_eyelid" translation="-6.11 16.45 11.32" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -737,7 +737,7 @@
 <TimeSensor DEF="Right_pupil_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Right_temple_segment">
-<HAnimDisplacer DEF="Right_temple_MorphInterpolator" coordIndex="8 11" displacements="-0.003 -0.4639 0.004 0.0 -0.075 0.0">
+<HAnimDisplacer DEF="Right_temple_MorphInterpolator" weight="0" containerField="displacers" coordIndex="8 11" displacements="-0.003 -0.4639 0.004, 0.0 -0.075 0.0">
 </HAnimDisplacer>
 <Transform DEF="Right_temple" translation="-10.95 20.56 6.406" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -776,7 +776,7 @@
 <TimeSensor DEF="Right_upper_cutaneous_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Right_upper_eyelid_segment">
-<HAnimDisplacer DEF="Right_upper_eyelid_MorphInterpolator" coordIndex="1 3 4 5 6 10 12" displacements="0.0 -0.5962 0.0 0.0 -0.7726 -0.115 0.0 -0.7324 0.0 0.0 -0.0775 0.0 0.0 -0.463 0.0 0.002 -0.464 0.0 0.0 -0.0776 0.0">
+<HAnimDisplacer DEF="Right_upper_eyelid_MorphInterpolator" weight="0" containerField="displacers" coordIndex="1 3 4 5 6 10 12" displacements="0.0 -0.5962 0.0, 0.0 -0.7726 -0.115, 0.0 -0.7324 0.0, 0.0 -0.0775 0.0, 0.0 -0.463 0.0, 0.002 -0.464 0.0, 0.0 -0.0776 0.0">
 </HAnimDisplacer>
 <Transform DEF="Right_upper_eyelid" translation="-5.53 17.96 12.21" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -1023,93 +1023,5 @@
 <ROUTE fromField="value_changed" fromNode="__2_AnimationAdapter" toField="set_fraction" toNode="__2_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="__2_Clock" toField="set_fraction" toNode="__2_AnimationAdapter" />
 
-<ProximitySensor DEF="MainSensor" size="1000000 1000000 1000000">
-</ProximitySensor>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="__2_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Center_lower_vermillion_lip_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Chin_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Glabella_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_bulbar_conjunctiva_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_cheek_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_dorsum_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_ear_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_eyebrow_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_forehead_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_lower_eyelid_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_lower_vermillion_lip_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_nasolabial_cheek_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_nostril_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_pupil_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_temple_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_upper_cutaneous_lip_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_upper_eyelid_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Left_upper_vermillion_lip_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Lower_teeth_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Mid_forehead_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Mid_nasal_dorsum_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Mid_upper_vermillion_lip_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Nasal_tip_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Neck_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Occipital_scalp_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Philtrum_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_bulbar_conjunctiva_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_cheek_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_dorsum_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_ear_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_eyebrow_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_forehead_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_lower_eyelid_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_nasolabial_cheek_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_nostril_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_pupil_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_temple_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_upper_cutaneous_lip_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_upper_eyelid_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Right_upper_vermillion_lip_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Tongue_Clock" toField="set_startTime">
-</ROUTE>
-<ROUTE fromNode="MainSensor" fromField="enterTime" toNode="Upper_teeth_Clock" toField="set_startTime">
-</ROUTE>
 </Scene>
 </X3D>
