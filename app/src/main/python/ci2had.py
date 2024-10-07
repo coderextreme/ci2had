@@ -36,6 +36,9 @@ def find_elements_by_prefix(root, prefix):
         def_value = elem.get("DEF")
         if def_value and re.match("("+prefix+"$|"+prefix+"[-_])", def_value):
             matched_elements.append(elem)
+        def_value = elem.get("USE")
+        if def_value and re.match("("+prefix+"$|"+prefix+"[-_])", def_value):
+            matched_elements.append(elem)
     return matched_elements
 
 def process_file(file_input, file_output):
@@ -46,22 +49,25 @@ def process_file(file_input, file_output):
     component = xml.etree.ElementTree.Element('component')
     component.set("name", "HAnim")
     component.set("level", "3")
-    component.text = "\n"
+    component.text = None
     component.tail = "\n"
     head.insert(0, component)
 
     humanoid = xml.etree.ElementTree.Element('HAnimHumanoid')
     humanoid.text = "\n"
     humanoid.tail = "\n"
+    humanoid.set('DEF', "hanim_humanoid")
+    humanoid.set('name', "humanoid")
     scene.insert(0, humanoid)
     humanoid_root = xml.etree.ElementTree.Element('HAnimJoint')
-    humanoid_root.set("DEF", "root")
+    humanoid_root.set("DEF", "hanim_root")
+    humanoid_root.set("name", "root")
     humanoid_root.set("containerField", "skeleton")
     humanoid_root.text = "\n"
     humanoid_root.tail = "\n"
     humanoid.append(humanoid_root)
     humanoid_root_use = xml.etree.ElementTree.Element('HAnimJoint')
-    humanoid_root_use.set("USE", "root")
+    humanoid_root_use.set("USE", "hanim_root")
     humanoid_root_use.set("containerField", "joints")
     humanoid_root_use.text = "\n"
     humanoid_root_use.tail = "\n"
@@ -69,17 +75,19 @@ def process_file(file_input, file_output):
     sacrum = xml.etree.ElementTree.Element('HAnimSegment')
     sacrum.text = "\n"
     sacrum.tail = "\n"
-    sacrum.set('DEF', "sacrum")
+    sacrum.set('DEF', "hanim_sacrum")
+    sacrum.set('name', "sacrum")
     humanoid_root.insert(0, sacrum)
 
     skullbase = xml.etree.ElementTree.Element('HAnimJoint')
-    skullbase.set("DEF", "skullbase")
+    skullbase.set("DEF", "hanim_skullbase")
+    skullbase.set("name", "skullbase")
     skullbase.text = "\n"
     skullbase.tail = "\n"
     humanoid_root.append(skullbase)
 
     skullbase_use = xml.etree.ElementTree.Element('HAnimJoint')
-    skullbase_use.set("USE", "skullbase")
+    skullbase_use.set("USE", "hanim_skullbase")
     skullbase_use.set("containerField", "joints")
     skullbase_use.text = "\n"
     skullbase_use.tail = "\n"
@@ -118,6 +126,7 @@ def process_file(file_input, file_output):
 
         if new_node is not None:
             new_node.set("DEF", DEF)
+            new_node.set("name", DEF)
             new_node.set("weight", "0")
             new_node.set("containerField", "displacers")
 
@@ -132,11 +141,13 @@ def process_file(file_input, file_output):
                     routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
                     for route in routes:
                         route.set("toField", "weight")
+                        route.set("toNode", DEF);
 
                     # Replace value_changed with weight
                     routes = root.findall(".//ROUTE[@fromField='value_changed'][@fromNode='"+DEF+"']")
                     for route in routes:
                         # route.set("fromField", "weight")
+                        route.set("fromNode", DEF)
                         # Set coordIndex of the new HAnimDisplacer node.
                         COORDDEF = route.get("toNode")
                         coords = root.findall(".//*[@DEF='"+COORDDEF+"']")
@@ -181,7 +192,8 @@ def process_file(file_input, file_output):
         segment = xml.etree.ElementTree.Element('HAnimSegment')
         segment.text = "\n"
         segment.tail = "\n"
-        segment.set('DEF', prefix+"_segment")
+        segment.set('DEF', "hanim_"+prefix)
+        segment.set('name', prefix)
         skullbase.append(segment)
         for element in elements:
             par = find_parent(root, element)
@@ -195,13 +207,18 @@ def process_file(file_input, file_output):
             elif not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
                 par.remove(element)
                 segment.append(element)
-            elif element.tag == 'Coordinate':
-                coordinate = xml.etree.ElementTree.Element('Coordinate')
-                coordinate.set("USE", element.get("DEF"))
-                coordinate.set("containerField", "coord")
-                coordinate.text = "\n"
-                coordinate.tail = "\n"
-                segment.append(coordinate)
+#            elif element.tag == 'Coordinate':
+#                coordinate = xml.etree.ElementTree.Element('Coordinate')
+#                coordinate.set("USE", element.get("DEF"))
+#                coordinate.set("containerField", "coord")
+#                coordinate.text = "\n"
+#                coordinate.tail = "\n"
+#                segment.append(coordinate)
+        # Move displacer to end
+        for element in list(segment):
+            if element.tag == "HAnimDisplacer":
+                segment.remove(element)
+                segment.append(element)
 
     # Remove the HAnimDisplacer from 'sacrum' after moving elements 
     for displacer in list(sacrum):
@@ -225,7 +242,12 @@ def process_file(file_input, file_output):
 #        route.set("toField", "set_startTime")
 #        scene.append(route)
 
-    X3D.write(file_output)
+
+    header = '<?xml version="1.0" encoding="utf-8"?>\n<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">'
+    xmlstr = xml.etree.ElementTree.tostring(root, encoding='unicode')
+    xmlString = f"{header}{xmlstr}"
+    with open(file_output, "w") as output_file:
+        output_file.write(xmlString)
 
 files = os.scandir("C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/")
 
