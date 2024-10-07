@@ -86,8 +86,9 @@ def process_file(file_input, file_output):
     humanoid.append(skullbase_use)
 
     for it in root.iter('ImageTexture'):
-        if it.get("url"):
-            it.set("url", "\""+it.get("url")+"\"")
+        url = it.get("url")
+        if url is not None and not url.startswith('"') and not url.startswith('&quot;'):
+                it.set("url", "\""+it.get("url")+"\"")
     for cis in root.iter('CoordinateInterpolator'):
         DEF = cis.get("DEF")
         # print(DEF)
@@ -130,42 +131,37 @@ def process_file(file_input, file_output):
                     for route in routes:
                         route.set("toField", "weight")
 
-                # Replace value_changed with weight
-                routes = root.findall(".//ROUTE[@fromField='value_changed'][@fromNode='"+DEF+"']")
-                for route in routes:
-                    # route.set("fromField", "weight")
-                    # Set coordIndex of the new HAnimDisplacer node.
-                    COORDDEF = route.get("toNode")
-                    coords = root.findall(".//*[@DEF='"+COORDDEF+"']")
-                    for coord in coords:
-                        ifs = find_parent(root, coord)
-                        if ifs is not None:
-                            coordinate_node = ifs.find("Coordinate")
-                            points = coordinate_node.get("point").split()
-                            pointsMatrix = split_every_third(points)
-                            baseMatrix = split_every_third(base)
-                            displacementsMatrix = split_every_third(displacements)
-                            coordIndex = []
-                            newDisplacements = []
-                            for i, point in enumerate(pointsMatrix): # Loop through Coordinate points
-                                for j, base_point in enumerate(baseMatrix):
-                                    if point == base_point and (non_zero(displacementsMatrix[i][0]) or non_zero(displacementsMatrix[i][1]) or non_zero(displacementsMatrix[i][2])):
-                                        coordIndex.append(str(i))
-                                        dis = " ".join(displacementsMatrix[i])
-                                        newDisplacements.append(dis)
-                                        # break # Assume a base point only maps to one point
-                            if new_node is not None:
+                    # Replace value_changed with weight
+                    routes = root.findall(".//ROUTE[@fromField='value_changed'][@fromNode='"+DEF+"']")
+                    for route in routes:
+                        # route.set("fromField", "weight")
+                        # Set coordIndex of the new HAnimDisplacer node.
+                        COORDDEF = route.get("toNode")
+                        coords = root.findall(".//*[@DEF='"+COORDDEF+"']")
+                        for coord in coords:
+                            ifs = find_parent(root, coord)
+                            if ifs is not None:
+                                coordinate_node = ifs.find("Coordinate")
+                                points = coordinate_node.get("point").split()
+                                pointsMatrix = split_every_third(points)
+                                baseMatrix = split_every_third(base)
+                                displacementsMatrix = split_every_third(displacements)
+                                coordIndex = []
+                                newDisplacements = []
+                                for i, point in enumerate(pointsMatrix): # Loop through Coordinate points
+                                    for j, base_point in enumerate(baseMatrix):
+                                        if point == base_point and (non_zero(displacementsMatrix[i][0]) or non_zero(displacementsMatrix[i][1]) or non_zero(displacementsMatrix[i][2])):
+                                            coordIndex.append(str(i))
+                                            dis = " ".join(displacementsMatrix[i])
+                                            newDisplacements.append(dis)
+                                            # break # Assume a base point only maps to one point
                                 new_node.set("coordIndex", " ".join(coordIndex))
                                 new_node.set("displacements", " ".join(newDisplacements))
-                                # print(displacements)
-                    # Remove the unnecessary ROUTE
-                    # TODO
-                    par = find_parent(root, route)
-                    par.remove(route)
+                        # remove route from CoordinateInterpolator to Coordinate
+                        par = find_parent(root, route)
+                        par.remove(route)
 
-            # Remove the CoordinateInterpolator
-            if new_node is not None:
-                parent.remove(cis)
+                        parent.remove(cis)
 
     # Move other elements into the 'sacrum' segment
     for element in list(scene):
