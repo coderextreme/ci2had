@@ -109,7 +109,7 @@ def process_file(file_input, file_output):
         new_node = None
         for i in range(len(base)):
             difference = float(extension[i]) - float(base[i])
-            displacements.append(str(difference))
+            displacements.append(str(round(difference, 4)))
             if new_node is None and non_zero(difference):
                 new_node = xml.etree.ElementTree.Element('HAnimDisplacer')
                 new_node.text = "\n"
@@ -149,14 +149,11 @@ def process_file(file_input, file_output):
                             newDisplacements = []
                             for i, point in enumerate(pointsMatrix): # Loop through Coordinate points
                                 for j, base_point in enumerate(baseMatrix):
-                                    if point == base_point and (non_zero(displacementsMatrix[j][0]) or non_zero(displacementsMatrix[j][1]) or non_zero(displacementsMatrix[j][2])):
+                                    if point == base_point and (non_zero(displacementsMatrix[i][0]) or non_zero(displacementsMatrix[i][1]) or non_zero(displacementsMatrix[i][2])):
                                         coordIndex.append(str(i))
-                                        dis = " ".join(displacementsMatrix[j])
-                                        # print(dis)
+                                        dis = " ".join(displacementsMatrix[i])
                                         newDisplacements.append(dis)
                                         # break # Assume a base point only maps to one point
-                                    #elif not (non_zero(displacementsMatrix[j][0]) or non_zero(displacementsMatrix[j][1]) or non_zero(displacementsMatrix[j][2])):
-                                    #    print("Found a zero point")
                             if new_node is not None:
                                 new_node.set("coordIndex", " ".join(coordIndex))
                                 new_node.set("displacements", " ".join(newDisplacements))

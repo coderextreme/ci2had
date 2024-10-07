@@ -63,7 +63,7 @@
 <HAnimSegment DEF="__4_segment">
 </HAnimSegment>
 <HAnimSegment DEF="Center_lower_vermillion_lip_segment">
-<HAnimDisplacer DEF="Center_lower_vermillion_lip_MorphInterpolator" coordIndex="0 1 2 3 4 5" displacements="0.0 -0.3795 0.13369999999999999 0.0 -0.20999999999999996 0.0 0.0 -0.21000000000000008 0.0 0.0 -0.3795 0.13369999999999999 0.0 -0.3795 0.13369999999999999 0.0 -0.21000000000000008 0.0">
+<HAnimDisplacer DEF="Center_lower_vermillion_lip_MorphInterpolator" coordIndex="0 1 2 3 4 5" displacements="0.0 -0.3795 0.1337 0.0 -0.21 0.0 0.0 -0.21 0.0 0.0 -0.3795 0.1337 0.0 -0.3795 0.1337 0.0 -0.21 0.0">
 </HAnimDisplacer>
 <Transform DEF="Center_lower_vermillion_lip" translation="0 8.315 13.52" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -83,7 +83,7 @@
 <TimeSensor DEF="Center_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Chin_segment">
-<HAnimDisplacer DEF="Chin_MorphInterpolator" coordIndex="6 9 19" displacements="0.0 -0.20999999999999996 0.0 0.0 -0.20999999999999996 0.0 0.0 -0.20999999999999996 0.0">
+<HAnimDisplacer DEF="Chin_MorphInterpolator" coordIndex="6 9 19" displacements="0.0 -0.21 0.0 0.0 -0.21 0.0 0.0 -0.21 0.0">
 </HAnimDisplacer>
 <Transform DEF="Chin" translation="0 6.337 7.3" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -247,7 +247,7 @@
 <TimeSensor DEF="Left_lower_eyelid_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Left_lower_vermillion_lip_segment">
-<HAnimDisplacer DEF="Left_lower_vermillion_lip_MorphInterpolator" coordIndex="0 2" displacements="0.0 -0.37948 0.13370000000000004 0.0 -0.20999999999999996 0.0">
+<HAnimDisplacer DEF="Left_lower_vermillion_lip_MorphInterpolator" coordIndex="0 2" displacements="0.0 -0.3795 0.1337 0.0 -0.21 0.0">
 </HAnimDisplacer>
 <Transform DEF="Left_lower_vermillion_lip" translation="1.788 8.405 13.04" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -665,7 +665,7 @@
 <TimeSensor DEF="Right_lower_eyelid_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Right_lower_vermillion_lip_segment">
-<HAnimDisplacer DEF="Right_lower_vermillion_lip_MorphInterpolator" coordIndex="0 2" displacements="0.0 -0.37948 0.13370000000000004 0.0 -0.20999999999999996 0.0">
+<HAnimDisplacer DEF="Right_lower_vermillion_lip_MorphInterpolator" coordIndex="0 2" displacements="0.0 -0.3795 0.1337 0.0 -0.21 0.0">
 </HAnimDisplacer>
 <Transform DEF="Right_lower_vermillion_lip" translation="-1.788 8.405 13.04" rotation="0 0 0 0" scale="1 1 1">
 <Shape>

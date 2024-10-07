@@ -128,7 +128,7 @@
 <TimeSensor DEF="Left_bulbar_conjunctiva_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Left_cheek_segment">
-<HAnimDisplacer DEF="Left_cheek_MorphInterpolator" coordIndex="25 26 32 33" displacements="-0.07800000000000029 0.5523 0.0 0.0 0.376 0.0 -0.1459999999999999 0.26450000000000007 0.0 0.0 0.4706999999999999 0.0">
+<HAnimDisplacer DEF="Left_cheek_MorphInterpolator" coordIndex="25 26 32 33" displacements="-0.078 0.5523 0.0 0.0 0.376 0.0 -0.146 0.2645 0.0 0.0 0.4707 0.0">
 </HAnimDisplacer>
 <Transform DEF="Left_cheek" translation="6.927 11.97 7.646" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -148,7 +148,7 @@
 <TimeSensor DEF="Left_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Left_dorsum_segment">
-<HAnimDisplacer DEF="Left_dorsum_MorphInterpolator" coordIndex="5" displacements="0.0 0.3759999999999999 0.0">
+<HAnimDisplacer DEF="Left_dorsum_MorphInterpolator" coordIndex="5" displacements="0.0 0.376 0.0">
 </HAnimDisplacer>
 <Transform DEF="Left_dorsum" translation="0.7065 14.64 14.87" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -258,7 +258,7 @@
 <TimeSensor DEF="Left_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Left_nasolabial_cheek_segment">
-<HAnimDisplacer DEF="Left_nasolabial_cheek_MorphInterpolator" coordIndex="0 3 4 5" displacements="0.0 0.376 0.0 -0.07810000000000006 0.552 0.0 0.0 0.3760000000000001 0.0 0.0 0.4705999999999999 0.0">
+<HAnimDisplacer DEF="Left_nasolabial_cheek_MorphInterpolator" coordIndex="0 3 4 5" displacements="0.0 0.376 0.0 -0.0781 0.552 0.0 0.0 0.376 0.0 0.0 0.4706 0.0">
 </HAnimDisplacer>
 <Transform DEF="Left_nasolabial_cheek" translation="2.021 10.27 13.53" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -278,7 +278,7 @@
 <TimeSensor DEF="Left_nasolabial_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Left_nostril_segment">
-<HAnimDisplacer DEF="Left_nostril_MorphInterpolator" coordIndex="2 4" displacements="0.0 0.3759 0.0 0.0 0.3762000000000001 0.0">
+<HAnimDisplacer DEF="Left_nostril_MorphInterpolator" coordIndex="2 4" displacements="0.0 0.3759 0.0 0.0 0.3762 0.0">
 </HAnimDisplacer>
 <Transform DEF="Left_nostril" translation="0.7684 11.22 15.04" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -334,7 +334,7 @@
 <TimeSensor DEF="Left_temple_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Left_upper_cutaneous_lip_segment">
-<HAnimDisplacer DEF="Left_upper_cutaneous_lip_MorphInterpolator" coordIndex="0" displacements="0.0 0.37649999999999995 0.0">
+<HAnimDisplacer DEF="Left_upper_cutaneous_lip_MorphInterpolator" coordIndex="0" displacements="0.0 0.3765 0.0">
 </HAnimDisplacer>
 <Transform DEF="Left_upper_cutaneous_lip" translation="0.7684 10.16 14.63" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -554,7 +554,7 @@
 <TimeSensor DEF="Right_bulbar_conjunctiva_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Right_cheek_segment">
-<HAnimDisplacer DEF="Right_cheek_MorphInterpolator" coordIndex="25 26 32 33" displacements="0.07800000000000029 0.5523 0.0 0.0 0.376 0.0 0.1459999999999999 0.26450000000000007 0.0 0.0 0.4706999999999999 0.0">
+<HAnimDisplacer DEF="Right_cheek_MorphInterpolator" coordIndex="25 26 32 33" displacements="0.078 0.5523 0.0 0.0 0.376 0.0 0.146 0.2645 0.0 0.0 0.4707 0.0">
 </HAnimDisplacer>
 <Transform DEF="Right_cheek" translation="-6.927 11.97 7.646" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -574,7 +574,7 @@
 <TimeSensor DEF="Right_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Right_dorsum_segment">
-<HAnimDisplacer DEF="Right_dorsum_MorphInterpolator" coordIndex="5" displacements="0.0 0.3759999999999999 0.0">
+<HAnimDisplacer DEF="Right_dorsum_MorphInterpolator" coordIndex="5" displacements="0.0 0.376 0.0">
 </HAnimDisplacer>
 <Transform DEF="Right_dorsum" translation="-0.7065 14.64 14.87" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -686,7 +686,7 @@
 <TimeSensor DEF="Right_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Right_nasolabial_cheek_segment">
-<HAnimDisplacer DEF="Right_nasolabial_cheek_MorphInterpolator" coordIndex="0 3 4 5" displacements="0.0 0.376 0.0 0.07810000000000006 0.552 0.0 0.0 0.3760000000000001 0.0 0.0 0.4705999999999999 0.0">
+<HAnimDisplacer DEF="Right_nasolabial_cheek_MorphInterpolator" coordIndex="0 3 4 5" displacements="0.0 0.376 0.0 0.0781 0.552 0.0 0.0 0.376 0.0 0.0 0.4706 0.0">
 </HAnimDisplacer>
 <Transform DEF="Right_nasolabial_cheek" translation="-2.021 10.27 13.53" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -706,7 +706,7 @@
 <TimeSensor DEF="Right_nasolabial_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Right_nostril_segment">
-<HAnimDisplacer DEF="Right_nostril_MorphInterpolator" coordIndex="2 4" displacements="0.0 0.3759 0.0 0.0 0.3762000000000001 0.0">
+<HAnimDisplacer DEF="Right_nostril_MorphInterpolator" coordIndex="2 4" displacements="0.0 0.3759 0.0 0.0 0.3762 0.0">
 </HAnimDisplacer>
 <Transform DEF="Right_nostril" translation="-0.7684 11.22 15.04" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -762,7 +762,7 @@
 <TimeSensor DEF="Right_temple_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Right_upper_cutaneous_lip_segment">
-<HAnimDisplacer DEF="Right_upper_cutaneous_lip_MorphInterpolator" coordIndex="0" displacements="0.0 0.37649999999999995 0.0">
+<HAnimDisplacer DEF="Right_upper_cutaneous_lip_MorphInterpolator" coordIndex="0" displacements="0.0 0.3765 0.0">
 </HAnimDisplacer>
 <Transform DEF="Right_upper_cutaneous_lip" translation="-0.7684 10.16 14.63" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
@@ -836,7 +836,7 @@
 <TimeSensor DEF="Tongue_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
 <HAnimSegment DEF="Upper_teeth_segment">
-<HAnimDisplacer DEF="Upper_teeth_MorphInterpolator" coordIndex="14 129 140 440 576 886 894" displacements="0.0 0.00010000000000001674 0.0 0.0 9.999999999996123e-06 0.0 0.0 -9.999999999996123e-06 0.0 -1.0000000000005664e-07 0.0 0.0 0.0 0.00010000000000000286 0.0 0.0 -9.999999999998899e-05 0.0 0.0 -9.999999999992654e-07 0.0">
+<HAnimDisplacer DEF="Upper_teeth_MorphInterpolator" coordIndex="14 576 886" displacements="0.0 0.0001 0.0 0.0 0.0001 0.0 0.0 -0.0001 0.0">
 </HAnimDisplacer>
 <Transform DEF="Upper_teeth" translation="0 9.723 11.67" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
