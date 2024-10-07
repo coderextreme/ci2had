@@ -94,23 +94,29 @@ def process_file(file_input, file_output):
         # print(base)
         # print(extension)
 
-        new_node = xml.etree.ElementTree.Element('HAnimDisplacer')
-        new_node.text = "\n"
-        new_node.tail = "\n"
         displacements = []
+        new_node = None
         for i in range(len(base)):
-            displacements.append(str(float(extension[i]) - float(base[i])))
+            difference = float(extension[i]) - float(base[i])
+            displacements.append(str(difference))
+            if new_node is None and difference != 0.0:
+                new_node = xml.etree.ElementTree.Element('HAnimDisplacer')
+                new_node.text = "\n"
+                new_node.tail = "\n"
         # print(displacements)
+
         parent = find_parent(root, cis)
-        new_node.set("displacements", " ".join(displacements))
-        # TODO
-        new_node.set("DEF", DEF)
+        if new_node is not None:
+            new_node.set("displacements", " ".join(displacements))
+            # TODO
+            new_node.set("DEF", DEF)
 
         if parent is not None:
             index = get_node_index(parent, cis)
             if index is not None:
                 # Add the HAnimDisplacer to the 'sacrum' segment
-                sacrum.append(new_node)
+                if new_node is not None:
+                    sacrum.append(new_node)
 
                 # Replace set_fraction with weight
                 # TODO
@@ -138,14 +144,16 @@ def process_file(file_input, file_output):
                                     if point == base_point:
                                         coordIndex.append(str(i))
                                         # break # Assume a base point only maps to one point
-                            new_node.set("coordIndex", " ".join(coordIndex))
+                            if new_node is not None:
+                                new_node.set("coordIndex", " ".join(coordIndex))
                     # Remove the unnecessary ROUTE
                     # TODO
                     par = find_parent(root, route)
                     par.remove(route)
 
-                # Remove the CoordinateInterpolator
-                # parent.remove(cis)
+        # Remove the CoordinateInterpolator
+        if new_node is not None:
+            parent.remove(cis)
 
     # Move other elements into the 'sacrum' segment
     for element in list(scene):
@@ -168,12 +176,13 @@ def process_file(file_input, file_output):
         for element in elements:
             par = find_parent(root, element)
             if element.tag == 'CoordinateInterpolator':
-                par.remove(element)
+                #par.remove(element)
                 # TODO
-                comment = xml.etree.ElementTree.Comment(str(xml.etree.ElementTree.tostring(element))[2:-3])
-                comment.tail = "\n"
-                segment.append(comment)
+                #comment = xml.etree.ElementTree.Comment(str(xml.etree.ElementTree.tostring(element))[2:-3])
+                #comment.tail = "\n"
+                # segment.append(comment)
                 # segment.append(element)
+                pass
             elif not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
                 par.remove(element)
                 segment.append(element)
