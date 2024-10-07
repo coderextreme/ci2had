@@ -860,31 +860,31 @@
 <ROUTE fromField="value_changed" fromNode="Lower_teeth_AnimationAdapter" toField="weight" toNode="Lower_teeth_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Lower_teeth_Clock" toField="set_fraction" toNode="Lower_teeth_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Tongue_AnimationAdapter" toField="weight" toNode="Tongue_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Tongue_AnimationAdapter" toField="set_fraction" toNode="Tongue_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Tongue_Clock" toField="set_fraction" toNode="Tongue_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Upper_teeth_AnimationAdapter" toField="weight" toNode="Upper_teeth_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Upper_teeth_AnimationAdapter" toField="set_fraction" toNode="Upper_teeth_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Upper_teeth_Clock" toField="set_fraction" toNode="Upper_teeth_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Mid_upper_vermillion_lip_AnimationAdapter" toField="weight" toNode="Mid_upper_vermillion_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Mid_upper_vermillion_lip_AnimationAdapter" toField="set_fraction" toNode="Mid_upper_vermillion_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Mid_upper_vermillion_lip_Clock" toField="set_fraction" toNode="Mid_upper_vermillion_lip_AnimationAdapter" />
 
 <ROUTE fromField="value_changed" fromNode="Neck_AnimationAdapter" toField="weight" toNode="Neck_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Neck_Clock" toField="set_fraction" toNode="Neck_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Occipital_scalp_AnimationAdapter" toField="weight" toNode="Occipital_scalp_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Occipital_scalp_AnimationAdapter" toField="set_fraction" toNode="Occipital_scalp_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Occipital_scalp_Clock" toField="set_fraction" toNode="Occipital_scalp_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_ear_AnimationAdapter" toField="weight" toNode="Left_ear_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_ear_AnimationAdapter" toField="set_fraction" toNode="Left_ear_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_ear_Clock" toField="set_fraction" toNode="Left_ear_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Mid_forehead_AnimationAdapter" toField="weight" toNode="Mid_forehead_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Mid_forehead_AnimationAdapter" toField="set_fraction" toNode="Mid_forehead_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Mid_forehead_Clock" toField="set_fraction" toNode="Mid_forehead_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_forehead_AnimationAdapter" toField="weight" toNode="Left_forehead_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_forehead_AnimationAdapter" toField="set_fraction" toNode="Left_forehead_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_forehead_Clock" toField="set_fraction" toNode="Left_forehead_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Glabella_AnimationAdapter" toField="weight" toNode="Glabella_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Glabella_AnimationAdapter" toField="set_fraction" toNode="Glabella_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Glabella_Clock" toField="set_fraction" toNode="Glabella_AnimationAdapter" />
 
 <ROUTE fromField="value_changed" fromNode="Chin_AnimationAdapter" toField="weight" toNode="Chin_MorphInterpolator" />
@@ -896,91 +896,91 @@
 <ROUTE fromField="value_changed" fromNode="Center_lower_vermillion_lip_AnimationAdapter" toField="weight" toNode="Center_lower_vermillion_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Center_lower_vermillion_lip_Clock" toField="set_fraction" toNode="Center_lower_vermillion_lip_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_eyebrow_AnimationAdapter" toField="weight" toNode="Left_eyebrow_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_eyebrow_AnimationAdapter" toField="set_fraction" toNode="Left_eyebrow_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_eyebrow_Clock" toField="set_fraction" toNode="Left_eyebrow_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_bulbar_conjunctiva_AnimationAdapter" toField="weight" toNode="Left_bulbar_conjunctiva_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_bulbar_conjunctiva_AnimationAdapter" toField="set_fraction" toNode="Left_bulbar_conjunctiva_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_bulbar_conjunctiva_Clock" toField="set_fraction" toNode="Left_bulbar_conjunctiva_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_temple_AnimationAdapter" toField="weight" toNode="Left_temple_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_temple_AnimationAdapter" toField="set_fraction" toNode="Left_temple_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_temple_Clock" toField="set_fraction" toNode="Left_temple_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Mid_nasal_dorsum_AnimationAdapter" toField="weight" toNode="Mid_nasal_dorsum_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Mid_nasal_dorsum_AnimationAdapter" toField="set_fraction" toNode="Mid_nasal_dorsum_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Mid_nasal_dorsum_Clock" toField="set_fraction" toNode="Mid_nasal_dorsum_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Nasal_tip_AnimationAdapter" toField="weight" toNode="Nasal_tip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Nasal_tip_AnimationAdapter" toField="set_fraction" toNode="Nasal_tip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Nasal_tip_Clock" toField="set_fraction" toNode="Nasal_tip_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_nostril_AnimationAdapter" toField="weight" toNode="Left_nostril_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_nostril_AnimationAdapter" toField="set_fraction" toNode="Left_nostril_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_nostril_Clock" toField="set_fraction" toNode="Left_nostril_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_dorsum_AnimationAdapter" toField="weight" toNode="Left_dorsum_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_dorsum_AnimationAdapter" toField="set_fraction" toNode="Left_dorsum_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_dorsum_Clock" toField="set_fraction" toNode="Left_dorsum_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_nasolabial_cheek_AnimationAdapter" toField="weight" toNode="Left_nasolabial_cheek_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_nasolabial_cheek_AnimationAdapter" toField="set_fraction" toNode="Left_nasolabial_cheek_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_nasolabial_cheek_Clock" toField="set_fraction" toNode="Left_nasolabial_cheek_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_cheek_AnimationAdapter" toField="weight" toNode="Left_cheek_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_cheek_AnimationAdapter" toField="set_fraction" toNode="Left_cheek_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_cheek_Clock" toField="set_fraction" toNode="Left_cheek_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_upper_vermillion_lip_AnimationAdapter" toField="weight" toNode="Left_upper_vermillion_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_upper_vermillion_lip_AnimationAdapter" toField="set_fraction" toNode="Left_upper_vermillion_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_upper_vermillion_lip_Clock" toField="set_fraction" toNode="Left_upper_vermillion_lip_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_upper_cutaneous_lip_AnimationAdapter" toField="weight" toNode="Left_upper_cutaneous_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_upper_cutaneous_lip_AnimationAdapter" toField="set_fraction" toNode="Left_upper_cutaneous_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_upper_cutaneous_lip_Clock" toField="set_fraction" toNode="Left_upper_cutaneous_lip_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Philtrum_AnimationAdapter" toField="weight" toNode="Philtrum_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Philtrum_AnimationAdapter" toField="set_fraction" toNode="Philtrum_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Philtrum_Clock" toField="set_fraction" toNode="Philtrum_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_forehead_AnimationAdapter" toField="weight" toNode="Right_forehead_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_forehead_AnimationAdapter" toField="set_fraction" toNode="Right_forehead_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_forehead_Clock" toField="set_fraction" toNode="Right_forehead_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_eyebrow_AnimationAdapter" toField="weight" toNode="Right_eyebrow_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_eyebrow_AnimationAdapter" toField="set_fraction" toNode="Right_eyebrow_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_eyebrow_Clock" toField="set_fraction" toNode="Right_eyebrow_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_upper_eyelid_AnimationAdapter" toField="weight" toNode="Left_upper_eyelid_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_upper_eyelid_AnimationAdapter" toField="set_fraction" toNode="Left_upper_eyelid_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_upper_eyelid_Clock" toField="set_fraction" toNode="Left_upper_eyelid_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_lower_eyelid_AnimationAdapter" toField="weight" toNode="Left_lower_eyelid_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_lower_eyelid_AnimationAdapter" toField="set_fraction" toNode="Left_lower_eyelid_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_lower_eyelid_Clock" toField="set_fraction" toNode="Left_lower_eyelid_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_pupil_AnimationAdapter" toField="weight" toNode="Left_pupil_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_pupil_AnimationAdapter" toField="set_fraction" toNode="Left_pupil_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_pupil_Clock" toField="set_fraction" toNode="Left_pupil_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_ear_AnimationAdapter" toField="weight" toNode="Right_ear_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_ear_AnimationAdapter" toField="set_fraction" toNode="Right_ear_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_ear_Clock" toField="set_fraction" toNode="Right_ear_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_cheek_AnimationAdapter" toField="weight" toNode="Right_cheek_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_cheek_AnimationAdapter" toField="set_fraction" toNode="Right_cheek_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_cheek_Clock" toField="set_fraction" toNode="Right_cheek_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_dorsum_AnimationAdapter" toField="weight" toNode="Right_dorsum_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_dorsum_AnimationAdapter" toField="set_fraction" toNode="Right_dorsum_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_dorsum_Clock" toField="set_fraction" toNode="Right_dorsum_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_bulbar_conjunctiva_AnimationAdapter" toField="weight" toNode="Right_bulbar_conjunctiva_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_bulbar_conjunctiva_AnimationAdapter" toField="set_fraction" toNode="Right_bulbar_conjunctiva_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_bulbar_conjunctiva_Clock" toField="set_fraction" toNode="Right_bulbar_conjunctiva_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_lower_eyelid_AnimationAdapter" toField="weight" toNode="Right_lower_eyelid_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_lower_eyelid_AnimationAdapter" toField="set_fraction" toNode="Right_lower_eyelid_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_lower_eyelid_Clock" toField="set_fraction" toNode="Right_lower_eyelid_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_nasolabial_cheek_AnimationAdapter" toField="weight" toNode="Right_nasolabial_cheek_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_nasolabial_cheek_AnimationAdapter" toField="set_fraction" toNode="Right_nasolabial_cheek_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_nasolabial_cheek_Clock" toField="set_fraction" toNode="Right_nasolabial_cheek_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_nostril_AnimationAdapter" toField="weight" toNode="Right_nostril_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_nostril_AnimationAdapter" toField="set_fraction" toNode="Right_nostril_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_nostril_Clock" toField="set_fraction" toNode="Right_nostril_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_pupil_AnimationAdapter" toField="weight" toNode="Right_pupil_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_pupil_AnimationAdapter" toField="set_fraction" toNode="Right_pupil_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_pupil_Clock" toField="set_fraction" toNode="Right_pupil_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_temple_AnimationAdapter" toField="weight" toNode="Right_temple_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_temple_AnimationAdapter" toField="set_fraction" toNode="Right_temple_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_temple_Clock" toField="set_fraction" toNode="Right_temple_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_upper_cutaneous_lip_AnimationAdapter" toField="weight" toNode="Right_upper_cutaneous_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_upper_cutaneous_lip_AnimationAdapter" toField="set_fraction" toNode="Right_upper_cutaneous_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_upper_cutaneous_lip_Clock" toField="set_fraction" toNode="Right_upper_cutaneous_lip_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_upper_eyelid_AnimationAdapter" toField="weight" toNode="Right_upper_eyelid_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_upper_eyelid_AnimationAdapter" toField="set_fraction" toNode="Right_upper_eyelid_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_upper_eyelid_Clock" toField="set_fraction" toNode="Right_upper_eyelid_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_upper_vermillion_lip_AnimationAdapter" toField="weight" toNode="Right_upper_vermillion_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_upper_vermillion_lip_AnimationAdapter" toField="set_fraction" toNode="Right_upper_vermillion_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_upper_vermillion_lip_Clock" toField="set_fraction" toNode="Right_upper_vermillion_lip_AnimationAdapter" />
 
 <ROUTE fromField="value_changed" fromNode="Right_lower_vermillion_lip_AnimationAdapter" toField="weight" toNode="Right_lower_vermillion_lip_MorphInterpolator" />

@@ -103,26 +103,24 @@ def process_file(file_input, file_output):
                 new_node = xml.etree.ElementTree.Element('HAnimDisplacer')
                 new_node.text = "\n"
                 new_node.tail = "\n"
-        # print(displacements)
 
-        parent = find_parent(root, cis)
         if new_node is not None:
             new_node.set("displacements", " ".join(displacements))
             # TODO
             new_node.set("DEF", DEF)
+            # print(displacements)
 
+        parent = find_parent(root, cis)
         if parent is not None:
             index = get_node_index(parent, cis)
             if index is not None:
                 # Add the HAnimDisplacer to the 'sacrum' segment
                 if new_node is not None:
                     sacrum.append(new_node)
-
-                # Replace set_fraction with weight
-                # TODO
-                routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
-                for route in routes:
-                    route.set("toField", "weight")
+                    # Replace set_fraction with weight
+                    routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
+                    for route in routes:
+                        route.set("toField", "weight")
 
                 # Replace value_changed with weight
                 routes = root.findall(".//ROUTE[@fromField='value_changed'][@fromNode='"+DEF+"']")
@@ -151,9 +149,9 @@ def process_file(file_input, file_output):
                     par = find_parent(root, route)
                     par.remove(route)
 
-        # Remove the CoordinateInterpolator
-        if new_node is not None:
-            parent.remove(cis)
+            # Remove the CoordinateInterpolator
+            if new_node is not None:
+                parent.remove(cis)
 
     # Move other elements into the 'sacrum' segment
     for element in list(scene):
