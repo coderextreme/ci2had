@@ -853,27 +853,6 @@
 <ScalarInterpolator DEF="Upper_teeth_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Upper_teeth_Clock" cycleInterval="4" enabled="true" loop="true" />
 </HAnimSegment>
-							     <HAnimSegment DEF='Joe_tooth' name='tooth'>
-								     <Transform>
-     <Shape>
-      <Appearance>
-        <Material ambientIntensity="1" transparency="0" shininess="0.145" diffuseColor="0.588 0.588 0.588" specularColor="0 0 0" />
-      </Appearance>
-      <IndexedFaceSet DEF="Cinter_lower_vermillion_lip-FACES" creaseAngle="3.14159"
-        coordIndex=" 1 0 4 -1 0 1 2 -1 1 4 3 -1 3 5 1 -1"
-        texCoordIndex=" 2 1 0 -1 1 2 3 -1 4 6 5 -1 5 7 4 -1"
-        solid="false" ccw="true">
-        <Coordinate DEF="Cinter_lower_vermillion_lip-COORD"
-          point="0.5699 0.5402 0.1151, 0 -0.5402 0.1287, 0.6344 -0.3611 -0.1287, -0.5699 0.5402 0.1151, 0 0.5402 0.1151 -0.6344 -0.3611 -0.1287" />
-        <TextureCoordinate DEF="Cinter_lower_vermillion_lip-TEXCOORD"
-          point=" 0.2441 0.6554 0.2548 0.6554 0.2557 0.6351 0.2652 0.6384 0.2557 0.6351 0.2548 0.6554
-                0.2441 0.6554 0.2652 0.6384" />
-      </IndexedFaceSet>
-    </Shape>
-								     </Transform>
-	    						        <Coordinate USE='Cinter_lower_vermillion_lip-COORD' containerField="coord"/>
-                                                            	<HAnimDisplacer DEF='Joe_skull_tip_raiser_action' coordIndex='0 1 2 3 4 5 6 7 8 9' displacements='0 0.15 0 0 0 0.15 -0.1 0 0.15 0.1 0 0.05 0 -0.02 0.05 -0.15 0 0 -0.05 0 0 0.15 0 0 0.05 0 0 0 0 -0.15' name='skull_tip_raiser_action'/>
-							      </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
 <HAnimJoint USE="hanim_root" containerField="joints">
@@ -881,12 +860,6 @@
 <HAnimJoint USE="hanim_skullbase" containerField="joints">
 </HAnimJoint>
 </HAnimHumanoid>
-      <TimeSensor DEF='KickTimer' cycleInterval='3.73' loop='true'/>
-    <Group DEF='DisplacersAnimationGroup'>
-      <ScalarInterpolator DEF='skull_tipInterpolator' key='0 0.1 0.2 0.35 0.6 0.7 0.85 0.88 0.94 0.97 1' keyValue='0 0 0 0 0.2 0.4 1 0 1 0.4 0'/>
-      <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='skull_tipInterpolator'/>
-      <ROUTE fromField='value_changed' fromNode='skull_tipInterpolator' toField='weight' toNode='Joe_skull_tip_raiser_action'/>
-    </Group>
 <ROUTE fromField="value_changed" fromNode="Lower_teeth_AnimationAdapter" toField="weight" toNode="Lower_teeth_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Lower_teeth_Clock" toField="set_fraction" toNode="Lower_teeth_AnimationAdapter" />
 

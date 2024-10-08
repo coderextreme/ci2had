@@ -207,13 +207,13 @@ def process_file(file_input, file_output):
             elif not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
                 par.remove(element)
                 segment.append(element)
-#            elif element.tag == 'Coordinate':
-#                coordinate = xml.etree.ElementTree.Element('Coordinate')
-#                coordinate.set("USE", element.get("DEF"))
-#                coordinate.set("containerField", "coord")
-#                coordinate.text = "\n"
-#                coordinate.tail = "\n"
-#                segment.append(coordinate)
+            elif element.tag == 'Coordinate':
+                coordinate = xml.etree.ElementTree.Element('Coordinate')
+                coordinate.set("USE", element.get("DEF"))
+                coordinate.set("containerField", "coord")
+                coordinate.text = "\n"
+                coordinate.tail = "\n"
+                segment.append(coordinate)
         # Move displacer to end
         for element in list(segment):
             if element.tag == "HAnimDisplacer":
