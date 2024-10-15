@@ -266,7 +266,6 @@
 </Transform>
 <Coordinate USE="Left_nostril-COORD" containerField="coord">
 </Coordinate>
-<!--<CoordinateInterpolator DEF="Left_nostril_MorphInterpolator" key="0 0.5 1" keyValue=" -0.2923 0.2585 0.9483 -0.398 -0.9732 0.1131 0.398 -0.209 -0.9483 -0.3119 0.9732 0.439 0.2902 0.6978 -0.4206  -0.08044 0.2585 0.9483 -0.398 -0.9732 0.1131 0.398 -0.209 -0.9483 -0.3119 0.9732 0.439 0.2902 0.6978 -0.4206  0.09261 0.2585 0.9483 -0.398 -0.9732 0.1131 0.398 -0.209 -0.9483 -0.3119 0.9732 0.439 0.2902 0.6978 -0.4206" />-->
 <ScalarInterpolator DEF="Left_nostril_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_nostril_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_nostril_MorphInterpolator" name="Left_nostril_MorphInterpolator" weight="0" containerField="displacers" coordIndex="0" displacements="0.3849 0.0 0.0">
@@ -460,7 +459,6 @@
 </Transform>
 <Coordinate USE="Nasal_tip-COORD" containerField="coord">
 </Coordinate>
-<!--<CoordinateInterpolator DEF="Nasal_tip_MorphInterpolator" key="0 0.5 1" keyValue=" 0 -1.103 -1.068 0.3704 -1.103 -1.072 0.4565 0.8434 -0.7458 0.4761 0.1288 -0.2364 0 0.4512 1.072 -0.3704 -1.103 -1.072 -0.4565 0.8434 -0.7458 0 1.103 0.5484 -0.4761 0.1288 -0.2364  0 -1.103 -1.068 0.3704 -1.103 -1.072 0.4565 0.8434 -0.7458 0.6879 0.1288 -0.2364 0 0.4512 1.072 -0.3704 -1.103 -1.072 -0.4565 0.8434 -0.7458 0 1.103 0.5484 -0.6879 0.1288 -0.2364  0 -1.103 -1.068 0.3704 -1.103 -1.072 0.4565 0.8434 -0.7458 0.861 0.1288 -0.2364 0 0.4512 1.072 -0.3704 -1.103 -1.072 -0.4565 0.8434 -0.7458 0 1.103 0.5484 -0.861 0.1288 -0.2364" />-->
 <ScalarInterpolator DEF="Nasal_tip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Nasal_tip_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Nasal_tip_MorphInterpolator" name="Nasal_tip_MorphInterpolator" weight="0" containerField="displacers" coordIndex="3 8" displacements="0.3849 0.0 0.0, -0.3849 0.0 0.0">
@@ -711,7 +709,6 @@
 </Transform>
 <Coordinate USE="Right_nostril-COORD" containerField="coord">
 </Coordinate>
-<!--<CoordinateInterpolator DEF="Right_nostril_MorphInterpolator" key="0 0.5 1" keyValue=" 0.2923 0.2585 0.9483 0.398 -0.9732 0.1131 -0.398 -0.209 -0.9483 0.3119 0.9732 0.439 -0.2902 0.6978 -0.4206  0.08044 0.2585 0.9483 0.398 -0.9732 0.1131 -0.398 -0.209 -0.9483 0.3119 0.9732 0.439 -0.2902 0.6978 -0.4206  -0.09261 0.2585 0.9483 0.398 -0.9732 0.1131 -0.398 -0.209 -0.9483 0.3119 0.9732 0.439 -0.2902 0.6978 -0.4206" />-->
 <ScalarInterpolator DEF="Right_nostril_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_nostril_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_nostril_MorphInterpolator" name="Right_nostril_MorphInterpolator" weight="0" containerField="displacers" coordIndex="0" displacements="-0.3849 0.0 0.0">

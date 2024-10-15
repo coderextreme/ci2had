@@ -105,6 +105,7 @@ def process_file(file_input, file_output):
 
         numKeys = len(keys)
         valuesPerKey = int(len(keyValues)/numKeys)
+        print("valuesPerKey", valuesPerKey)
         # print(keys)
         # print(keyValues)
         key = 0
@@ -120,9 +121,12 @@ def process_file(file_input, file_output):
             difference = float(extension[i]) - float(base[i])
             displacements.append(str(round(difference, 4)))
             if new_node is None and non_zero(difference):
+                # print (f"{DEF} {i}, {extension[i]}, {base[i]}")
                 new_node = xml.etree.ElementTree.Element('HAnimDisplacer')
                 new_node.text = "\n"
                 new_node.tail = "\n"
+            if non_zero(difference):
+                print (f"{DEF} keyValue base point index (0 indexed) {i}, {extension[i]} - {base[i]} = {round(difference,4)}")
 
         if new_node is not None:
             new_node.set("DEF", DEF)
@@ -141,13 +145,10 @@ def process_file(file_input, file_output):
                     routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
                     for route in routes:
                         route.set("toField", "weight")
-                        route.set("toNode", DEF);
 
                     # Replace value_changed with weight
                     routes = root.findall(".//ROUTE[@fromField='value_changed'][@fromNode='"+DEF+"']")
                     for route in routes:
-                        # route.set("fromField", "weight")
-                        route.set("fromNode", DEF)
                         # Set coordIndex of the new HAnimDisplacer node.
                         COORDDEF = route.get("toNode")
                         coords = root.findall(".//*[@DEF='"+COORDDEF+"']")
@@ -164,12 +165,17 @@ def process_file(file_input, file_output):
                                 for i, point in enumerate(pointsMatrix): # Loop through Coordinate points
                                     for j, base_point in enumerate(baseMatrix):
                                         if point == base_point and (non_zero(displacementsMatrix[i][0]) or non_zero(displacementsMatrix[i][1]) or non_zero(displacementsMatrix[i][2])):
+                                        #if point == base_point:
                                             coordIndex.append(str(i))
                                             dis = " ".join(displacementsMatrix[i])
                                             newDisplacements.append(dis)
                                             # break # Assume a base point only maps to one point
-                                new_node.set("coordIndex", " ".join(coordIndex))
-                                new_node.set("displacements", ", ".join(newDisplacements))
+                                coordIndex = " ".join(coordIndex)
+                                new_node.set("coordIndex", coordIndex)
+                                newDisplacements = ", ".join(newDisplacements)
+                                new_node.set("displacements", newDisplacements)
+                                print(f"coordIndex {coordIndex} displacement {newDisplacements}")
+                                #new_node.set("displacements", " ".join(displacements))
                         # remove route from CoordinateInterpolator to Coordinate
                         par = find_parent(root, route)
                         par.remove(route)
@@ -198,12 +204,11 @@ def process_file(file_input, file_output):
         for element in elements:
             par = find_parent(root, element)
             if element.tag == 'CoordinateInterpolator':
-                #comment = xml.etree.ElementTree.Comment(str(xml.etree.ElementTree.tostring(element))[2:-3])
-                #comment.tail = "\n"
-                #segment.append(comment)
+                comment = xml.etree.ElementTree.Comment(str(xml.etree.ElementTree.tostring(element))[2:-3])
+                comment.tail = "\n"
+                segment.append(comment)
                 par.remove(element)
-                segment.append(element)
-                pass
+                #segment.append(element)
             elif not element.tag in ('IndexedFaceSet', 'Coordinate', 'TextureCoordinate'):
                 par.remove(element)
                 segment.append(element)
@@ -225,6 +230,10 @@ def process_file(file_input, file_output):
         if displacer.tag == "HAnimDisplacer":
             sacrum.remove(displacer)
 
+    for view in root.iter('Viewpoint'):
+            par = find_parent(root, view)
+            scene.insert(0, view)
+            par.remove(view)
 #    sensor = xml.etree.ElementTree.Element('ProximitySensor')
 #    sensor.text = "\n"
 #    sensor.tail = "\n"
@@ -263,4 +272,7 @@ def processAFile(input_file):
 for input_file in files:
     processAFile(input_file)
 
-# processAFile("../resources/JoeKick.x3d")
+#processAFile("C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/FACS_AU9(Jin)_Nose_Wrinkler_Morpher.x3d")
+#processAFile("../resources/FACS47.x3d")
+
+

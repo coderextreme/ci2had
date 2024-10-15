@@ -38,7 +38,6 @@
 </Transform>
 <Coordinate USE="Center_lower_vermillion_lip-COORD" containerField="coord">
 </Coordinate>
-<!--<CoordinateInterpolator DEF="Center_lower_vermillion_lip_MorphInterpolator" key="0 0.5 1" keyValue=" 0.5699 0.5402 0.1151 0 -0.5402 0.1287 0.6344 -0.3611 -0.1287 -0.5699 0.5402 0.1151 0 0.5402 0.1151 -0.6344 -0.3611 -0.1287  0.5699 0.5402 0.5695 0 -0.02005 0.3815 0.6344 0.01052 0.1241 -0.5699 0.5402 0.5695 0 0.5402 0.5695 -0.6344 0.01052 0.1241  0.5699 0.1607 0.2488 0 -0.7502 0.1287 0.6344 -0.5711 -0.1287 -0.5699 0.1607 0.2488 0 0.1607 0.2488 -0.6344 -0.5711 -0.1287" />-->
 <ScalarInterpolator DEF="Center_lower_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Center_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Center_lower_vermillion_lip_MorphInterpolator" name="Center_lower_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers" coordIndex="0 1 2 3 4 5" displacements="0.0 -0.3795 0.1337, 0.0 -0.21 0.0, 0.0 -0.21 0.0, 0.0 -0.3795 0.1337, 0.0 -0.3795 0.1337, 0.0 -0.21 0.0">
@@ -59,7 +58,6 @@
 </Transform>
 <Coordinate USE="Chin-COORD" containerField="coord">
 </Coordinate>
-<!--<CoordinateInterpolator DEF="Chin_MorphInterpolator" key="0 0.5 1" keyValue=" 0 -2.287 3.579 0 -0.1353 -6.353 3.657 -0.4253 2.123 3.345 0.9926 4.159 3.653 -0.9673 0.1176 5.33 0.7945 -6.311 0 1.438 6.353 3.006 2.287 5.134 4.492 -0.08641 -3.097 0.6344 1.617 6.096 -3.657 -0.4253 2.123 -3.345 0.9926 4.159 0 0.481 5.272 -5.33 0.7945 -6.311 -4.492 -0.08641 -3.097 0 -0.5988 -3.408 0 -2.111 1.781 -3.653 -0.9673 0.1176 -3.006 2.287 5.134 -0.6344 1.617 6.096  0 -2.287 3.579 0 -0.1353 -6.353 3.657 -0.4253 2.123 3.345 0.9926 4.159 3.653 -0.9673 0.1176 5.33 0.7945 -6.311 0 1.958 6.606 3.006 2.287 5.134 4.492 -0.08641 -3.097 0.6344 1.988 6.349 -3.657 -0.4253 2.123 -3.345 0.9926 4.159 0 0.481 5.272 -5.33 0.7945 -6.311 -4.492 -0.08641 -3.097 0 -0.5988 -3.408 0 -2.111 1.781 -3.653 -0.9673 0.1176 -3.006 2.287 5.134 -0.6344 1.988 6.349  0 -2.287 3.579 0 -0.1353 -6.353 3.657 -0.4253 2.123 3.345 0.9926 4.159 3.653 -0.9673 0.1176 5.33 0.7945 -6.311 0 1.228 6.353 3.006 2.287 5.134 4.492 -0.08641 -3.097 0.6344 1.407 6.096 -3.657 -0.4253 2.123 -3.345 0.9926 4.159 0 0.481 5.272 -5.33 0.7945 -6.311 -4.492 -0.08641 -3.097 0 -0.5988 -3.408 0 -2.111 1.781 -3.653 -0.9673 0.1176 -3.006 2.287 5.134 -0.6344 1.407 6.096" />-->
 <ScalarInterpolator DEF="Chin_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Chin_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Chin_MorphInterpolator" name="Chin_MorphInterpolator" weight="0" containerField="displacers" coordIndex="6 9 19" displacements="0.0 -0.21 0.0, 0.0 -0.21 0.0, 0.0 -0.21 0.0">
@@ -232,7 +230,6 @@
 </Transform>
 <Coordinate USE="Left_lower_vermillion_lip-COORD" containerField="coord">
 </Coordinate>
-<!--<CoordinateInterpolator DEF="Left_lower_vermillion_lip_MorphInterpolator" key="0 0.5 1" keyValue=" -1.218 0.4506 0.603 1.218 0.219 -0.603 -1.154 -0.4506 0.3592  -1.218 0.4506 1.057 1.218 0.219 -0.603 -1.154 -0.07904 0.612  -1.218 0.07112 0.7367 1.218 0.219 -0.603 -1.154 -0.6606 0.3592" />-->
 <ScalarInterpolator DEF="Left_lower_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_lower_vermillion_lip_MorphInterpolator" name="Left_lower_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers" coordIndex="0 2" displacements="0.0 -0.3795 0.1337, 0.0 -0.21 0.0">
@@ -675,7 +672,6 @@
 
 <Coordinate USE="Right_lower_vermillion_lip-COORD" containerField="coord">
 </Coordinate>
-<!--<CoordinateInterpolator DEF="Right_lower_vermillion_lip_MorphInterpolator" key="0 0.5 1" keyValue=" 1.218 0.4506 0.603 -1.218 0.219 -0.603 1.154 -0.4506 0.3592  1.218 0.4506 1.057 -1.218 0.219 -0.603 1.154 -0.07904 0.612  1.218 0.07112 0.7367 -1.218 0.219 -0.603 1.154 -0.6606 0.3592" />-->
 <ScalarInterpolator DEF="Right_lower_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_lower_vermillion_lip_MorphInterpolator" name="Right_lower_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers" coordIndex="0 2" displacements="0.0 -0.3795 0.1337, 0.0 -0.21 0.0">
