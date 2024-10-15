@@ -1,0 +1,12 @@
+<HAnimSegment DEF="hanim_Right_nostril" name="Right_nostril">
+<Transform DEF="Right_nostril" translation="-0.7684 11.22 15.04" rotation="0 0 0 0" scale="1 1 1">
+<IndexedFaceSet DEF="Right_nostril-FACES" creaseAngle="3.14159" coordIndex=" 0 3 2 -1 1 0 2 -1 4 2 3 -1" texCoordIndex=" 0 3 2 -1 1 0 2 -1 4 2 3 -1" solid="false" ccw="true">
+<TextureCoordinate DEF="Right_nostril-TEXCOORD" point=" 0.2538 0.7051 0.2511 0.6816 0.2661 0.696 0.2528 0.7186 0.2641 0.7133" />
+<Coordinate DEF="Right_nostril-COORD" point=" 0.2923 0.2585 0.9483 0.398 -0.9732 0.1131 -0.398 -0.209 -0.9483 0.3119 0.9732 0.439 -0.2902 0.6978 -0.4206" />
+<Coordinate USE="Right_nostril-COORD" containerField="coord">
+<!--<CoordinateInterpolator DEF="Right_nostril_MorphInterpolator" key="0 0.5 1" keyValue=" 0.2923 0.2585 0.9483 0.398 -0.9732 0.1131 -0.398 -0.209 -0.9483 0.3119 0.9732 0.439 -0.2902 0.6978 -0.4206  0.2923 0.2585 0.9483 0.398 -0.9732 0.1131 -0.398 -0.03922 -0.9483 0.3119 0.9732 0.439 -0.2902 0.8677 -0.4206  0.2923 0.2585 0.9483 0.398 -0.9732 0.1131 -0.398 0.1669 -0.9483 0.3119 0.9732 0.439 -0.2902 1.074 -0.4206" />-->
+<ScalarInterpolator DEF="Right_nostril_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
+<TimeSensor DEF="Right_nostril_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Right_nostril_MorphInterpolator" name="Right_nostril_MorphInterpolator" weight="0" containerField="displacers" coordIndex="2 4" displacements="0.0 0.3759 0.0, 0.0 0.3762 0.0">
+<ROUTE fromField="value_changed" fromNode="Right_nostril_AnimationAdapter" toField="weight" toNode="Right_nostril_MorphInterpolator" />
+<ROUTE fromField="fraction_changed" fromNode="Right_nostril_Clock" toField="set_fraction" toNode="Right_nostril_AnimationAdapter" />
