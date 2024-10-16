@@ -1,0 +1,12 @@
+{
+  "name": "ci2had",
+  "version": "0.0.1",
+  "private": true,
+  "main": "app.js",
+  "dependencies": {
+    "express": "*"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}

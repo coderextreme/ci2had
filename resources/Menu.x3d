@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd"><X3D xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsi:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd">
+  <head>
+    <meta content="SwitchInlineMenu.x3d" name="title"/>
+    <meta content="X3D scene with a Switch of Inlines controlled by a menu" name="description"/>
+  </head>
+  <Scene>
+    <!-- Viewpoint and any other scene setup -->
+    <Viewpoint position="0 20 110" />
+
+    <!-- Menu prototype declaration -->
+    <ProtoDeclare name="Menu">
+      <ProtoInterface>
+        <field name="menuItems" type="MFString" accessType="initializeOnly"/>
+      </ProtoInterface>
+      <ProtoBody>
+      <Group>
+        <Transform DEF="MenuTransform" translation="48 18 0">
+	  <TouchSensor DEF="MenuTouchSensor" />
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"/>
+            </Appearance>
+            <Text DEF="MenuText">
+              <IS>
+                <connect nodeField="string" protoField="menuItems"/>
+              </IS>
+              <FontStyle size="2.8" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+            </Text>
+          </Shape>
+        </Transform>
+
+	<Switch DEF="SceneSwitcher" whichChoice="0">
+<Inline DEF="OPTION1" url='"../resources/FACS_AU1(Jin)_Inner_Brow_Raiser_Morpher_Output.x3d" "FACS_AU1(Jin)_Inner_Brow_Raiser_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION2" url='"../resources/FACS_AU10(Jin)_Upper_Lip_Raiser_Morpher_Output.x3d" "FACS_AU10(Jin)_Upper_Lip_Raiser_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION3" url='"../resources/FACS_AU11(Jin)_Nasolabial_Deepener_Morpher_Output.x3d" "FACS_AU11(Jin)_Nasolabial_Deepener_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION4" url='"../resources/FACS_AU12(Jin)_Lip_Corner_Puller_Morpher_Output.x3d" "FACS_AU12(Jin)_Lip_Corner_Puller_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION5" url='"../resources/FACS_AU13(Jin)_Cheek_Puffer_Morpher_Output.x3d" "FACS_AU13(Jin)_Cheek_Puffer_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION6" url='"../resources/FACS_AU14(Jin)_Dimpler_Morpher_Output.x3d" "FACS_AU14(Jin)_Dimpler_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION7" url='"../resources/FACS_AU15(Jin)_Lip_Corner_Depressor_Morpher_Output.x3d" "FACS_AU15(Jin)_Lip_Corner_Depressor_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION8" url='"../resources/FACS_AU16(Jin)_Lower_Lip_Depressor_Morpher_Output.x3d" "FACS_AU16(Jin)_Lower_Lip_Depressor_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION9" url='"../resources/FACS_AU17(Jin)_Chin_Raiser_Morpher_Output.x3d" "FACS_AU17(Jin)_Chin_Raiser_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION10" url='"../resources/FACS_AU18(Jin)_Lip_Puckerer_Morpher_Output.x3d" "FACS_AU18(Jin)_Lip_Puckerer_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION11" url='"../resources/FACS_AU2(Jin)_Outer_Brow_Raiser_Morpher_Output.x3d" "FACS_AU2(Jin)_Outer_Brow_Raiser_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION12" url='"../resources/FACS_AU20(Jin)_Lip_stretcher_Morpher_Output.x3d" "FACS_AU20(Jin)_Lip_stretcher_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION13" url='"../resources/FACS_AU22(Jin)_Lip_Funneler_Morpher_Output.x3d" "FACS_AU22(Jin)_Lip_Funneler_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION14" url='"../resources/FACS_AU23(Jin)_Lip_Tightener_Morpher_Output.x3d" "FACS_AU23(Jin)_Lip_Tightener_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION15" url='"../resources/FACS_AU24(Jin)_Lip_Pressor_Morpher_Output.x3d" "FACS_AU24(Jin)_Lip_Pressor_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION16" url='"../resources/FACS_AU25(Jin)_Lips_Part_Morpher_Output.x3d" "FACS_AU25(Jin)_Lips_Part_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION17" url='"../resources/FACS_AU26(Jin)_Jaw_Drop_Morpher_Output.x3d" "FACS_AU26(Jin)_Jaw_Drop_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION18" url='"../resources/FACS_AU27(Jin)_Mouth_Stretch_Morpher_Output.x3d" "FACS_AU27(Jin)_Mouth_Stretch_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION19" url='"../resources/FACS_AU28(Jin)_Lip_Suck_Morpher_Output.x3d" "FACS_AU28(Jin)_Lip_Suck_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION20" url='"../resources/FACS_AU4(Jin)_Brow_Lowerer_Morpher_Output.x3d" "FACS_AU4(Jin)_Brow_Lowerer_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION21" url='"../resources/FACS_AU41(Jin)_Lid_droop_Morpher_Output.x3d" "FACS_AU41(Jin)_Lid_droop_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION22" url='"../resources/FACS_AU42(Jin)_Slit_Morpher_Output.x3d" "FACS_AU42(Jin)_Slit_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION23" url='"../resources/FACS_AU43(Jin)_Eyes_Closed_Morpher_Output.x3d" "FACS_AU43(Jin)_Eyes_Closed_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION24" url='"../resources/FACS_AU44(Jin)_Squint_Morpher_Output.x3d" "FACS_AU44(Jin)_Squint_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION25" url='"../resources/FACS_AU45(Jin)_Blink_Morpher_Output.x3d" "FACS_AU45(Jin)_Blink_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION26" url='"../resources/FACS_AU46(Jin)_Wink_Morpher_Output.x3d" "FACS_AU46(Jin)_Wink_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION27" url='"../resources/FACS_AU5(Jin)_Upper_Lid_Raiser_Morpher_Output.x3d" "FACS_AU5(Jin)_Upper_Lid_Raiser_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION28" url='"../resources/FACS_AU6(Jin)_Cheek_Raiser_Morpher_Output.x3d" "FACS_AU6(Jin)_Cheek_Raiser_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION29" url='"../resources/FACS_AU7(Jin)_Lid_Tightener_Morpher_Output.x3d" "FACS_AU7(Jin)_Lid_Tightener_Morpher_Output.x3d"'/>
+<Inline DEF="OPTION30" url='"../resources/FACS_AU9(Jin)_Nose_Wrinkler_Morpher_Output.x3d" "FACS_AU9(Jin)_Nose_Wrinkler_Morpher_Output.x3d"'/>
+</Switch>
+
+    <!-- Script to handle selection logic -->
+    <Script DEF="MenuScript">
+      <field name="menuItems" type="MFString" accessType="initializeOnly"/>
+      <field name="selection" type="SFInt32" accessType="outputOnly"/>
+      <field name="touchPoint" type="SFVec3f" accessType="inputOnly"/>
+      <field name="spacing" type="SFFloat" accessType="initializeOnly" value="1.2"/>
+      <field name="size" type="SFFloat" accessType="initializeOnly" value="2.8"/>
+      <field name="menuCenterY" type="SFFloat" accessType="initializeOnly"/>
+      <field name="itemHeight" type="SFFloat" accessType="initializeOnly"/>
+
+      <![CDATA[ecmascript:
+	function initialize() {
+	  selection = 0;
+	      var spacingBetweenGlyphs = size * spacing - size; // Spacing calculation
+	  var menuHeight = (size + spacingBetweenGlyphs) * menuItems.length;
+	  menuCenterY = menuHeight / 2;
+	  itemHeight = menuHeight / menuItems.length;
+	}
+
+        function touchPoint(value) {
+		  Browser.print("Hit "+value+" "+selection+"\n");
+		  var index = Math.floor((menuCenterY - value.y) / itemHeight - 0.5);
+
+		  selection = index - 2;
+		  if (selection >= 0 && selection < menuItems.length) {
+	      		Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"\n");
+		  }
+	}
+      ]]>
+    <IS>
+	  <connect nodeField="menuItems" protoField="menuItems"/>
+    </IS>
+    </Script>
+
+    <!-- ROUTEs to connect everything -->
+    <ROUTE fromNode="MenuTouchSensor"   fromField="hitPoint_changed" toNode="MenuScript" toField="touchPoint"/>
+    <ROUTE fromNode="MenuScript" fromField="selection" toNode="SceneSwitcher" toField="whichChoice"/>
+      </Group>
+      </ProtoBody>
+    </ProtoDeclare>
+    <ProtoInstance DEF='MainMenu' name='Menu'>
+      <fieldValue name='menuItems' value='"FACS_AU1(Jin)_Inner_Brow_Raiser_Morpher.x3d" "FACS_AU10(Jin)_Upper_Lip_Raiser_Morpher.x3d" "FACS_AU11(Jin)_Nasolabial_Deepener_Morpher.x3d" "FACS_AU12(Jin)_Lip_Corner_Puller_Morpher.x3d" "FACS_AU13(Jin)_Cheek_Puffer_Morpher.x3d" "FACS_AU14(Jin)_Dimpler_Morpher.x3d" "FACS_AU15(Jin)_Lip_Corner_Depressor_Morpher.x3d" "FACS_AU16(Jin)_Lower_Lip_Depressor_Morpher.x3d" "FACS_AU17(Jin)_Chin_Raiser_Morpher.x3d" "FACS_AU18(Jin)_Lip_Puckerer_Morpher.x3d" "FACS_AU2(Jin)_Outer_Brow_Raiser_Morpher.x3d" "FACS_AU20(Jin)_Lip_stretcher_Morpher.x3d" "FACS_AU22(Jin)_Lip_Funneler_Morpher.x3d" "FACS_AU23(Jin)_Lip_Tightener_Morpher.x3d" "FACS_AU24(Jin)_Lip_Pressor_Morpher.x3d" "FACS_AU25(Jin)_Lips_Part_Morpher.x3d" "FACS_AU26(Jin)_Jaw_Drop_Morpher.x3d" "FACS_AU27(Jin)_Mouth_Stretch_Morpher.x3d" "FACS_AU28(Jin)_Lip_Suck_Morpher.x3d" "FACS_AU4(Jin)_Brow_Lowerer_Morpher.x3d" "FACS_AU41(Jin)_Lid_droop_Morpher.x3d" "FACS_AU42(Jin)_Slit_Morpher.x3d" "FACS_AU43(Jin)_Eyes_Closed_Morpher.x3d" "FACS_AU44(Jin)_Squint_Morpher.x3d" "FACS_AU45(Jin)_Blink_Morpher.x3d" "FACS_AU46(Jin)_Wink_Morpher.x3d" "FACS_AU5(Jin)_Upper_Lid_Raiser_Morpher.x3d" "FACS_AU6(Jin)_Cheek_Raiser_Morpher.x3d" "FACS_AU7(Jin)_Lid_Tightener_Morpher.x3d" "FACS_AU9(Jin)_Nose_Wrinkler_Morpher.x3d" '/>
+    </ProtoInstance>
+  </Scene>
+</X3D>
