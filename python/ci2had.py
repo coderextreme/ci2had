@@ -286,12 +286,11 @@ with open("../resources/Menu.x3d", "w") as menu_file:
     <ProtoDeclare name="Menu">
       <ProtoInterface>
         <field name="menuItems" type="MFString" accessType="initializeOnly"/>
-        <field name="selection" type="SFInt32" accessType="outputOnly"/>
       </ProtoInterface>
       <ProtoBody>
       <Group>
         <Transform DEF="MenuTransform" translation="48 18 0">
-          <TouchSensor DEF="MenuTouchSensor"/>
+         <TouchSensor DEF="MenuTouchSensor"/>
           <Shape>
             <Appearance>
               <Material diffuseColor="1 1 1"/>
@@ -300,12 +299,12 @@ with open("../resources/Menu.x3d", "w") as menu_file:
               <IS>
                 <connect nodeField="string" protoField="menuItems"/>
               </IS>
-              <FontStyle size="2.8" justify='"MIDDLE" "MIDDLE"'/>
+              <FontStyle size="2.8" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
             </Text>
           </Shape>
         </Transform>
 
-      <Switch DEF="SceneSwitcher" whichChoice="0">''');
+      <Switch DEF="SceneSwitcher" whichChoice="0">\n''');
     item = 1
     menu = ""
     for input_file in files:
@@ -318,28 +317,41 @@ with open("../resources/Menu.x3d", "w") as menu_file:
 
     <!-- Script to handle selection logic -->
     <Script DEF="MenuScript">
-      <field name="selection" type="SFInt32" accessType="inputOutput" value="0"/>
-      <field name="menuItems" type="MFString" accessType="inputOnly"/>
-      <field name="nextItem" type="SFBool" accessType="inputOnly"/>
-      <field name="switchChoice" type="SFInt32" accessType="outputOnly"/>
+      <field name="menuItems" type="MFString" accessType="initializeOnly"/>
+      <field name="selection" type="SFInt32" accessType="outputOnly"/>
+      <field name="touchPoint" type="SFVec3f" accessType="inputOnly"/>
+      <field name="spacing" type="SFFloat" accessType="initializeOnly" value="1.2"/>
+      <field name="size" type="SFFloat" accessType="initializeOnly" value="2.8"/>
+      <field name="menuCenterY" type="SFFloat" accessType="initializeOnly"/>
+      <field name="itemHeight" type="SFFloat" accessType="initializeOnly"/>
 
-      <![CDATA[
+      <![CDATA[ecmascript:
         function initialize() {
           selection = 0;
+          var spacingBetweenGlyphs = size * spacing - size; // Spacing calculation
+          var menuHeight = (size + spacingBetweenGlyphs) * menuItems.length;
+          menuCenterY = menuHeight / 2;
+          itemHeight = menuHeight / menuItems.length;
         }
 
-        function nextItem(value) {
-          if (value) {
-            selection = (selection + 1) % '''+str(item-1)+''';  // Assuming '''+str(item-1)+''' menu items for example
-            switchChoice = selection;
+        function touchPoint(value) {
+          Browser.print("Hit "+value+" "+selection+"\\n");
+          var index = Math.floor((menuCenterY - value.y) / itemHeight - 0.5);
+
+          selection = index - 2;
+          if (selection >= 0 && selection < menuItems.length) {
+            Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"\\n");
           }
         }
       ]]>
+      <IS>
+         <connect nodeField="menuItems" protoField="menuItems"/>
+      </IS>
     </Script>
 
-    <!-- ROUTEs to connect everything -->
-    <ROUTE fromNode="MenuTouchSensor" fromField="isActive" toNode="MenuScript" toField="nextItem"/>
-    <ROUTE fromNode="MenuScript" fromField="switchChoice" toNode="SceneSwitcher" toField="whichChoice"/>
+     <!-- ROUTEs to connect everything -->
+     <ROUTE fromNode="MenuTouchSensor"   fromField="hitPoint_changed" toNode="MenuScript" toField="touchPoint"/>
+     <ROUTE fromNode="MenuScript" fromField="selection" toNode="SceneSwitcher" toField="whichChoice"/>
       </Group>
       </ProtoBody>
     </ProtoDeclare>
@@ -347,7 +359,8 @@ with open("../resources/Menu.x3d", "w") as menu_file:
       <fieldValue name='menuItems' value=\''''+menu+'''\'/>
     </ProtoInstance>
   </Scene>
-</X3D>''');
+</X3D>
+''');
 
 #processAFile("C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/FACS_AU9(Jin)_Nose_Wrinkler_Morpher.x3d")
 #processAFile("../resources/FACS47.x3d")

@@ -16,7 +16,7 @@
       <ProtoBody>
       <Group>
         <Transform DEF="MenuTransform" translation="48 18 0">
-	  <TouchSensor DEF="MenuTouchSensor" />
+         <TouchSensor DEF="MenuTouchSensor"/>
           <Shape>
             <Appearance>
               <Material diffuseColor="1 1 1"/>
@@ -30,7 +30,7 @@
           </Shape>
         </Transform>
 
-	<Switch DEF="SceneSwitcher" whichChoice="0">
+      <Switch DEF="SceneSwitcher" whichChoice="0">
 <Inline DEF="OPTION1" url='"../resources/FACS_AU1(Jin)_Inner_Brow_Raiser_Morpher_Output.x3d" "FACS_AU1(Jin)_Inner_Brow_Raiser_Morpher_Output.x3d"'/>
 <Inline DEF="OPTION2" url='"../resources/FACS_AU10(Jin)_Upper_Lip_Raiser_Morpher_Output.x3d" "FACS_AU10(Jin)_Upper_Lip_Raiser_Morpher_Output.x3d"'/>
 <Inline DEF="OPTION3" url='"../resources/FACS_AU11(Jin)_Nasolabial_Deepener_Morpher_Output.x3d" "FACS_AU11(Jin)_Nasolabial_Deepener_Morpher_Output.x3d"'/>
@@ -74,32 +74,32 @@
       <field name="itemHeight" type="SFFloat" accessType="initializeOnly"/>
 
       <![CDATA[ecmascript:
-	function initialize() {
-	  selection = 0;
-	      var spacingBetweenGlyphs = size * spacing - size; // Spacing calculation
-	  var menuHeight = (size + spacingBetweenGlyphs) * menuItems.length;
-	  menuCenterY = menuHeight / 2;
-	  itemHeight = menuHeight / menuItems.length;
-	}
+        function initialize() {
+          selection = 0;
+          var spacingBetweenGlyphs = size * spacing - size; // Spacing calculation
+          var menuHeight = (size + spacingBetweenGlyphs) * menuItems.length;
+          menuCenterY = menuHeight / 2;
+          itemHeight = menuHeight / menuItems.length;
+        }
 
         function touchPoint(value) {
-		  Browser.print("Hit "+value+" "+selection+"\n");
-		  var index = Math.floor((menuCenterY - value.y) / itemHeight - 0.5);
+          Browser.print("Hit "+value+" "+selection+"\n");
+          var index = Math.floor((menuCenterY - value.y) / itemHeight - 0.5);
 
-		  selection = index - 2;
-		  if (selection >= 0 && selection < menuItems.length) {
-	      		Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"\n");
-		  }
-	}
+          selection = index - 2;
+          if (selection >= 0 && selection < menuItems.length) {
+            Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"\n");
+          }
+        }
       ]]>
-    <IS>
-	  <connect nodeField="menuItems" protoField="menuItems"/>
-    </IS>
+      <IS>
+         <connect nodeField="menuItems" protoField="menuItems"/>
+      </IS>
     </Script>
 
-    <!-- ROUTEs to connect everything -->
-    <ROUTE fromNode="MenuTouchSensor"   fromField="hitPoint_changed" toNode="MenuScript" toField="touchPoint"/>
-    <ROUTE fromNode="MenuScript" fromField="selection" toNode="SceneSwitcher" toField="whichChoice"/>
+     <!-- ROUTEs to connect everything -->
+     <ROUTE fromNode="MenuTouchSensor"   fromField="hitPoint_changed" toNode="MenuScript" toField="touchPoint"/>
+     <ROUTE fromNode="MenuScript" fromField="selection" toNode="SceneSwitcher" toField="whichChoice"/>
       </Group>
       </ProtoBody>
     </ProtoDeclare>
