@@ -106,5 +106,5 @@ magic("*.xml", "text/xml");
 http.createServer({
 }, app)
 .listen(port, '127.0.0.1', function () {
-  console.log('Example app listening on port', port, "! Go to http://localhost:"+port+"/");
+  console.log('Example app listening on port', port, "! Go to http://localhost:"+port+"/ in your browser.  CTRL-Click on the previous link, or copy and paste the link.  Hint.  Only FreeWRL works right now.  See README.md");
 });
