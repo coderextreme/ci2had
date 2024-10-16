@@ -43,6 +43,7 @@ def find_elements_by_prefix(root, prefix):
     return matched_elements
 
 def process_file(file_input, file_output):
+    print(f"Input file: {file_input.name}")
     X3D = xml.etree.ElementTree.parse(file_input)
     root = X3D.getroot()
     head = root.find('head')
@@ -100,13 +101,13 @@ def process_file(file_input, file_output):
                 it.set("url", "\""+it.get("url")+"\"")
     for cis in root.iter('CoordinateInterpolator'):
         DEF = cis.get("DEF")
-        # print(DEF)
+        print(f"DEF={DEF}")
         keys = cis.get("key").split()
         keyValues = cis.get("keyValue").split()
 
         numKeys = len(keys)
         valuesPerKey = int(len(keyValues)/numKeys)
-        print("valuesPerKey", valuesPerKey)
+        # print("valuesPerKey", valuesPerKey)
         # print(keys)
         # print(keyValues)
         key = 0
@@ -126,8 +127,13 @@ def process_file(file_input, file_output):
                 new_node = xml.etree.ElementTree.Element('HAnimDisplacer')
                 new_node.text = "\n"
                 new_node.tail = "\n"
-            if non_zero(difference):
-                print (f"{DEF} keyValue base point index (0 indexed) {i}, {extension[i]} - {base[i]} = {round(difference,4)}")
+            #if non_zero(difference):
+            #    print (f"{DEF} keyValue base point index (0 indexed) {i}, {extension[i]} - {base[i]} = {round(difference,4)}")
+            if i % 3 == 0:
+                v = int(i / 3)
+                print(f"[ \\vec{v} = ", end="")
+            if i % 3 == 2:
+                print(f"({extension[i]} - {base[i]}, {extension[i-1]} - {base[i-1]}, {extension[i-2]} - {base[i-2]}) = ({displacements[-3]}, {displacements[-2]}, {displacements[-1]}) ]")
 
         if new_node is not None:
             new_node.set("DEF", DEF)
@@ -175,7 +181,7 @@ def process_file(file_input, file_output):
                                 new_node.set("coordIndex", coordIndex)
                                 newDisplacements = ", ".join(newDisplacements)
                                 new_node.set("displacements", newDisplacements)
-                                print(f"coordIndex {coordIndex} displacement {newDisplacements}")
+                                print(f"coordIndex {coordIndex} displacement {newDisplacements}\n")
                                 #new_node.set("displacements", " ".join(displacements))
                         # remove route from CoordinateInterpolator to Coordinate
                         par = find_parent(root, route)
@@ -304,7 +310,7 @@ with open("../resources/Menu.x3d", "w") as menu_file:
           </Shape>
         </Transform>
 
-      <Switch DEF="SceneSwitcher" whichChoice="0">\n''');
+      <Switch DEF="SceneSwitcher" whichChoice="0">\n''')
     item = 1
     menu = ""
     for input_file in files:
@@ -360,7 +366,7 @@ with open("../resources/Menu.x3d", "w") as menu_file:
     </ProtoInstance>
   </Scene>
 </X3D>
-''');
+''')
 
 #processAFile("C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/FACS_AU9(Jin)_Nose_Wrinkler_Morpher.x3d")
 #processAFile("../resources/FACS47.x3d")
