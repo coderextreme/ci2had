@@ -1,6 +1,24 @@
 # ci2had
 CoordinateInterpolator to HAnimDisplacer (ci2had)
 
+# Quick Windows Powershell instructions:
+
+Clone the repository, go to project folder, and launch FreeWRL 6.7
+You may wish to load the Git repository into your favorite IDE instead.
+
+```powershell
+git clone https://github.com/coderextreme/ci2had
+cd ci2had
+```
+
+Launch FreeWRL with the file:  Replace \ with / if on MacOS or Linux.
+
+```powershell
+ & 'C:\Program Files (x86)\freeWRL\freeWRL.6.7\freeWRL.exe' -J DUK resources\Menu.x3d
+```
+
+Or open resources/Menu.x3d in FreeWRL Launcher.
+
 # Future instructions
 
 Download Node.js (for the future).  We'll assume that you've downloaded Git and cloned the https://github.com/coderextreme/ci2had repository.
