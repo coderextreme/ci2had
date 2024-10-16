@@ -31,7 +31,7 @@ npm install
 npm run start
 ```
 
-This will start a web server and give you a link to visit.  CTRL-Click (left mouse button) to visit the link.  This works in Windows.  Maybe copy and paste.  Note that only FreeWRL currently implements HAnimDisplaces (had in ci2had)
+This will start a web server and give you a link to visit.  CTRL-Click (left mouse button) to visit the link.  This works in Windows.  Maybe copy and paste.  Note that only FreeWRL currently implements HAnimDisplacers (had in ci2had). I have not tried Octaga.  Maybe some others will work.
 
 Type CTRL-C in the terminal window to exit.
 
