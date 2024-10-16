@@ -66,3 +66,33 @@ For an example that's really obvious, select:
 
 FACS\_AU27(Jin)_Mouth_Stretch_Morpher_Output.x3d in the FreeWRL window that pops up once you've browsed to the file and selected Launch FreeWRL
 
+
+# Advanced Instructions.
+
+Install FACS files (download from googledocs and unpack in Downloads folder):
+
+C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/
+
+Go to python folder, or start IDE in python folder.
+```
+cd python
+```
+
+Or, start VS Code
+```
+code python
+```
+
+Launch file python/ci2had.py in editor.
+
+Replace occurences of C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/ with your own download extract folder path.
+
+
+Debug program "ci2had.py"
+
+```
+python ci2had.py
+```
+Or install Python extensions in VS Code.
+
+Pick up output in the resources folder, Menu.x3d and associated FACS .x3d files. Follow instructions in previous sections.
