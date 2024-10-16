@@ -3,7 +3,7 @@ CoordinateInterpolator to HAnimDisplacer (ci2had)
 
 # Quick Windows Powershell instructions:
 
-Clone the repository, go to project folder, and launch FreeWRL 6.7
+Clone the repository, go to project folder, and launch FreeWRL 6.7.
 You may wish to load the Git repository into your favorite IDE instead.
 
 ```powershell
