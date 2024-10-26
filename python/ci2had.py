@@ -119,15 +119,17 @@ def process_file(file_input, file_output):
 
         displacements = []
         new_node = None
+        non_zero_displacement = False
         for i in range(len(base)):
             difference = float(extension[i]) - float(base[i])
             displacements.append(str(round(difference, 4)))
-            if new_node is None and non_zero(difference):
+            if new_node is None:
                 # print (f"{DEF} {i}, {extension[i]}, {base[i]}")
                 new_node = xml.etree.ElementTree.Element('HAnimDisplacer')
                 new_node.text = "\n"
                 new_node.tail = "\n"
-            #if non_zero(difference):
+            if non_zero(difference):
+                non_zero_displacement = True
             #    print (f"{DEF} keyValue base point index (0 indexed) {i}, {extension[i]} - {base[i]} = {round(difference,4)}")
             if i % 3 == 0:
                 v = int(i / 3)
@@ -180,17 +182,18 @@ def process_file(file_input, file_output):
                                             newDisplacements.append(dis)
                                             # break # Assume a base point only maps to one point
                                 coordIndex = " ".join(coordIndex)
-                                new_node.set("coordIndex", coordIndex)
                                 newDisplacements = ", ".join(newDisplacements)
-                                new_node.set("displacements", newDisplacements)
+                                if non_zero_displacement:
+                                    new_node.set("coordIndex", coordIndex)
+                                    new_node.set("displacements", newDisplacements)
                                 # print(f"coordIndex {coordIndex} displacement {newDisplacements}\n")
                                 #new_node.set("displacements", " ".join(displacements))
                         # remove route from CoordinateInterpolator to Coordinate
                         par = find_parent(root, route)
                         par.remove(route)
 
-                        #parent.remove(cis)
-        parent.remove(cis)
+                        parent.remove(cis)
+        # parent.remove(cis)
 
     # Move other elements into the 'sacrum' segment
     for element in list(scene):

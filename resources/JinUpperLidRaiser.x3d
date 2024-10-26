@@ -40,6 +40,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Center_lower_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Center_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Center_lower_vermillion_lip_MorphInterpolator" name="Center_lower_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Chin" name="Chin">
 <Transform DEF="Chin" translation="0 6.337 7.3" rotation="0 0 0 0" scale="1 1 1">
@@ -58,6 +60,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Chin_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Chin_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Chin_MorphInterpolator" name="Chin_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Glabella" name="Glabella">
 <Transform DEF="Glabella" translation="0 18.93 15.66" rotation="0 0 0 0" scale="1 1 1">
@@ -76,6 +80,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Glabella_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Glabella_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Glabella_MorphInterpolator" name="Glabella_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_bulbar_conjunctiva" name="Left_bulbar_conjunctiva">
 <Transform DEF="Left_bulbar_conjunctiva" translation="5.794 17.61 11.15" rotation="0 0 0 0" scale="1 1 1">
@@ -114,6 +120,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_cheek_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Left_cheek_MorphInterpolator" name="Left_cheek_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_dorsum" name="Left_dorsum">
 <Transform DEF="Left_dorsum" translation="0.7065 14.64 14.87" rotation="0 0 0 0" scale="1 1 1">
@@ -132,6 +140,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_dorsum_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_dorsum_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Left_dorsum_MorphInterpolator" name="Left_dorsum_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_ear" name="Left_ear">
 <Transform DEF="Left_ear" translation="12.49 15.99 1.017" rotation="0 0 0 0" scale="1 1 1">
@@ -150,6 +160,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_ear_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_ear_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Left_ear_MorphInterpolator" name="Left_ear_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_eyebrow" name="Left_eyebrow">
 <Transform DEF="Left_eyebrow" translation="5.691 19.58 13.13" rotation="0 0 0 0" scale="1 1 1">
@@ -188,6 +200,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_forehead_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_forehead_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Left_forehead_MorphInterpolator" name="Left_forehead_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_lower_eyelid" name="Left_lower_eyelid">
 <Transform DEF="Left_lower_eyelid" translation="6.11 16.45 11.32" rotation="0 0 0 0" scale="1 1 1">
@@ -226,6 +240,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_lower_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Left_lower_vermillion_lip_MorphInterpolator" name="Left_lower_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_nasolabial_cheek" name="Left_nasolabial_cheek">
 <Transform DEF="Left_nasolabial_cheek" translation="2.021 10.27 13.53" rotation="0 0 0 0" scale="1 1 1">
@@ -244,6 +260,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_nasolabial_cheek_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_nasolabial_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Left_nasolabial_cheek_MorphInterpolator" name="Left_nasolabial_cheek_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_nostril" name="Left_nostril">
 <Transform DEF="Left_nostril" translation="0.7684 11.22 15.04" rotation="0 0 0 0" scale="1 1 1">
@@ -262,6 +280,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_nostril_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_nostril_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Left_nostril_MorphInterpolator" name="Left_nostril_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_pupil" name="Left_pupil">
 <Transform DEF="Left_pupil" translation="6.059 17.5 12.33" rotation="0 0 0 0" scale="1 1 1">
@@ -300,6 +320,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_temple_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_temple_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Left_temple_MorphInterpolator" name="Left_temple_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_upper_cutaneous_lip" name="Left_upper_cutaneous_lip">
 <Transform DEF="Left_upper_cutaneous_lip" translation="0.7684 10.16 14.63" rotation="0 0 0 0" scale="1 1 1">
@@ -318,6 +340,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_upper_cutaneous_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_upper_cutaneous_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Left_upper_cutaneous_lip_MorphInterpolator" name="Left_upper_cutaneous_lip_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_upper_eyelid" name="Left_upper_eyelid">
 <Transform DEF="Left_upper_eyelid" translation="5.53 17.96 12.21" rotation="0 0 0 0" scale="1 1 1">
@@ -356,6 +380,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_upper_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_upper_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Left_upper_vermillion_lip_MorphInterpolator" name="Left_upper_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_upper_vermillion_lip001" name="Left_upper_vermillion_lip001">
 </HAnimSegment>
@@ -376,6 +402,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Lower_teeth_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Lower_teeth_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Lower_teeth_MorphInterpolator" name="Lower_teeth_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Mid_forehead" name="Mid_forehead">
 <Transform DEF="Mid_forehead" translation="0 27.83 9.426" rotation="0 0 0 0" scale="1 1 1">
@@ -394,6 +422,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Mid_forehead_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Mid_forehead_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Mid_forehead_MorphInterpolator" name="Mid_forehead_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Mid_nasal_dorsum" name="Mid_nasal_dorsum">
 <Transform DEF="Mid_nasal_dorsum" translation="0 14.79 15.76" rotation="0 0 0 0" scale="1 1 1">
@@ -412,6 +442,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Mid_nasal_dorsum_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Mid_nasal_dorsum_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Mid_nasal_dorsum_MorphInterpolator" name="Mid_nasal_dorsum_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Mid_upper_vermillion_lip" name="Mid_upper_vermillion_lip">
 <Transform DEF="Mid_upper_vermillion_lip" translation="0 9.116 14.46" rotation="0 0 0 0" scale="1 1 1">
@@ -430,6 +462,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Mid_upper_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Mid_upper_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Mid_upper_vermillion_lip_MorphInterpolator" name="Mid_upper_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Nasal_tip" name="Nasal_tip">
 <Transform DEF="Nasal_tip" translation="0 11.35 16.23" rotation="0 0 0 0" scale="1 1 1">
@@ -448,6 +482,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Nasal_tip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Nasal_tip_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Nasal_tip_MorphInterpolator" name="Nasal_tip_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Neck" name="Neck">
 <Transform DEF="Neck" translation="0 4.213 0.4657" rotation="0 0 0 0" scale="1 1 1">
@@ -466,6 +502,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Neck_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Neck_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Neck_MorphInterpolator" name="Neck_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Occipital_scalp" name="Occipital_scalp">
 <Transform DEF="Occipital_scalp" translation="0 22.26 -9.81" rotation="0 0 0 0" scale="1 1 1">
@@ -484,6 +522,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Occipital_scalp_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Occipital_scalp_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Occipital_scalp_MorphInterpolator" name="Occipital_scalp_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Philtrum" name="Philtrum">
 <Transform DEF="Philtrum" translation="0 9.815 15" rotation="0 0 0 0" scale="1 1 1">
@@ -502,6 +542,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Philtrum_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Philtrum_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Philtrum_MorphInterpolator" name="Philtrum_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_bulbar_conjunctiva" name="Right_bulbar_conjunctiva">
 <Transform DEF="Right_bulbar_conjunctiva" translation="-5.794 17.61 11.15" rotation="0 0 0 0" scale="1 1 1">
@@ -540,6 +582,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_cheek_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Right_cheek_MorphInterpolator" name="Right_cheek_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_dorsum" name="Right_dorsum">
 <Transform DEF="Right_dorsum" translation="-0.7065 14.64 14.87" rotation="0 0 0 0" scale="1 1 1">
@@ -558,6 +602,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_dorsum_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_dorsum_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Right_dorsum_MorphInterpolator" name="Right_dorsum_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_ear" name="Right_ear">
 <Transform DEF="Right_ear" translation="-12.49 15.99 1.017" rotation="0 0 0 0" scale="1 1 1">
@@ -576,6 +622,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_ear_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_ear_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Right_ear_MorphInterpolator" name="Right_ear_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_eyebrow" name="Right_eyebrow">
 <Transform DEF="Right_eyebrow" translation="-5.691 19.58 13.13" rotation="0 0 0 0" scale="1 1 1">
@@ -614,6 +662,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_forehead_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_forehead_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Right_forehead_MorphInterpolator" name="Right_forehead_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_lower_eyelid" name="Right_lower_eyelid">
 <Transform DEF="Right_lower_eyelid" translation="-6.11 16.45 11.32" rotation="0 0 0 0" scale="1 1 1">
@@ -654,6 +704,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_lower_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Right_lower_vermillion_lip_MorphInterpolator" name="Right_lower_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_nasolabial_cheek" name="Right_nasolabial_cheek">
 <Transform DEF="Right_nasolabial_cheek" translation="-2.021 10.27 13.53" rotation="0 0 0 0" scale="1 1 1">
@@ -672,6 +724,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_nasolabial_cheek_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_nasolabial_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Right_nasolabial_cheek_MorphInterpolator" name="Right_nasolabial_cheek_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_nostril" name="Right_nostril">
 <Transform DEF="Right_nostril" translation="-0.7684 11.22 15.04" rotation="0 0 0 0" scale="1 1 1">
@@ -690,6 +744,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_nostril_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_nostril_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Right_nostril_MorphInterpolator" name="Right_nostril_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_pupil" name="Right_pupil">
 <Transform DEF="Right_pupil" translation="-6.059 17.5 12.33" rotation="0 0 0 0" scale="1 1 1">
@@ -728,6 +784,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_temple_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_temple_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Right_temple_MorphInterpolator" name="Right_temple_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_upper_cutaneous_lip" name="Right_upper_cutaneous_lip">
 <Transform DEF="Right_upper_cutaneous_lip" translation="-0.7684 10.16 14.63" rotation="0 0 0 0" scale="1 1 1">
@@ -746,6 +804,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_upper_cutaneous_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_upper_cutaneous_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Right_upper_cutaneous_lip_MorphInterpolator" name="Right_upper_cutaneous_lip_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_upper_eyelid" name="Right_upper_eyelid">
 <Transform DEF="Right_upper_eyelid" translation="-5.53 17.96 12.21" rotation="0 0 0 0" scale="1 1 1">
@@ -784,6 +844,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_upper_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_upper_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Right_upper_vermillion_lip_MorphInterpolator" name="Right_upper_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Tongue" name="Tongue">
 <Transform DEF="Tongue" translation="0 8.886 11.1" rotation="0 0 0 0" scale="1 1 1">
@@ -802,6 +864,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Tongue_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Tongue_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Tongue_MorphInterpolator" name="Tongue_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Upper_teeth" name="Upper_teeth">
 <Transform DEF="Upper_teeth" translation="0 9.723 11.67" rotation="0 0 0 0" scale="1 1 1">
@@ -820,6 +884,8 @@
 </Coordinate>
 <ScalarInterpolator DEF="Upper_teeth_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Upper_teeth_Clock" cycleInterval="4" enabled="true" loop="true" />
+<HAnimDisplacer DEF="Upper_teeth_MorphInterpolator" name="Upper_teeth_MorphInterpolator" weight="0" containerField="displacers">
+</HAnimDisplacer>
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
@@ -828,56 +894,43 @@
 <HAnimJoint USE="hanim_skullbase" containerField="joints">
 </HAnimJoint>
 </HAnimHumanoid>
-<ROUTE fromField="value_changed" fromNode="Lower_teeth_MorphInterpolator" toField="point" toNode="Lower_teeth-COORD" />
-<ROUTE fromField="value_changed" fromNode="Lower_teeth_AnimationAdapter" toField="set_fraction" toNode="Lower_teeth_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Lower_teeth_AnimationAdapter" toField="weight" toNode="Lower_teeth_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Lower_teeth_Clock" toField="set_fraction" toNode="Lower_teeth_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Tongue_MorphInterpolator" toField="point" toNode="Tongue-COORD" />
-<ROUTE fromField="value_changed" fromNode="Tongue_AnimationAdapter" toField="set_fraction" toNode="Tongue_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Tongue_AnimationAdapter" toField="weight" toNode="Tongue_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Tongue_Clock" toField="set_fraction" toNode="Tongue_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Upper_teeth_MorphInterpolator" toField="point" toNode="Upper_teeth-COORD" />
-<ROUTE fromField="value_changed" fromNode="Upper_teeth_AnimationAdapter" toField="set_fraction" toNode="Upper_teeth_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Upper_teeth_AnimationAdapter" toField="weight" toNode="Upper_teeth_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Upper_teeth_Clock" toField="set_fraction" toNode="Upper_teeth_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Mid_upper_vermillion_lip_MorphInterpolator" toField="point" toNode="Mid_upper_vermillion_lip-COORD" />
-<ROUTE fromField="value_changed" fromNode="Mid_upper_vermillion_lip_AnimationAdapter" toField="set_fraction" toNode="Mid_upper_vermillion_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Mid_upper_vermillion_lip_AnimationAdapter" toField="weight" toNode="Mid_upper_vermillion_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Mid_upper_vermillion_lip_Clock" toField="set_fraction" toNode="Mid_upper_vermillion_lip_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Neck_MorphInterpolator" toField="point" toNode="Neck-COORD" />
-<ROUTE fromField="value_changed" fromNode="Neck_AnimationAdapter" toField="set_fraction" toNode="Neck_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Neck_AnimationAdapter" toField="weight" toNode="Neck_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Neck_Clock" toField="set_fraction" toNode="Neck_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Occipital_scalp_MorphInterpolator" toField="point" toNode="Occipital_scalp-COORD" />
-<ROUTE fromField="value_changed" fromNode="Occipital_scalp_AnimationAdapter" toField="set_fraction" toNode="Occipital_scalp_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Occipital_scalp_AnimationAdapter" toField="weight" toNode="Occipital_scalp_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Occipital_scalp_Clock" toField="set_fraction" toNode="Occipital_scalp_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_ear_MorphInterpolator" toField="point" toNode="Left_ear-COORD" />
-<ROUTE fromField="value_changed" fromNode="Left_ear_AnimationAdapter" toField="set_fraction" toNode="Left_ear_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_ear_AnimationAdapter" toField="weight" toNode="Left_ear_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_ear_Clock" toField="set_fraction" toNode="Left_ear_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Mid_forehead_MorphInterpolator" toField="point" toNode="Mid_forehead-COORD" />
-<ROUTE fromField="value_changed" fromNode="Mid_forehead_AnimationAdapter" toField="set_fraction" toNode="Mid_forehead_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Mid_forehead_AnimationAdapter" toField="weight" toNode="Mid_forehead_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Mid_forehead_Clock" toField="set_fraction" toNode="Mid_forehead_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_forehead_MorphInterpolator" toField="point" toNode="Left_forehead-COORD" />
-<ROUTE fromField="value_changed" fromNode="Left_forehead_AnimationAdapter" toField="set_fraction" toNode="Left_forehead_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_forehead_AnimationAdapter" toField="weight" toNode="Left_forehead_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_forehead_Clock" toField="set_fraction" toNode="Left_forehead_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Glabella_MorphInterpolator" toField="point" toNode="Glabella-COORD" />
-<ROUTE fromField="value_changed" fromNode="Glabella_AnimationAdapter" toField="set_fraction" toNode="Glabella_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Glabella_AnimationAdapter" toField="weight" toNode="Glabella_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Glabella_Clock" toField="set_fraction" toNode="Glabella_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Chin_MorphInterpolator" toField="point" toNode="Chin-COORD" />
-<ROUTE fromField="value_changed" fromNode="Chin_AnimationAdapter" toField="set_fraction" toNode="Chin_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Chin_AnimationAdapter" toField="weight" toNode="Chin_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Chin_Clock" toField="set_fraction" toNode="Chin_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_lower_vermillion_lip_MorphInterpolator" toField="point" toNode="Left_lower_vermillion_lip-COORD" />
-<ROUTE fromField="value_changed" fromNode="Left_lower_vermillion_lip_AnimationAdapter" toField="set_fraction" toNode="Left_lower_vermillion_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_lower_vermillion_lip_AnimationAdapter" toField="weight" toNode="Left_lower_vermillion_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_lower_vermillion_lip_Clock" toField="set_fraction" toNode="Left_lower_vermillion_lip_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Center_lower_vermillion_lip_MorphInterpolator" toField="point" toNode="Center_lower_vermillion_lip-COORD" />
-<ROUTE fromField="value_changed" fromNode="Center_lower_vermillion_lip_AnimationAdapter" toField="set_fraction" toNode="Center_lower_vermillion_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Center_lower_vermillion_lip_AnimationAdapter" toField="weight" toNode="Center_lower_vermillion_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Center_lower_vermillion_lip_Clock" toField="set_fraction" toNode="Center_lower_vermillion_lip_AnimationAdapter" />
 
 <ROUTE fromField="value_changed" fromNode="Left_eyebrow_AnimationAdapter" toField="weight" toNode="Left_eyebrow_MorphInterpolator" />
@@ -886,48 +939,37 @@
 <ROUTE fromField="value_changed" fromNode="Left_bulbar_conjunctiva_AnimationAdapter" toField="weight" toNode="Left_bulbar_conjunctiva_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_bulbar_conjunctiva_Clock" toField="set_fraction" toNode="Left_bulbar_conjunctiva_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_temple_MorphInterpolator" toField="point" toNode="Left_temple-COORD" />
-<ROUTE fromField="value_changed" fromNode="Left_temple_AnimationAdapter" toField="set_fraction" toNode="Left_temple_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_temple_AnimationAdapter" toField="weight" toNode="Left_temple_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_temple_Clock" toField="set_fraction" toNode="Left_temple_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Mid_nasal_dorsum_MorphInterpolator" toField="point" toNode="Mid_nasal_dorsum-COORD" />
-<ROUTE fromField="value_changed" fromNode="Mid_nasal_dorsum_AnimationAdapter" toField="set_fraction" toNode="Mid_nasal_dorsum_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Mid_nasal_dorsum_AnimationAdapter" toField="weight" toNode="Mid_nasal_dorsum_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Mid_nasal_dorsum_Clock" toField="set_fraction" toNode="Mid_nasal_dorsum_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Nasal_tip_MorphInterpolator" toField="point" toNode="Nasal_tip-COORD" />
-<ROUTE fromField="value_changed" fromNode="Nasal_tip_AnimationAdapter" toField="set_fraction" toNode="Nasal_tip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Nasal_tip_AnimationAdapter" toField="weight" toNode="Nasal_tip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Nasal_tip_Clock" toField="set_fraction" toNode="Nasal_tip_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_nostril_MorphInterpolator" toField="point" toNode="Left_nostril-COORD" />
-<ROUTE fromField="value_changed" fromNode="Left_nostril_AnimationAdapter" toField="set_fraction" toNode="Left_nostril_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_nostril_AnimationAdapter" toField="weight" toNode="Left_nostril_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_nostril_Clock" toField="set_fraction" toNode="Left_nostril_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_dorsum_MorphInterpolator" toField="point" toNode="Left_dorsum-COORD" />
-<ROUTE fromField="value_changed" fromNode="Left_dorsum_AnimationAdapter" toField="set_fraction" toNode="Left_dorsum_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_dorsum_AnimationAdapter" toField="weight" toNode="Left_dorsum_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_dorsum_Clock" toField="set_fraction" toNode="Left_dorsum_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_nasolabial_cheek_MorphInterpolator" toField="point" toNode="Left_nasolabial_cheek-COORD" />
-<ROUTE fromField="value_changed" fromNode="Left_nasolabial_cheek_AnimationAdapter" toField="set_fraction" toNode="Left_nasolabial_cheek_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_nasolabial_cheek_AnimationAdapter" toField="weight" toNode="Left_nasolabial_cheek_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_nasolabial_cheek_Clock" toField="set_fraction" toNode="Left_nasolabial_cheek_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_cheek_MorphInterpolator" toField="point" toNode="Left_cheek-COORD" />
-<ROUTE fromField="value_changed" fromNode="Left_cheek_AnimationAdapter" toField="set_fraction" toNode="Left_cheek_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_cheek_AnimationAdapter" toField="weight" toNode="Left_cheek_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_cheek_Clock" toField="set_fraction" toNode="Left_cheek_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_upper_vermillion_lip_MorphInterpolator" toField="point" toNode="Left_upper_vermillion_lip-COORD" />
-<ROUTE fromField="value_changed" fromNode="Left_upper_vermillion_lip_AnimationAdapter" toField="set_fraction" toNode="Left_upper_vermillion_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_upper_vermillion_lip_AnimationAdapter" toField="weight" toNode="Left_upper_vermillion_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_upper_vermillion_lip_Clock" toField="set_fraction" toNode="Left_upper_vermillion_lip_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Left_upper_cutaneous_lip_MorphInterpolator" toField="point" toNode="Left_upper_cutaneous_lip-COORD" />
-<ROUTE fromField="value_changed" fromNode="Left_upper_cutaneous_lip_AnimationAdapter" toField="set_fraction" toNode="Left_upper_cutaneous_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Left_upper_cutaneous_lip_AnimationAdapter" toField="weight" toNode="Left_upper_cutaneous_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_upper_cutaneous_lip_Clock" toField="set_fraction" toNode="Left_upper_cutaneous_lip_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Philtrum_MorphInterpolator" toField="point" toNode="Philtrum-COORD" />
-<ROUTE fromField="value_changed" fromNode="Philtrum_AnimationAdapter" toField="set_fraction" toNode="Philtrum_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Philtrum_AnimationAdapter" toField="weight" toNode="Philtrum_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Philtrum_Clock" toField="set_fraction" toNode="Philtrum_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_forehead_MorphInterpolator" toField="point" toNode="Right_forehead-COORD" />
-<ROUTE fromField="value_changed" fromNode="Right_forehead_AnimationAdapter" toField="set_fraction" toNode="Right_forehead_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_forehead_AnimationAdapter" toField="weight" toNode="Right_forehead_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_forehead_Clock" toField="set_fraction" toNode="Right_forehead_AnimationAdapter" />
 
 <ROUTE fromField="value_changed" fromNode="Right_eyebrow_AnimationAdapter" toField="weight" toNode="Right_eyebrow_MorphInterpolator" />
@@ -942,16 +984,13 @@
 <ROUTE fromField="value_changed" fromNode="Left_pupil_AnimationAdapter" toField="weight" toNode="Left_pupil_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Left_pupil_Clock" toField="set_fraction" toNode="Left_pupil_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_ear_MorphInterpolator" toField="point" toNode="Right_ear-COORD" />
-<ROUTE fromField="value_changed" fromNode="Right_ear_AnimationAdapter" toField="set_fraction" toNode="Right_ear_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_ear_AnimationAdapter" toField="weight" toNode="Right_ear_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_ear_Clock" toField="set_fraction" toNode="Right_ear_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_cheek_MorphInterpolator" toField="point" toNode="Right_cheek-COORD" />
-<ROUTE fromField="value_changed" fromNode="Right_cheek_AnimationAdapter" toField="set_fraction" toNode="Right_cheek_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_cheek_AnimationAdapter" toField="weight" toNode="Right_cheek_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_cheek_Clock" toField="set_fraction" toNode="Right_cheek_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_dorsum_MorphInterpolator" toField="point" toNode="Right_dorsum-COORD" />
-<ROUTE fromField="value_changed" fromNode="Right_dorsum_AnimationAdapter" toField="set_fraction" toNode="Right_dorsum_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_dorsum_AnimationAdapter" toField="weight" toNode="Right_dorsum_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_dorsum_Clock" toField="set_fraction" toNode="Right_dorsum_AnimationAdapter" />
 
 <ROUTE fromField="value_changed" fromNode="Right_bulbar_conjunctiva_AnimationAdapter" toField="weight" toNode="Right_bulbar_conjunctiva_MorphInterpolator" />
@@ -960,34 +999,28 @@
 <ROUTE fromField="value_changed" fromNode="Right_lower_eyelid_AnimationAdapter" toField="weight" toNode="Right_lower_eyelid_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_lower_eyelid_Clock" toField="set_fraction" toNode="Right_lower_eyelid_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_nasolabial_cheek_MorphInterpolator" toField="point" toNode="Right_nasolabial_cheek-COORD" />
-<ROUTE fromField="value_changed" fromNode="Right_nasolabial_cheek_AnimationAdapter" toField="set_fraction" toNode="Right_nasolabial_cheek_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_nasolabial_cheek_AnimationAdapter" toField="weight" toNode="Right_nasolabial_cheek_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_nasolabial_cheek_Clock" toField="set_fraction" toNode="Right_nasolabial_cheek_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_nostril_MorphInterpolator" toField="point" toNode="Right_nostril-COORD" />
-<ROUTE fromField="value_changed" fromNode="Right_nostril_AnimationAdapter" toField="set_fraction" toNode="Right_nostril_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_nostril_AnimationAdapter" toField="weight" toNode="Right_nostril_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_nostril_Clock" toField="set_fraction" toNode="Right_nostril_AnimationAdapter" />
 
 <ROUTE fromField="value_changed" fromNode="Right_pupil_AnimationAdapter" toField="weight" toNode="Right_pupil_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_pupil_Clock" toField="set_fraction" toNode="Right_pupil_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_temple_MorphInterpolator" toField="point" toNode="Right_temple-COORD" />
-<ROUTE fromField="value_changed" fromNode="Right_temple_AnimationAdapter" toField="set_fraction" toNode="Right_temple_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_temple_AnimationAdapter" toField="weight" toNode="Right_temple_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_temple_Clock" toField="set_fraction" toNode="Right_temple_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_upper_cutaneous_lip_MorphInterpolator" toField="point" toNode="Right_upper_cutaneous_lip-COORD" />
-<ROUTE fromField="value_changed" fromNode="Right_upper_cutaneous_lip_AnimationAdapter" toField="set_fraction" toNode="Right_upper_cutaneous_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_upper_cutaneous_lip_AnimationAdapter" toField="weight" toNode="Right_upper_cutaneous_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_upper_cutaneous_lip_Clock" toField="set_fraction" toNode="Right_upper_cutaneous_lip_AnimationAdapter" />
 
 <ROUTE fromField="value_changed" fromNode="Right_upper_eyelid_AnimationAdapter" toField="weight" toNode="Right_upper_eyelid_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_upper_eyelid_Clock" toField="set_fraction" toNode="Right_upper_eyelid_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_upper_vermillion_lip_MorphInterpolator" toField="point" toNode="Right_upper_vermillion_lip-COORD" />
-<ROUTE fromField="value_changed" fromNode="Right_upper_vermillion_lip_AnimationAdapter" toField="set_fraction" toNode="Right_upper_vermillion_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_upper_vermillion_lip_AnimationAdapter" toField="weight" toNode="Right_upper_vermillion_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_upper_vermillion_lip_Clock" toField="set_fraction" toNode="Right_upper_vermillion_lip_AnimationAdapter" />
 
-<ROUTE fromField="value_changed" fromNode="Right_lower_vermillion_lip_MorphInterpolator" toField="point" toNode="Right_lower_vermillion_lip-COORD" />
-<ROUTE fromField="value_changed" fromNode="Right_lower_vermillion_lip_AnimationAdapter" toField="set_fraction" toNode="Right_lower_vermillion_lip_MorphInterpolator" />
+<ROUTE fromField="value_changed" fromNode="Right_lower_vermillion_lip_AnimationAdapter" toField="weight" toNode="Right_lower_vermillion_lip_MorphInterpolator" />
 <ROUTE fromField="fraction_changed" fromNode="Right_lower_vermillion_lip_Clock" toField="set_fraction" toNode="Right_lower_vermillion_lip_AnimationAdapter" />
 
 </Scene>
