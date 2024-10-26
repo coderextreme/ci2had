@@ -101,7 +101,7 @@ def process_file(file_input, file_output):
                 it.set("url", "\""+it.get("url")+"\"")
     for cis in root.iter('CoordinateInterpolator'):
         DEF = cis.get("DEF")
-        print(f"DEF={DEF}")
+        # print(f"DEF={DEF}")
         keys = cis.get("key").split()
         keyValues = cis.get("keyValue").split()
 
@@ -131,9 +131,11 @@ def process_file(file_input, file_output):
             #    print (f"{DEF} keyValue base point index (0 indexed) {i}, {extension[i]} - {base[i]} = {round(difference,4)}")
             if i % 3 == 0:
                 v = int(i / 3)
-                print(f"[ \\vec{v} = ", end="")
+                #print(f"[ \\vec{v} = ", end="")
+                pass
             if i % 3 == 2:
-                print(f"({extension[i]} - {base[i]}, {extension[i-1]} - {base[i-1]}, {extension[i-2]} - {base[i-2]}) = ({displacements[-3]}, {displacements[-2]}, {displacements[-1]}) ]")
+                #print(f"({extension[i]} - {base[i]}, {extension[i-1]} - {base[i-1]}, {extension[i-2]} - {base[i-2]}) = ({displacements[-3]}, {displacements[-2]}, {displacements[-1]}) ]")
+                pass
 
         if new_node is not None:
             new_node.set("DEF", DEF)
@@ -181,13 +183,14 @@ def process_file(file_input, file_output):
                                 new_node.set("coordIndex", coordIndex)
                                 newDisplacements = ", ".join(newDisplacements)
                                 new_node.set("displacements", newDisplacements)
-                                print(f"coordIndex {coordIndex} displacement {newDisplacements}\n")
+                                # print(f"coordIndex {coordIndex} displacement {newDisplacements}\n")
                                 #new_node.set("displacements", " ".join(displacements))
                         # remove route from CoordinateInterpolator to Coordinate
                         par = find_parent(root, route)
                         par.remove(route)
 
-                        parent.remove(cis)
+                        #parent.remove(cis)
+        parent.remove(cis)
 
     # Move other elements into the 'sacrum' segment
     for element in list(scene):
@@ -268,14 +271,21 @@ def process_file(file_input, file_output):
 files = os.scandir("C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/")
 
 def processAFile(input_file, menu_file, item_number):
-    output_file = os.path.join("../resources/",os.path.basename(input_file))
+    output_file = os.path.basename(input_file)
+    output_file = output_file.replace("FACS_AU", "").replace("(", "").replace(")", "").replace("_", "").replace("Morpher", "")
+    if output_file[1:2] == "J":
+        output_file = "0"+output_file
+    output_file = output_file[2:]
     if output_file.endswith(".x3d"):
-        output_file = output_file[:-4]+"_Output.x3d"
+        output_file = output_file[:-4]+".x3d"
+        output_file = os.path.join("../resources/",os.path.basename(output_file))
+        print(f"Output file is {output_file}")
         try:
             process_file(input_file, output_file)
             menu_file.write("<Inline DEF=\"OPTION"+str(item_number)+"\" url='\""+output_file+"\" \""+(output_file.replace("../resources/", ""))+"\"'/>\n")
         except xml.etree.ElementTree.ParseError:
             print(f"The file {output_file} has a parse error")
+    return output_file
 
 with open("../resources/Menu.x3d", "w") as menu_file:
     menu_file.write('''<?xml version="1.0" encoding="utf-8"?>
@@ -292,10 +302,11 @@ with open("../resources/Menu.x3d", "w") as menu_file:
     <ProtoDeclare name="Menu">
       <ProtoInterface>
         <field name="menuItems" type="MFString" accessType="initializeOnly"/>
+        <field name="menuSize" type="MFVec3f" accessType="inputOnly"/>
       </ProtoInterface>
       <ProtoBody>
       <Group>
-        <Transform DEF="MenuTransform" translation="48 18 0">
+        <Transform DEF="MenuTransform" translation="48 27 0">
          <TouchSensor DEF="MenuTouchSensor"/>
           <Shape>
             <Appearance>
@@ -305,8 +316,19 @@ with open("../resources/Menu.x3d", "w") as menu_file:
               <IS>
                 <connect nodeField="string" protoField="menuItems"/>
               </IS>
-              <FontStyle size="2.8" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
             </Text>
+          </Shape>
+        </Transform>
+        <Transform DEF="MenuTransform" translation="48 20 -0.10">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 1"/>
+            </Appearance>
+            <Box size="50 90 0.01"/>
+              <IS>
+                <connect nodeField="size" protoField="menuSize"/>
+              </IS>
           </Shape>
         </Transform>
 
@@ -315,9 +337,9 @@ with open("../resources/Menu.x3d", "w") as menu_file:
     menu = ""
     for input_file in files:
         if input_file.name.endswith(".x3d"):
-            processAFile(input_file, menu_file, item)
+            output_file = processAFile(input_file, menu_file, item)
             item += 1
-            menu += '"'+input_file.name+'" '
+            menu += '"'+output_file.replace("../resources/", "")+'" '
 
     menu_file.write('''</Switch>
 
@@ -325,9 +347,10 @@ with open("../resources/Menu.x3d", "w") as menu_file:
     <Script DEF="MenuScript">
       <field name="menuItems" type="MFString" accessType="initializeOnly"/>
       <field name="selection" type="SFInt32" accessType="outputOnly"/>
+      <field name="menuSize" type="SFVec3f" accessType="outputOnly" value="50 86 0.01"/>
       <field name="touchPoint" type="SFVec3f" accessType="inputOnly"/>
       <field name="spacing" type="SFFloat" accessType="initializeOnly" value="1.2"/>
-      <field name="size" type="SFFloat" accessType="initializeOnly" value="2.8"/>
+      <field name="size" type="SFFloat" accessType="initializeOnly" value="2.4"/>
       <field name="menuCenterY" type="SFFloat" accessType="initializeOnly"/>
       <field name="itemHeight" type="SFFloat" accessType="initializeOnly"/>
 
@@ -336,6 +359,7 @@ with open("../resources/Menu.x3d", "w") as menu_file:
           selection = 0;
           var spacingBetweenGlyphs = size * spacing - size; // Spacing calculation
           var menuHeight = (size + spacingBetweenGlyphs) * menuItems.length;
+          menuSize.y = menuHeight;
           menuCenterY = menuHeight / 2;
           itemHeight = menuHeight / menuItems.length;
         }
@@ -352,6 +376,7 @@ with open("../resources/Menu.x3d", "w") as menu_file:
       ]]>
       <IS>
          <connect nodeField="menuItems" protoField="menuItems"/>
+         <connect nodeField="menuSize" protoField="menuSize"/>
       </IS>
     </Script>
 
