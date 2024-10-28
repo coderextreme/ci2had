@@ -4,6 +4,7 @@ import os
 import re
 import glob
 import sys
+import time
 
 epsilon = sys.float_info.epsilon
 
@@ -62,7 +63,7 @@ def findAnimation(input_filename):
 
 def_prefixes = ["Hair", "__0", "__2", "__4", "Center_lower_vermillion_lip", "Chin", "Glabella", "Left_bulbar_conjunctiva", "Left_cheek", "Left_dorsum", "Left_ear", "Left_eyebrow", "Left_forehead", "Left_lower_eyelid", "Left_lower_vermillion_lip", "Left_nasolabial_cheek", "Left_nostril", "Left_pupil", "Left_temple", "Left_upper_cutaneous_lip", "Left_upper_eyelid", "Left_upper_vermillion_lip", "Left_upper_vermillion_lip001", "Lower_teeth", "Mid_forehead", "Mid_nasal_dorsum", "Mid_upper_vermillion_lip", "Nasal_tip", "Neck", "Occipital_scalp", "Philtrum", "Right_bulbar_conjunctiva", "Right_cheek", "Right_dorsum", "Right_ear", "Right_eyebrow", "Right_forehead", "Right_lower_eyelid", "Right_lower_vermillion_lip", "Right_nasolabial_cheek", "Right_nostril", "Right_pupil", "Right_temple", "Right_upper_cutaneous_lip", "Right_upper_eyelid", "Right_upper_vermillion_lip", "Tongue", "Upper_teeth"]
 
-def process_file(file_input):
+def process_file(file_input, findex):
     print(f"Input file: {file_input}")
     X3D = xml.etree.ElementTree.parse(file_input)
     root = X3D.getroot()
@@ -81,13 +82,33 @@ def process_file(file_input):
     clock_name = animation+"_Clock"
     time_sensor.set('DEF', clock_name)
     time_sensor.set('cycleInterval', "4")
+    time_sensor.set('loop', "false")
     time_sensor.set('enabled', "true")
-    time_sensor.set('loop', "true")
     if len(scene) >= 0:
         scene.insert(0, time_sensor)
         print(f"Added clock name is {clock_name}")
     else:
         print(f"Not Added clock name is {clock_name}")
+    if findex == 0:
+        proximity_sensor = xml.etree.ElementTree.Element('ProximitySensor')
+        if proximity_sensor is not None:
+            proximity_sensor.text = "\n"
+            proximity_sensor.tail = "\n"
+            proximity_sensor.set('DEF', "Fire_"+clock_name)
+            proximity_sensor.set("size", "10000 10000 10000")
+            scene.append(proximity_sensor)
+            print(f"Added proximity is {proximity_sensor.get('DEF')}")
+        else:
+            print(f"Couldn't Add proximity")
+
+        route = xml.etree.ElementTree.Element('ROUTE')
+        route.text = "\n"
+        route.tail = "\n"
+        route.set("fromNode", proximity_sensor.get('DEF'))
+        route.set("fromField", "enterTime")
+        route.set("toNode", time_sensor.get('DEF'))
+        route.set("toField", "startTime")
+        scene.append(route)
 
     return scene
 
@@ -106,7 +127,22 @@ def processMega(scene_list, files):
     component.set("level", "3")
     component.text = "\n"
     component.tail = "\n"
-    head.insert(0, component)
+    head.append(component)
+
+    meta = xml.etree.ElementTree.Element('meta')
+    meta.text = "\n"
+    meta.tail = "\n"
+    meta.set("name", "title")
+    meta.set("content", "YehudiMenuJin.x3d")
+    head.append(meta)
+
+    meta = xml.etree.ElementTree.Element('meta')
+    meta.text = "\n"
+    meta.tail = "\n"
+    meta.set("name", "description")
+    meta.set("content", "X3D scene with alternate facial animations controlled by a menu")
+    head.append(meta)
+
     finalX3D.append(head)
     scene = xml.etree.ElementTree.Element('Scene')
     scene.text = "\n"
@@ -119,14 +155,14 @@ def processMega(scene_list, files):
     humanoid.set('name', "humanoid")
     scene.insert(0, humanoid)
     humanoid_root = xml.etree.ElementTree.Element('HAnimJoint')
-    humanoid_root.set("DEF", "hanim_root")
-    humanoid_root.set("name", "root")
+    humanoid_root.set("DEF", "hanim_humanoid_root")
+    humanoid_root.set("name", "humanoid_root")
     humanoid_root.set("containerField", "skeleton")
     humanoid_root.text = "\n"
     humanoid_root.tail = "\n"
     humanoid.append(humanoid_root)
     humanoid_root_use = xml.etree.ElementTree.Element('HAnimJoint')
-    humanoid_root_use.set("USE", "hanim_root")
+    humanoid_root_use.set("USE", "hanim_humanoid_root")
     humanoid_root_use.set("containerField", "joints")
     humanoid_root_use.text = "\n"
     humanoid_root_use.tail = "\n"
@@ -172,7 +208,7 @@ def processMega(scene_list, files):
                     print(f"2Didn't find segment {element.tag} {element.get('DEF')}")
                 for segment_child in element:
                     if segment_child.tag in ('HAnimDisplacer', 'ScalarInterpolator'):
-                        print(f"Adding {segment_child.tag}")
+                        # print(f"Adding {segment_child.tag}")
                         segment.append(segment_child)
                     elif not prefix in seen_prefixes:
                         print(f"2Don't know {segment_child.tag} {element.get('DEF')}")
@@ -181,19 +217,44 @@ def processMega(scene_list, files):
                         print(f"2Don't know what to do with {segment_child.tag}")
                         # segment.append(segment_child)
                 seen_prefixes.append(prefix)
+    ts_list = []
     for scene_element in scene_list:
         time_sensors = scene_element.findall(".//TimeSensor")
         if len(time_sensors) <= 0:
             print(f"Could not find TimeSensors")
         for time_sensor in time_sensors:
             scene.append(time_sensor)
+            ts_list.append(time_sensor)
             print(f"Adding {time_sensor.tag} {time_sensor.get('DEF')}")
+
+        proximity_sensors = scene_element.findall(".//ProximitySensor")
+        if len(proximity_sensors) <= 0:
+            print(f"Could not find ProximitySensor")
+        else:
+            for proximity_sensor in proximity_sensors:
+                scene.append(proximity_sensor)
+                print(f"Adding {proximity_sensor.tag} {proximity_sensor.get('DEF')}")
+
         routes = scene_element.findall(".//ROUTE")
         if len(routes) <= 0:
             print(f"Could not find ROUTEs")
         for route in routes:
             scene.append(route)
-            print(f"Adding {route.tag}")
+            # print(f"Adding {route.tag}")
+
+        for t, time_sensor in enumerate(ts_list):
+            # print("Time", t);
+            for other_t, other_time_sensor in enumerate(ts_list):
+                if time_sensor != other_time_sensor:
+                    route = xml.etree.ElementTree.Element('ROUTE')
+                    route.text = "\n"
+                    route.tail = "\n"
+                    route.set("fromNode", time_sensor.get('DEF'))
+                    route.set("fromField", "startTime")
+                    route.set("toNode", other_time_sensor.get('DEF'))
+                    route.set("toField", "stopTime")
+                    scene.append(route)
+                #print("Other", other_t);
 
     return finalX3D
 
@@ -253,6 +314,11 @@ def process_scene(scene, file):
             route.set("fromNode", clock_name)
             route.set("toNode", prefix+"_AnimationAdapter_"+animation)
 
+        # Both
+        routes = scene.findall(".//ROUTE[@fromField='enterTime'][@toField='startTime']")
+        for route in routes:
+            print(f"Got NEW ROUTE")
+
     return scene
 
 
@@ -261,9 +327,9 @@ files = glob.glob('../resources/Jin*.x3d')
 
 megaX3D = xml.etree.ElementTree.Element('megaX3D')
 scene_list = []
-for input_file in files:
+for findex, input_file in enumerate(files):
     # print(f"{input_file}")
-    scene = process_file(input_file)
+    scene = process_file(input_file, findex)
     time_sensors = scene.findall(".//TimeSensor")
     if len(time_sensors) > 0:
         for time_sensor in time_sensors:
@@ -347,6 +413,7 @@ menu_str = '''
 
           selection = index - 2;
           if (selection >= 0 && selection < menuItems.length) {
+            /*
             var nodes = Browser.currentScene.rootNodes;
             for (var n = 0; n < nodes.length; n++) {
               try {
@@ -359,23 +426,18 @@ menu_str = '''
                 Browser.print(e);
               }
             }
-            Browser.println("Selected "+selection+" "+menuItems[selection]);
-
-            var oldNode = Browser.currentScene.getNamedNode(menuItems[oldSelection]+"_Clock");
-            if (oldNode) {
-                oldNode.stopTime = tm;
-            } else {
-                Browser.println(node+" Couldn't disable "+menuItems[oldSelection]+"_Clock");
-            }
+            */
 
             var node = Browser.currentScene.getNamedNode(menuItems[selection]+"_Clock");
             if (node) {
-                oldNode.startTime = tm;
+                node.startTime = tm;
+                node.enabled = true;
             } else {
                 Browser.println(node+" Couldn't enable "+menuItems[selection]+"_Clock");
             }
 
             oldSelection = selection;
+            Browser.println("Selected "+selection+" "+menuItems[selection]);
           }
         }
       ]]>
