@@ -63,7 +63,7 @@ def process_file(file_input, file_output):
     scene.insert(0, humanoid)
     humanoid_root = xml.etree.ElementTree.Element('HAnimJoint')
     humanoid_root.set("DEF", "hanim_root")
-    humanoid_root.set("name", "root")
+    humanoid_root.set("name", "humanoid_root")
     humanoid_root.set("containerField", "skeleton")
     humanoid_root.text = "\n"
     humanoid_root.tail = "\n"
@@ -141,7 +141,7 @@ def process_file(file_input, file_output):
 
         if new_node is not None:
             new_node.set("DEF", DEF)
-            new_node.set("name", DEF)
+            new_node.set("name", DEF.lower())
             new_node.set("weight", "0")
             new_node.set("containerField", "displacers")
 
@@ -212,7 +212,7 @@ def process_file(file_input, file_output):
         segment.text = "\n"
         segment.tail = "\n"
         segment.set('DEF', "hanim_"+prefix)
-        segment.set('name', prefix)
+        segment.set('name', prefix.lower())
         skullbase.append(segment)
         for element in elements:
             par = find_parent(root, element)
@@ -305,11 +305,10 @@ with open("../resources/Menu.x3d", "w") as menu_file:
     <ProtoDeclare name="Menu">
       <ProtoInterface>
         <field name="menuItems" type="MFString" accessType="initializeOnly"/>
-        <field name="menuSize" type="MFVec3f" accessType="inputOnly"/>
       </ProtoInterface>
       <ProtoBody>
       <Group>
-        <Transform DEF="MenuTransform" translation="48 27 0">
+        <Transform DEF="TextMenuTransform" translation="48 27 0">
          <TouchSensor DEF="MenuTouchSensor"/>
           <Shape>
             <Appearance>
@@ -322,16 +321,13 @@ with open("../resources/Menu.x3d", "w") as menu_file:
               <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
             </Text>
           </Shape>
-        </Transform>
-        <Transform DEF="MenuTransform" translation="48 20 -0.10">
           <Shape>
             <Appearance>
               <Material diffuseColor="0 0 1"/>
             </Appearance>
-            <Box size="50 90 0.01"/>
-              <IS>
-                <connect nodeField="size" protoField="menuSize"/>
-              </IS>
+            <IndexedFaceSet DEF='Backing' coordIndex='0 1 2 3 -1'>
+                <Coordinate point='25 45 -0.01, -25 45 -0.01, -25 -45 -0.01, 25 -45 -0.01'/>
+             </IndexedFaceSet>
           </Shape>
         </Transform>
 
@@ -350,7 +346,6 @@ with open("../resources/Menu.x3d", "w") as menu_file:
     <Script DEF="MenuScript">
       <field name="menuItems" type="MFString" accessType="initializeOnly"/>
       <field name="selection" type="SFInt32" accessType="outputOnly"/>
-      <field name="menuSize" type="SFVec3f" accessType="outputOnly" value="50 86 0.01"/>
       <field name="touchPoint" type="SFVec3f" accessType="inputOnly"/>
       <field name="spacing" type="SFFloat" accessType="initializeOnly" value="1.2"/>
       <field name="size" type="SFFloat" accessType="initializeOnly" value="2.4"/>
@@ -362,7 +357,6 @@ with open("../resources/Menu.x3d", "w") as menu_file:
           selection = 0;
           var spacingBetweenGlyphs = size * spacing - size; // Spacing calculation
           var menuHeight = (size + spacingBetweenGlyphs) * menuItems.length;
-          menuSize.y = menuHeight;
           menuCenterY = menuHeight / 2;
           itemHeight = menuHeight / menuItems.length;
         }
@@ -379,7 +373,6 @@ with open("../resources/Menu.x3d", "w") as menu_file:
       ]]>
       <IS>
          <connect nodeField="menuItems" protoField="menuItems"/>
-         <connect nodeField="menuSize" protoField="menuSize"/>
       </IS>
     </Script>
 

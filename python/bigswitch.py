@@ -47,20 +47,52 @@ def find_segments_by_prefix(root, prefix):
     for elem in root.iter():
         def_value = elem.get("DEF")
         if def_value and elem.tag == 'HAnimSegment':
-            def_value = def_value[6:]
+            if def_value.startswith("hanim_"):
+                def_value = def_value[6:]
             if prefix == def_value:
                 #print(f"looking at {def_value} {prefix} {elem.tag}")
                 matched_elements.append(elem)
+            else:
+                #print(f"missed at {def_value} {prefix} {elem.tag}")
+                pass
     return matched_elements
 
+def findAnimation(input_filename):
+    return input_filename.replace("../resources", "")[1:-4]
+
+def_prefixes = ["Hair", "__0", "__2", "__4", "Center_lower_vermillion_lip", "Chin", "Glabella", "Left_bulbar_conjunctiva", "Left_cheek", "Left_dorsum", "Left_ear", "Left_eyebrow", "Left_forehead", "Left_lower_eyelid", "Left_lower_vermillion_lip", "Left_nasolabial_cheek", "Left_nostril", "Left_pupil", "Left_temple", "Left_upper_cutaneous_lip", "Left_upper_eyelid", "Left_upper_vermillion_lip", "Left_upper_vermillion_lip001", "Lower_teeth", "Mid_forehead", "Mid_nasal_dorsum", "Mid_upper_vermillion_lip", "Nasal_tip", "Neck", "Occipital_scalp", "Philtrum", "Right_bulbar_conjunctiva", "Right_cheek", "Right_dorsum", "Right_ear", "Right_eyebrow", "Right_forehead", "Right_lower_eyelid", "Right_lower_vermillion_lip", "Right_nasolabial_cheek", "Right_nostril", "Right_pupil", "Right_temple", "Right_upper_cutaneous_lip", "Right_upper_eyelid", "Right_upper_vermillion_lip", "Tongue", "Upper_teeth"]
+
 def process_file(file_input):
-    # print(f"Input file: {file_input}")
+    print(f"Input file: {file_input}")
     X3D = xml.etree.ElementTree.parse(file_input)
     root = X3D.getroot()
-    return root
+    scene = root.find("Scene")
 
-def processMega(megaX3D):
+    time_sensors = scene.findall(".//TimeSensor")
+    for time_sensor in time_sensors:
+        par = find_parent(scene, time_sensor)
+        par.remove(time_sensor)
+        print(f"Removed TimeSensor, DEF is {time_sensor.get('DEF')}")
 
+    time_sensor = xml.etree.ElementTree.Element('TimeSensor')
+    time_sensor.text = "\n"
+    time_sensor.tail = "\n"
+    animation = findAnimation(file_input)
+    clock_name = animation+"_Clock"
+    time_sensor.set('DEF', clock_name)
+    time_sensor.set('cycleInterval', "4")
+    time_sensor.set('enabled', "true")
+    time_sensor.set('loop', "true")
+    if len(scene) >= 0:
+        scene.insert(0, time_sensor)
+        print(f"Added clock name is {clock_name}")
+    else:
+        print(f"Not Added clock name is {clock_name}")
+
+    return scene
+
+
+def processMega(scene_list, files):
     finalX3D = xml.etree.ElementTree.Element('X3D')
     finalX3D.text = "\n"
     finalX3D.tail = "\n"
@@ -80,7 +112,6 @@ def processMega(megaX3D):
     scene.text = "\n"
     scene.tail = "\n"
     finalX3D.append(scene)
-
     humanoid = xml.etree.ElementTree.Element('HAnimHumanoid')
     humanoid.text = "\n"
     humanoid.tail = "\n"
@@ -120,104 +151,258 @@ def processMega(megaX3D):
     skullbase_use.text = "\n"
     skullbase_use.tail = "\n"
     humanoid.append(skullbase_use)
-
-    def_prefixes = ["Hair", "__0", "__2", "__4", "Center_lower_vermillion_lip", "Chin", "Glabella", "Left_bulbar_conjunctiva", "Left_cheek", "Left_dorsum", "Left_ear", "Left_eyebrow", "Left_forehead", "Left_lower_eyelid", "Left_lower_vermillion_lip", "Left_nasolabial_cheek", "Left_nostril", "Left_pupil", "Left_temple", "Left_upper_cutaneous_lip", "Left_upper_eyelid", "Left_upper_vermillion_lip", "Left_upper_vermillion_lip001", "Lower_teeth", "Mid_forehead", "Mid_nasal_dorsum", "Mid_upper_vermillion_lip", "Nasal_tip", "Neck", "Occipital_scalp", "Philtrum", "Right_bulbar_conjunctiva", "Right_cheek", "Right_dorsum", "Right_ear", "Right_eyebrow", "Right_forehead", "Right_lower_eyelid", "Right_lower_vermillion_lip", "Right_nasolabial_cheek", "Right_nostril", "Right_pupil", "Right_temple", "Right_upper_cutaneous_lip", "Right_upper_eyelid", "Right_upper_vermillion_lip", "Tongue", "Upper_teeth"]
-
     seen_prefixes = []
+    for scene_element in scene_list:
+        for prefix in def_prefixes:
+            elements = find_segments_by_prefix(scene_element, prefix)
+            if len(elements) == 0:
+                print(f"{prefix} has no elements")
+            for element in elements:
+                print(f"Found element {element.tag} {element.get('DEF')}")
+                if prefix not in seen_prefixes:
+                    print(f"2Found segment {element.tag} {element.get('DEF')}")
+                    segment = xml.etree.ElementTree.Element('HAnimSegment')
+                    segment.text = "\n"
+                    segment.tail = "\n"
+                    segment.set('DEF', "hanim_"+prefix)
+                    segment.set('name', prefix.lower())
+                    print(f"Adding {segment.tag}")
+                    skullbase.append(segment)
+                else:
+                    print(f"2Didn't find segment {element.tag} {element.get('DEF')}")
+                for segment_child in element:
+                    if segment_child.tag in ('HAnimDisplacer', 'ScalarInterpolator'):
+                        print(f"Adding {segment_child.tag}")
+                        segment.append(segment_child)
+                    elif not prefix in seen_prefixes:
+                        print(f"2Don't know {segment_child.tag} {element.get('DEF')}")
+                        segment.append(segment_child)  # append first Transform and Coordinate
+                    else:
+                        print(f"2Don't know what to do with {segment_child.tag}")
+                        # segment.append(segment_child)
+                seen_prefixes.append(prefix)
+    for scene_element in scene_list:
+        time_sensors = scene_element.findall(".//TimeSensor")
+        if len(time_sensors) <= 0:
+            print(f"Could not find TimeSensors")
+        for time_sensor in time_sensors:
+            scene.append(time_sensor)
+            print(f"Adding {time_sensor.tag} {time_sensor.get('DEF')}")
+        routes = scene_element.findall(".//ROUTE")
+        if len(routes) <= 0:
+            print(f"Could not find ROUTEs")
+        for route in routes:
+            scene.append(route)
+            print(f"Adding {route.tag}")
+
+    return finalX3D
+
+
+def process_scene(scene, file):
+    seen_prefixes = []
+    animation = findAnimation(file)
     for prefix in def_prefixes:
-        elements = find_segments_by_prefix(megaX3D, prefix)
-        i = 0
-        ts = 0
+        elements = find_segments_by_prefix(scene, prefix)
+        if len(elements) == 0:
+            print(f"{prefix} has not one element")
         for element in elements:
             if prefix not in seen_prefixes:
                 print(f"Found segment {element.tag} {element.get('DEF')}")
-                segment = xml.etree.ElementTree.Element('HAnimSegment')
-                segment.text = "\n"
-                segment.tail = "\n"
-                segment.set('DEF', "hanim_"+prefix)
-                segment.set('name', prefix)
-                print(f"Adding {segment.tag}")
-                skullbase.append(segment)
+            else:
+                print(f"Didn't find segment {element.tag} {element.get('DEF')}")
             for segment_child in element:
                 if segment_child.tag == 'HAnimDisplacer':
-                    print(f"Adding {segment_child.tag}")
-                    segment_child.set("DEF", prefix+"_MorphInterpolator"+str(i))
-                    i = i + 1
-                    segment.append(segment_child)
-                elif segment_child.tag == 'CoordinateInterpolator':
-                    print(f"Adding {segment_child.tag}")
-                    segment_child.set("DEF", prefix+"_MorphInterpolator"+str(i))
-                    i = i + 1
-                    segment.append(segment_child)
-                elif segment_child.tag == 'TimeSensor':
-                    pass
+                    print(f"Setting {segment_child.tag}")
+                    segment_child.set("DEF", prefix+"_MorphInterpolator_"+animation)
+                elif segment_child.tag == 'ScalarInterpolator':
+                    print(f"Setting {segment_child.tag}")
+                    segment_child.set("DEF", prefix+"_AnimationAdapter_"+animation)
+                #elif segment_child.tag == 'CoordinateInterpolator':
+                #    print(f"Setting {segment_child.tag}")
+                #    segment_child.set("DEF", prefix+"_MorphInterpolator_"+animation)
                 elif not prefix in seen_prefixes:
-                    print(f"Adding {segment_child.tag}")
-                    segment.append(segment_child)
+                    print(f"Don't know {segment_child.tag} {element.get('DEF')}")
+                    # segment_child.set("DEF", prefix+f"_{segment_child.tag}_"+animation)
                 else:
-                    # print(f"Don't know what to do with {segment_child.tag}")
+                    print(f"Don't know what to do with {segment_child.tag}")
                     # segment.append(segment_child)
                     pass
             seen_prefixes.append(prefix)
 
         # CoordinateInterpolator
-        routes = megaX3D.findall(".//ROUTE[@fromNode='"+prefix+"_MorphInterpolator'][@fromField='value_changed'][@toNode='"+prefix+"-COORD'][@toField='point']")
-        i = 0
+        routes = scene.findall(".//ROUTE[@fromNode='"+prefix+"_MorphInterpolator'][@fromField='value_changed'][@toNode='"+prefix+"-COORD'][@toField='point']")
         for route in routes:
-            route.set("fromNode", prefix+"_MorphInterpolator"+str(i))
-            finalX3D.append(route)
-            i += 1
+            route.set("fromNode", prefix+"_MorphInterpolator_"+animation)
 
-        routes = megaX3D.findall(".//ROUTE[@fromNode='"+prefix+"_AnimationAdapter'][@fromField='value_changed'][@toNode='"+prefix+"_MorphInterpolator'][@toField='set_fraction']")
-        i = 0
+        routes = scene.findall(".//ROUTE[@fromNode='"+prefix+"_AnimationAdapter'][@fromField='value_changed'][@toNode='"+prefix+"_MorphInterpolator'][@toField='set_fraction']")
         for route in routes:
-            route.set("fromNode", prefix+"_AnimationAdapter"+str(i))
-            route.set("toNode", prefix+"_MorphInterpolator"+str(i))
-            finalX3D.append(route)
-            i += 1
+            route.set("fromNode", prefix+"_AnimationAdapter_"+animation)
+            route.set("toNode", prefix+"_MorphInterpolator_"+animation)
 
         # HAnimDisplacer
-        routes = megaX3D.findall(".//ROUTE[@fromNode='"+prefix+"_AnimationAdapter'][@fromField='value_changed'][@toNode='"+prefix+"_MorphInterpolator'][@toField='weight']")
-        i = 0
+        routes = scene.findall(".//ROUTE[@fromNode='"+prefix+"_AnimationAdapter'][@fromField='value_changed'][@toNode='"+prefix+"_MorphInterpolator'][@toField='weight']")
         for route in routes:
-            route.set("fromNode", prefix+"_AnimationAdapter"+str(i))
-            route.set("toNode", prefix+"_MorphInterpolator"+str(i))
-            finalX3D.append(route)
-            i += 1
+            route.set("fromNode", prefix+"_AnimationAdapter_"+animation)
+            route.set("toNode", prefix+"_MorphInterpolator_"+animation)
 
-        routes = megaX3D.findall(".//ROUTE[@fromNode='"+prefix+"_Clock'][@fromField='fraction_changed'][@toNode='"+prefix+"_AnimationAdapter'][@toField='set_fraction']")
-        i = 0
+        # Both
+        routes = scene.findall(".//ROUTE[@fromNode='"+prefix+"_Clock'][@fromField='fraction_changed'][@toNode='"+prefix+"_AnimationAdapter'][@toField='set_fraction']")
         for route in routes:
-            time_sensor = xml.etree.ElementTree.Element('TimeSensor')
-            time_sensor.text = "\n"
-            time_sensor.tail = "\n"
-            time_sensor.set('DEF', prefix+"_Clock"+str(i))
-            time_sensor.set('cycleInterval', "4")
-            time_sensor.set('enabled', "true")
-            time_sensor.set('loop', "true")
-            finalX3D.append(time_sensor)
+            clock_name = animation+"_Clock"
+            print(f"Got route for {prefix} {animation}, clock name is {clock_name}")
+            route.set("fromNode", clock_name)
+            route.set("toNode", prefix+"_AnimationAdapter_"+animation)
 
-            route.set("fromNode", prefix+"_Clock"+str(i))
-            route.set("toNode", prefix+"_AnimationAdaper"+str(i))
-            finalX3D.append(route)
-            i += 1
-
-    return finalX3D
+    return scene
 
 
-files = glob.glob('../resources/FACS_AU*_Output.x3d')
+files = glob.glob('../resources/Jin*.x3d')
 #print(f"{files}")
 
 megaX3D = xml.etree.ElementTree.Element('megaX3D')
+scene_list = []
 for input_file in files:
     # print(f"{input_file}")
-    megaX3D.append(process_file(input_file))
+    scene = process_file(input_file)
+    time_sensors = scene.findall(".//TimeSensor")
+    if len(time_sensors) > 0:
+        for time_sensor in time_sensors:
+            # scene.append(time_sensor)
+            print(f"Found TimeSensor {time_sensor.tag} {time_sensor.get('DEF')}")
+    else:
+        print("Could not find TimeSensor")
+    scene = process_scene(scene, input_file)
+    scene_list.append(scene)
 
-finalX3D = processMega(megaX3D)
+finalX3D = processMega(scene_list, files)
 
 header = '<?xml version="1.0" encoding="utf-8"?>\n<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">'
 xmlstr = xml.etree.ElementTree.tostring(finalX3D, encoding='unicode')
-xmlString = f"{header}{xmlstr}"
-file_output = os.path.join("../resources/",os.path.basename("ItsAFACSJack.x3d"))
+
+menu_str = '''
+    <!-- Viewpoint and any other scene setup -->
+    <Viewpoint position="0 20 110" />
+    <ProtoDeclare name="Menu">
+      <ProtoInterface>
+        <field name="menuItems" type="MFString" accessType="initializeOnly"/>
+      </ProtoInterface>
+      <ProtoBody>
+      <Group>
+        <Transform DEF="TextMenuTransform" translation="48 27 0">
+         <TouchSensor DEF="MenuTouchSensor"/>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 1 1"/>
+            </Appearance>
+            <Text DEF="MenuText">
+              <IS>
+                <connect nodeField="string" protoField="menuItems"/>
+              </IS>
+              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+            </Text>
+          </Shape>
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0 0 1"/>
+            </Appearance>
+            <IndexedFaceSet DEF='Backing' coordIndex='0 1 2 3 -1'>
+                <Coordinate point='25 36 -0.1, -25 36 -0.1, -25 -52 -0.1, 25 -52 -0.1'/>
+             </IndexedFaceSet>
+          </Shape>
+        </Transform>
+
+    <!-- Script to handle selection logic -->
+    <Script DEF="MenuScript">
+      <field name="menuItems" type="MFString" accessType="initializeOnly"/>
+      <field name="selection" type="SFInt32" accessType="outputOnly"/>
+      <field name="touchPoint" type="SFVec3f" accessType="inputOnly"/>
+      <field name="spacing" type="SFFloat" accessType="initializeOnly" value="1.2"/>
+      <field name="size" type="SFFloat" accessType="initializeOnly" value="2.4"/>
+      <field name="menuCenterY" type="SFFloat" accessType="initializeOnly"/>
+      <field name="itemHeight" type="SFFloat" accessType="initializeOnly"/>
+      <field name="oldSelection" type="SFInt32" accessType="inputOutput"/>
+
+      <![CDATA[ecmascript:
+        function initialize() {
+          selection = 0;
+          oldSelection = 0;
+          var spacingBetweenGlyphs = size * spacing - size; // Spacing calculation
+          var menuHeight = (size + spacingBetweenGlyphs) * menuItems.length;
+          menuCenterY = menuHeight / 2;
+          itemHeight = menuHeight / menuItems.length;
+          var sel = 0;
+          for (sel = 0; sel < menuItems.length; sel++) {
+            var node = Browser.currentScene.getNamedNode(menuItems[sel]);
+            if (node) {
+                node.getField("stopTime").setValue(0);
+            } else {
+                Browser.println("Can't get menu node, duh!");
+            }
+          }
+        }
+
+        function touchPoint(value, tm) {
+          Browser.println("Hit "+value+" "+selection);
+          var index = Math.floor((menuCenterY - value.y) / itemHeight - 0.5);
+
+          selection = index - 2;
+          if (selection >= 0 && selection < menuItems.length) {
+            var nodes = Browser.currentScene.rootNodes;
+            for (var n = 0; n < nodes.length; n++) {
+              try {
+                if (nodes[n].DEF) {
+                    Browser.println("DEF "+nodes[n].DEF);
+                } else {
+                    Browser.println("no DEF "+JSON.stringify(nodes[n]));
+                }
+              } catch (e) {
+                Browser.print(e);
+              }
+            }
+            Browser.println("Selected "+selection+" "+menuItems[selection]);
+
+            var oldNode = Browser.currentScene.getNamedNode(menuItems[oldSelection]+"_Clock");
+            if (oldNode) {
+                oldNode.stopTime = tm;
+            } else {
+                Browser.println(node+" Couldn't disable "+menuItems[oldSelection]+"_Clock");
+            }
+
+            var node = Browser.currentScene.getNamedNode(menuItems[selection]+"_Clock");
+            if (node) {
+                oldNode.startTime = tm;
+            } else {
+                Browser.println(node+" Couldn't enable "+menuItems[selection]+"_Clock");
+            }
+
+            oldSelection = selection;
+          }
+        }
+      ]]>
+      <IS>
+         <connect nodeField="menuItems" protoField="menuItems"/>
+      </IS>
+    </Script>
+
+     <!-- ROUTEs to connect everything -->
+     <ROUTE fromNode="MenuTouchSensor"   fromField="hitPoint_changed" toNode="MenuScript" toField="touchPoint"/>
+     <!--
+     <ROUTE fromNode="MenuScript" fromField="selection" toNode="SceneSwitcher" toField="whichChoice"/>
+     -->
+      </Group>
+      </ProtoBody>
+    </ProtoDeclare>
+    <ProtoInstance DEF='MainMenu' name='Menu'>
+      <fieldValue name='menuItems' value=\''''
+for input_file in files:
+    if input_file.endswith(".x3d"):
+        menu_str += '"'+findAnimation(input_file)+'" '
+menu_str += '''\'/>
+    </ProtoInstance>
+  </Scene>
+</X3D>
+'''
+xmlString = f"{header}{xmlstr[:-16]}{menu_str}"
+file_output = os.path.join("../resources/",os.path.basename("YehudiMenuJin.x3d"))
 with open(file_output, "w") as output_file:
     output_file.write(xmlString)

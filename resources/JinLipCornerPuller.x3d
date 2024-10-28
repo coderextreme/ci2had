@@ -11,11 +11,11 @@
 <Scene>
 <Viewpoint position="0 20 110" />
 <HAnimHumanoid DEF="hanim_humanoid" name="humanoid">
-<HAnimJoint DEF="hanim_root" name="root" containerField="skeleton">
+<HAnimJoint DEF="hanim_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim_sacrum" name="sacrum">
 </HAnimSegment>
 <HAnimJoint DEF="hanim_skullbase" name="skullbase">
-<HAnimSegment DEF="hanim_Hair" name="Hair">
+<HAnimSegment DEF="hanim_Hair" name="hair">
 <Transform DEF="Hair" translation="0 22.26 -9.79" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -32,7 +32,7 @@
 </Coordinate>
 <ScalarInterpolator DEF="Hair_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Hair_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Hair_MorphInterpolator" name="Hair_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Hair_MorphInterpolator" name="hair_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
 <HAnimSegment DEF="hanim___0" name="__0">
@@ -41,7 +41,7 @@
 </HAnimSegment>
 <HAnimSegment DEF="hanim___4" name="__4">
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Center_lower_vermillion_lip" name="Center_lower_vermillion_lip">
+<HAnimSegment DEF="hanim_Center_lower_vermillion_lip" name="center_lower_vermillion_lip">
 <Transform DEF="Center_lower_vermillion_lip" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -58,10 +58,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Center_lower_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Center_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Center_lower_vermillion_lip_MorphInterpolator" name="Center_lower_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Center_lower_vermillion_lip_MorphInterpolator" name="center_lower_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Chin" name="Chin">
+<HAnimSegment DEF="hanim_Chin" name="chin">
 <Transform DEF="Chin" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -78,10 +78,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Chin_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Chin_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Chin_MorphInterpolator" name="Chin_MorphInterpolator" weight="0" containerField="displacers" coordIndex="16 17" displacements="1.176 0.13 -0.375, -1.176 0.13 -0.375">
+<HAnimDisplacer DEF="Chin_MorphInterpolator" name="chin_morphinterpolator" weight="0" containerField="displacers" coordIndex="16 17" displacements="1.176 0.13 -0.375, -1.176 0.13 -0.375">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Glabella" name="Glabella">
+<HAnimSegment DEF="hanim_Glabella" name="glabella">
 <Transform DEF="Glabella" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -98,10 +98,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Glabella_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Glabella_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Glabella_MorphInterpolator" name="Glabella_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Glabella_MorphInterpolator" name="glabella_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_bulbar_conjunctiva" name="Left_bulbar_conjunctiva">
+<HAnimSegment DEF="hanim_Left_bulbar_conjunctiva" name="left_bulbar_conjunctiva">
 <Transform DEF="Left_bulbar_conjunctiva" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -118,10 +118,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_bulbar_conjunctiva_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_bulbar_conjunctiva_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_bulbar_conjunctiva_MorphInterpolator" name="Left_bulbar_conjunctiva_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Left_bulbar_conjunctiva_MorphInterpolator" name="left_bulbar_conjunctiva_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_cheek" name="Left_cheek">
+<HAnimSegment DEF="hanim_Left_cheek" name="left_cheek">
 <Transform DEF="Left_cheek" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -138,10 +138,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_cheek_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_cheek_MorphInterpolator" name="Left_cheek_MorphInterpolator" weight="0" containerField="displacers" coordIndex="1 8 12 34" displacements="0.473 -0.03 -0.642, 1.14 0.0 -1.022, 0.583 -0.05 -0.383, 1.176 0.13 -0.375">
+<HAnimDisplacer DEF="Left_cheek_MorphInterpolator" name="left_cheek_morphinterpolator" weight="0" containerField="displacers" coordIndex="1 8 12 34" displacements="0.473 -0.03 -0.642, 1.14 0.0 -1.022, 0.583 -0.05 -0.383, 1.176 0.13 -0.375">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_dorsum" name="Left_dorsum">
+<HAnimSegment DEF="hanim_Left_dorsum" name="left_dorsum">
 <Transform DEF="Left_dorsum" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -158,10 +158,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_dorsum_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_dorsum_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_dorsum_MorphInterpolator" name="Left_dorsum_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Left_dorsum_MorphInterpolator" name="left_dorsum_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_ear" name="Left_ear">
+<HAnimSegment DEF="hanim_Left_ear" name="left_ear">
 <Transform DEF="Left_ear" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -178,10 +178,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_ear_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_ear_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_ear_MorphInterpolator" name="Left_ear_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Left_ear_MorphInterpolator" name="left_ear_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_eyebrow" name="Left_eyebrow">
+<HAnimSegment DEF="hanim_Left_eyebrow" name="left_eyebrow">
 <Transform DEF="Left_eyebrow" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -198,10 +198,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_eyebrow_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_eyebrow_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_eyebrow_MorphInterpolator" name="Left_eyebrow_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Left_eyebrow_MorphInterpolator" name="left_eyebrow_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_forehead" name="Left_forehead">
+<HAnimSegment DEF="hanim_Left_forehead" name="left_forehead">
 <Transform DEF="Left_forehead" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -218,10 +218,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_forehead_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_forehead_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_forehead_MorphInterpolator" name="Left_forehead_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Left_forehead_MorphInterpolator" name="left_forehead_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_lower_eyelid" name="Left_lower_eyelid">
+<HAnimSegment DEF="hanim_Left_lower_eyelid" name="left_lower_eyelid">
 <Transform DEF="Left_lower_eyelid" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -238,10 +238,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_lower_eyelid_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_lower_eyelid_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_lower_eyelid_MorphInterpolator" name="Left_lower_eyelid_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Left_lower_eyelid_MorphInterpolator" name="left_lower_eyelid_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_lower_vermillion_lip" name="Left_lower_vermillion_lip">
+<HAnimSegment DEF="hanim_Left_lower_vermillion_lip" name="left_lower_vermillion_lip">
 <Transform DEF="Left_lower_vermillion_lip" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -258,10 +258,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_lower_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_lower_vermillion_lip_MorphInterpolator" name="Left_lower_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers" coordIndex="2" displacements="1.176 0.13 -0.375">
+<HAnimDisplacer DEF="Left_lower_vermillion_lip_MorphInterpolator" name="left_lower_vermillion_lip_morphinterpolator" weight="0" containerField="displacers" coordIndex="2" displacements="1.176 0.13 -0.375">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_nasolabial_cheek" name="Left_nasolabial_cheek">
+<HAnimSegment DEF="hanim_Left_nasolabial_cheek" name="left_nasolabial_cheek">
 <Transform DEF="Left_nasolabial_cheek" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -278,10 +278,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_nasolabial_cheek_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_nasolabial_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_nasolabial_cheek_MorphInterpolator" name="Left_nasolabial_cheek_MorphInterpolator" weight="0" containerField="displacers" coordIndex="5" displacements="1.176 0.13 -0.375">
+<HAnimDisplacer DEF="Left_nasolabial_cheek_MorphInterpolator" name="left_nasolabial_cheek_morphinterpolator" weight="0" containerField="displacers" coordIndex="5" displacements="1.176 0.13 -0.375">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_nostril" name="Left_nostril">
+<HAnimSegment DEF="hanim_Left_nostril" name="left_nostril">
 <Transform DEF="Left_nostril" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -298,10 +298,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_nostril_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_nostril_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_nostril_MorphInterpolator" name="Left_nostril_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Left_nostril_MorphInterpolator" name="left_nostril_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_pupil" name="Left_pupil">
+<HAnimSegment DEF="hanim_Left_pupil" name="left_pupil">
 <Transform DEF="Left_pupil" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -318,10 +318,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_pupil_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_pupil_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_pupil_MorphInterpolator" name="Left_pupil_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Left_pupil_MorphInterpolator" name="left_pupil_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_temple" name="Left_temple">
+<HAnimSegment DEF="hanim_Left_temple" name="left_temple">
 <Transform DEF="Left_temple" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -338,10 +338,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_temple_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_temple_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_temple_MorphInterpolator" name="Left_temple_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Left_temple_MorphInterpolator" name="left_temple_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_upper_cutaneous_lip" name="Left_upper_cutaneous_lip">
+<HAnimSegment DEF="hanim_Left_upper_cutaneous_lip" name="left_upper_cutaneous_lip">
 <Transform DEF="Left_upper_cutaneous_lip" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -358,10 +358,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_upper_cutaneous_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_upper_cutaneous_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_upper_cutaneous_lip_MorphInterpolator" name="Left_upper_cutaneous_lip_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Left_upper_cutaneous_lip_MorphInterpolator" name="left_upper_cutaneous_lip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_upper_eyelid" name="Left_upper_eyelid">
+<HAnimSegment DEF="hanim_Left_upper_eyelid" name="left_upper_eyelid">
 <Transform DEF="Left_upper_eyelid" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -378,10 +378,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_upper_eyelid_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_upper_eyelid_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_upper_eyelid_MorphInterpolator" name="Left_upper_eyelid_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Left_upper_eyelid_MorphInterpolator" name="left_upper_eyelid_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_upper_vermillion_lip" name="Left_upper_vermillion_lip">
+<HAnimSegment DEF="hanim_Left_upper_vermillion_lip" name="left_upper_vermillion_lip">
 <Transform DEF="Left_upper_vermillion_lip" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -398,10 +398,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_upper_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_upper_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_upper_vermillion_lip_MorphInterpolator" name="Left_upper_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers" coordIndex="3" displacements="1.176 0.13 -0.375">
+<HAnimDisplacer DEF="Left_upper_vermillion_lip_MorphInterpolator" name="left_upper_vermillion_lip_morphinterpolator" weight="0" containerField="displacers" coordIndex="3" displacements="1.176 0.13 -0.375">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Left_upper_vermillion_lip001" name="Left_upper_vermillion_lip001">
+<HAnimSegment DEF="hanim_Left_upper_vermillion_lip001" name="left_upper_vermillion_lip001">
 <Transform DEF="Left_upper_vermillion_lip001" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -420,10 +420,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Left_upper_vermillion_lip001_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Left_upper_vermillion_lip001_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Left_upper_vermillion_lip001_MorphInterpolator" name="Left_upper_vermillion_lip001_MorphInterpolator" weight="0" containerField="displacers" coordIndex="3" displacements="-1.176 0.13 -0.375">
+<HAnimDisplacer DEF="Left_upper_vermillion_lip001_MorphInterpolator" name="left_upper_vermillion_lip001_morphinterpolator" weight="0" containerField="displacers" coordIndex="3" displacements="-1.176 0.13 -0.375">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Lower_teeth" name="Lower_teeth">
+<HAnimSegment DEF="hanim_Lower_teeth" name="lower_teeth">
 <Transform DEF="Lower_teeth" translation="0 8.43 11.42" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -440,10 +440,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Lower_teeth_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Lower_teeth_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Lower_teeth_MorphInterpolator" name="Lower_teeth_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Lower_teeth_MorphInterpolator" name="lower_teeth_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Mid_forehead" name="Mid_forehead">
+<HAnimSegment DEF="hanim_Mid_forehead" name="mid_forehead">
 <Transform DEF="Mid_forehead" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -460,10 +460,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Mid_forehead_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Mid_forehead_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Mid_forehead_MorphInterpolator" name="Mid_forehead_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Mid_forehead_MorphInterpolator" name="mid_forehead_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Mid_nasal_dorsum" name="Mid_nasal_dorsum">
+<HAnimSegment DEF="hanim_Mid_nasal_dorsum" name="mid_nasal_dorsum">
 <Transform DEF="Mid_nasal_dorsum" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -480,10 +480,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Mid_nasal_dorsum_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Mid_nasal_dorsum_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Mid_nasal_dorsum_MorphInterpolator" name="Mid_nasal_dorsum_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Mid_nasal_dorsum_MorphInterpolator" name="mid_nasal_dorsum_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Mid_upper_vermillion_lip" name="Mid_upper_vermillion_lip">
+<HAnimSegment DEF="hanim_Mid_upper_vermillion_lip" name="mid_upper_vermillion_lip">
 <Transform DEF="Mid_upper_vermillion_lip" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -500,10 +500,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Mid_upper_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Mid_upper_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Mid_upper_vermillion_lip_MorphInterpolator" name="Mid_upper_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Mid_upper_vermillion_lip_MorphInterpolator" name="mid_upper_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Nasal_tip" name="Nasal_tip">
+<HAnimSegment DEF="hanim_Nasal_tip" name="nasal_tip">
 <Transform DEF="Nasal_tip" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -520,10 +520,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Nasal_tip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Nasal_tip_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Nasal_tip_MorphInterpolator" name="Nasal_tip_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Nasal_tip_MorphInterpolator" name="nasal_tip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Neck" name="Neck">
+<HAnimSegment DEF="hanim_Neck" name="neck">
 <Transform DEF="Neck" translation="0 4.213 0.4657" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -540,10 +540,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Neck_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Neck_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Neck_MorphInterpolator" name="Neck_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Neck_MorphInterpolator" name="neck_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Occipital_scalp" name="Occipital_scalp">
+<HAnimSegment DEF="hanim_Occipital_scalp" name="occipital_scalp">
 <Transform DEF="Occipital_scalp" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -560,10 +560,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Occipital_scalp_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Occipital_scalp_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Occipital_scalp_MorphInterpolator" name="Occipital_scalp_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Occipital_scalp_MorphInterpolator" name="occipital_scalp_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Philtrum" name="Philtrum">
+<HAnimSegment DEF="hanim_Philtrum" name="philtrum">
 <Transform DEF="Philtrum" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -580,10 +580,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Philtrum_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Philtrum_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Philtrum_MorphInterpolator" name="Philtrum_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Philtrum_MorphInterpolator" name="philtrum_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_bulbar_conjunctiva" name="Right_bulbar_conjunctiva">
+<HAnimSegment DEF="hanim_Right_bulbar_conjunctiva" name="right_bulbar_conjunctiva">
 <Transform DEF="Right_bulbar_conjunctiva" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -600,10 +600,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_bulbar_conjunctiva_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_bulbar_conjunctiva_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_bulbar_conjunctiva_MorphInterpolator" name="Right_bulbar_conjunctiva_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Right_bulbar_conjunctiva_MorphInterpolator" name="right_bulbar_conjunctiva_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_cheek" name="Right_cheek">
+<HAnimSegment DEF="hanim_Right_cheek" name="right_cheek">
 <Transform DEF="Right_cheek" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -620,10 +620,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_cheek_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_cheek_MorphInterpolator" name="Right_cheek_MorphInterpolator" weight="0" containerField="displacers" coordIndex="1 8 12 34" displacements="-0.473 -0.03 -0.642, -1.14 0.0 -1.022, -0.583 -0.05 -0.383, -1.176 0.13 -0.375">
+<HAnimDisplacer DEF="Right_cheek_MorphInterpolator" name="right_cheek_morphinterpolator" weight="0" containerField="displacers" coordIndex="1 8 12 34" displacements="-0.473 -0.03 -0.642, -1.14 0.0 -1.022, -0.583 -0.05 -0.383, -1.176 0.13 -0.375">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_dorsum" name="Right_dorsum">
+<HAnimSegment DEF="hanim_Right_dorsum" name="right_dorsum">
 <Transform DEF="Right_dorsum" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -640,10 +640,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_dorsum_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_dorsum_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_dorsum_MorphInterpolator" name="Right_dorsum_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Right_dorsum_MorphInterpolator" name="right_dorsum_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_ear" name="Right_ear">
+<HAnimSegment DEF="hanim_Right_ear" name="right_ear">
 <Transform DEF="Right_ear" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -660,10 +660,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_ear_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_ear_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_ear_MorphInterpolator" name="Right_ear_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Right_ear_MorphInterpolator" name="right_ear_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_eyebrow" name="Right_eyebrow">
+<HAnimSegment DEF="hanim_Right_eyebrow" name="right_eyebrow">
 <Transform DEF="Right_eyebrow" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -680,10 +680,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_eyebrow_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_eyebrow_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_eyebrow_MorphInterpolator" name="Right_eyebrow_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Right_eyebrow_MorphInterpolator" name="right_eyebrow_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_forehead" name="Right_forehead">
+<HAnimSegment DEF="hanim_Right_forehead" name="right_forehead">
 <Transform DEF="Right_forehead" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -700,10 +700,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_forehead_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_forehead_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_forehead_MorphInterpolator" name="Right_forehead_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Right_forehead_MorphInterpolator" name="right_forehead_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_lower_eyelid" name="Right_lower_eyelid">
+<HAnimSegment DEF="hanim_Right_lower_eyelid" name="right_lower_eyelid">
 <Transform DEF="Right_lower_eyelid" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -720,10 +720,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_lower_eyelid_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_lower_eyelid_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_lower_eyelid_MorphInterpolator" name="Right_lower_eyelid_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Right_lower_eyelid_MorphInterpolator" name="right_lower_eyelid_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_lower_vermillion_lip" name="Right_lower_vermillion_lip">
+<HAnimSegment DEF="hanim_Right_lower_vermillion_lip" name="right_lower_vermillion_lip">
 <Transform DEF="Right_lower_vermillion_lip" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -740,10 +740,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_lower_vermillion_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_lower_vermillion_lip_MorphInterpolator" name="Right_lower_vermillion_lip_MorphInterpolator" weight="0" containerField="displacers" coordIndex="2" displacements="-1.176 0.13 -0.375">
+<HAnimDisplacer DEF="Right_lower_vermillion_lip_MorphInterpolator" name="right_lower_vermillion_lip_morphinterpolator" weight="0" containerField="displacers" coordIndex="2" displacements="-1.176 0.13 -0.375">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_nasolabial_cheek" name="Right_nasolabial_cheek">
+<HAnimSegment DEF="hanim_Right_nasolabial_cheek" name="right_nasolabial_cheek">
 <Transform DEF="Right_nasolabial_cheek" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -760,10 +760,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_nasolabial_cheek_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_nasolabial_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_nasolabial_cheek_MorphInterpolator" name="Right_nasolabial_cheek_MorphInterpolator" weight="0" containerField="displacers" coordIndex="5" displacements="-1.176 0.13 -0.375">
+<HAnimDisplacer DEF="Right_nasolabial_cheek_MorphInterpolator" name="right_nasolabial_cheek_morphinterpolator" weight="0" containerField="displacers" coordIndex="5" displacements="-1.176 0.13 -0.375">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_nostril" name="Right_nostril">
+<HAnimSegment DEF="hanim_Right_nostril" name="right_nostril">
 <Transform DEF="Right_nostril" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -780,10 +780,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_nostril_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_nostril_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_nostril_MorphInterpolator" name="Right_nostril_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Right_nostril_MorphInterpolator" name="right_nostril_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_pupil" name="Right_pupil">
+<HAnimSegment DEF="hanim_Right_pupil" name="right_pupil">
 <Transform DEF="Right_pupil" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -800,10 +800,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_pupil_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_pupil_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_pupil_MorphInterpolator" name="Right_pupil_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Right_pupil_MorphInterpolator" name="right_pupil_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_temple" name="Right_temple">
+<HAnimSegment DEF="hanim_Right_temple" name="right_temple">
 <Transform DEF="Right_temple" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -820,10 +820,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_temple_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_temple_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_temple_MorphInterpolator" name="Right_temple_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Right_temple_MorphInterpolator" name="right_temple_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_upper_cutaneous_lip" name="Right_upper_cutaneous_lip">
+<HAnimSegment DEF="hanim_Right_upper_cutaneous_lip" name="right_upper_cutaneous_lip">
 <Transform DEF="Right_upper_cutaneous_lip" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -840,10 +840,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_upper_cutaneous_lip_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_upper_cutaneous_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_upper_cutaneous_lip_MorphInterpolator" name="Right_upper_cutaneous_lip_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Right_upper_cutaneous_lip_MorphInterpolator" name="right_upper_cutaneous_lip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_upper_eyelid" name="Right_upper_eyelid">
+<HAnimSegment DEF="hanim_Right_upper_eyelid" name="right_upper_eyelid">
 <Transform DEF="Right_upper_eyelid" translation="0 27.61 9.233" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -860,12 +860,12 @@
 </Coordinate>
 <ScalarInterpolator DEF="Right_upper_eyelid_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Right_upper_eyelid_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Right_upper_eyelid_MorphInterpolator" name="Right_upper_eyelid_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Right_upper_eyelid_MorphInterpolator" name="right_upper_eyelid_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Right_upper_vermillion_lip" name="Right_upper_vermillion_lip">
+<HAnimSegment DEF="hanim_Right_upper_vermillion_lip" name="right_upper_vermillion_lip">
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Tongue" name="Tongue">
+<HAnimSegment DEF="hanim_Tongue" name="tongue">
 <Transform DEF="Tongue" translation="0 8.886 11.09" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -882,10 +882,10 @@
 </Coordinate>
 <ScalarInterpolator DEF="Tongue_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Tongue_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Tongue_MorphInterpolator" name="Tongue_MorphInterpolator" weight="0" containerField="displacers">
+<HAnimDisplacer DEF="Tongue_MorphInterpolator" name="tongue_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
-<HAnimSegment DEF="hanim_Upper_teeth" name="Upper_teeth">
+<HAnimSegment DEF="hanim_Upper_teeth" name="upper_teeth">
 <Transform DEF="Upper_teeth" translation="0 9.723 11.65" rotation="0 0 0 0" scale="1 1 1">
 <Shape>
 <Appearance>
@@ -902,7 +902,7 @@
 </Coordinate>
 <ScalarInterpolator DEF="Upper_teeth_AnimationAdapter" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <TimeSensor DEF="Upper_teeth_Clock" cycleInterval="4" enabled="true" loop="true" />
-<HAnimDisplacer DEF="Upper_teeth_MorphInterpolator" name="Upper_teeth_MorphInterpolator" weight="0" containerField="displacers" coordIndex="1 219 711 1006" displacements="0.0 0.0001 0.0, 0.0 -0.0001 0.0, 0.0 0.0001 0.0, 0.0 -0.0001 0.0">
+<HAnimDisplacer DEF="Upper_teeth_MorphInterpolator" name="upper_teeth_morphinterpolator" weight="0" containerField="displacers" coordIndex="1 219 711 1006" displacements="0.0 0.0001 0.0, 0.0 -0.0001 0.0, 0.0 0.0001 0.0, 0.0 -0.0001 0.0">
 </HAnimDisplacer>
 </HAnimSegment>
 </HAnimJoint>
