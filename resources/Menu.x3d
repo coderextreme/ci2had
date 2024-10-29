@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd"><X3D xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsi:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd">
   <head>
-    <meta content="SwitchInlineMenu.x3d" name="title"/>
+    <meta content="Menu.x3d" name="title"/>
     <meta content="X3D scene with a Switch of Inlines controlled by a menu" name="description"/>
   </head>
   <Scene>
@@ -33,7 +33,7 @@
               <Material diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet DEF='Backing' coordIndex='0 1 2 3 -1'>
-                <Coordinate point='25 45 -0.01, -25 45 -0.01, -25 -45 -0.01, 25 -45 -0.01'/>
+                <Coordinate point='25 36 -0.01, -25 36 -0.01, -25 -51 -0.01, 25 -51 -0.01'/>
              </IndexedFaceSet>
           </Shape>
         </Transform>

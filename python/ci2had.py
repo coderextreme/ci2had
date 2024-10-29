@@ -42,6 +42,9 @@ def find_elements_by_prefix(root, prefix):
             matched_elements.append(elem)
     return matched_elements
 
+def findAnimation(input_filename):
+    return input_filename.replace("../resources", "")[1:-4]
+
 def process_file(file_input, file_output):
     print(f"Input file: {file_input.name}")
     X3D = xml.etree.ElementTree.parse(file_input)
@@ -140,7 +143,7 @@ def process_file(file_input, file_output):
                 pass
 
         if new_node is not None:
-            new_node.set("DEF", DEF)
+            new_node.set("DEF", DEF+"_"+findAnimation(file_output))
             new_node.set("name", DEF.lower())
             new_node.set("weight", "0")
             new_node.set("containerField", "displacers")
@@ -152,10 +155,13 @@ def process_file(file_input, file_output):
                 # Add the HAnimDisplacer to the 'sacrum' segment
                 if new_node is not None:
                     sacrum.append(new_node)
+                    # CoordinateInterpolator changed to HAnimDisplacer
+                    routes = root.findall(".//ROUTE[@fromField='value_changed'][@toField='set_fraction'][@toNode='"+DEF+"']")
                     # Replace set_fraction with weight
-                    routes = root.findall(".//ROUTE[@toField='set_fraction'][@toNode='"+DEF+"']")
                     for route in routes:
+                        route.set("fromNode", route.get("fromNode")+"_"+findAnimation(file_output))
                         route.set("toField", "weight")
+                        route.set("toNode", DEF+"_"+findAnimation(file_output))
 
                     # Replace value_changed with weight
                     routes = root.findall(".//ROUTE[@fromField='value_changed'][@fromNode='"+DEF+"']")
@@ -194,6 +200,15 @@ def process_file(file_input, file_output):
 
                         parent.remove(cis)
         # parent.remove(cis)
+    # Clock to Adapter
+    routes = scene.findall(".//ROUTE[@fromField='fraction_changed'][@toField='set_fraction']")
+    for route in routes:
+        route.set("toNode", route.get("toNode")+"_"+findAnimation(file_output))
+
+    scinterpolators = root.findall(".//ScalarInterpolator")
+    for scinterpolator in scinterpolators:
+        scinterpolator.set("DEF", scinterpolator.get("DEF")+"_"+findAnimation(file_output))
+
 
     # Move other elements into the 'sacrum' segment
     for element in list(scene):
@@ -232,6 +247,9 @@ def process_file(file_input, file_output):
                 coordinate.text = "\n"
                 coordinate.tail = "\n"
                 segment.append(coordinate)
+            elif element.tag == 'ScalarInterpolator':
+                element.set("DEF", element.get("DEF")+"_"+findAnimation(file_output))
+                
         # Move displacer to end
         for element in list(segment):
             if element.tag == "HAnimDisplacer":
@@ -254,7 +272,13 @@ def process_file(file_input, file_output):
 #    sensor.set("size", "1000000 1000000 1000000")
 #    scene.append(sensor)
 
-#    for ts in root.iter('TimeSensor'):
+    for ts in root.iter('TimeSensor'):
+        export = xml.etree.ElementTree.Element('EXPORT')
+        export.text = "\n"
+        export.tail = "\n"
+        export.set("localDEF", ts.get("DEF"))
+        export.set("AS", ts.get("DEF"))
+        scene.append(export)
 #        route = xml.etree.ElementTree.Element('ROUTE')
 #        route.text = "\n"
 #        route.tail = "\n"
@@ -294,7 +318,7 @@ with open("../resources/Menu.x3d", "w") as menu_file:
     menu_file.write('''<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd"><X3D xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsi:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd">
   <head>
-    <meta content="SwitchInlineMenu.x3d" name="title"/>
+    <meta content="Menu.x3d" name="title"/>
     <meta content="X3D scene with a Switch of Inlines controlled by a menu" name="description"/>
   </head>
   <Scene>
@@ -326,7 +350,7 @@ with open("../resources/Menu.x3d", "w") as menu_file:
               <Material diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet DEF='Backing' coordIndex='0 1 2 3 -1'>
-                <Coordinate point='25 45 -0.01, -25 45 -0.01, -25 -45 -0.01, 25 -45 -0.01'/>
+                <Coordinate point='25 36 -0.01, -25 36 -0.01, -25 -51 -0.01, 25 -51 -0.01'/>
              </IndexedFaceSet>
           </Shape>
         </Transform>
