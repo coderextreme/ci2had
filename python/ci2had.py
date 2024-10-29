@@ -84,6 +84,13 @@ def process_file(file_input, file_output):
     sacrum.set('name', "sacrum")
     humanoid_root.insert(0, sacrum)
 
+    sacrum_use = xml.etree.ElementTree.Element('HAnimSegment')
+    sacrum_use.set("USE", "hanim_sacrum")
+    sacrum_use.set("containerField", "segments")
+    sacrum_use.text = "\n"
+    sacrum_use.tail = "\n"
+    humanoid.append(sacrum_use)
+
     skullbase = xml.etree.ElementTree.Element('HAnimJoint')
     skullbase.set("DEF", "hanim_skullbase")
     skullbase.set("name", "skullbase")
@@ -159,7 +166,7 @@ def process_file(file_input, file_output):
                     routes = root.findall(".//ROUTE[@fromField='value_changed'][@toField='set_fraction'][@toNode='"+DEF+"']")
                     # Replace set_fraction with weight
                     for route in routes:
-                        route.set("fromNode", route.get("fromNode")+"_"+findAnimation(file_output))
+                        route.set("fromNode", "AnimationAdapter_"+findAnimation(file_output))
                         route.set("toField", "weight")
                         route.set("toNode", DEF+"_"+findAnimation(file_output))
 
@@ -203,11 +210,8 @@ def process_file(file_input, file_output):
     # Clock to Adapter
     routes = scene.findall(".//ROUTE[@fromField='fraction_changed'][@toField='set_fraction']")
     for route in routes:
-        route.set("toNode", route.get("toNode")+"_"+findAnimation(file_output))
-
-    scinterpolators = root.findall(".//ScalarInterpolator")
-    for scinterpolator in scinterpolators:
-        scinterpolator.set("DEF", scinterpolator.get("DEF")+"_"+findAnimation(file_output))
+        route.set("toNode", "AnimationAdapter_"+findAnimation(file_output))
+        route.set("fromNode", findAnimation(file_output)+"_Clock")
 
 
     # Move other elements into the 'sacrum' segment
@@ -221,6 +225,35 @@ def process_file(file_input, file_output):
 
     def_prefixes = ["Hair", "__0", "__2", "__4", "Center_lower_vermillion_lip", "Chin", "Glabella", "Left_bulbar_conjunctiva", "Left_cheek", "Left_dorsum", "Left_ear", "Left_eyebrow", "Left_forehead", "Left_lower_eyelid", "Left_lower_vermillion_lip", "Left_nasolabial_cheek", "Left_nostril", "Left_pupil", "Left_temple", "Left_upper_cutaneous_lip", "Left_upper_eyelid", "Left_upper_vermillion_lip", "Left_upper_vermillion_lip001", "Lower_teeth", "Mid_forehead", "Mid_nasal_dorsum", "Mid_upper_vermillion_lip", "Nasal_tip", "Neck", "Occipital_scalp", "Philtrum", "Right_bulbar_conjunctiva", "Right_cheek", "Right_dorsum", "Right_ear", "Right_eyebrow", "Right_forehead", "Right_lower_eyelid", "Right_lower_vermillion_lip", "Right_nasolabial_cheek", "Right_nostril", "Right_pupil", "Right_temple", "Right_upper_cutaneous_lip", "Right_upper_eyelid", "Right_upper_vermillion_lip", "Tongue", "Upper_teeth"]
 
+    firstScalarInterpolator = None
+    elements = root.findall(".//ScalarInterpolator")
+    for element in elements:
+        par = find_parent(root, element)
+        par.remove(element)
+        if firstScalarInterpolator is None:
+            print(f"DEFing {element.tag}")
+            element.set("DEF", "AnimationAdapter_"+findAnimation(file_output))
+            firstScalarInterpolator = element
+            scene.insert(0, firstScalarInterpolator)
+
+    firstTimeSensor = None
+    elements = root.findall(".//TimeSensor")
+    for element in elements:
+        par = find_parent(root, element)
+        par.remove(element)
+        if firstTimeSensor is None:
+            print(f"DEFing {element.tag}")
+            element.set("DEF", findAnimation(file_output)+"_Clock")
+            export = xml.etree.ElementTree.Element('EXPORT')
+            export.text = "\n"
+            export.tail = "\n"
+            export.set("localDEF", element.get("DEF"))
+            export.set("AS", element.get("DEF"))
+            scene.insert(0,export)
+
+            firstTimeSensor = element
+            scene.insert(0, firstTimeSensor)
+
     for prefix in def_prefixes:
         elements = find_elements_by_prefix(root, prefix)
         segment = xml.etree.ElementTree.Element('HAnimSegment')
@@ -229,6 +262,14 @@ def process_file(file_input, file_output):
         segment.set('DEF', "hanim_"+prefix)
         segment.set('name', prefix.lower())
         skullbase.append(segment)
+
+        segment_use = xml.etree.ElementTree.Element('HAnimSegment')
+        segment_use.set('USE', "hanim_"+prefix)
+        segment_use.set("containerField", "segments")
+        segment_use.text = "\n"
+        segment_use.tail = "\n"
+        humanoid.append(segment_use)
+
         for element in elements:
             par = find_parent(root, element)
             if element.tag == 'CoordinateInterpolator':
@@ -247,8 +288,6 @@ def process_file(file_input, file_output):
                 coordinate.text = "\n"
                 coordinate.tail = "\n"
                 segment.append(coordinate)
-            elif element.tag == 'ScalarInterpolator':
-                element.set("DEF", element.get("DEF")+"_"+findAnimation(file_output))
                 
         # Move displacer to end
         for element in list(segment):
@@ -272,13 +311,6 @@ def process_file(file_input, file_output):
 #    sensor.set("size", "1000000 1000000 1000000")
 #    scene.append(sensor)
 
-    for ts in root.iter('TimeSensor'):
-        export = xml.etree.ElementTree.Element('EXPORT')
-        export.text = "\n"
-        export.tail = "\n"
-        export.set("localDEF", ts.get("DEF"))
-        export.set("AS", ts.get("DEF"))
-        scene.append(export)
 #        route = xml.etree.ElementTree.Element('ROUTE')
 #        route.text = "\n"
 #        route.tail = "\n"

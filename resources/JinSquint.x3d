@@ -10,6 +10,10 @@
 </head>
 <Scene>
 <Viewpoint position="0 20 110" />
+<TimeSensor DEF="JinSquint_Clock" cycleInterval="4" enabled="true" loop="true" />
+<EXPORT localDEF="JinSquint_Clock" AS="JinSquint_Clock">
+</EXPORT>
+<ScalarInterpolator DEF="AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
 <HAnimHumanoid DEF="hanim_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim_sacrum" name="sacrum">
@@ -36,8 +40,6 @@
 
 <Coordinate USE="__2-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="__2_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="__2_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="__2_MorphInterpolator_JinSquint" name="__2_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -58,8 +60,6 @@
 </Transform>
 <Coordinate USE="Center_lower_vermillion_lip-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Center_lower_vermillion_lip_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Center_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Center_lower_vermillion_lip_MorphInterpolator_JinSquint" name="center_lower_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -78,8 +78,6 @@
 </Transform>
 <Coordinate USE="Chin-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Chin_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Chin_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Chin_MorphInterpolator_JinSquint" name="chin_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -98,8 +96,6 @@
 </Transform>
 <Coordinate USE="Glabella-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Glabella_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Glabella_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Glabella_MorphInterpolator_JinSquint" name="glabella_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -118,8 +114,6 @@
 </Transform>
 <Coordinate USE="Left_bulbar_conjunctiva-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_bulbar_conjunctiva_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_bulbar_conjunctiva_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_bulbar_conjunctiva_MorphInterpolator_JinSquint" name="left_bulbar_conjunctiva_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -138,8 +132,6 @@
 </Transform>
 <Coordinate USE="Left_cheek-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_cheek_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_cheek_MorphInterpolator_JinSquint" name="left_cheek_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -158,8 +150,6 @@
 </Transform>
 <Coordinate USE="Left_dorsum-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_dorsum_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_dorsum_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_dorsum_MorphInterpolator_JinSquint" name="left_dorsum_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -178,8 +168,6 @@
 </Transform>
 <Coordinate USE="Left_ear-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_ear_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_ear_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_ear_MorphInterpolator_JinSquint" name="left_ear_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -198,8 +186,6 @@
 </Transform>
 <Coordinate USE="Left_eyebrow-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_eyebrow_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_eyebrow_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_eyebrow_MorphInterpolator_JinSquint" name="left_eyebrow_morphinterpolator" weight="0" containerField="displacers" coordIndex="7 8" displacements="0.0 -0.4631 0.0, 0.0 -0.4632 0.0">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -218,8 +204,6 @@
 </Transform>
 <Coordinate USE="Left_forehead-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_forehead_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_forehead_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_forehead_MorphInterpolator_JinSquint" name="left_forehead_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -238,8 +222,6 @@
 </Transform>
 <Coordinate USE="Left_lower_eyelid-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_lower_eyelid_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_lower_eyelid_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_lower_eyelid_MorphInterpolator_JinSquint" name="left_lower_eyelid_morphinterpolator" weight="0" containerField="displacers" coordIndex="0 1 2 3 4 10 11 12" displacements="0.0 0.6387 0.7019, 0.0 0.3839 0.263, 0.0 0.499 0.4721, 0.0 0.7235 0.3988, 0.0 0.6387 0.398, 0.0 0.6386 0.399, 0.0 -0.078 0.0, 0.0 -0.078 0.0">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -258,8 +240,6 @@
 </Transform>
 <Coordinate USE="Left_lower_vermillion_lip-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_lower_vermillion_lip_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_lower_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_lower_vermillion_lip_MorphInterpolator_JinSquint" name="left_lower_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -278,8 +258,6 @@
 </Transform>
 <Coordinate USE="Left_nasolabial_cheek-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_nasolabial_cheek_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_nasolabial_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_nasolabial_cheek_MorphInterpolator_JinSquint" name="left_nasolabial_cheek_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -298,8 +276,6 @@
 </Transform>
 <Coordinate USE="Left_nostril-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_nostril_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_nostril_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_nostril_MorphInterpolator_JinSquint" name="left_nostril_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -318,8 +294,6 @@
 </Transform>
 <Coordinate USE="Left_pupil-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_pupil_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_pupil_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_pupil_MorphInterpolator_JinSquint" name="left_pupil_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -338,8 +312,6 @@
 </Transform>
 <Coordinate USE="Left_temple-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_temple_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_temple_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_temple_MorphInterpolator_JinSquint" name="left_temple_morphinterpolator" weight="0" containerField="displacers" coordIndex="8 11" displacements="0.0 -0.4529 0.0, 0.0 -0.077 0.0">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -358,8 +330,6 @@
 </Transform>
 <Coordinate USE="Left_upper_cutaneous_lip-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_upper_cutaneous_lip_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_upper_cutaneous_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_upper_cutaneous_lip_MorphInterpolator_JinSquint" name="left_upper_cutaneous_lip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -378,8 +348,6 @@
 </Transform>
 <Coordinate USE="Left_upper_eyelid-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_upper_eyelid_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_upper_eyelid_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_upper_eyelid_MorphInterpolator_JinSquint" name="left_upper_eyelid_morphinterpolator" weight="0" containerField="displacers" coordIndex="1 3 4 5 6 10 12" displacements="0.0 -0.5962 0.0, 0.0 -0.7726 -0.115, 0.0 -0.7324 0.0, 0.0 -0.0775 0.0, 0.0 -0.463 0.0, 0.0 -0.464 0.0, 0.0 -0.0776 0.0">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -398,8 +366,6 @@
 </Transform>
 <Coordinate USE="Left_upper_vermillion_lip-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Left_upper_vermillion_lip_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Left_upper_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Left_upper_vermillion_lip_MorphInterpolator_JinSquint" name="left_upper_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -420,8 +386,6 @@
 </Transform>
 <Coordinate USE="Lower_teeth-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Lower_teeth_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Lower_teeth_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Lower_teeth_MorphInterpolator_JinSquint" name="lower_teeth_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -440,8 +404,6 @@
 </Transform>
 <Coordinate USE="Mid_forehead-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Mid_forehead_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Mid_forehead_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Mid_forehead_MorphInterpolator_JinSquint" name="mid_forehead_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -460,8 +422,6 @@
 </Transform>
 <Coordinate USE="Mid_nasal_dorsum-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Mid_nasal_dorsum_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Mid_nasal_dorsum_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Mid_nasal_dorsum_MorphInterpolator_JinSquint" name="mid_nasal_dorsum_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -480,8 +440,6 @@
 </Transform>
 <Coordinate USE="Mid_upper_vermillion_lip-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Mid_upper_vermillion_lip_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Mid_upper_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Mid_upper_vermillion_lip_MorphInterpolator_JinSquint" name="mid_upper_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -500,8 +458,6 @@
 </Transform>
 <Coordinate USE="Nasal_tip-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Nasal_tip_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Nasal_tip_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Nasal_tip_MorphInterpolator_JinSquint" name="nasal_tip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -520,8 +476,6 @@
 </Transform>
 <Coordinate USE="Neck-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Neck_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Neck_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Neck_MorphInterpolator_JinSquint" name="neck_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -540,8 +494,6 @@
 </Transform>
 <Coordinate USE="Occipital_scalp-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Occipital_scalp_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Occipital_scalp_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Occipital_scalp_MorphInterpolator_JinSquint" name="occipital_scalp_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -560,8 +512,6 @@
 </Transform>
 <Coordinate USE="Philtrum-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Philtrum_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Philtrum_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Philtrum_MorphInterpolator_JinSquint" name="philtrum_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -580,8 +530,6 @@
 </Transform>
 <Coordinate USE="Right_bulbar_conjunctiva-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_bulbar_conjunctiva_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_bulbar_conjunctiva_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_bulbar_conjunctiva_MorphInterpolator_JinSquint" name="right_bulbar_conjunctiva_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -600,8 +548,6 @@
 </Transform>
 <Coordinate USE="Right_cheek-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_cheek_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_cheek_MorphInterpolator_JinSquint" name="right_cheek_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -620,8 +566,6 @@
 </Transform>
 <Coordinate USE="Right_dorsum-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_dorsum_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_dorsum_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_dorsum_MorphInterpolator_JinSquint" name="right_dorsum_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -640,8 +584,6 @@
 </Transform>
 <Coordinate USE="Right_ear-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_ear_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_ear_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_ear_MorphInterpolator_JinSquint" name="right_ear_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -660,8 +602,6 @@
 </Transform>
 <Coordinate USE="Right_eyebrow-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_eyebrow_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_eyebrow_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_eyebrow_MorphInterpolator_JinSquint" name="right_eyebrow_morphinterpolator" weight="0" containerField="displacers" coordIndex="7 8" displacements="0.0 -0.4631 0.0, 0.0 -0.4632 0.0">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -680,8 +620,6 @@
 </Transform>
 <Coordinate USE="Right_forehead-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_forehead_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_forehead_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_forehead_MorphInterpolator_JinSquint" name="right_forehead_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -700,8 +638,6 @@
 </Transform>
 <Coordinate USE="Right_lower_eyelid-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_lower_eyelid_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_lower_eyelid_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_lower_eyelid_MorphInterpolator_JinSquint" name="right_lower_eyelid_morphinterpolator" weight="0" containerField="displacers" coordIndex="0 1 2 3 4 10 11 12" displacements="0.0 0.6387 0.7019, 0.0 0.3839 0.263, 0.0 0.499 0.4721, 0.0 0.7235 0.3988, 0.0 0.6387 0.398, 0.0 0.6386 0.399, 0.0 -0.078 0.0, 0.0 -0.078 0.0">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -722,8 +658,6 @@
 </Transform>
 <Coordinate USE="Right_nasolabial_cheek-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_nasolabial_cheek_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_nasolabial_cheek_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_nasolabial_cheek_MorphInterpolator_JinSquint" name="right_nasolabial_cheek_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -742,8 +676,6 @@
 </Transform>
 <Coordinate USE="Right_nostril-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_nostril_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_nostril_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_nostril_MorphInterpolator_JinSquint" name="right_nostril_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -762,8 +694,6 @@
 </Transform>
 <Coordinate USE="Right_pupil-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_pupil_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_pupil_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_pupil_MorphInterpolator_JinSquint" name="right_pupil_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -782,8 +712,6 @@
 </Transform>
 <Coordinate USE="Right_temple-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_temple_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_temple_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_temple_MorphInterpolator_JinSquint" name="right_temple_morphinterpolator" weight="0" containerField="displacers" coordIndex="8 11" displacements="-0.003 -0.4639 0.004, 0.0 -0.075 0.0">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -802,8 +730,6 @@
 </Transform>
 <Coordinate USE="Right_upper_cutaneous_lip-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_upper_cutaneous_lip_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_upper_cutaneous_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_upper_cutaneous_lip_MorphInterpolator_JinSquint" name="right_upper_cutaneous_lip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -822,8 +748,6 @@
 </Transform>
 <Coordinate USE="Right_upper_eyelid-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_upper_eyelid_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_upper_eyelid_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_upper_eyelid_MorphInterpolator_JinSquint" name="right_upper_eyelid_morphinterpolator" weight="0" containerField="displacers" coordIndex="1 3 4 5 6 10 12" displacements="0.0 -0.5962 0.0, 0.0 -0.7726 -0.115, 0.0 -0.7324 0.0, 0.0 -0.0775 0.0, 0.0 -0.463 0.0, 0.002 -0.464 0.0, 0.0 -0.0776 0.0">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -842,8 +766,6 @@
 </Transform>
 <Coordinate USE="Right_upper_vermillion_lip-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Right_upper_vermillion_lip_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Right_upper_vermillion_lip_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Right_upper_vermillion_lip_MorphInterpolator_JinSquint" name="right_upper_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -862,8 +784,6 @@
 </Transform>
 <Coordinate USE="Tongue-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Tongue_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Tongue_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Tongue_MorphInterpolator_JinSquint" name="tongue_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -882,8 +802,6 @@
 </Transform>
 <Coordinate USE="Upper_teeth-COORD" containerField="coord">
 </Coordinate>
-<ScalarInterpolator DEF="Upper_teeth_AnimationAdapter_JinSquint" key="0 0.1 0.15 0.2 0.3 0.35 0.4 0.5" keyValue="0 0 0.5 1 1 0.5 0 0" />
-<TimeSensor DEF="Upper_teeth_Clock" cycleInterval="4" enabled="true" loop="true" />
 <HAnimDisplacer DEF="Upper_teeth_MorphInterpolator_JinSquint" name="upper_teeth_morphinterpolator" weight="0" containerField="displacers">
 </HAnimDisplacer>
 </HAnimSegment>
@@ -891,223 +809,235 @@
 </HAnimJoint>
 <HAnimJoint USE="hanim_root" containerField="joints">
 </HAnimJoint>
+<HAnimSegment USE="hanim_sacrum" containerField="segments">
+</HAnimSegment>
 <HAnimJoint USE="hanim_skullbase" containerField="joints">
 </HAnimJoint>
+<HAnimSegment USE="hanim_Hair" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim___0" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim___2" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim___4" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Center_lower_vermillion_lip" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Chin" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Glabella" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_bulbar_conjunctiva" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_cheek" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_dorsum" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_ear" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_eyebrow" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_forehead" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_lower_eyelid" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_lower_vermillion_lip" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_nasolabial_cheek" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_nostril" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_pupil" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_temple" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_upper_cutaneous_lip" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_upper_eyelid" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_upper_vermillion_lip" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Left_upper_vermillion_lip001" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Lower_teeth" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Mid_forehead" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Mid_nasal_dorsum" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Mid_upper_vermillion_lip" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Nasal_tip" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Neck" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Occipital_scalp" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Philtrum" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_bulbar_conjunctiva" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_cheek" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_dorsum" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_ear" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_eyebrow" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_forehead" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_lower_eyelid" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_lower_vermillion_lip" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_nasolabial_cheek" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_nostril" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_pupil" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_temple" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_upper_cutaneous_lip" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_upper_eyelid" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Right_upper_vermillion_lip" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Tongue" containerField="segments">
+</HAnimSegment>
+<HAnimSegment USE="hanim_Upper_teeth" containerField="segments">
+</HAnimSegment>
 </HAnimHumanoid>
-<ROUTE fromField="value_changed" fromNode="Lower_teeth_AnimationAdapter_JinSquint" toField="weight" toNode="Lower_teeth_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Lower_teeth_Clock" toField="set_fraction" toNode="Lower_teeth_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Lower_teeth_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Tongue_AnimationAdapter_JinSquint" toField="weight" toNode="Tongue_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Tongue_Clock" toField="set_fraction" toNode="Tongue_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Tongue_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Upper_teeth_AnimationAdapter_JinSquint" toField="weight" toNode="Upper_teeth_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Upper_teeth_Clock" toField="set_fraction" toNode="Upper_teeth_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Upper_teeth_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Mid_upper_vermillion_lip_AnimationAdapter_JinSquint" toField="weight" toNode="Mid_upper_vermillion_lip_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Mid_upper_vermillion_lip_Clock" toField="set_fraction" toNode="Mid_upper_vermillion_lip_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Mid_upper_vermillion_lip_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Neck_AnimationAdapter_JinSquint" toField="weight" toNode="Neck_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Neck_Clock" toField="set_fraction" toNode="Neck_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Neck_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Occipital_scalp_AnimationAdapter_JinSquint" toField="weight" toNode="Occipital_scalp_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Occipital_scalp_Clock" toField="set_fraction" toNode="Occipital_scalp_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Occipital_scalp_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_ear_AnimationAdapter_JinSquint" toField="weight" toNode="Left_ear_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_ear_Clock" toField="set_fraction" toNode="Left_ear_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_ear_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Mid_forehead_AnimationAdapter_JinSquint" toField="weight" toNode="Mid_forehead_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Mid_forehead_Clock" toField="set_fraction" toNode="Mid_forehead_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Mid_forehead_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_forehead_AnimationAdapter_JinSquint" toField="weight" toNode="Left_forehead_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_forehead_Clock" toField="set_fraction" toNode="Left_forehead_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_forehead_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Glabella_AnimationAdapter_JinSquint" toField="weight" toNode="Glabella_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Glabella_Clock" toField="set_fraction" toNode="Glabella_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Glabella_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Chin_AnimationAdapter_JinSquint" toField="weight" toNode="Chin_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Chin_Clock" toField="set_fraction" toNode="Chin_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Chin_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_lower_vermillion_lip_AnimationAdapter_JinSquint" toField="weight" toNode="Left_lower_vermillion_lip_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_lower_vermillion_lip_Clock" toField="set_fraction" toNode="Left_lower_vermillion_lip_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_lower_vermillion_lip_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Center_lower_vermillion_lip_AnimationAdapter_JinSquint" toField="weight" toNode="Center_lower_vermillion_lip_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Center_lower_vermillion_lip_Clock" toField="set_fraction" toNode="Center_lower_vermillion_lip_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Center_lower_vermillion_lip_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_eyebrow_AnimationAdapter_JinSquint" toField="weight" toNode="Left_eyebrow_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_eyebrow_Clock" toField="set_fraction" toNode="Left_eyebrow_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_eyebrow_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_bulbar_conjunctiva_AnimationAdapter_JinSquint" toField="weight" toNode="Left_bulbar_conjunctiva_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_bulbar_conjunctiva_Clock" toField="set_fraction" toNode="Left_bulbar_conjunctiva_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_bulbar_conjunctiva_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_temple_AnimationAdapter_JinSquint" toField="weight" toNode="Left_temple_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_temple_Clock" toField="set_fraction" toNode="Left_temple_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_temple_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Mid_nasal_dorsum_AnimationAdapter_JinSquint" toField="weight" toNode="Mid_nasal_dorsum_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Mid_nasal_dorsum_Clock" toField="set_fraction" toNode="Mid_nasal_dorsum_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Mid_nasal_dorsum_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Nasal_tip_AnimationAdapter_JinSquint" toField="weight" toNode="Nasal_tip_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Nasal_tip_Clock" toField="set_fraction" toNode="Nasal_tip_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Nasal_tip_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_nostril_AnimationAdapter_JinSquint" toField="weight" toNode="Left_nostril_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_nostril_Clock" toField="set_fraction" toNode="Left_nostril_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_nostril_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_dorsum_AnimationAdapter_JinSquint" toField="weight" toNode="Left_dorsum_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_dorsum_Clock" toField="set_fraction" toNode="Left_dorsum_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_dorsum_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_nasolabial_cheek_AnimationAdapter_JinSquint" toField="weight" toNode="Left_nasolabial_cheek_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_nasolabial_cheek_Clock" toField="set_fraction" toNode="Left_nasolabial_cheek_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_nasolabial_cheek_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_cheek_AnimationAdapter_JinSquint" toField="weight" toNode="Left_cheek_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_cheek_Clock" toField="set_fraction" toNode="Left_cheek_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_cheek_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_upper_vermillion_lip_AnimationAdapter_JinSquint" toField="weight" toNode="Left_upper_vermillion_lip_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_upper_vermillion_lip_Clock" toField="set_fraction" toNode="Left_upper_vermillion_lip_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_upper_vermillion_lip_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_upper_cutaneous_lip_AnimationAdapter_JinSquint" toField="weight" toNode="Left_upper_cutaneous_lip_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_upper_cutaneous_lip_Clock" toField="set_fraction" toNode="Left_upper_cutaneous_lip_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_upper_cutaneous_lip_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Philtrum_AnimationAdapter_JinSquint" toField="weight" toNode="Philtrum_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Philtrum_Clock" toField="set_fraction" toNode="Philtrum_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Philtrum_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_forehead_AnimationAdapter_JinSquint" toField="weight" toNode="Right_forehead_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_forehead_Clock" toField="set_fraction" toNode="Right_forehead_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_forehead_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_eyebrow_AnimationAdapter_JinSquint" toField="weight" toNode="Right_eyebrow_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_eyebrow_Clock" toField="set_fraction" toNode="Right_eyebrow_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_eyebrow_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_upper_eyelid_AnimationAdapter_JinSquint" toField="weight" toNode="Left_upper_eyelid_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_upper_eyelid_Clock" toField="set_fraction" toNode="Left_upper_eyelid_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_upper_eyelid_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_lower_eyelid_AnimationAdapter_JinSquint" toField="weight" toNode="Left_lower_eyelid_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_lower_eyelid_Clock" toField="set_fraction" toNode="Left_lower_eyelid_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_lower_eyelid_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Left_pupil_AnimationAdapter_JinSquint" toField="weight" toNode="Left_pupil_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Left_pupil_Clock" toField="set_fraction" toNode="Left_pupil_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Left_pupil_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_ear_AnimationAdapter_JinSquint" toField="weight" toNode="Right_ear_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_ear_Clock" toField="set_fraction" toNode="Right_ear_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_ear_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_cheek_AnimationAdapter_JinSquint" toField="weight" toNode="Right_cheek_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_cheek_Clock" toField="set_fraction" toNode="Right_cheek_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_cheek_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_dorsum_AnimationAdapter_JinSquint" toField="weight" toNode="Right_dorsum_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_dorsum_Clock" toField="set_fraction" toNode="Right_dorsum_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_dorsum_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_bulbar_conjunctiva_AnimationAdapter_JinSquint" toField="weight" toNode="Right_bulbar_conjunctiva_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_bulbar_conjunctiva_Clock" toField="set_fraction" toNode="Right_bulbar_conjunctiva_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_bulbar_conjunctiva_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_lower_eyelid_AnimationAdapter_JinSquint" toField="weight" toNode="Right_lower_eyelid_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_lower_eyelid_Clock" toField="set_fraction" toNode="Right_lower_eyelid_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_lower_eyelid_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_nasolabial_cheek_AnimationAdapter_JinSquint" toField="weight" toNode="Right_nasolabial_cheek_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_nasolabial_cheek_Clock" toField="set_fraction" toNode="Right_nasolabial_cheek_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_nasolabial_cheek_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_nostril_AnimationAdapter_JinSquint" toField="weight" toNode="Right_nostril_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_nostril_Clock" toField="set_fraction" toNode="Right_nostril_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_nostril_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_pupil_AnimationAdapter_JinSquint" toField="weight" toNode="Right_pupil_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_pupil_Clock" toField="set_fraction" toNode="Right_pupil_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_pupil_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_temple_AnimationAdapter_JinSquint" toField="weight" toNode="Right_temple_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_temple_Clock" toField="set_fraction" toNode="Right_temple_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_temple_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_upper_cutaneous_lip_AnimationAdapter_JinSquint" toField="weight" toNode="Right_upper_cutaneous_lip_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_upper_cutaneous_lip_Clock" toField="set_fraction" toNode="Right_upper_cutaneous_lip_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_upper_cutaneous_lip_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_upper_eyelid_AnimationAdapter_JinSquint" toField="weight" toNode="Right_upper_eyelid_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_upper_eyelid_Clock" toField="set_fraction" toNode="Right_upper_eyelid_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_upper_eyelid_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="Right_upper_vermillion_lip_AnimationAdapter_JinSquint" toField="weight" toNode="Right_upper_vermillion_lip_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="Right_upper_vermillion_lip_Clock" toField="set_fraction" toNode="Right_upper_vermillion_lip_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="Right_upper_vermillion_lip_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<ROUTE fromField="value_changed" fromNode="__2_AnimationAdapter_JinSquint" toField="weight" toNode="__2_MorphInterpolator_JinSquint" />
-<ROUTE fromField="fraction_changed" fromNode="__2_Clock" toField="set_fraction" toNode="__2_AnimationAdapter_JinSquint" />
+<ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinSquint" toField="weight" toNode="__2_MorphInterpolator_JinSquint" />
+<ROUTE fromField="fraction_changed" fromNode="JinSquint_Clock" toField="set_fraction" toNode="AnimationAdapter_JinSquint" />
 
-<EXPORT localDEF="__2_Clock" AS="__2_Clock">
-</EXPORT>
-<EXPORT localDEF="Center_lower_vermillion_lip_Clock" AS="Center_lower_vermillion_lip_Clock">
-</EXPORT>
-<EXPORT localDEF="Chin_Clock" AS="Chin_Clock">
-</EXPORT>
-<EXPORT localDEF="Glabella_Clock" AS="Glabella_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_bulbar_conjunctiva_Clock" AS="Left_bulbar_conjunctiva_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_cheek_Clock" AS="Left_cheek_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_dorsum_Clock" AS="Left_dorsum_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_ear_Clock" AS="Left_ear_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_eyebrow_Clock" AS="Left_eyebrow_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_forehead_Clock" AS="Left_forehead_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_lower_eyelid_Clock" AS="Left_lower_eyelid_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_lower_vermillion_lip_Clock" AS="Left_lower_vermillion_lip_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_nasolabial_cheek_Clock" AS="Left_nasolabial_cheek_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_nostril_Clock" AS="Left_nostril_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_pupil_Clock" AS="Left_pupil_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_temple_Clock" AS="Left_temple_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_upper_cutaneous_lip_Clock" AS="Left_upper_cutaneous_lip_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_upper_eyelid_Clock" AS="Left_upper_eyelid_Clock">
-</EXPORT>
-<EXPORT localDEF="Left_upper_vermillion_lip_Clock" AS="Left_upper_vermillion_lip_Clock">
-</EXPORT>
-<EXPORT localDEF="Lower_teeth_Clock" AS="Lower_teeth_Clock">
-</EXPORT>
-<EXPORT localDEF="Mid_forehead_Clock" AS="Mid_forehead_Clock">
-</EXPORT>
-<EXPORT localDEF="Mid_nasal_dorsum_Clock" AS="Mid_nasal_dorsum_Clock">
-</EXPORT>
-<EXPORT localDEF="Mid_upper_vermillion_lip_Clock" AS="Mid_upper_vermillion_lip_Clock">
-</EXPORT>
-<EXPORT localDEF="Nasal_tip_Clock" AS="Nasal_tip_Clock">
-</EXPORT>
-<EXPORT localDEF="Neck_Clock" AS="Neck_Clock">
-</EXPORT>
-<EXPORT localDEF="Occipital_scalp_Clock" AS="Occipital_scalp_Clock">
-</EXPORT>
-<EXPORT localDEF="Philtrum_Clock" AS="Philtrum_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_bulbar_conjunctiva_Clock" AS="Right_bulbar_conjunctiva_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_cheek_Clock" AS="Right_cheek_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_dorsum_Clock" AS="Right_dorsum_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_ear_Clock" AS="Right_ear_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_eyebrow_Clock" AS="Right_eyebrow_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_forehead_Clock" AS="Right_forehead_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_lower_eyelid_Clock" AS="Right_lower_eyelid_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_nasolabial_cheek_Clock" AS="Right_nasolabial_cheek_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_nostril_Clock" AS="Right_nostril_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_pupil_Clock" AS="Right_pupil_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_temple_Clock" AS="Right_temple_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_upper_cutaneous_lip_Clock" AS="Right_upper_cutaneous_lip_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_upper_eyelid_Clock" AS="Right_upper_eyelid_Clock">
-</EXPORT>
-<EXPORT localDEF="Right_upper_vermillion_lip_Clock" AS="Right_upper_vermillion_lip_Clock">
-</EXPORT>
-<EXPORT localDEF="Tongue_Clock" AS="Tongue_Clock">
-</EXPORT>
-<EXPORT localDEF="Upper_teeth_Clock" AS="Upper_teeth_Clock">
-</EXPORT>
 </Scene>
 </X3D>
