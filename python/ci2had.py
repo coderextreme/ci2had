@@ -59,7 +59,7 @@ def process_file(file_input, file_output):
     head.insert(0, component)
 
     humanoid = xml.etree.ElementTree.Element('HAnimHumanoid')
-    humanoid.text = ""
+    humanoid.text = "\n"
     humanoid.tail = "\n"
     humanoid.set('DEF', "hanim_humanoid")
     humanoid.set('name', "humanoid")
@@ -68,17 +68,17 @@ def process_file(file_input, file_output):
     humanoid_root.set("DEF", "hanim_root")
     humanoid_root.set("name", "humanoid_root")
     humanoid_root.set("containerField", "skeleton")
-    humanoid_root.text = ""
+    humanoid_root.text = "\n"
     humanoid_root.tail = "\n"
     humanoid.append(humanoid_root)
     humanoid_root_use = xml.etree.ElementTree.Element('HAnimJoint')
     humanoid_root_use.set("USE", "hanim_root")
     humanoid_root_use.set("containerField", "joints")
-    humanoid_root_use.text = ""
+    humanoid_root_use.text = "\n"
     humanoid_root_use.tail = "\n"
     humanoid.append(humanoid_root_use)
     sacrum = xml.etree.ElementTree.Element('HAnimSegment')
-    sacrum.text = ""
+    sacrum.text = "\n"
     sacrum.tail = "\n"
     sacrum.set('DEF', "hanim_sacrum")
     sacrum.set('name', "sacrum")
@@ -87,21 +87,21 @@ def process_file(file_input, file_output):
     sacrum_use = xml.etree.ElementTree.Element('HAnimSegment')
     sacrum_use.set("USE", "hanim_sacrum")
     sacrum_use.set("containerField", "segments")
-    sacrum_use.text = ""
+    sacrum_use.text = "\n"
     sacrum_use.tail = "\n"
     humanoid.append(sacrum_use)
 
     skullbase = xml.etree.ElementTree.Element('HAnimJoint')
     skullbase.set("DEF", "hanim_skullbase")
     skullbase.set("name", "skullbase")
-    skullbase.text = ""
+    skullbase.text = "\n"
     skullbase.tail = "\n"
     humanoid_root.append(skullbase)
 
     skullbase_use = xml.etree.ElementTree.Element('HAnimJoint')
     skullbase_use.set("USE", "hanim_skullbase")
     skullbase_use.set("containerField", "joints")
-    skullbase_use.text = ""
+    skullbase_use.text = "\n"
     skullbase_use.tail = "\n"
     humanoid.append(skullbase_use)
 
@@ -278,7 +278,7 @@ def process_file(file_input, file_output):
     for prefix in def_prefixes:
         elements = find_elements_by_prefix(root, prefix)
         segment = xml.etree.ElementTree.Element('HAnimSegment')
-        segment.text = ""
+        segment.text = "\n"
         segment.tail = "\n"
         segment.set('DEF', "hanim_"+prefix)
         segment.set('name', prefix.lower())
@@ -287,7 +287,7 @@ def process_file(file_input, file_output):
         segment_use = xml.etree.ElementTree.Element('HAnimSegment')
         segment_use.set('USE', "hanim_"+prefix)
         segment_use.set("containerField", "segments")
-        segment_use.text = ""
+        segment_use.text = "\n"
         segment_use.tail = "\n"
         humanoid.append(segment_use)
 

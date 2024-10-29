@@ -11,8 +11,7 @@
 <Scene>
 <Viewpoint position="0 20 110" />
 <TimeSensor DEF="JinOuterBrowRaiser_Clock" cycleInterval="4" enabled="true" loop="true" />
-<EXPORT localDEF="JinOuterBrowRaiser_Clock" AS="JinOuterBrowRaiser_Clock">
-</EXPORT>
+<EXPORT localDEF="JinOuterBrowRaiser_Clock" AS="JinOuterBrowRaiser_Clock" />
 <ScalarInterpolator DEF="AnimationAdapter_JinOuterBrowRaiser" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
 <HAnimHumanoid DEF="hanim_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim_root" name="humanoid_root" containerField="skeleton">
@@ -40,10 +39,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Center_lower_vermillion_lip-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Center_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" name="center_lower_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Center_lower_vermillion_lip-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Center_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" name="center_lower_vermillion_lip_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Chin" name="chin">
 <Transform DEF="Chin" translation="0 6.337 7.3" rotation="0 0 0 0" scale="1 1 1">
@@ -58,10 +55,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Chin-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Chin_MorphInterpolator_JinOuterBrowRaiser" name="chin_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Chin-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Chin_MorphInterpolator_JinOuterBrowRaiser" name="chin_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Glabella" name="glabella">
 <Transform DEF="Glabella" translation="0 18.93 15.66" rotation="0 0 0 0" scale="1 1 1">
@@ -76,10 +71,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Glabella-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Glabella_MorphInterpolator_JinOuterBrowRaiser" name="glabella_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Glabella-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Glabella_MorphInterpolator_JinOuterBrowRaiser" name="glabella_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_bulbar_conjunctiva" name="left_bulbar_conjunctiva">
 <Transform DEF="Left_bulbar_conjunctiva" translation="5.794 17.61 11.15" rotation="0 0 0 0" scale="1 1 1">
@@ -94,10 +87,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_bulbar_conjunctiva-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_bulbar_conjunctiva_MorphInterpolator_JinOuterBrowRaiser" name="left_bulbar_conjunctiva_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_bulbar_conjunctiva-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_bulbar_conjunctiva_MorphInterpolator_JinOuterBrowRaiser" name="left_bulbar_conjunctiva_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_cheek" name="left_cheek">
 <Transform DEF="Left_cheek" translation="6.927 11.97 7.646" rotation="0 0 0 0" scale="1 1 1">
@@ -112,10 +103,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_cheek-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_cheek_MorphInterpolator_JinOuterBrowRaiser" name="left_cheek_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_cheek-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_cheek_MorphInterpolator_JinOuterBrowRaiser" name="left_cheek_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_dorsum" name="left_dorsum">
 <Transform DEF="Left_dorsum" translation="0.7065 14.64 14.87" rotation="0 0 0 0" scale="1 1 1">
@@ -130,10 +119,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_dorsum-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_dorsum_MorphInterpolator_JinOuterBrowRaiser" name="left_dorsum_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_dorsum-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_dorsum_MorphInterpolator_JinOuterBrowRaiser" name="left_dorsum_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_ear" name="left_ear">
 <Transform DEF="Left_ear" translation="12.49 15.99 1.017" rotation="0 0 0 0" scale="1 1 1">
@@ -148,10 +135,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_ear-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_ear_MorphInterpolator_JinOuterBrowRaiser" name="left_ear_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_ear-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_ear_MorphInterpolator_JinOuterBrowRaiser" name="left_ear_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_eyebrow" name="left_eyebrow">
 <Transform DEF="Left_eyebrow" translation="5.691 19.58 13.13" rotation="0 0 0 0" scale="1 1 1">
@@ -166,10 +151,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_eyebrow-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_eyebrow_MorphInterpolator_JinOuterBrowRaiser" name="left_eyebrow_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_eyebrow-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_eyebrow_MorphInterpolator_JinOuterBrowRaiser" name="left_eyebrow_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_forehead" name="left_forehead">
 <Transform DEF="Left_forehead" translation="6.652 27.61 9.229" rotation="0 0 0 0" scale="1 1 1">
@@ -184,10 +167,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_forehead-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_forehead_MorphInterpolator_JinOuterBrowRaiser" name="left_forehead_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_forehead-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_forehead_MorphInterpolator_JinOuterBrowRaiser" name="left_forehead_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_lower_eyelid" name="left_lower_eyelid">
 <Transform DEF="Left_lower_eyelid" translation="6.11 16.45 11.32" rotation="0 0 0 0" scale="1 1 1">
@@ -202,10 +183,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_lower_eyelid-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_lower_eyelid_MorphInterpolator_JinOuterBrowRaiser" name="left_lower_eyelid_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_lower_eyelid-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_lower_eyelid_MorphInterpolator_JinOuterBrowRaiser" name="left_lower_eyelid_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_lower_vermillion_lip" name="left_lower_vermillion_lip">
 <Transform DEF="Left_lower_vermillion_lip" translation="1.788 8.405 13.04" rotation="0 0 0 0" scale="1 1 1">
@@ -220,10 +199,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_lower_vermillion_lip-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" name="left_lower_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_lower_vermillion_lip-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" name="left_lower_vermillion_lip_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_nasolabial_cheek" name="left_nasolabial_cheek">
 <Transform DEF="Left_nasolabial_cheek" translation="2.021 10.27 13.53" rotation="0 0 0 0" scale="1 1 1">
@@ -238,10 +215,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_nasolabial_cheek-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_nasolabial_cheek_MorphInterpolator_JinOuterBrowRaiser" name="left_nasolabial_cheek_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_nasolabial_cheek-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_nasolabial_cheek_MorphInterpolator_JinOuterBrowRaiser" name="left_nasolabial_cheek_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_nostril" name="left_nostril">
 <Transform DEF="Left_nostril" translation="0.7684 11.22 15.04" rotation="0 0 0 0" scale="1 1 1">
@@ -256,10 +231,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_nostril-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_nostril_MorphInterpolator_JinOuterBrowRaiser" name="left_nostril_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_nostril-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_nostril_MorphInterpolator_JinOuterBrowRaiser" name="left_nostril_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_pupil" name="left_pupil">
 <Transform DEF="Left_pupil" translation="6.059 17.5 12.33" rotation="0 0 0 0" scale="1 1 1">
@@ -274,10 +247,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_pupil-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_pupil_MorphInterpolator_JinOuterBrowRaiser" name="left_pupil_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_pupil-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_pupil_MorphInterpolator_JinOuterBrowRaiser" name="left_pupil_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_temple" name="left_temple">
 <Transform DEF="Left_temple" translation="10.95 20.56 6.406" rotation="0 0 0 0" scale="1 1 1">
@@ -292,10 +263,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_temple-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_temple_MorphInterpolator_JinOuterBrowRaiser" name="left_temple_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_temple-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_temple_MorphInterpolator_JinOuterBrowRaiser" name="left_temple_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_upper_cutaneous_lip" name="left_upper_cutaneous_lip">
 <Transform DEF="Left_upper_cutaneous_lip" translation="0.7684 10.16 14.63" rotation="0 0 0 0" scale="1 1 1">
@@ -310,10 +279,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_upper_cutaneous_lip-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_upper_cutaneous_lip_MorphInterpolator_JinOuterBrowRaiser" name="left_upper_cutaneous_lip_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_upper_cutaneous_lip-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_upper_cutaneous_lip_MorphInterpolator_JinOuterBrowRaiser" name="left_upper_cutaneous_lip_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_upper_eyelid" name="left_upper_eyelid">
 <Transform DEF="Left_upper_eyelid" translation="5.53 17.96 12.21" rotation="0 0 0 0" scale="1 1 1">
@@ -328,10 +295,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_upper_eyelid-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_upper_eyelid_MorphInterpolator_JinOuterBrowRaiser" name="left_upper_eyelid_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_upper_eyelid-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_upper_eyelid_MorphInterpolator_JinOuterBrowRaiser" name="left_upper_eyelid_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_upper_vermillion_lip" name="left_upper_vermillion_lip">
 <Transform DEF="Left_upper_vermillion_lip" translation="1.788 9.002 13.64" rotation="0 0 0 0" scale="1 1 1">
@@ -346,10 +311,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Left_upper_vermillion_lip-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Left_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" name="left_upper_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Left_upper_vermillion_lip-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Left_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" name="left_upper_vermillion_lip_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Left_upper_vermillion_lip001" name="left_upper_vermillion_lip001">
 </HAnimSegment>
@@ -366,10 +329,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Lower_teeth-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Lower_teeth_MorphInterpolator_JinOuterBrowRaiser" name="lower_teeth_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Lower_teeth-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Lower_teeth_MorphInterpolator_JinOuterBrowRaiser" name="lower_teeth_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Mid_forehead" name="mid_forehead">
 <Transform DEF="Mid_forehead" translation="0 27.83 9.426" rotation="0 0 0 0" scale="1 1 1">
@@ -384,10 +345,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Mid_forehead-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Mid_forehead_MorphInterpolator_JinOuterBrowRaiser" name="mid_forehead_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Mid_forehead-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Mid_forehead_MorphInterpolator_JinOuterBrowRaiser" name="mid_forehead_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Mid_nasal_dorsum" name="mid_nasal_dorsum">
 <Transform DEF="Mid_nasal_dorsum" translation="0 14.79 15.76" rotation="0 0 0 0" scale="1 1 1">
@@ -402,10 +361,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Mid_nasal_dorsum-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Mid_nasal_dorsum_MorphInterpolator_JinOuterBrowRaiser" name="mid_nasal_dorsum_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Mid_nasal_dorsum-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Mid_nasal_dorsum_MorphInterpolator_JinOuterBrowRaiser" name="mid_nasal_dorsum_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Mid_upper_vermillion_lip" name="mid_upper_vermillion_lip">
 <Transform DEF="Mid_upper_vermillion_lip" translation="0 9.116 14.46" rotation="0 0 0 0" scale="1 1 1">
@@ -420,10 +377,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Mid_upper_vermillion_lip-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Mid_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" name="mid_upper_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Mid_upper_vermillion_lip-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Mid_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" name="mid_upper_vermillion_lip_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Nasal_tip" name="nasal_tip">
 <Transform DEF="Nasal_tip" translation="0 11.35 16.23" rotation="0 0 0 0" scale="1 1 1">
@@ -438,10 +393,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Nasal_tip-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Nasal_tip_MorphInterpolator_JinOuterBrowRaiser" name="nasal_tip_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Nasal_tip-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Nasal_tip_MorphInterpolator_JinOuterBrowRaiser" name="nasal_tip_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Neck" name="neck">
 <Transform DEF="Neck" translation="0 4.213 0.4657" rotation="0 0 0 0" scale="1 1 1">
@@ -456,10 +409,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Neck-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Neck_MorphInterpolator_JinOuterBrowRaiser" name="neck_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Neck-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Neck_MorphInterpolator_JinOuterBrowRaiser" name="neck_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Occipital_scalp" name="occipital_scalp">
 <Transform DEF="Occipital_scalp" translation="0 22.26 -9.81" rotation="0 0 0 0" scale="1 1 1">
@@ -474,10 +425,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Occipital_scalp-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Occipital_scalp_MorphInterpolator_JinOuterBrowRaiser" name="occipital_scalp_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Occipital_scalp-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Occipital_scalp_MorphInterpolator_JinOuterBrowRaiser" name="occipital_scalp_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Philtrum" name="philtrum">
 <Transform DEF="Philtrum" translation="0 9.815 15" rotation="0 0 0 0" scale="1 1 1">
@@ -492,10 +441,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Philtrum-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Philtrum_MorphInterpolator_JinOuterBrowRaiser" name="philtrum_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Philtrum-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Philtrum_MorphInterpolator_JinOuterBrowRaiser" name="philtrum_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_bulbar_conjunctiva" name="right_bulbar_conjunctiva">
 <Transform DEF="Right_bulbar_conjunctiva" translation="-5.794 17.61 11.15" rotation="0 0 0 0" scale="1 1 1">
@@ -510,10 +457,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_bulbar_conjunctiva-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_bulbar_conjunctiva_MorphInterpolator_JinOuterBrowRaiser" name="right_bulbar_conjunctiva_morphinterpolator" weight="0" containerField="displacers" coordIndex="19" displacements="0.0 0.135 0.0">
-</HAnimDisplacer>
+<Coordinate USE="Right_bulbar_conjunctiva-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_bulbar_conjunctiva_MorphInterpolator_JinOuterBrowRaiser" name="right_bulbar_conjunctiva_morphinterpolator" weight="0" containerField="displacers" coordIndex="19" displacements="0.0 0.135 0.0" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_cheek" name="right_cheek">
 <Transform DEF="Right_cheek" translation="-6.927 11.97 7.646" rotation="0 0 0 0" scale="1 1 1">
@@ -528,10 +473,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_cheek-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_cheek_MorphInterpolator_JinOuterBrowRaiser" name="right_cheek_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Right_cheek-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_cheek_MorphInterpolator_JinOuterBrowRaiser" name="right_cheek_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_dorsum" name="right_dorsum">
 <Transform DEF="Right_dorsum" translation="-0.7065 14.64 14.87" rotation="0 0 0 0" scale="1 1 1">
@@ -546,10 +489,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_dorsum-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_dorsum_MorphInterpolator_JinOuterBrowRaiser" name="right_dorsum_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Right_dorsum-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_dorsum_MorphInterpolator_JinOuterBrowRaiser" name="right_dorsum_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_ear" name="right_ear">
 <Transform DEF="Right_ear" translation="-12.49 15.99 1.017" rotation="0 0 0 0" scale="1 1 1">
@@ -564,10 +505,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_ear-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_ear_MorphInterpolator_JinOuterBrowRaiser" name="right_ear_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Right_ear-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_ear_MorphInterpolator_JinOuterBrowRaiser" name="right_ear_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_eyebrow" name="right_eyebrow">
 <Transform DEF="Right_eyebrow" translation="-5.691 19.58 13.13" rotation="0 0 0 0" scale="1 1 1">
@@ -582,10 +521,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_eyebrow-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_eyebrow_MorphInterpolator_JinOuterBrowRaiser" name="right_eyebrow_morphinterpolator" weight="0" containerField="displacers" coordIndex="1 5 7 8" displacements="0.0 0.655 0.0, 0.0 0.268 0.0, 0.0 0.6547 0.0, 0.0 0.2686 0.0">
-</HAnimDisplacer>
+<Coordinate USE="Right_eyebrow-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_eyebrow_MorphInterpolator_JinOuterBrowRaiser" name="right_eyebrow_morphinterpolator" weight="0" containerField="displacers" coordIndex="1 5 7 8" displacements="0.0 0.655 0.0, 0.0 0.268 0.0, 0.0 0.6547 0.0, 0.0 0.2686 0.0" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_forehead" name="right_forehead">
 <Transform DEF="Right_forehead" translation="-6.652 27.61 9.229" rotation="0 0 0 0" scale="1 1 1">
@@ -600,10 +537,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_forehead-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_forehead_MorphInterpolator_JinOuterBrowRaiser" name="right_forehead_morphinterpolator" weight="0" containerField="displacers" coordIndex="14 16" displacements="0.0 0.269 0.0, 0.0 0.654 0.0">
-</HAnimDisplacer>
+<Coordinate USE="Right_forehead-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_forehead_MorphInterpolator_JinOuterBrowRaiser" name="right_forehead_morphinterpolator" weight="0" containerField="displacers" coordIndex="14 16" displacements="0.0 0.269 0.0, 0.0 0.654 0.0" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_lower_eyelid" name="right_lower_eyelid">
 <Transform DEF="Right_lower_eyelid" translation="-6.11 16.45 11.32" rotation="0 0 0 0" scale="1 1 1">
@@ -618,10 +553,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_lower_eyelid-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_lower_eyelid_MorphInterpolator_JinOuterBrowRaiser" name="right_lower_eyelid_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Right_lower_eyelid-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_lower_eyelid_MorphInterpolator_JinOuterBrowRaiser" name="right_lower_eyelid_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_lower_vermillion_lip" name="right_lower_vermillion_lip">
 <Transform DEF="Right_lower_vermillion_lip" translation="-1.788 8.405 13.04" rotation="0 0 0 0" scale="1 1 1">
@@ -638,10 +571,8 @@
 </Transform>
 
 
-<Coordinate USE="Right_lower_vermillion_lip-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" name="right_lower_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Right_lower_vermillion_lip-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" name="right_lower_vermillion_lip_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_nasolabial_cheek" name="right_nasolabial_cheek">
 <Transform DEF="Right_nasolabial_cheek" translation="-2.021 10.27 13.53" rotation="0 0 0 0" scale="1 1 1">
@@ -656,10 +587,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_nasolabial_cheek-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_nasolabial_cheek_MorphInterpolator_JinOuterBrowRaiser" name="right_nasolabial_cheek_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Right_nasolabial_cheek-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_nasolabial_cheek_MorphInterpolator_JinOuterBrowRaiser" name="right_nasolabial_cheek_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_nostril" name="right_nostril">
 <Transform DEF="Right_nostril" translation="-0.7684 11.22 15.04" rotation="0 0 0 0" scale="1 1 1">
@@ -674,10 +603,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_nostril-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_nostril_MorphInterpolator_JinOuterBrowRaiser" name="right_nostril_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Right_nostril-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_nostril_MorphInterpolator_JinOuterBrowRaiser" name="right_nostril_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_pupil" name="right_pupil">
 <Transform DEF="Right_pupil" translation="-6.059 17.5 12.33" rotation="0 0 0 0" scale="1 1 1">
@@ -692,10 +619,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_pupil-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_pupil_MorphInterpolator_JinOuterBrowRaiser" name="right_pupil_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Right_pupil-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_pupil_MorphInterpolator_JinOuterBrowRaiser" name="right_pupil_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_temple" name="right_temple">
 <Transform DEF="Right_temple" translation="-10.95 20.56 6.406" rotation="0 0 0 0" scale="1 1 1">
@@ -710,10 +635,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_temple-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_temple_MorphInterpolator_JinOuterBrowRaiser" name="right_temple_morphinterpolator" weight="0" containerField="displacers" coordIndex="1 8" displacements="0.0 0.2686 0.0, 0.0 0.2687 0.0">
-</HAnimDisplacer>
+<Coordinate USE="Right_temple-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_temple_MorphInterpolator_JinOuterBrowRaiser" name="right_temple_morphinterpolator" weight="0" containerField="displacers" coordIndex="1 8" displacements="0.0 0.2686 0.0, 0.0 0.2687 0.0" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_upper_cutaneous_lip" name="right_upper_cutaneous_lip">
 <Transform DEF="Right_upper_cutaneous_lip" translation="-0.7684 10.16 14.63" rotation="0 0 0 0" scale="1 1 1">
@@ -728,10 +651,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_upper_cutaneous_lip-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_upper_cutaneous_lip_MorphInterpolator_JinOuterBrowRaiser" name="right_upper_cutaneous_lip_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Right_upper_cutaneous_lip-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_upper_cutaneous_lip_MorphInterpolator_JinOuterBrowRaiser" name="right_upper_cutaneous_lip_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_upper_eyelid" name="right_upper_eyelid">
 <Transform DEF="Right_upper_eyelid" translation="-5.53 17.96 12.21" rotation="0 0 0 0" scale="1 1 1">
@@ -746,10 +667,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_upper_eyelid-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_upper_eyelid_MorphInterpolator_JinOuterBrowRaiser" name="right_upper_eyelid_morphinterpolator" weight="0" containerField="displacers" coordIndex="6 10" displacements="0.0 0.654 0.0, 0.0 0.268 0.0">
-</HAnimDisplacer>
+<Coordinate USE="Right_upper_eyelid-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_upper_eyelid_MorphInterpolator_JinOuterBrowRaiser" name="right_upper_eyelid_morphinterpolator" weight="0" containerField="displacers" coordIndex="6 10" displacements="0.0 0.654 0.0, 0.0 0.268 0.0" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Right_upper_vermillion_lip" name="right_upper_vermillion_lip">
 <Transform DEF="Right_upper_vermillion_lip" translation="-1.788 9.002 13.64" rotation="0 0 0 0" scale="1 1 1">
@@ -764,10 +683,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Right_upper_vermillion_lip-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Right_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" name="right_upper_vermillion_lip_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Right_upper_vermillion_lip-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Right_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" name="right_upper_vermillion_lip_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Tongue" name="tongue">
 <Transform DEF="Tongue" translation="0 8.886 11.1" rotation="0 0 0 0" scale="1 1 1">
@@ -782,10 +699,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Tongue-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Tongue_MorphInterpolator_JinOuterBrowRaiser" name="tongue_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Tongue-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Tongue_MorphInterpolator_JinOuterBrowRaiser" name="tongue_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 <HAnimSegment DEF="hanim_Upper_teeth" name="upper_teeth">
 <Transform DEF="Upper_teeth" translation="0 9.723 11.67" rotation="0 0 0 0" scale="1 1 1">
@@ -800,10 +715,8 @@
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Coordinate USE="Upper_teeth-COORD" containerField="coord">
-</Coordinate>
-<HAnimDisplacer DEF="Upper_teeth_MorphInterpolator_JinOuterBrowRaiser" name="upper_teeth_morphinterpolator" weight="0" containerField="displacers">
-</HAnimDisplacer>
+<Coordinate USE="Upper_teeth-COORD" containerField="coord" />
+<HAnimDisplacer DEF="Upper_teeth_MorphInterpolator_JinOuterBrowRaiser" name="upper_teeth_morphinterpolator" weight="0" containerField="displacers" />
 </HAnimSegment>
 </HAnimJoint>
 </HAnimJoint>
@@ -953,7 +866,6 @@
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinOuterBrowRaiser" toField="weight" toNode="Right_upper_eyelid_MorphInterpolator_JinOuterBrowRaiser" />
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinOuterBrowRaiser" toField="weight" toNode="Right_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" />
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinOuterBrowRaiser" toField="weight" toNode="Right_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction">
-</ROUTE>
+<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction" />
 </Scene>
 </X3D>

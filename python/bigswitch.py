@@ -66,17 +66,17 @@ def_prefixes = ["Hair", "__0", "__2", "__4", "Center_lower_vermillion_lip", "Chi
 
 def process_scene_list(scene_list):
     switch = xml.etree.ElementTree.Element('Switch')
-    switch.text = "\n"
+    switch.text = ""
     switch.tail = "\n"
     switch.set('DEF', "SceneSwitcher")
     switch.set('whichChoice', "0")
     for scene_index, scene_element in enumerate(scene_list):
         group = xml.etree.ElementTree.Element('Group')
-        group.text = "\n"
+        group.text = ""
         group.tail = "\n"
         switch.append(group)
         humanoid = xml.etree.ElementTree.Element('HAnimHumanoid')
-        humanoid.text = "\n"
+        humanoid.text = ""
         humanoid.tail = "\n"
         humanoid.set('DEF', "hanim_humanoid"+str(scene_index))
         humanoid.set('name', "humanoid")
@@ -85,17 +85,17 @@ def process_scene_list(scene_list):
         humanoid_root.set("DEF", "hanim_humanoid_root"+str(scene_index))
         humanoid_root.set("name", "humanoid_root")
         humanoid_root.set("containerField", "skeleton")
-        humanoid_root.text = "\n"
+        humanoid_root.text = ""
         humanoid_root.tail = "\n"
         humanoid.append(humanoid_root)
         humanoid_root_use = xml.etree.ElementTree.Element('HAnimJoint')
         humanoid_root_use.set("USE", "hanim_humanoid_root"+str(scene_index))
         humanoid_root_use.set("containerField", "joints")
-        humanoid_root_use.text = "\n"
+        humanoid_root_use.text = ""
         humanoid_root_use.tail = "\n"
         humanoid.append(humanoid_root_use)
         sacrum = xml.etree.ElementTree.Element('HAnimSegment')
-        sacrum.text = "\n"
+        sacrum.text = ""
         sacrum.tail = "\n"
         sacrum.set('DEF', "hanim_sacrum"+str(scene_index))
         sacrum.set('name', "sacrum")
@@ -104,21 +104,21 @@ def process_scene_list(scene_list):
         skullbase = xml.etree.ElementTree.Element('HAnimJoint')
         skullbase.set("DEF", "hanim_skullbase"+str(scene_index))
         skullbase.set("name", "skullbase")
-        skullbase.text = "\n"
+        skullbase.text = ""
         skullbase.tail = "\n"
         humanoid_root.append(skullbase)
 
         skullbase_use = xml.etree.ElementTree.Element('HAnimJoint')
         skullbase_use.set("USE", "hanim_skullbase"+str(scene_index))
         skullbase_use.set("containerField", "joints")
-        skullbase_use.text = "\n"
+        skullbase_use.text = ""
         skullbase_use.tail = "\n"
         humanoid.append(skullbase_use)
 
         for prefix in def_prefixes:
             elements = find_segments_by_prefix(scene_element, prefix)
             segment = xml.etree.ElementTree.Element('HAnimSegment')
-            segment.text = "\n"
+            segment.text = ""
             segment.tail = "\n"
             segment.set('DEF', "hanim_"+prefix+str(scene_index))
             segment.set('name', prefix.lower())
@@ -150,21 +150,13 @@ def process_scene_list(scene_list):
                     group.append(proximity_sensor)
                     print(f"Adding {proximity_sensor.tag} {proximity_sensor.get('DEF')}")
 
-            routes = scene_element.findall(".//ROUTE")
-            if len(routes) <= 0:
-                print(f"Could not find ROUTEs")
-            for route in routes:
-                par = find_parent(scene_element, route)
-                group.append(route)
-                par.remove(route)
-                # print(f"Adding {route.tag}")
 
     #        for t, time_sensor in enumerate(ts_list):
     #            # print("Time", t)
     #            for other_t, other_time_sensor in enumerate(ts_list):
     #                if time_sensor != other_time_sensor:
     #                    route = xml.etree.ElementTree.Element('ROUTE')
-    #                    route.text = "\n"
+    #                    route.text = ""
     #                    route.tail = "\n"
     #                    route.set("fromNode", time_sensor.get('DEF'))
     #                    route.set("fromField", "startTime")
@@ -189,7 +181,7 @@ def process_scene(scene, file):
                     segment_child.set("DEF", prefix+"_MorphInterpolator_"+animation)
                 elif segment_child.tag == 'ScalarInterpolator':
                     print(f"Setting {segment_child.tag}")
-                    segment_child.set("DEF", prefix+"_AnimationAdapter_"+animation)
+                    segment_child.set("DEF", "AnimationAdapter_"+animation)
                 #elif segment_child.tag == 'CoordinateInterpolator':
                 #    print(f"Setting {segment_child.tag}")
                 #    segment_child.set("DEF", prefix+"_MorphInterpolator_"+animation)
@@ -207,27 +199,25 @@ def process_scene(scene, file):
                     segment_child.set('DEF', segment_child.get('DEF')+"_"+animation)
 
         # CoordinateInterpolator
-        routes = scene.findall(".//ROUTE[@fromNode='"+prefix+"_MorphInterpolator'][@fromField='value_changed'][@toNode='"+prefix+"-COORD'][@toField='point']")
-        for route in routes:
-            route.set("fromNode", prefix+"_MorphInterpolator_"+animation)
-            # remove ROUTE
-            par = find_parent(scene, route)
-            par.remove(route)
+        #routes = scene.findall(".//ROUTE[@fromNode='"+prefix+"_MorphInterpolator'][@fromField='value_changed'][@toNode='"+prefix+"-COORD'][@toField='point']")
+        #for route in routes:
+        #    route.set("fromNode", prefix+"_MorphInterpolator_"+animation)
+        #    # remove ROUTE
+        #    par = find_parent(scene, route)
+        #    par.remove(route)
 
-        routes = scene.findall(".//ROUTE[@fromNode='"+prefix+"_AnimationAdapter'][@fromField='value_changed'][@toNode='"+prefix+"_MorphInterpolator'][@toField='set_fraction']")
-        for route in routes:
-            route.set("fromNode", prefix+"_AnimationAdapter_"+animation)
-            route.set("toNode", prefix+"_MorphInterpolator_"+animation)
-            # remove ROUTE
-            par = find_parent(scene, route)
-            par.remove(route)
-
-        # HAnimDisplacer
-        #routes = scene.findall(".//ROUTE[@fromNode='"+prefix+"_AnimationAdapter_"+animation+"'][@fromField='value_changed'][@toNode='"+prefix+"_MorphInterpolator_"+animation+"'][@toField='weight']")
+        #routes = scene.findall(".//ROUTE[@fromNode='"+prefix+"_AnimationAdapter'][@fromField='value_changed'][@toNode='"+prefix+"_MorphInterpolator'][@toField='set_fraction']")
         #for route in routes:
         #    route.set("fromNode", prefix+"_AnimationAdapter_"+animation)
-        #    # route.set("toNode", prefix+"_MorphInterpolator_"+animation)
-        #    print(f"setting from {prefix}_AnimationAdapter_{animation} to {prefix}_MorphInterpolator_{animation}")
+        #    route.set("toNode", prefix+"_MorphInterpolator_"+animation)
+        #    # remove ROUTE
+        #    par = find_parent(scene, route)
+        #    par.remove(route)
+
+        # HAnimDisplacer
+        routes = scene.findall(".//ROUTE[@fromNode='AnimationAdapter_"+animation+"'][@fromField='value_changed'][@toNode='"+prefix+"_MorphInterpolator_"+animation+"'][@toField='weight']")
+        for route in routes:
+            print(f"setting from AnimationAdapter_{animation} to {prefix}_MorphInterpolator_{animation}")
 
         # Both
         routes = scene.findall(".//ROUTE[@fromNode='"+prefix+"_Clock'][@fromField='fraction_changed'][@toNode='"+prefix+"_AnimationAdapter_"+animation+"'][@toField='set_fraction']")
@@ -257,40 +247,40 @@ for findex, input_file in enumerate(files):
     scene = root.find("Scene")
 
 
-    time_sensors = scene.findall(".//TimeSensor")
-    for tim_sensor in time_sensors:
-        par = find_parent(scene, tim_sensor)
-        par.remove(tim_sensor)
-        print(f"Removed TimeSensor")
+#    time_sensors = scene.findall(".//TimeSensor")
+#    for tim_sensor in time_sensors:
+#        par = find_parent(scene, tim_sensor)
+#        par.remove(tim_sensor)
+#        print(f"Removed TimeSensor")
 
     scene = process_scene(scene, input_file)
     scene_list.append(scene)
 
 
 finalX3D = xml.etree.ElementTree.Element('X3D')
-finalX3D.text = "\n"
+finalX3D.text = ""
 finalX3D.tail = "\n"
 finalX3D.set("profile", "Immersive")
 finalX3D.set("version", "4.0")
 head = xml.etree.ElementTree.Element('head')
-head.text = "\n"
+head.text = ""
 head.tail = "\n"
 component = xml.etree.ElementTree.Element('component')
 component.set("name", "HAnim")
 component.set("level", "3")
-component.text = "\n"
+component.text = ""
 component.tail = "\n"
 head.append(component)
 
 meta = xml.etree.ElementTree.Element('meta')
-meta.text = "\n"
+meta.text = ""
 meta.tail = "\n"
 meta.set("name", "title")
 meta.set("content", "YehudiMenuJin.x3d")
 head.append(meta)
 
 meta = xml.etree.ElementTree.Element('meta')
-meta.text = "\n"
+meta.text = ""
 meta.tail = "\n"
 meta.set("name", "description")
 meta.set("content", "X3D scene with alternate facial animations controlled by a menu")
@@ -298,34 +288,23 @@ head.append(meta)
 finalX3D.append(head)
 
 scene = xml.etree.ElementTree.Element('Scene')
-scene.text = "\n"
+scene.text = ""
 scene.tail = "\n"
 
 animation = findAnimation(input_file)
 clock_name = animation+"_Clock"
 proximity_sensor = xml.etree.ElementTree.Element('ProximitySensor')
-proximity_sensor.text = "\n"
+proximity_sensor.text = ""
 proximity_sensor.tail = "\n"
 proximity_sensor.set('DEF', "Fire_"+clock_name)
 proximity_sensor.set("size", "10000 10000 10000")
 scene.insert(0, proximity_sensor)
 
-print(f"Added proximity is {proximity_sensor.get('DEF')}")
-
-route = xml.etree.ElementTree.Element('ROUTE')
-route.text = "\n"
-route.tail = "\n"
-route.set("fromNode", proximity_sensor.get('DEF'))
-route.set("fromField", "enterTime")
-route.set("toNode", clock_name)
-route.set("toField", "startTime")
-scene.append(route)
-
 for findex, input_file in enumerate(files):
     animation = findAnimation(input_file)
     clock_name = animation+"_Clock"
     time_sensor = xml.etree.ElementTree.Element('TimeSensor')
-    time_sensor.text = "\n"
+    time_sensor.text = ""
     time_sensor.tail = "\n"
     time_sensor.set('DEF', clock_name)
     time_sensor.set('cycleInterval',"4")
@@ -333,17 +312,35 @@ for findex, input_file in enumerate(files):
     time_sensor.set('enabled', "true")
     scene.append(time_sensor)
 
+for scene_element in scene_list:
+    scalarInterpolators = scene_element.findall(".//ScalarInterpolator")
+    if len(scalarInterpolators) <= 0:
+        print(f"Could not find scalarInterpolators")
+    for scalarInterpolator in scalarInterpolators:
+        scene.append(scalarInterpolator)
 
 scene.append(process_scene_list(scene_list))
 
-finalX3D.append(scene)
-routes = finalX3D.findall(".//ROUTE")
+routes = scene_element.findall(".//ROUTE")
 if len(routes) <= 0:
     print(f"Could not find ROUTEs")
+else:
+    print(f"Could find ROUTEs")
 for route in routes:
-    par = find_parent(finalX3D, route)
-    par.remove(route)
     scene.append(route)
+    # print(f"Adding {route.tag}")
+
+print(f"Added proximity is {proximity_sensor.get('DEF')}")
+route = xml.etree.ElementTree.Element('ROUTE')
+route.text = ""
+route.tail = "\n"
+route.set("fromNode", proximity_sensor.get('DEF'))
+route.set("fromField", "enterTime")
+route.set("toNode", clock_name)
+route.set("toField", "startTime")
+scene.append(route)
+
+finalX3D.append(scene)
 
 header = '<?xml version="1.0" encoding="utf-8"?>\n<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">'
 xmlstr = xml.etree.ElementTree.tostring(finalX3D, encoding='unicode')
@@ -374,7 +371,7 @@ for file_index, input_file in enumerate(files):
     </Script>
 '''
         menu_str += '<Transform translation="48 '+str(ifs_start*36+27.4)+' 0">\n'
-        menu_str += '<TouchSensor description="'+findAnimation(input_file)+'" DEF="'+findAnimation(input_file)+'_Sensor"/>\n'
+        menu_str += '<TouchSensor description="'+re.sub(r"([a-z])([A-Z])", r"\1 \2", findAnimation(input_file))+'" DEF="'+findAnimation(input_file)+'_Sensor"/>\n'
         menu_str += '''
           <Shape>
             <Appearance>
@@ -399,7 +396,7 @@ for file_index, input_file in enumerate(files):
              </IndexedFaceSet>
           </Shape>
         </Transform>
-        '''
+'''
         menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Sensor" fromField="touchTime" toNode="Choice'+str(file_index)+'" toField="touchTime"/>\n'
         menu_str += '<ROUTE fromNode="Choice'+str(file_index)+'" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>\n'
     ifs_start += increment
