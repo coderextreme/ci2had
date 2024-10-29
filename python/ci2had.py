@@ -59,7 +59,7 @@ def process_file(file_input, file_output):
     head.insert(0, component)
 
     humanoid = xml.etree.ElementTree.Element('HAnimHumanoid')
-    humanoid.text = "\n"
+    humanoid.text = ""
     humanoid.tail = "\n"
     humanoid.set('DEF', "hanim_humanoid")
     humanoid.set('name', "humanoid")
@@ -68,17 +68,17 @@ def process_file(file_input, file_output):
     humanoid_root.set("DEF", "hanim_root")
     humanoid_root.set("name", "humanoid_root")
     humanoid_root.set("containerField", "skeleton")
-    humanoid_root.text = "\n"
+    humanoid_root.text = ""
     humanoid_root.tail = "\n"
     humanoid.append(humanoid_root)
     humanoid_root_use = xml.etree.ElementTree.Element('HAnimJoint')
     humanoid_root_use.set("USE", "hanim_root")
     humanoid_root_use.set("containerField", "joints")
-    humanoid_root_use.text = "\n"
+    humanoid_root_use.text = ""
     humanoid_root_use.tail = "\n"
     humanoid.append(humanoid_root_use)
     sacrum = xml.etree.ElementTree.Element('HAnimSegment')
-    sacrum.text = "\n"
+    sacrum.text = ""
     sacrum.tail = "\n"
     sacrum.set('DEF', "hanim_sacrum")
     sacrum.set('name', "sacrum")
@@ -87,28 +87,36 @@ def process_file(file_input, file_output):
     sacrum_use = xml.etree.ElementTree.Element('HAnimSegment')
     sacrum_use.set("USE", "hanim_sacrum")
     sacrum_use.set("containerField", "segments")
-    sacrum_use.text = "\n"
+    sacrum_use.text = ""
     sacrum_use.tail = "\n"
     humanoid.append(sacrum_use)
 
     skullbase = xml.etree.ElementTree.Element('HAnimJoint')
     skullbase.set("DEF", "hanim_skullbase")
     skullbase.set("name", "skullbase")
-    skullbase.text = "\n"
+    skullbase.text = ""
     skullbase.tail = "\n"
     humanoid_root.append(skullbase)
 
     skullbase_use = xml.etree.ElementTree.Element('HAnimJoint')
     skullbase_use.set("USE", "hanim_skullbase")
     skullbase_use.set("containerField", "joints")
-    skullbase_use.text = "\n"
+    skullbase_use.text = ""
     skullbase_use.tail = "\n"
     humanoid.append(skullbase_use)
+
+    def get_first_occurrence(root, tag):
+        for element in root.iter():
+            if element.tag == tag:
+                return element
+        return None
+
 
     for it in root.iter('ImageTexture'):
         url = it.get("url")
         if url is not None and not url.startswith('"') and not url.startswith('&quot;'):
                 it.set("url", "\""+it.get("url")+"\"")
+
     for cis in root.iter('CoordinateInterpolator'):
         DEF = cis.get("DEF")
         # print(f"DEF={DEF}")
@@ -136,7 +144,7 @@ def process_file(file_input, file_output):
             if new_node is None:
                 # print (f"{DEF} {i}, {extension[i]}, {base[i]}")
                 new_node = xml.etree.ElementTree.Element('HAnimDisplacer')
-                new_node.text = "\n"
+                new_node.text = ""
                 new_node.tail = "\n"
             if non_zero(difference):
                 non_zero_displacement = True
@@ -169,6 +177,8 @@ def process_file(file_input, file_output):
                         route.set("fromNode", "AnimationAdapter_"+findAnimation(file_output))
                         route.set("toField", "weight")
                         route.set("toNode", DEF+"_"+findAnimation(file_output))
+                        #par = find_parent(root, route)
+                        #par.remove(route)
 
                     # Replace value_changed with weight
                     routes = root.findall(".//ROUTE[@fromField='value_changed'][@fromNode='"+DEF+"']")
@@ -210,8 +220,19 @@ def process_file(file_input, file_output):
     # Clock to Adapter
     routes = scene.findall(".//ROUTE[@fromField='fraction_changed'][@toField='set_fraction']")
     for route in routes:
-        route.set("toNode", "AnimationAdapter_"+findAnimation(file_output))
-        route.set("fromNode", findAnimation(file_output)+"_Clock")
+        #route.set("fromNode", findAnimation(file_output)+"_Clock")
+        #route.set("toNode", "AnimationAdapter_"+findAnimation(file_output))
+        par = find_parent(root, route)
+        par.remove(route)
+    route = xml.etree.ElementTree.Element('ROUTE')
+    route.text = ""
+    route.tail = "\n"
+    route.set("fromNode", findAnimation(file_output)+"_Clock")
+    route.set("fromField", "fraction_changed")
+    route.set("toNode", DEF+"_"+findAnimation(file_output))
+    route.set("toNode", "AnimationAdapter_"+findAnimation(file_output))
+    route.set("toField", "set_fraction")
+    scene.append(route)
 
 
     # Move other elements into the 'sacrum' segment
@@ -245,7 +266,7 @@ def process_file(file_input, file_output):
             print(f"DEFing {element.tag}")
             element.set("DEF", findAnimation(file_output)+"_Clock")
             export = xml.etree.ElementTree.Element('EXPORT')
-            export.text = "\n"
+            export.text = ""
             export.tail = "\n"
             export.set("localDEF", element.get("DEF"))
             export.set("AS", element.get("DEF"))
@@ -257,7 +278,7 @@ def process_file(file_input, file_output):
     for prefix in def_prefixes:
         elements = find_elements_by_prefix(root, prefix)
         segment = xml.etree.ElementTree.Element('HAnimSegment')
-        segment.text = "\n"
+        segment.text = ""
         segment.tail = "\n"
         segment.set('DEF', "hanim_"+prefix)
         segment.set('name', prefix.lower())
@@ -266,7 +287,7 @@ def process_file(file_input, file_output):
         segment_use = xml.etree.ElementTree.Element('HAnimSegment')
         segment_use.set('USE', "hanim_"+prefix)
         segment_use.set("containerField", "segments")
-        segment_use.text = "\n"
+        segment_use.text = ""
         segment_use.tail = "\n"
         humanoid.append(segment_use)
 
@@ -285,7 +306,7 @@ def process_file(file_input, file_output):
                 coordinate = xml.etree.ElementTree.Element('Coordinate')
                 coordinate.set("USE", element.get("DEF"))
                 coordinate.set("containerField", "coord")
-                coordinate.text = "\n"
+                coordinate.text = ""
                 coordinate.tail = "\n"
                 segment.append(coordinate)
                 
@@ -305,14 +326,14 @@ def process_file(file_input, file_output):
             scene.insert(0, view)
             par.remove(view)
 #    sensor = xml.etree.ElementTree.Element('ProximitySensor')
-#    sensor.text = "\n"
+#    sensor.text = ""
 #    sensor.tail = "\n"
 #    sensor.set("DEF", "MainSensor")
 #    sensor.set("size", "1000000 1000000 1000000")
 #    scene.append(sensor)
 
 #        route = xml.etree.ElementTree.Element('ROUTE')
-#        route.text = "\n"
+#        route.text = ""
 #        route.tail = "\n"
 #        route.set("fromNode", "MainSensor")
 #        route.set("fromField", "enterTime")

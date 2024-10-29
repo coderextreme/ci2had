@@ -911,133 +911,49 @@
 </HAnimSegment>
 </HAnimHumanoid>
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Lower_teeth_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Tongue_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Upper_teeth_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Mid_upper_vermillion_lip_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Neck_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Occipital_scalp_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_ear_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Mid_forehead_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_forehead_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Glabella_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Chin_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_lower_vermillion_lip_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Center_lower_vermillion_lip_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_eyebrow_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_bulbar_conjunctiva_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_temple_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Mid_nasal_dorsum_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Nasal_tip_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_nostril_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_dorsum_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_nasolabial_cheek_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_cheek_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_upper_vermillion_lip_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_upper_cutaneous_lip_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Philtrum_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_forehead_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_eyebrow_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_upper_eyelid_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_lower_eyelid_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Left_pupil_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_ear_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_cheek_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_dorsum_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_bulbar_conjunctiva_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_lower_eyelid_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_nasolabial_cheek_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_nostril_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_pupil_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_temple_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_upper_cutaneous_lip_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_upper_eyelid_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_upper_vermillion_lip_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinChinRaiser" toField="weight" toNode="Right_lower_vermillion_lip_MorphInterpolator_JinChinRaiser" />
-<ROUTE fromField="fraction_changed" fromNode="JinChinRaiser_Clock" toField="set_fraction" toNode="AnimationAdapter_JinChinRaiser" />
-
+<ROUTE fromNode="JinChinRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinChinRaiser" toField="set_fraction">
+</ROUTE>
 </Scene>
 </X3D>
