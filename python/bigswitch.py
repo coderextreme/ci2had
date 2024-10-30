@@ -61,55 +61,55 @@ def find_segments_by_prefix(root, prefix):
 def findAnimation(input_filename):
     return input_filename.replace("../resources", "")[1:-4]
 
-def_prefixes = ["Hair", "__0", "__2", "__4", "Center_lower_vermillion_lip", "Chin", "Glabella", "Left_bulbar_conjunctiva", "Left_cheek", "Left_dorsum", "Left_ear", "Left_eyebrow", "Left_forehead", "Left_lower_eyelid", "Left_lower_vermillion_lip", "Left_nasolabial_cheek", "Left_nostril", "Left_pupil", "Left_temple", "Left_upper_cutaneous_lip", "Left_upper_eyelid", "Left_upper_vermillion_lip", "Left_upper_vermillion_lip001", "Lower_teeth", "Mid_forehead", "Mid_nasal_dorsum", "Mid_upper_vermillion_lip", "Nasal_tip", "Neck", "Occipital_scalp", "Philtrum", "Right_bulbar_conjunctiva", "Right_cheek", "Right_dorsum", "Right_ear", "Right_eyebrow", "Right_forehead", "Right_lower_eyelid", "Right_lower_vermillion_lip", "Right_nasolabial_cheek", "Right_nostril", "Right_pupil", "Right_temple", "Right_upper_cutaneous_lip", "Right_upper_eyelid", "Right_upper_vermillion_lip", "Tongue", "Upper_teeth"]
+def_prefixes = ["Lower_teeth", "Hair", "__0", "__2", "__4", "Center_lower_vermillion_lip", "Chin", "Glabella", "Left_bulbar_conjunctiva", "Left_cheek", "Left_dorsum", "Left_ear", "Left_eyebrow", "Left_forehead", "Left_lower_eyelid", "Left_lower_vermillion_lip", "Left_nasolabial_cheek", "Left_nostril", "Left_pupil", "Left_temple", "Left_upper_cutaneous_lip", "Left_upper_eyelid", "Left_upper_vermillion_lip", "Left_upper_vermillion_lip001", "Mid_forehead", "Mid_nasal_dorsum", "Mid_upper_vermillion_lip", "Nasal_tip", "Neck", "Occipital_scalp", "Philtrum", "Right_bulbar_conjunctiva", "Right_cheek", "Right_dorsum", "Right_ear", "Right_eyebrow", "Right_forehead", "Right_lower_eyelid", "Right_lower_vermillion_lip", "Right_nasolabial_cheek", "Right_nostril", "Right_pupil", "Right_temple", "Right_upper_cutaneous_lip", "Right_upper_eyelid", "Right_upper_vermillion_lip", "Tongue", "Upper_teeth"]
 
 
 def process_scene_list(scene_list):
     switch = xml.etree.ElementTree.Element('Switch')
-    switch.text = ""
+    switch.text = "\n"
     switch.tail = "\n"
     switch.set('DEF', "SceneSwitcher")
     switch.set('whichChoice', "0")
     for scene_index, scene_element in enumerate(scene_list):
         group = xml.etree.ElementTree.Element('Group')
-        group.text = ""
+        group.text = "\n"
         group.tail = "\n"
         switch.append(group)
         humanoid = xml.etree.ElementTree.Element('HAnimHumanoid')
-        humanoid.text = ""
+        humanoid.text = "\n"
         humanoid.tail = "\n"
-        humanoid.set('DEF', "hanim_humanoid"+str(scene_index))
+        humanoid.set('DEF', "hanim"+str(scene_index)+"_humanoid")
         humanoid.set('name', "humanoid")
         group.insert(0, humanoid)
         humanoid_root = xml.etree.ElementTree.Element('HAnimJoint')
-        humanoid_root.set("DEF", "hanim_humanoid_root"+str(scene_index))
+        humanoid_root.set("DEF", "hanim"+str(scene_index)+"_humanoid_root")
         humanoid_root.set("name", "humanoid_root")
         humanoid_root.set("containerField", "skeleton")
-        humanoid_root.text = ""
+        humanoid_root.text = "\n"
         humanoid_root.tail = "\n"
         humanoid.append(humanoid_root)
         humanoid_root_use = xml.etree.ElementTree.Element('HAnimJoint')
-        humanoid_root_use.set("USE", "hanim_humanoid_root"+str(scene_index))
+        humanoid_root_use.set("USE", "hanim"+str(scene_index)+"_humanoid_root")
         humanoid_root_use.set("containerField", "joints")
         humanoid_root_use.text = ""
         humanoid_root_use.tail = "\n"
         humanoid.append(humanoid_root_use)
         sacrum = xml.etree.ElementTree.Element('HAnimSegment')
-        sacrum.text = ""
+        sacrum.text = "\n"
         sacrum.tail = "\n"
-        sacrum.set('DEF', "hanim_sacrum"+str(scene_index))
+        sacrum.set('DEF', "hanim"+str(scene_index)+"_sacrum")
         sacrum.set('name', "sacrum")
         humanoid_root.insert(0, sacrum)
 
         skullbase = xml.etree.ElementTree.Element('HAnimJoint')
-        skullbase.set("DEF", "hanim_skullbase"+str(scene_index))
+        skullbase.set("DEF", "hanim"+str(scene_index)+"_skullbase")
         skullbase.set("name", "skullbase")
-        skullbase.text = ""
+        skullbase.text = "\n"
         skullbase.tail = "\n"
         humanoid_root.append(skullbase)
 
         skullbase_use = xml.etree.ElementTree.Element('HAnimJoint')
-        skullbase_use.set("USE", "hanim_skullbase"+str(scene_index))
+        skullbase_use.set("USE", "hanim"+str(scene_index)+"_skullbase")
         skullbase_use.set("containerField", "joints")
         skullbase_use.text = ""
         skullbase_use.tail = "\n"
@@ -118,9 +118,9 @@ def process_scene_list(scene_list):
         for prefix in def_prefixes:
             elements = find_segments_by_prefix(scene_element, prefix)
             segment = xml.etree.ElementTree.Element('HAnimSegment')
-            segment.text = ""
+            segment.text = "\n"
             segment.tail = "\n"
-            segment.set('DEF', "hanim_"+prefix+str(scene_index))
+            segment.set('DEF', "hanim"+str(scene_index)+"_"+prefix.lower())
             segment.set('name', prefix.lower())
             skullbase.append(segment)
             if len(elements) == 0:
@@ -217,20 +217,17 @@ def process_scene(scene, file):
         # HAnimDisplacer
         routes = scene.findall(".//ROUTE[@fromNode='AnimationAdapter_"+animation+"'][@fromField='value_changed'][@toNode='"+prefix+"_MorphInterpolator_"+animation+"'][@toField='weight']")
         for route in routes:
-            print(f"setting from AnimationAdapter_{animation} to {prefix}_MorphInterpolator_{animation}")
+            print(f"Got animation route for {prefix} {animation}")
 
         # Both
-        routes = scene.findall(".//ROUTE[@fromNode='"+prefix+"_Clock'][@fromField='fraction_changed'][@toNode='"+prefix+"_AnimationAdapter_"+animation+"'][@toField='set_fraction']")
+        routes = scene.findall(".//ROUTE[@fromNode='"+animation+"_Clock'][@fromField='fraction_changed'][@toNode='AnimationAdapter_"+animation+"'][@toField='set_fraction']")
         for route in routes:
-            clock_name = animation+"_Clock"
-            print(f"Got route for {prefix} {animation}, clock name is {clock_name}")
-            route.set("fromNode", clock_name)
-            route.set("toNode", prefix+"_AnimationAdapter_"+animation)
+            print(f"Got clock route for {prefix} {animation}")
 
-        # Both
-        #routes = scene.findall(".//ROUTE[@fromField='enterTime'][@toField='startTime']")
-        #for route in routes:
-        #    print(f"Got NEW ROUTE")
+            # Both
+            #routes = scene.findall(".//ROUTE[@fromField='enterTime'][@toField='startTime']")
+            #for route in routes:
+            #    print(f"Got NEW ROUTE")
 
     return scene
 
@@ -258,12 +255,12 @@ for findex, input_file in enumerate(files):
 
 
 finalX3D = xml.etree.ElementTree.Element('X3D')
-finalX3D.text = ""
+finalX3D.text = "\n"
 finalX3D.tail = "\n"
 finalX3D.set("profile", "Immersive")
 finalX3D.set("version", "4.0")
 head = xml.etree.ElementTree.Element('head')
-head.text = ""
+head.text = "\n"
 head.tail = "\n"
 component = xml.etree.ElementTree.Element('component')
 component.set("name", "HAnim")
@@ -282,13 +279,20 @@ head.append(meta)
 meta = xml.etree.ElementTree.Element('meta')
 meta.text = ""
 meta.tail = "\n"
+meta.set("name", "identifier")
+meta.set("content", "https://coderextreme.net/X3DJSONLD/src/main/data/YehudiMenuJin.x3d")
+head.append(meta)
+
+meta = xml.etree.ElementTree.Element('meta')
+meta.text = ""
+meta.tail = "\n"
 meta.set("name", "description")
 meta.set("content", "X3D scene with alternate facial animations controlled by a menu")
 head.append(meta)
 finalX3D.append(head)
 
 scene = xml.etree.ElementTree.Element('Scene')
-scene.text = ""
+scene.text = "\n"
 scene.tail = "\n"
 
 animation = findAnimation(input_file)
@@ -321,14 +325,15 @@ for scene_element in scene_list:
 
 scene.append(process_scene_list(scene_list))
 
-routes = scene_element.findall(".//ROUTE")
-if len(routes) <= 0:
-    print(f"Could not find ROUTEs")
-else:
-    print(f"Could find ROUTEs")
-for route in routes:
-    scene.append(route)
-    # print(f"Adding {route.tag}")
+for scene_element in scene_list:
+    routes = scene_element.findall(".//ROUTE")
+    if len(routes) <= 0:
+        print(f"Could not find ROUTEs")
+    else:
+        print(f"Could find ROUTEs")
+    for route in routes:
+        scene.append(route)
+        # print(f"Adding {route.tag}")
 
 print(f"Added proximity is {proximity_sensor.get('DEF')}")
 route = xml.etree.ElementTree.Element('ROUTE')
@@ -339,10 +344,9 @@ route.set("fromField", "enterTime")
 route.set("toNode", clock_name)
 route.set("toField", "startTime")
 scene.append(route)
-
 finalX3D.append(scene)
 
-header = '<?xml version="1.0" encoding="utf-8"?>\n<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">'
+header = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">'
 xmlstr = xml.etree.ElementTree.tostring(finalX3D, encoding='unicode')
 
 menu_str = '''
