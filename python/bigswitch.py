@@ -312,8 +312,8 @@ for findex, input_file in enumerate(files):
     time_sensor.text = ""
     time_sensor.tail = "\n"
     time_sensor.set('DEF', clock_name)
-    time_sensor.set('cycleInterval',"4")
-    time_sensor.set('loop', "false")
+    time_sensor.set('cycleInterval',"0.99")
+    time_sensor.set('loop', "true")
     time_sensor.set('enabled', "true")
     scene.append(time_sensor)
 
