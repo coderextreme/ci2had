@@ -192,8 +192,9 @@ def process_scene(scene, file):
                     print(f"Setting {segment_child.tag}")
                     for node in segment_child.iter():
                         if node.get('DEF'):
-                            print(f"Setting {node.tag}")
                             node.set('DEF', node.get('DEF')+"_"+animation)
+                        if node.get('USE'):
+                            node.set('USE', node.get('USE')+"_"+animation)
                 elif segment_child.get('DEF'):
                     print(f"Setting {segment_child.tag}")
                     segment_child.set('DEF', segment_child.get('DEF')+"_"+animation)

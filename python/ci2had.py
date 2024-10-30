@@ -46,7 +46,7 @@ def findAnimation(input_filename):
     return input_filename.replace("../resources", "")[1:-4]
 
 def process_file(file_input, file_output):
-    print(f"Input file: {file_input.name}")
+    print(f"Input file: {file_input}")
     X3D = xml.etree.ElementTree.parse(file_input)
     root = X3D.getroot()
     head = root.find('head')
@@ -348,8 +348,10 @@ def process_file(file_input, file_output):
     with open(file_output, "w", encoding='utf-8') as output_file:
         output_file.write(xmlString)
 
-# files = os.scandir("C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/")
-files = os.scandir("C:/Users/jcarl/www.web3d.org/x3d/content/examples/HumanoidAnimation/FacialAnimation/")
+#PATH = "C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/"
+PATH = "C:/Users/jcarl/www.web3d.org/x3d/content/examples/HumanoidAnimation/FacialAnimation/"
+
+files = os.listdir(PATH)
 
 def processAFile(input_file, menu_file, item_number):
     output_file = os.path.basename(input_file)
@@ -365,7 +367,7 @@ def processAFile(input_file, menu_file, item_number):
         output_file = os.path.join("../resources/",os.path.basename(output_file))
         print(f"Output file is {output_file}")
         try:
-            process_file(input_file, output_file)
+            process_file(os.path.join(PATH, input_file), output_file)
             menu_file.write("<Inline DEF=\"OPTION"+str(item_number)+"\" url='\""+output_file+"\" \""+(output_file.replace("../resources/", ""))+"\"'/>\n")
         except xml.etree.ElementTree.ParseError:
             print(f"The file {output_file} has a parse error")
@@ -416,7 +418,7 @@ with open("../resources/Menu.x3d", "w") as menu_file:
     item = 1
     menu = ""
     for input_file in files:
-        if input_file.name.endswith(".x3d"):
+        if input_file.endswith(".x3d"):
             output_file = processAFile(input_file, menu_file, item)
             item += 1
             menu += '"'+output_file.replace("../resources/", "")+'" '
@@ -469,8 +471,3 @@ with open("../resources/Menu.x3d", "w") as menu_file:
   </Scene>
 </X3D>
 ''')
-
-#processAFile("C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/FACS_AU9(Jin)_Nose_Wrinkler_Morpher.x3d")
-#processAFile("../resources/FACS47.x3d")
-
-
