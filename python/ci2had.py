@@ -244,7 +244,7 @@ def process_file(file_input, file_output):
         #    scene.remove(element)
         #    scene.append(element)
 
-    def_prefixes = ["Hair", "__0", "__2", "__4", "Center_lower_vermillion_lip", "Chin", "Glabella", "Left_bulbar_conjunctiva", "Left_cheek", "Left_dorsum", "Left_ear", "Left_eyebrow", "Left_forehead", "Left_lower_eyelid", "Left_lower_vermillion_lip", "Left_nasolabial_cheek", "Left_nostril", "Left_pupil", "Left_temple", "Left_upper_cutaneous_lip", "Left_upper_eyelid", "Left_upper_vermillion_lip", "Left_upper_vermillion_lip001", "Lower_teeth", "Mid_forehead", "Mid_nasal_dorsum", "Mid_upper_vermillion_lip", "Nasal_tip", "Neck", "Occipital_scalp", "Philtrum", "Right_bulbar_conjunctiva", "Right_cheek", "Right_dorsum", "Right_ear", "Right_eyebrow", "Right_forehead", "Right_lower_eyelid", "Right_lower_vermillion_lip", "Right_nasolabial_cheek", "Right_nostril", "Right_pupil", "Right_temple", "Right_upper_cutaneous_lip", "Right_upper_eyelid", "Right_upper_vermillion_lip", "Tongue", "Upper_teeth"]
+    def_prefixes = ["Lower_teeth", "Hair", "__0", "__2", "__4", "Center_lower_vermillion_lip", "Chin", "Glabella", "Left_bulbar_conjunctiva", "Left_cheek", "Left_dorsum", "Left_ear", "Left_eyebrow", "Left_forehead", "Left_lower_eyelid", "Left_lower_vermillion_lip", "Left_nasolabial_cheek", "Left_nostril", "Left_pupil", "Left_temple", "Left_upper_cutaneous_lip", "Left_upper_eyelid", "Left_upper_vermillion_lip", "Left_upper_vermillion_lip001", "Mid_forehead", "Mid_nasal_dorsum", "Mid_upper_vermillion_lip", "Nasal_tip", "Neck", "Occipital_scalp", "Philtrum", "Right_bulbar_conjunctiva", "Right_cheek", "Right_dorsum", "Right_ear", "Right_eyebrow", "Right_forehead", "Right_lower_eyelid", "Right_lower_vermillion_lip", "Right_nasolabial_cheek", "Right_nostril", "Right_pupil", "Right_temple", "Right_upper_cutaneous_lip", "Right_upper_eyelid", "Right_upper_vermillion_lip", "Tongue", "Upper_teeth"]
 
     firstScalarInterpolator = None
     elements = root.findall(".//ScalarInterpolator")
@@ -342,20 +342,24 @@ def process_file(file_input, file_output):
 #        scene.append(route)
 
 
-    header = '<?xml version="1.0" encoding="utf-8"?>\n<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">'
+    header = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">'
     xmlstr = xml.etree.ElementTree.tostring(root, encoding='unicode')
     xmlString = f"{header}{xmlstr}"
-    with open(file_output, "w") as output_file:
+    with open(file_output, "w", encoding='utf-8') as output_file:
         output_file.write(xmlString)
 
-files = os.scandir("C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/")
+# files = os.scandir("C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T023418Z-001/Jin_Facs_au_x3d_240219/")
+files = os.scandir("C:/Users/jcarl/www.web3d.org/x3d/content/examples/HumanoidAnimation/FacialAnimation/")
 
 def processAFile(input_file, menu_file, item_number):
     output_file = os.path.basename(input_file)
-    output_file = output_file.replace("FACS_AU", "").replace("(", "").replace(")", "").replace("_", "").replace("Morpher", "")
+    output_file = output_file.replace("FACS_AU", "").replace("FacsAu", ""). replace("(", "").replace(")", "").replace("_", "").replace("Morpher", "")
     if output_file[1:2] == "J":
         output_file = "0"+output_file
-    output_file = output_file[2:]
+    if output_file[0].isdigit():
+        output_file = output_file[2:]
+    elif output_file.startswith("Jin"):
+        output_file = output_file[0:3] + output_file[5:]
     if output_file.endswith(".x3d"):
         output_file = output_file[:-4]+".x3d"
         output_file = os.path.join("../resources/",os.path.basename(output_file))
@@ -368,7 +372,7 @@ def processAFile(input_file, menu_file, item_number):
     return output_file
 
 with open("../resources/Menu.x3d", "w") as menu_file:
-    menu_file.write('''<?xml version="1.0" encoding="utf-8"?>
+    menu_file.write('''<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd"><X3D xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsi:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd">
   <head>
     <meta content="Menu.x3d" name="title"/>
