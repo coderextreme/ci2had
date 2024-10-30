@@ -177,7 +177,7 @@
       }
       ]]>
     </Script>
-<Inline DEF="JinLiddroop" url='"../resources/JinLiddroop.x3d" "JinLiddroop.x3d"'/>
+<Inline DEF="JinLidDroop" url='"../resources/JinLidDroop.x3d" "JinLidDroop.x3d"'/>
 </Group>
 
     <Group>
@@ -313,7 +313,7 @@
       }
       ]]>
     </Script>
-<Inline DEF="JinLipstretcher" url='"../resources/JinLipstretcher.x3d" "JinLipstretcher.x3d"'/>
+<Inline DEF="JinLipStretcher" url='"../resources/JinLipStretcher.x3d" "JinLipStretcher.x3d"'/>
 </Group>
 
     <Group>
@@ -737,13 +737,13 @@
 <ROUTE fromNode="JinJawDrop_Sensor" fromField="touchTime" toNode="Choice8" toField="touchTime"/>
 <ROUTE fromNode="Choice8" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
 <Transform translation="48 36.39999999999999 0">
-<TouchSensor description="TSJinLiddroop" DEF="JinLiddroop_Sensor"/>
+<TouchSensor description="TSJinLidDroop" DEF="JinLidDroop_Sensor"/>
 
           <Shape>
             <Appearance>
               <Material diffuseColor="1 1 1"/>
             </Appearance>
-<Text string='"JinLiddroop"'>
+<Text string='"JinLidDroop"'>
 
               <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
             </Text>
@@ -758,7 +758,7 @@
              </IndexedFaceSet>
           </Shape>
         </Transform>
-<ROUTE fromNode="JinLiddroop_Sensor" fromField="touchTime" toNode="Choice9" toField="touchTime"/>
+<ROUTE fromNode="JinLidDroop_Sensor" fromField="touchTime" toNode="Choice9" toField="touchTime"/>
 <ROUTE fromNode="Choice9" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
 <Transform translation="48 33.39999999999999 0">
 <TouchSensor description="TSJinLidTightener" DEF="JinLidTightener_Sensor"/>
@@ -929,13 +929,13 @@
 <ROUTE fromNode="JinLipsPart_Sensor" fromField="touchTime" toNode="Choice16" toField="touchTime"/>
 <ROUTE fromNode="Choice16" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
 <Transform translation="48 12.399999999999999 0">
-<TouchSensor description="TSJinLipstretcher" DEF="JinLipstretcher_Sensor"/>
+<TouchSensor description="TSJinLipStretcher" DEF="JinLipStretcher_Sensor"/>
 
           <Shape>
             <Appearance>
               <Material diffuseColor="1 1 1"/>
             </Appearance>
-<Text string='"JinLipstretcher"'>
+<Text string='"JinLipStretcher"'>
 
               <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
             </Text>
@@ -950,7 +950,7 @@
              </IndexedFaceSet>
           </Shape>
         </Transform>
-<ROUTE fromNode="JinLipstretcher_Sensor" fromField="touchTime" toNode="Choice17" toField="touchTime"/>
+<ROUTE fromNode="JinLipStretcher_Sensor" fromField="touchTime" toNode="Choice17" toField="touchTime"/>
 <ROUTE fromNode="Choice17" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/>
 <Transform translation="48 9.399999999999999 0">
 <TouchSensor description="TSJinLipSuck" DEF="JinLipSuck_Sensor"/>
