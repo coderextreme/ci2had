@@ -123,40 +123,46 @@ def process_scene_list(scene_list):
                             if displacer is not None:
                                 segment.append(displacer)
 
-        ts_list = []
-        for scene_element in scene_list:
-            time_sensors = scene_element.findall(".//TimeSensor")
-            if len(time_sensors) <= 0:
-                print(f"Could not find TimeSensors")
-            for time_sensor in time_sensors:
+    ts_list = []
+    for scene_index, scene_element in enumerate(scene_list):
+        time_sensors = scene_element.findall(".//TimeSensor")
+        if len(time_sensors) <= 0:
+            print(f"Could not find TimeSensors")
+        for time_sensor in time_sensors:
+            group.insert(0,time_sensor)
+            ts_list.append(time_sensor)
+            print(f"Adding {time_sensor.tag} {time_sensor.get('DEF')}")
+
+        proximity_sensors = scene_element.findall(".//ProximitySensor")
+        if len(proximity_sensors) <= 0:
+            print(f"Could not find ProximitySensor")
+        else:
+            for proximity_sensor in proximity_sensors:
                 if scene_index == SCENE:
-                    group.append(time_sensor)
-                ts_list.append(time_sensor)
-                print(f"Adding {time_sensor.tag} {time_sensor.get('DEF')}")
+                    group.insert(0, proximity_sensor)
+                    print(f"Adding {proximity_sensor.tag} {proximity_sensor.get('DEF')}")
+                    route = xml.etree.ElementTree.Element('ROUTE')
+                    route.text = ""
+                    route.tail = "\n"
+                    route.set("fromNode", proximity_sensor.get('DEF'))
+                    route.set("fromField", "enterTime")
+                    route.set("toNode", clock_name)
+                    route.set("toField", "startTime")
+                    scene.append(route)
 
-            proximity_sensors = scene_element.findall(".//ProximitySensor")
-            if len(proximity_sensors) <= 0:
-                print(f"Could not find ProximitySensor")
-            else:
-                for proximity_sensor in proximity_sensors:
-                    if scene_index == SCENE:
-                        group.append(proximity_sensor)
-                        print(f"Adding {proximity_sensor.tag} {proximity_sensor.get('DEF')}")
-
-
-            for t, time_sensor in enumerate(ts_list):
-                # print("Time", t)
-                for other_t, other_time_sensor in enumerate(ts_list):
-                    if time_sensor != other_time_sensor:
-                        route = xml.etree.ElementTree.Element('ROUTE')
-                        route.text = ""
-                        route.tail = "\n"
-                        route.set("fromNode", time_sensor.get('DEF'))
-                        route.set("fromField", "startTime")
-                        route.set("toNode", other_time_sensor.get('DEF'))
-                        route.set("toField", "stopTime")
-                        group.append(route)
-                        #print("Other", other_t)
+    for t, time_sensor in enumerate(ts_list):
+        # print("Time", t)
+        for other_t, other_time_sensor in enumerate(ts_list):
+            if time_sensor != other_time_sensor:
+                route = xml.etree.ElementTree.Element('ROUTE')
+                route.text = ""
+                route.tail = "\n"
+                route.set("fromNode", time_sensor.get('DEF'))
+                route.set("fromField", "startTime")
+                route.set("toNode", other_time_sensor.get('DEF'))
+                route.set("toField", "stopTime")
+                group.append(route)
+                #print("Other", other_t)
 
     return group
 
@@ -326,25 +332,21 @@ for scene_element in scene_list:
     else:
         print(f"Could find ROUTEs")
     for route in routes:
+        # remove ROUTE
+        par = find_parent(scene_element, route)
+        par.remove(route)
         scene.append(route)
         # print(f"Adding {route.tag}")
 
-print(f"Added proximity is {proximity_sensor.get('DEF')}")
-route = xml.etree.ElementTree.Element('ROUTE')
-route.text = ""
-route.tail = "\n"
-route.set("fromNode", proximity_sensor.get('DEF'))
-route.set("fromField", "enterTime")
-route.set("toNode", clock_name)
-route.set("toField", "startTime")
-scene.append(route)
 finalX3D.append(scene)
+
 
 header = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">'
 xmlstr = xml.etree.ElementTree.tostring(finalX3D, encoding='unicode')
 
 menu_str = '''
     <!-- Viewpoint and any other scene setup -->
+    <WorldInfo title="SingleMenuJin.x3d"/>
     <Viewpoint position="0 20 110" />
       <Group>
       '''
