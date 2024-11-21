@@ -129,26 +129,31 @@ def process_scene_list(scene_list):
         if len(time_sensors) <= 0:
             print(f"Could not find TimeSensors")
         for time_sensor in time_sensors:
+            time_sensor.set("enabled", "false")
             group.insert(0,time_sensor)
             ts_list.append(time_sensor)
             print(f"Adding {time_sensor.tag} {time_sensor.get('DEF')}")
 
-        proximity_sensors = scene_element.findall(".//ProximitySensor")
-        if len(proximity_sensors) <= 0:
-            print(f"Could not find ProximitySensor")
-        else:
-            for proximity_sensor in proximity_sensors:
-                if scene_index == SCENE:
-                    group.insert(0, proximity_sensor)
-                    print(f"Adding {proximity_sensor.tag} {proximity_sensor.get('DEF')}")
-                    route = xml.etree.ElementTree.Element('ROUTE')
-                    route.text = ""
-                    route.tail = "\n"
-                    route.set("fromNode", proximity_sensor.get('DEF'))
-                    route.set("fromField", "enterTime")
-                    route.set("toNode", clock_name)
-                    route.set("toField", "startTime")
-                    scene.append(route)
+    proximity_sensors = scene_element.findall(".//ProximitySensor")
+    if len(proximity_sensors) <= 0:
+        print(f"Could not find ProximitySensor, Adding")
+        proximity_sensor = xml.etree.ElementTree.Element('ProximitySensor')
+        proximity_sensor.text = ""
+        proximity_sensor.tail = "\n"
+        proximity_sensor.set('DEF', "Fire_"+clock_name)
+        proximity_sensor.set("size", "10000 10000 10000")
+        scene.insert(0, proximity_sensor)
+        ps = proximity_sensor
+        group.insert(0, ps)
+        print(f"Adding {proximity_sensor.tag} {proximity_sensor.get('DEF')}")
+        route = xml.etree.ElementTree.Element('ROUTE')
+        route.text = ""
+        route.tail = "\n"
+        route.set("fromNode", ps.get('DEF'))
+        route.set("fromField", "enterTime")
+        route.set("toNode", clock_name)
+        route.set("toField", "startTime")
+        group.append(route)
 
     for t, time_sensor in enumerate(ts_list):
         # print("Time", t)
@@ -398,6 +403,7 @@ for file_index, input_file in enumerate(files):
         </Transform>
 '''
         menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Sensor" fromField="touchTime" toNode="'+findAnimation(input_file)+'_Clock" toField="startTime"/>\n'
+        menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Sensor" fromField="isOver" toNode="'+findAnimation(input_file)+'_Clock" toField="enabled"/>\n'
 
     ifs_start += increment
 menu_str += '''

@@ -8,6 +8,7 @@
 </head>
 <Scene>
 <ProximitySensor DEF="Fire_JinWink_Clock" size="10000 10000 10000" />
+<ProximitySensor DEF="Fire_JinWink_Clock" size="10000 10000 10000" />
 <ScalarInterpolator DEF="AnimationAdapter_JinBlink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinBrowLowerer" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinCheekPuffer" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
@@ -39,36 +40,37 @@
     <ScalarInterpolator DEF="AnimationAdapter_JinUpperLipRaiser" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinWink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <Group>
-<TimeSensor DEF="JinWink_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinUpperLipRaiser_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinUpperLidRaiser_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinSquint_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinSlit_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinOuterBrowRaiser_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinNoseWrinkler_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinNasolabialDeepener_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinMouthStretch_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinLowerLipDepressor_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinLipTightener_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinLipSuck_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinLipStretcher_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinLipsPart_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinLipPuckerer_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinLipPressor_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinLipFunneler_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinLipCornerPuller_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinLipCornerDepressor_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinLidTightener_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinLidDroop_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinJawDrop_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinInnerBrowRaiser_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinEyesClosed_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinDimpler_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinChinRaiser_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinCheekRaiser_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinCheekPuffer_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinBrowLowerer_Clock" cycleInterval="0.99" enabled="true" loop="true" />
-    <TimeSensor DEF="JinBlink_Clock" cycleInterval="0.99" enabled="true" loop="true" />
+<ProximitySensor DEF="Fire_JinWink_Clock" size="10000 10000 10000" />
+<TimeSensor DEF="JinWink_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinUpperLipRaiser_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinUpperLidRaiser_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinSquint_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinSlit_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinOuterBrowRaiser_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinNoseWrinkler_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinNasolabialDeepener_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinMouthStretch_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinLowerLipDepressor_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinLipTightener_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinLipSuck_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinLipStretcher_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinLipsPart_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinLipPuckerer_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinLipPressor_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinLipFunneler_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinLipCornerPuller_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinLipCornerDepressor_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinLidTightener_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinLidDroop_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinJawDrop_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinInnerBrowRaiser_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinEyesClosed_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinDimpler_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinChinRaiser_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinCheekRaiser_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinCheekPuffer_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinBrowLowerer_Clock" cycleInterval="0.99" enabled="false" loop="true" />
+    <TimeSensor DEF="JinBlink_Clock" cycleInterval="0.99" enabled="false" loop="true" />
     <HAnimHumanoid DEF="hanim0_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim0_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim0_sacrum" name="sacrum">
@@ -1905,6 +1907,7 @@
 <HAnimJoint USE="hanim0_humanoid_root" containerField="joints" />
 <HAnimJoint USE="hanim0_skullbase" containerField="joints" />
 </HAnimHumanoid>
+<ROUTE fromNode="Fire_JinWink_Clock" fromField="enterTime" toNode="JinWink_Clock" toField="startTime" />
 <ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
 <ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
 <ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
@@ -4167,6 +4170,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinBlink_Sensor" fromField="touchTime" toNode="JinBlink_Clock" toField="startTime"/>
+<ROUTE fromNode="JinBlink_Sensor" fromField="isOver" toNode="JinBlink_Clock" toField="enabled"/>
 <Transform translation="48 60.4 0">
 <TouchSensor description="Jin Brow Lowerer" DEF="JinBrowLowerer_Sensor"/>
 
@@ -4190,6 +4194,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinBrowLowerer_Sensor" fromField="touchTime" toNode="JinBrowLowerer_Clock" toField="startTime"/>
+<ROUTE fromNode="JinBrowLowerer_Sensor" fromField="isOver" toNode="JinBrowLowerer_Clock" toField="enabled"/>
 <Transform translation="48 57.39999999999999 0">
 <TouchSensor description="Jin Cheek Puffer" DEF="JinCheekPuffer_Sensor"/>
 
@@ -4213,6 +4218,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinCheekPuffer_Sensor" fromField="touchTime" toNode="JinCheekPuffer_Clock" toField="startTime"/>
+<ROUTE fromNode="JinCheekPuffer_Sensor" fromField="isOver" toNode="JinCheekPuffer_Clock" toField="enabled"/>
 <Transform translation="48 54.39999999999999 0">
 <TouchSensor description="Jin Cheek Raiser" DEF="JinCheekRaiser_Sensor"/>
 
@@ -4236,6 +4242,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinCheekRaiser_Sensor" fromField="touchTime" toNode="JinCheekRaiser_Clock" toField="startTime"/>
+<ROUTE fromNode="JinCheekRaiser_Sensor" fromField="isOver" toNode="JinCheekRaiser_Clock" toField="enabled"/>
 <Transform translation="48 51.39999999999999 0">
 <TouchSensor description="Jin Chin Raiser" DEF="JinChinRaiser_Sensor"/>
 
@@ -4259,6 +4266,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinChinRaiser_Sensor" fromField="touchTime" toNode="JinChinRaiser_Clock" toField="startTime"/>
+<ROUTE fromNode="JinChinRaiser_Sensor" fromField="isOver" toNode="JinChinRaiser_Clock" toField="enabled"/>
 <Transform translation="48 48.39999999999999 0">
 <TouchSensor description="Jin Dimpler" DEF="JinDimpler_Sensor"/>
 
@@ -4282,6 +4290,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinDimpler_Sensor" fromField="touchTime" toNode="JinDimpler_Clock" toField="startTime"/>
+<ROUTE fromNode="JinDimpler_Sensor" fromField="isOver" toNode="JinDimpler_Clock" toField="enabled"/>
 <Transform translation="48 45.39999999999999 0">
 <TouchSensor description="Jin Eyes Closed" DEF="JinEyesClosed_Sensor"/>
 
@@ -4305,6 +4314,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinEyesClosed_Sensor" fromField="touchTime" toNode="JinEyesClosed_Clock" toField="startTime"/>
+<ROUTE fromNode="JinEyesClosed_Sensor" fromField="isOver" toNode="JinEyesClosed_Clock" toField="enabled"/>
 <Transform translation="48 42.39999999999999 0">
 <TouchSensor description="Jin Inner Brow Raiser" DEF="JinInnerBrowRaiser_Sensor"/>
 
@@ -4328,6 +4338,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinInnerBrowRaiser_Sensor" fromField="touchTime" toNode="JinInnerBrowRaiser_Clock" toField="startTime"/>
+<ROUTE fromNode="JinInnerBrowRaiser_Sensor" fromField="isOver" toNode="JinInnerBrowRaiser_Clock" toField="enabled"/>
 <Transform translation="48 39.39999999999999 0">
 <TouchSensor description="Jin Jaw Drop" DEF="JinJawDrop_Sensor"/>
 
@@ -4351,6 +4362,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinJawDrop_Sensor" fromField="touchTime" toNode="JinJawDrop_Clock" toField="startTime"/>
+<ROUTE fromNode="JinJawDrop_Sensor" fromField="isOver" toNode="JinJawDrop_Clock" toField="enabled"/>
 <Transform translation="48 36.39999999999999 0">
 <TouchSensor description="Jin Lid Droop" DEF="JinLidDroop_Sensor"/>
 
@@ -4374,6 +4386,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinLidDroop_Sensor" fromField="touchTime" toNode="JinLidDroop_Clock" toField="startTime"/>
+<ROUTE fromNode="JinLidDroop_Sensor" fromField="isOver" toNode="JinLidDroop_Clock" toField="enabled"/>
 <Transform translation="48 33.39999999999999 0">
 <TouchSensor description="Jin Lid Tightener" DEF="JinLidTightener_Sensor"/>
 
@@ -4397,6 +4410,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinLidTightener_Sensor" fromField="touchTime" toNode="JinLidTightener_Clock" toField="startTime"/>
+<ROUTE fromNode="JinLidTightener_Sensor" fromField="isOver" toNode="JinLidTightener_Clock" toField="enabled"/>
 <Transform translation="48 30.399999999999995 0">
 <TouchSensor description="Jin Lip Corner Depressor" DEF="JinLipCornerDepressor_Sensor"/>
 
@@ -4420,6 +4434,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinLipCornerDepressor_Sensor" fromField="touchTime" toNode="JinLipCornerDepressor_Clock" toField="startTime"/>
+<ROUTE fromNode="JinLipCornerDepressor_Sensor" fromField="isOver" toNode="JinLipCornerDepressor_Clock" toField="enabled"/>
 <Transform translation="48 27.399999999999995 0">
 <TouchSensor description="Jin Lip Corner Puller" DEF="JinLipCornerPuller_Sensor"/>
 
@@ -4443,6 +4458,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinLipCornerPuller_Sensor" fromField="touchTime" toNode="JinLipCornerPuller_Clock" toField="startTime"/>
+<ROUTE fromNode="JinLipCornerPuller_Sensor" fromField="isOver" toNode="JinLipCornerPuller_Clock" toField="enabled"/>
 <Transform translation="48 24.399999999999995 0">
 <TouchSensor description="Jin Lip Funneler" DEF="JinLipFunneler_Sensor"/>
 
@@ -4466,6 +4482,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinLipFunneler_Sensor" fromField="touchTime" toNode="JinLipFunneler_Clock" toField="startTime"/>
+<ROUTE fromNode="JinLipFunneler_Sensor" fromField="isOver" toNode="JinLipFunneler_Clock" toField="enabled"/>
 <Transform translation="48 21.399999999999995 0">
 <TouchSensor description="Jin Lip Pressor" DEF="JinLipPressor_Sensor"/>
 
@@ -4489,6 +4506,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinLipPressor_Sensor" fromField="touchTime" toNode="JinLipPressor_Clock" toField="startTime"/>
+<ROUTE fromNode="JinLipPressor_Sensor" fromField="isOver" toNode="JinLipPressor_Clock" toField="enabled"/>
 <Transform translation="48 18.4 0">
 <TouchSensor description="Jin Lip Puckerer" DEF="JinLipPuckerer_Sensor"/>
 
@@ -4512,6 +4530,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinLipPuckerer_Sensor" fromField="touchTime" toNode="JinLipPuckerer_Clock" toField="startTime"/>
+<ROUTE fromNode="JinLipPuckerer_Sensor" fromField="isOver" toNode="JinLipPuckerer_Clock" toField="enabled"/>
 <Transform translation="48 15.399999999999997 0">
 <TouchSensor description="Jin Lips Part" DEF="JinLipsPart_Sensor"/>
 
@@ -4535,6 +4554,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinLipsPart_Sensor" fromField="touchTime" toNode="JinLipsPart_Clock" toField="startTime"/>
+<ROUTE fromNode="JinLipsPart_Sensor" fromField="isOver" toNode="JinLipsPart_Clock" toField="enabled"/>
 <Transform translation="48 12.399999999999999 0">
 <TouchSensor description="Jin Lip Stretcher" DEF="JinLipStretcher_Sensor"/>
 
@@ -4558,6 +4578,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinLipStretcher_Sensor" fromField="touchTime" toNode="JinLipStretcher_Clock" toField="startTime"/>
+<ROUTE fromNode="JinLipStretcher_Sensor" fromField="isOver" toNode="JinLipStretcher_Clock" toField="enabled"/>
 <Transform translation="48 9.399999999999999 0">
 <TouchSensor description="Jin Lip Suck" DEF="JinLipSuck_Sensor"/>
 
@@ -4581,6 +4602,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinLipSuck_Sensor" fromField="touchTime" toNode="JinLipSuck_Clock" toField="startTime"/>
+<ROUTE fromNode="JinLipSuck_Sensor" fromField="isOver" toNode="JinLipSuck_Clock" toField="enabled"/>
 <Transform translation="48 6.399999999999999 0">
 <TouchSensor description="Jin Lip Tightener" DEF="JinLipTightener_Sensor"/>
 
@@ -4604,6 +4626,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinLipTightener_Sensor" fromField="touchTime" toNode="JinLipTightener_Clock" toField="startTime"/>
+<ROUTE fromNode="JinLipTightener_Sensor" fromField="isOver" toNode="JinLipTightener_Clock" toField="enabled"/>
 <Transform translation="48 3.399999999999995 0">
 <TouchSensor description="Jin Lower Lip Depressor" DEF="JinLowerLipDepressor_Sensor"/>
 
@@ -4627,6 +4650,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinLowerLipDepressor_Sensor" fromField="touchTime" toNode="JinLowerLipDepressor_Clock" toField="startTime"/>
+<ROUTE fromNode="JinLowerLipDepressor_Sensor" fromField="isOver" toNode="JinLowerLipDepressor_Clock" toField="enabled"/>
 <Transform translation="48 0.399999999999995 0">
 <TouchSensor description="Jin Mouth Stretch" DEF="JinMouthStretch_Sensor"/>
 
@@ -4650,6 +4674,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinMouthStretch_Sensor" fromField="touchTime" toNode="JinMouthStretch_Clock" toField="startTime"/>
+<ROUTE fromNode="JinMouthStretch_Sensor" fromField="isOver" toNode="JinMouthStretch_Clock" toField="enabled"/>
 <Transform translation="48 -2.6000000000000085 0">
 <TouchSensor description="Jin Nasolabial Deepener" DEF="JinNasolabialDeepener_Sensor"/>
 
@@ -4673,6 +4698,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinNasolabialDeepener_Sensor" fromField="touchTime" toNode="JinNasolabialDeepener_Clock" toField="startTime"/>
+<ROUTE fromNode="JinNasolabialDeepener_Sensor" fromField="isOver" toNode="JinNasolabialDeepener_Clock" toField="enabled"/>
 <Transform translation="48 -5.6000000000000085 0">
 <TouchSensor description="Jin Nose Wrinkler" DEF="JinNoseWrinkler_Sensor"/>
 
@@ -4696,6 +4722,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinNoseWrinkler_Sensor" fromField="touchTime" toNode="JinNoseWrinkler_Clock" toField="startTime"/>
+<ROUTE fromNode="JinNoseWrinkler_Sensor" fromField="isOver" toNode="JinNoseWrinkler_Clock" toField="enabled"/>
 <Transform translation="48 -8.600000000000009 0">
 <TouchSensor description="Jin Outer Brow Raiser" DEF="JinOuterBrowRaiser_Sensor"/>
 
@@ -4719,6 +4746,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinOuterBrowRaiser_Sensor" fromField="touchTime" toNode="JinOuterBrowRaiser_Clock" toField="startTime"/>
+<ROUTE fromNode="JinOuterBrowRaiser_Sensor" fromField="isOver" toNode="JinOuterBrowRaiser_Clock" toField="enabled"/>
 <Transform translation="48 -11.600000000000009 0">
 <TouchSensor description="Jin Slit" DEF="JinSlit_Sensor"/>
 
@@ -4742,6 +4770,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinSlit_Sensor" fromField="touchTime" toNode="JinSlit_Clock" toField="startTime"/>
+<ROUTE fromNode="JinSlit_Sensor" fromField="isOver" toNode="JinSlit_Clock" toField="enabled"/>
 <Transform translation="48 -14.600000000000001 0">
 <TouchSensor description="Jin Squint" DEF="JinSquint_Sensor"/>
 
@@ -4765,6 +4794,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinSquint_Sensor" fromField="touchTime" toNode="JinSquint_Clock" toField="startTime"/>
+<ROUTE fromNode="JinSquint_Sensor" fromField="isOver" toNode="JinSquint_Clock" toField="enabled"/>
 <Transform translation="48 -17.6 0">
 <TouchSensor description="Jin Upper Lid Raiser" DEF="JinUpperLidRaiser_Sensor"/>
 
@@ -4788,6 +4818,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinUpperLidRaiser_Sensor" fromField="touchTime" toNode="JinUpperLidRaiser_Clock" toField="startTime"/>
+<ROUTE fromNode="JinUpperLidRaiser_Sensor" fromField="isOver" toNode="JinUpperLidRaiser_Clock" toField="enabled"/>
 <Transform translation="48 -20.6 0">
 <TouchSensor description="Jin Upper Lip Raiser" DEF="JinUpperLipRaiser_Sensor"/>
 
@@ -4811,6 +4842,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinUpperLipRaiser_Sensor" fromField="touchTime" toNode="JinUpperLipRaiser_Clock" toField="startTime"/>
+<ROUTE fromNode="JinUpperLipRaiser_Sensor" fromField="isOver" toNode="JinUpperLipRaiser_Clock" toField="enabled"/>
 <Transform translation="48 -23.599999999999994 0">
 <TouchSensor description="Jin Wink" DEF="JinWink_Sensor"/>
 
@@ -4834,6 +4866,7 @@
           </Shape>
         </Transform>
 <ROUTE fromNode="JinWink_Sensor" fromField="touchTime" toNode="JinWink_Clock" toField="startTime"/>
+<ROUTE fromNode="JinWink_Sensor" fromField="isOver" toNode="JinWink_Clock" toField="enabled"/>
 
     </Group>
   </Scene>
