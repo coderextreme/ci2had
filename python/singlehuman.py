@@ -414,7 +414,7 @@ for file_index, input_file in enumerate(files):
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -429,9 +429,10 @@ for file_index, input_file in enumerate(files):
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         '''
         menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Sensor" fromField="touchTime" toNode="Script'+str(file_index)+'" toField="inTime"/>\n'
         menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Material" fromField="diffuseColor" toNode="Script'+str(file_index)+'" toField="diffuseColor"/>\n'
@@ -441,7 +442,6 @@ for file_index, input_file in enumerate(files):
         menu_str += '<ROUTE fromNode="Script'+str(file_index)+'" fromField="resumeTime" toNode="'+findAnimation(input_file)+'_Clock" toField="resumeTime"/>\n'
         menu_str += '<ROUTE fromNode="Script'+str(file_index)+'" fromField="fraction" toNode="AnimationAdapter_'+findAnimation(input_file)+'" toField="set_fraction"/>\n'
         menu_str += '''
-      </Script>
         </Transform>
 '''
         # menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Sensor" fromField="isOver" toNode="'+findAnimation(input_file)+'_Clock" toField="enabled"/>\n'

@@ -3305,7 +3305,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -3320,9 +3320,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinBlink_Sensor" fromField="touchTime" toNode="Script0" toField="inTime"/>
 <ROUTE fromNode="JinBlink_Material" fromField="diffuseColor" toNode="Script0" toField="diffuseColor"/>
 <ROUTE fromNode="Script0" fromField="diffuseColor" toNode="JinBlink_Material" toField="diffuseColor" />
@@ -3331,7 +3332,6 @@
 <ROUTE fromNode="Script0" fromField="resumeTime" toNode="JinBlink_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script0" fromField="fraction" toNode="AnimationAdapter_JinBlink" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinBlink_Sensor" fromField="touchTime" toNode="JinBlink_Clock" toField="startTime"/>
 <Transform translation="48 60.4 0">
@@ -3364,7 +3364,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -3379,9 +3379,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinBrowLowerer_Sensor" fromField="touchTime" toNode="Script1" toField="inTime"/>
 <ROUTE fromNode="JinBrowLowerer_Material" fromField="diffuseColor" toNode="Script1" toField="diffuseColor"/>
 <ROUTE fromNode="Script1" fromField="diffuseColor" toNode="JinBrowLowerer_Material" toField="diffuseColor" />
@@ -3390,7 +3391,6 @@
 <ROUTE fromNode="Script1" fromField="resumeTime" toNode="JinBrowLowerer_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script1" fromField="fraction" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinBrowLowerer_Sensor" fromField="touchTime" toNode="JinBrowLowerer_Clock" toField="startTime"/>
 <Transform translation="48 57.39999999999999 0">
@@ -3423,7 +3423,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -3438,9 +3438,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinCheekPuffer_Sensor" fromField="touchTime" toNode="Script2" toField="inTime"/>
 <ROUTE fromNode="JinCheekPuffer_Material" fromField="diffuseColor" toNode="Script2" toField="diffuseColor"/>
 <ROUTE fromNode="Script2" fromField="diffuseColor" toNode="JinCheekPuffer_Material" toField="diffuseColor" />
@@ -3449,7 +3450,6 @@
 <ROUTE fromNode="Script2" fromField="resumeTime" toNode="JinCheekPuffer_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script2" fromField="fraction" toNode="AnimationAdapter_JinCheekPuffer" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinCheekPuffer_Sensor" fromField="touchTime" toNode="JinCheekPuffer_Clock" toField="startTime"/>
 <Transform translation="48 54.39999999999999 0">
@@ -3482,7 +3482,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -3497,9 +3497,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinCheekRaiser_Sensor" fromField="touchTime" toNode="Script3" toField="inTime"/>
 <ROUTE fromNode="JinCheekRaiser_Material" fromField="diffuseColor" toNode="Script3" toField="diffuseColor"/>
 <ROUTE fromNode="Script3" fromField="diffuseColor" toNode="JinCheekRaiser_Material" toField="diffuseColor" />
@@ -3508,7 +3509,6 @@
 <ROUTE fromNode="Script3" fromField="resumeTime" toNode="JinCheekRaiser_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script3" fromField="fraction" toNode="AnimationAdapter_JinCheekRaiser" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinCheekRaiser_Sensor" fromField="touchTime" toNode="JinCheekRaiser_Clock" toField="startTime"/>
 <Transform translation="48 51.39999999999999 0">
@@ -3541,7 +3541,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -3556,9 +3556,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinChinRaiser_Sensor" fromField="touchTime" toNode="Script4" toField="inTime"/>
 <ROUTE fromNode="JinChinRaiser_Material" fromField="diffuseColor" toNode="Script4" toField="diffuseColor"/>
 <ROUTE fromNode="Script4" fromField="diffuseColor" toNode="JinChinRaiser_Material" toField="diffuseColor" />
@@ -3567,7 +3568,6 @@
 <ROUTE fromNode="Script4" fromField="resumeTime" toNode="JinChinRaiser_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script4" fromField="fraction" toNode="AnimationAdapter_JinChinRaiser" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinChinRaiser_Sensor" fromField="touchTime" toNode="JinChinRaiser_Clock" toField="startTime"/>
 <Transform translation="48 48.39999999999999 0">
@@ -3600,7 +3600,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -3615,9 +3615,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinDimpler_Sensor" fromField="touchTime" toNode="Script5" toField="inTime"/>
 <ROUTE fromNode="JinDimpler_Material" fromField="diffuseColor" toNode="Script5" toField="diffuseColor"/>
 <ROUTE fromNode="Script5" fromField="diffuseColor" toNode="JinDimpler_Material" toField="diffuseColor" />
@@ -3626,7 +3627,6 @@
 <ROUTE fromNode="Script5" fromField="resumeTime" toNode="JinDimpler_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script5" fromField="fraction" toNode="AnimationAdapter_JinDimpler" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinDimpler_Sensor" fromField="touchTime" toNode="JinDimpler_Clock" toField="startTime"/>
 <Transform translation="48 45.39999999999999 0">
@@ -3659,7 +3659,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -3674,9 +3674,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinEyesClosed_Sensor" fromField="touchTime" toNode="Script6" toField="inTime"/>
 <ROUTE fromNode="JinEyesClosed_Material" fromField="diffuseColor" toNode="Script6" toField="diffuseColor"/>
 <ROUTE fromNode="Script6" fromField="diffuseColor" toNode="JinEyesClosed_Material" toField="diffuseColor" />
@@ -3685,7 +3686,6 @@
 <ROUTE fromNode="Script6" fromField="resumeTime" toNode="JinEyesClosed_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script6" fromField="fraction" toNode="AnimationAdapter_JinEyesClosed" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinEyesClosed_Sensor" fromField="touchTime" toNode="JinEyesClosed_Clock" toField="startTime"/>
 <Transform translation="48 42.39999999999999 0">
@@ -3718,7 +3718,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -3733,9 +3733,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinInnerBrowRaiser_Sensor" fromField="touchTime" toNode="Script7" toField="inTime"/>
 <ROUTE fromNode="JinInnerBrowRaiser_Material" fromField="diffuseColor" toNode="Script7" toField="diffuseColor"/>
 <ROUTE fromNode="Script7" fromField="diffuseColor" toNode="JinInnerBrowRaiser_Material" toField="diffuseColor" />
@@ -3744,7 +3745,6 @@
 <ROUTE fromNode="Script7" fromField="resumeTime" toNode="JinInnerBrowRaiser_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script7" fromField="fraction" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinInnerBrowRaiser_Sensor" fromField="touchTime" toNode="JinInnerBrowRaiser_Clock" toField="startTime"/>
 <Transform translation="48 39.39999999999999 0">
@@ -3777,7 +3777,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -3792,9 +3792,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinJawDrop_Sensor" fromField="touchTime" toNode="Script8" toField="inTime"/>
 <ROUTE fromNode="JinJawDrop_Material" fromField="diffuseColor" toNode="Script8" toField="diffuseColor"/>
 <ROUTE fromNode="Script8" fromField="diffuseColor" toNode="JinJawDrop_Material" toField="diffuseColor" />
@@ -3803,7 +3804,6 @@
 <ROUTE fromNode="Script8" fromField="resumeTime" toNode="JinJawDrop_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script8" fromField="fraction" toNode="AnimationAdapter_JinJawDrop" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinJawDrop_Sensor" fromField="touchTime" toNode="JinJawDrop_Clock" toField="startTime"/>
 <Transform translation="48 36.39999999999999 0">
@@ -3836,7 +3836,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -3851,9 +3851,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinLidDroop_Sensor" fromField="touchTime" toNode="Script9" toField="inTime"/>
 <ROUTE fromNode="JinLidDroop_Material" fromField="diffuseColor" toNode="Script9" toField="diffuseColor"/>
 <ROUTE fromNode="Script9" fromField="diffuseColor" toNode="JinLidDroop_Material" toField="diffuseColor" />
@@ -3862,7 +3863,6 @@
 <ROUTE fromNode="Script9" fromField="resumeTime" toNode="JinLidDroop_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script9" fromField="fraction" toNode="AnimationAdapter_JinLidDroop" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinLidDroop_Sensor" fromField="touchTime" toNode="JinLidDroop_Clock" toField="startTime"/>
 <Transform translation="48 33.39999999999999 0">
@@ -3895,7 +3895,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -3910,9 +3910,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinLidTightener_Sensor" fromField="touchTime" toNode="Script10" toField="inTime"/>
 <ROUTE fromNode="JinLidTightener_Material" fromField="diffuseColor" toNode="Script10" toField="diffuseColor"/>
 <ROUTE fromNode="Script10" fromField="diffuseColor" toNode="JinLidTightener_Material" toField="diffuseColor" />
@@ -3921,7 +3922,6 @@
 <ROUTE fromNode="Script10" fromField="resumeTime" toNode="JinLidTightener_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script10" fromField="fraction" toNode="AnimationAdapter_JinLidTightener" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinLidTightener_Sensor" fromField="touchTime" toNode="JinLidTightener_Clock" toField="startTime"/>
 <Transform translation="48 30.399999999999995 0">
@@ -3954,7 +3954,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -3969,9 +3969,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinLipCornerDepressor_Sensor" fromField="touchTime" toNode="Script11" toField="inTime"/>
 <ROUTE fromNode="JinLipCornerDepressor_Material" fromField="diffuseColor" toNode="Script11" toField="diffuseColor"/>
 <ROUTE fromNode="Script11" fromField="diffuseColor" toNode="JinLipCornerDepressor_Material" toField="diffuseColor" />
@@ -3980,7 +3981,6 @@
 <ROUTE fromNode="Script11" fromField="resumeTime" toNode="JinLipCornerDepressor_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script11" fromField="fraction" toNode="AnimationAdapter_JinLipCornerDepressor" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinLipCornerDepressor_Sensor" fromField="touchTime" toNode="JinLipCornerDepressor_Clock" toField="startTime"/>
 <Transform translation="48 27.399999999999995 0">
@@ -4013,7 +4013,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4028,9 +4028,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinLipCornerPuller_Sensor" fromField="touchTime" toNode="Script12" toField="inTime"/>
 <ROUTE fromNode="JinLipCornerPuller_Material" fromField="diffuseColor" toNode="Script12" toField="diffuseColor"/>
 <ROUTE fromNode="Script12" fromField="diffuseColor" toNode="JinLipCornerPuller_Material" toField="diffuseColor" />
@@ -4039,7 +4040,6 @@
 <ROUTE fromNode="Script12" fromField="resumeTime" toNode="JinLipCornerPuller_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script12" fromField="fraction" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinLipCornerPuller_Sensor" fromField="touchTime" toNode="JinLipCornerPuller_Clock" toField="startTime"/>
 <Transform translation="48 24.399999999999995 0">
@@ -4072,7 +4072,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4087,9 +4087,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinLipFunneler_Sensor" fromField="touchTime" toNode="Script13" toField="inTime"/>
 <ROUTE fromNode="JinLipFunneler_Material" fromField="diffuseColor" toNode="Script13" toField="diffuseColor"/>
 <ROUTE fromNode="Script13" fromField="diffuseColor" toNode="JinLipFunneler_Material" toField="diffuseColor" />
@@ -4098,7 +4099,6 @@
 <ROUTE fromNode="Script13" fromField="resumeTime" toNode="JinLipFunneler_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script13" fromField="fraction" toNode="AnimationAdapter_JinLipFunneler" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinLipFunneler_Sensor" fromField="touchTime" toNode="JinLipFunneler_Clock" toField="startTime"/>
 <Transform translation="48 21.399999999999995 0">
@@ -4131,7 +4131,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4146,9 +4146,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinLipPressor_Sensor" fromField="touchTime" toNode="Script14" toField="inTime"/>
 <ROUTE fromNode="JinLipPressor_Material" fromField="diffuseColor" toNode="Script14" toField="diffuseColor"/>
 <ROUTE fromNode="Script14" fromField="diffuseColor" toNode="JinLipPressor_Material" toField="diffuseColor" />
@@ -4157,7 +4158,6 @@
 <ROUTE fromNode="Script14" fromField="resumeTime" toNode="JinLipPressor_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script14" fromField="fraction" toNode="AnimationAdapter_JinLipPressor" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinLipPressor_Sensor" fromField="touchTime" toNode="JinLipPressor_Clock" toField="startTime"/>
 <Transform translation="48 18.4 0">
@@ -4190,7 +4190,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4205,9 +4205,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinLipPuckerer_Sensor" fromField="touchTime" toNode="Script15" toField="inTime"/>
 <ROUTE fromNode="JinLipPuckerer_Material" fromField="diffuseColor" toNode="Script15" toField="diffuseColor"/>
 <ROUTE fromNode="Script15" fromField="diffuseColor" toNode="JinLipPuckerer_Material" toField="diffuseColor" />
@@ -4216,7 +4217,6 @@
 <ROUTE fromNode="Script15" fromField="resumeTime" toNode="JinLipPuckerer_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script15" fromField="fraction" toNode="AnimationAdapter_JinLipPuckerer" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinLipPuckerer_Sensor" fromField="touchTime" toNode="JinLipPuckerer_Clock" toField="startTime"/>
 <Transform translation="48 15.399999999999997 0">
@@ -4249,7 +4249,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4264,9 +4264,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinLipsPart_Sensor" fromField="touchTime" toNode="Script16" toField="inTime"/>
 <ROUTE fromNode="JinLipsPart_Material" fromField="diffuseColor" toNode="Script16" toField="diffuseColor"/>
 <ROUTE fromNode="Script16" fromField="diffuseColor" toNode="JinLipsPart_Material" toField="diffuseColor" />
@@ -4275,7 +4276,6 @@
 <ROUTE fromNode="Script16" fromField="resumeTime" toNode="JinLipsPart_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script16" fromField="fraction" toNode="AnimationAdapter_JinLipsPart" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinLipsPart_Sensor" fromField="touchTime" toNode="JinLipsPart_Clock" toField="startTime"/>
 <Transform translation="48 12.399999999999999 0">
@@ -4308,7 +4308,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4323,9 +4323,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinLipStretcher_Sensor" fromField="touchTime" toNode="Script17" toField="inTime"/>
 <ROUTE fromNode="JinLipStretcher_Material" fromField="diffuseColor" toNode="Script17" toField="diffuseColor"/>
 <ROUTE fromNode="Script17" fromField="diffuseColor" toNode="JinLipStretcher_Material" toField="diffuseColor" />
@@ -4334,7 +4335,6 @@
 <ROUTE fromNode="Script17" fromField="resumeTime" toNode="JinLipStretcher_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script17" fromField="fraction" toNode="AnimationAdapter_JinLipStretcher" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinLipStretcher_Sensor" fromField="touchTime" toNode="JinLipStretcher_Clock" toField="startTime"/>
 <Transform translation="48 9.399999999999999 0">
@@ -4367,7 +4367,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4382,9 +4382,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinLipSuck_Sensor" fromField="touchTime" toNode="Script18" toField="inTime"/>
 <ROUTE fromNode="JinLipSuck_Material" fromField="diffuseColor" toNode="Script18" toField="diffuseColor"/>
 <ROUTE fromNode="Script18" fromField="diffuseColor" toNode="JinLipSuck_Material" toField="diffuseColor" />
@@ -4393,7 +4394,6 @@
 <ROUTE fromNode="Script18" fromField="resumeTime" toNode="JinLipSuck_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script18" fromField="fraction" toNode="AnimationAdapter_JinLipSuck" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinLipSuck_Sensor" fromField="touchTime" toNode="JinLipSuck_Clock" toField="startTime"/>
 <Transform translation="48 6.399999999999999 0">
@@ -4426,7 +4426,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4441,9 +4441,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinLipTightener_Sensor" fromField="touchTime" toNode="Script19" toField="inTime"/>
 <ROUTE fromNode="JinLipTightener_Material" fromField="diffuseColor" toNode="Script19" toField="diffuseColor"/>
 <ROUTE fromNode="Script19" fromField="diffuseColor" toNode="JinLipTightener_Material" toField="diffuseColor" />
@@ -4452,7 +4453,6 @@
 <ROUTE fromNode="Script19" fromField="resumeTime" toNode="JinLipTightener_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script19" fromField="fraction" toNode="AnimationAdapter_JinLipTightener" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinLipTightener_Sensor" fromField="touchTime" toNode="JinLipTightener_Clock" toField="startTime"/>
 <Transform translation="48 3.399999999999995 0">
@@ -4485,7 +4485,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4500,9 +4500,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinLowerLipDepressor_Sensor" fromField="touchTime" toNode="Script20" toField="inTime"/>
 <ROUTE fromNode="JinLowerLipDepressor_Material" fromField="diffuseColor" toNode="Script20" toField="diffuseColor"/>
 <ROUTE fromNode="Script20" fromField="diffuseColor" toNode="JinLowerLipDepressor_Material" toField="diffuseColor" />
@@ -4511,7 +4512,6 @@
 <ROUTE fromNode="Script20" fromField="resumeTime" toNode="JinLowerLipDepressor_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script20" fromField="fraction" toNode="AnimationAdapter_JinLowerLipDepressor" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinLowerLipDepressor_Sensor" fromField="touchTime" toNode="JinLowerLipDepressor_Clock" toField="startTime"/>
 <Transform translation="48 0.399999999999995 0">
@@ -4544,7 +4544,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4559,9 +4559,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinMouthStretch_Sensor" fromField="touchTime" toNode="Script21" toField="inTime"/>
 <ROUTE fromNode="JinMouthStretch_Material" fromField="diffuseColor" toNode="Script21" toField="diffuseColor"/>
 <ROUTE fromNode="Script21" fromField="diffuseColor" toNode="JinMouthStretch_Material" toField="diffuseColor" />
@@ -4570,7 +4571,6 @@
 <ROUTE fromNode="Script21" fromField="resumeTime" toNode="JinMouthStretch_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script21" fromField="fraction" toNode="AnimationAdapter_JinMouthStretch" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinMouthStretch_Sensor" fromField="touchTime" toNode="JinMouthStretch_Clock" toField="startTime"/>
 <Transform translation="48 -2.6000000000000085 0">
@@ -4603,7 +4603,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4618,9 +4618,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinNasolabialDeepener_Sensor" fromField="touchTime" toNode="Script22" toField="inTime"/>
 <ROUTE fromNode="JinNasolabialDeepener_Material" fromField="diffuseColor" toNode="Script22" toField="diffuseColor"/>
 <ROUTE fromNode="Script22" fromField="diffuseColor" toNode="JinNasolabialDeepener_Material" toField="diffuseColor" />
@@ -4629,7 +4630,6 @@
 <ROUTE fromNode="Script22" fromField="resumeTime" toNode="JinNasolabialDeepener_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script22" fromField="fraction" toNode="AnimationAdapter_JinNasolabialDeepener" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinNasolabialDeepener_Sensor" fromField="touchTime" toNode="JinNasolabialDeepener_Clock" toField="startTime"/>
 <Transform translation="48 -5.6000000000000085 0">
@@ -4662,7 +4662,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4677,9 +4677,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinNoseWrinkler_Sensor" fromField="touchTime" toNode="Script23" toField="inTime"/>
 <ROUTE fromNode="JinNoseWrinkler_Material" fromField="diffuseColor" toNode="Script23" toField="diffuseColor"/>
 <ROUTE fromNode="Script23" fromField="diffuseColor" toNode="JinNoseWrinkler_Material" toField="diffuseColor" />
@@ -4688,7 +4689,6 @@
 <ROUTE fromNode="Script23" fromField="resumeTime" toNode="JinNoseWrinkler_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script23" fromField="fraction" toNode="AnimationAdapter_JinNoseWrinkler" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinNoseWrinkler_Sensor" fromField="touchTime" toNode="JinNoseWrinkler_Clock" toField="startTime"/>
 <Transform translation="48 -8.600000000000009 0">
@@ -4721,7 +4721,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4736,9 +4736,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinOuterBrowRaiser_Sensor" fromField="touchTime" toNode="Script24" toField="inTime"/>
 <ROUTE fromNode="JinOuterBrowRaiser_Material" fromField="diffuseColor" toNode="Script24" toField="diffuseColor"/>
 <ROUTE fromNode="Script24" fromField="diffuseColor" toNode="JinOuterBrowRaiser_Material" toField="diffuseColor" />
@@ -4747,7 +4748,6 @@
 <ROUTE fromNode="Script24" fromField="resumeTime" toNode="JinOuterBrowRaiser_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script24" fromField="fraction" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinOuterBrowRaiser_Sensor" fromField="touchTime" toNode="JinOuterBrowRaiser_Clock" toField="startTime"/>
 <Transform translation="48 -11.600000000000009 0">
@@ -4780,7 +4780,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4795,9 +4795,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinSlit_Sensor" fromField="touchTime" toNode="Script25" toField="inTime"/>
 <ROUTE fromNode="JinSlit_Material" fromField="diffuseColor" toNode="Script25" toField="diffuseColor"/>
 <ROUTE fromNode="Script25" fromField="diffuseColor" toNode="JinSlit_Material" toField="diffuseColor" />
@@ -4806,7 +4807,6 @@
 <ROUTE fromNode="Script25" fromField="resumeTime" toNode="JinSlit_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script25" fromField="fraction" toNode="AnimationAdapter_JinSlit" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinSlit_Sensor" fromField="touchTime" toNode="JinSlit_Clock" toField="startTime"/>
 <Transform translation="48 -14.600000000000001 0">
@@ -4839,7 +4839,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4854,9 +4854,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinSquint_Sensor" fromField="touchTime" toNode="Script26" toField="inTime"/>
 <ROUTE fromNode="JinSquint_Material" fromField="diffuseColor" toNode="Script26" toField="diffuseColor"/>
 <ROUTE fromNode="Script26" fromField="diffuseColor" toNode="JinSquint_Material" toField="diffuseColor" />
@@ -4865,7 +4866,6 @@
 <ROUTE fromNode="Script26" fromField="resumeTime" toNode="JinSquint_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script26" fromField="fraction" toNode="AnimationAdapter_JinSquint" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinSquint_Sensor" fromField="touchTime" toNode="JinSquint_Clock" toField="startTime"/>
 <Transform translation="48 -17.6 0">
@@ -4898,7 +4898,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4913,9 +4913,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinUpperLidRaiser_Sensor" fromField="touchTime" toNode="Script27" toField="inTime"/>
 <ROUTE fromNode="JinUpperLidRaiser_Material" fromField="diffuseColor" toNode="Script27" toField="diffuseColor"/>
 <ROUTE fromNode="Script27" fromField="diffuseColor" toNode="JinUpperLidRaiser_Material" toField="diffuseColor" />
@@ -4924,7 +4925,6 @@
 <ROUTE fromNode="Script27" fromField="resumeTime" toNode="JinUpperLidRaiser_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script27" fromField="fraction" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinUpperLidRaiser_Sensor" fromField="touchTime" toNode="JinUpperLidRaiser_Clock" toField="startTime"/>
 <Transform translation="48 -20.6 0">
@@ -4957,7 +4957,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -4972,9 +4972,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinUpperLipRaiser_Sensor" fromField="touchTime" toNode="Script28" toField="inTime"/>
 <ROUTE fromNode="JinUpperLipRaiser_Material" fromField="diffuseColor" toNode="Script28" toField="diffuseColor"/>
 <ROUTE fromNode="Script28" fromField="diffuseColor" toNode="JinUpperLipRaiser_Material" toField="diffuseColor" />
@@ -4983,7 +4984,6 @@
 <ROUTE fromNode="Script28" fromField="resumeTime" toNode="JinUpperLipRaiser_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script28" fromField="fraction" toNode="AnimationAdapter_JinUpperLipRaiser" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinUpperLipRaiser_Sensor" fromField="touchTime" toNode="JinUpperLipRaiser_Clock" toField="startTime"/>
 <Transform translation="48 -23.599999999999994 0">
@@ -5016,7 +5016,7 @@
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            Browser.print("in", diffuseColor.g, diffuseColor.b);
+            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -5031,9 +5031,10 @@
                 pauseTime = value + 1;
                 fraction = 0;
             }
-            Browser.print("out", diffuseColor.g, diffuseColor.b);
+            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
+      </Script>
         <ROUTE fromNode="JinWink_Sensor" fromField="touchTime" toNode="Script29" toField="inTime"/>
 <ROUTE fromNode="JinWink_Material" fromField="diffuseColor" toNode="Script29" toField="diffuseColor"/>
 <ROUTE fromNode="Script29" fromField="diffuseColor" toNode="JinWink_Material" toField="diffuseColor" />
@@ -5042,7 +5043,6 @@
 <ROUTE fromNode="Script29" fromField="resumeTime" toNode="JinWink_Clock" toField="resumeTime"/>
 <ROUTE fromNode="Script29" fromField="fraction" toNode="AnimationAdapter_JinWink" toField="set_fraction"/>
 
-      </Script>
         </Transform>
 <ROUTE fromNode="JinWink_Sensor" fromField="touchTime" toNode="JinWink_Clock" toField="startTime"/>
 
