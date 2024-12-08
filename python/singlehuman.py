@@ -409,12 +409,12 @@ for file_index, input_file in enumerate(files):
         <field name="inTime" type="SFTime" accessType="inputOnly"/>
         <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
         <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[
-        ecmascript:
+        <![CDATA[ecmascript:
         function inTime(value) {
-            console.log("in", diffuseColor.g, diffuseColor.b);
+            Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
@@ -422,12 +422,14 @@ for file_index, input_file in enumerate(files):
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 resumeTime = value + 1;
+                fraction = 0;
             } else {
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 pauseTime = value + 1;
+                fraction = 0;
             }
-            console.log("out", diffuseColor.g, diffuseColor.b);
+            Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
         '''
@@ -437,6 +439,7 @@ for file_index, input_file in enumerate(files):
         menu_str += '<ROUTE fromNode="Script'+str(file_index)+'" fromField="checked" toNode="'+findAnimation(input_file)+'_Clock" toField="enabled"/>\n'
         menu_str += '<ROUTE fromNode="Script'+str(file_index)+'" fromField="pauseTime" toNode="'+findAnimation(input_file)+'_Clock" toField="pauseTime"/>\n'
         menu_str += '<ROUTE fromNode="Script'+str(file_index)+'" fromField="resumeTime" toNode="'+findAnimation(input_file)+'_Clock" toField="resumeTime"/>\n'
+        menu_str += '<ROUTE fromNode="Script'+str(file_index)+'" fromField="fraction" toNode="AnimationAdapter_'+findAnimation(input_file)+'" toField="set_fraction"/>\n'
         menu_str += '''
       </Script>
         </Transform>
