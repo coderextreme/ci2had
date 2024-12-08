@@ -8,6 +8,7 @@
 </head>
 <Scene>
 <ProximitySensor DEF="Fire_JinWink_Clock" size="10000 10000 10000" />
+<ProximitySensor DEF="Fire_JinWink_Clock" size="10000 10000 10000" />
 <ScalarInterpolator DEF="AnimationAdapter_JinBlink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinBrowLowerer" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinCheekPuffer" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
@@ -39,6 +40,7 @@
     <ScalarInterpolator DEF="AnimationAdapter_JinUpperLipRaiser" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinWink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <Group>
+<ProximitySensor DEF="Fire_JinWink_Clock" size="10000 10000 10000" />
 <TimeSensor DEF="JinWink_Clock" cycleInterval="0.99" enabled="false" loop="true" />
     <TimeSensor DEF="JinUpperLipRaiser_Clock" cycleInterval="0.99" enabled="false" loop="true" />
     <TimeSensor DEF="JinUpperLidRaiser_Clock" cycleInterval="0.99" enabled="false" loop="true" />
@@ -1906,876 +1908,6 @@
 <HAnimJoint USE="hanim0_skullbase" containerField="joints" />
 </HAnimHumanoid>
 <ROUTE fromNode="Fire_JinWink_Clock" fromField="enterTime" toNode="JinWink_Clock" toField="startTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBlink_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinDimpler_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinJawDrop_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidDroop_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLidTightener_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPressor_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipsPart_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipSuck_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLipTightener_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSlit_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinSquint_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="startTime" toNode="JinWink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinBlink_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinChinRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinDimpler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinEyesClosed_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinJawDrop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinLidDroop_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinLidTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinLipFunneler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinLipPressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinLipsPart_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinLipStretcher_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinLipSuck_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinLipTightener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinMouthStretch_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinSlit_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinSquint_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime" />
-<ROUTE fromNode="JinWink_Clock" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime" />
 </Group>
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinBlink" toField="weight" toNode="Lower_teeth_MorphInterpolator_JinBlink" />
     <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinBlink" toField="weight" toNode="Tongue_MorphInterpolator_JinBlink" />
@@ -4159,16 +3291,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinBlink_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script0">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinBlink_Sensor" fromField="touchTime" toNode="Script0" toField="inTime"/>
+<ROUTE fromNode="JinBlink_Material" fromField="diffuseColor" toNode="Script0" toField="diffuseColor"/>
+<ROUTE fromNode="Script0" fromField="diffuseColor" toNode="JinBlink_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script0" fromField="checked" toNode="JinBlink_Clock" toField="enabled"/>
+<ROUTE fromNode="Script0" fromField="pauseTime" toNode="JinBlink_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script0" fromField="resumeTime" toNode="JinBlink_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinBlink_Sensor" fromField="touchTime" toNode="JinBlink_Clock" toField="startTime"/>
-<ROUTE fromNode="JinBlink_Sensor" fromField="isOver" toNode="JinBlink_Clock" toField="enabled"/>
 <Transform translation="48 60.4 0">
 <TouchSensor description="Jin Brow Lowerer" DEF="JinBrowLowerer_Sensor"/>
 
@@ -4183,16 +3347,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinBrowLowerer_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script1">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinBrowLowerer_Sensor" fromField="touchTime" toNode="Script1" toField="inTime"/>
+<ROUTE fromNode="JinBrowLowerer_Material" fromField="diffuseColor" toNode="Script1" toField="diffuseColor"/>
+<ROUTE fromNode="Script1" fromField="diffuseColor" toNode="JinBrowLowerer_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script1" fromField="checked" toNode="JinBrowLowerer_Clock" toField="enabled"/>
+<ROUTE fromNode="Script1" fromField="pauseTime" toNode="JinBrowLowerer_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script1" fromField="resumeTime" toNode="JinBrowLowerer_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinBrowLowerer_Sensor" fromField="touchTime" toNode="JinBrowLowerer_Clock" toField="startTime"/>
-<ROUTE fromNode="JinBrowLowerer_Sensor" fromField="isOver" toNode="JinBrowLowerer_Clock" toField="enabled"/>
 <Transform translation="48 57.39999999999999 0">
 <TouchSensor description="Jin Cheek Puffer" DEF="JinCheekPuffer_Sensor"/>
 
@@ -4207,16 +3403,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinCheekPuffer_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script2">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinCheekPuffer_Sensor" fromField="touchTime" toNode="Script2" toField="inTime"/>
+<ROUTE fromNode="JinCheekPuffer_Material" fromField="diffuseColor" toNode="Script2" toField="diffuseColor"/>
+<ROUTE fromNode="Script2" fromField="diffuseColor" toNode="JinCheekPuffer_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script2" fromField="checked" toNode="JinCheekPuffer_Clock" toField="enabled"/>
+<ROUTE fromNode="Script2" fromField="pauseTime" toNode="JinCheekPuffer_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script2" fromField="resumeTime" toNode="JinCheekPuffer_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinCheekPuffer_Sensor" fromField="touchTime" toNode="JinCheekPuffer_Clock" toField="startTime"/>
-<ROUTE fromNode="JinCheekPuffer_Sensor" fromField="isOver" toNode="JinCheekPuffer_Clock" toField="enabled"/>
 <Transform translation="48 54.39999999999999 0">
 <TouchSensor description="Jin Cheek Raiser" DEF="JinCheekRaiser_Sensor"/>
 
@@ -4231,16 +3459,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinCheekRaiser_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script3">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinCheekRaiser_Sensor" fromField="touchTime" toNode="Script3" toField="inTime"/>
+<ROUTE fromNode="JinCheekRaiser_Material" fromField="diffuseColor" toNode="Script3" toField="diffuseColor"/>
+<ROUTE fromNode="Script3" fromField="diffuseColor" toNode="JinCheekRaiser_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script3" fromField="checked" toNode="JinCheekRaiser_Clock" toField="enabled"/>
+<ROUTE fromNode="Script3" fromField="pauseTime" toNode="JinCheekRaiser_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script3" fromField="resumeTime" toNode="JinCheekRaiser_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinCheekRaiser_Sensor" fromField="touchTime" toNode="JinCheekRaiser_Clock" toField="startTime"/>
-<ROUTE fromNode="JinCheekRaiser_Sensor" fromField="isOver" toNode="JinCheekRaiser_Clock" toField="enabled"/>
 <Transform translation="48 51.39999999999999 0">
 <TouchSensor description="Jin Chin Raiser" DEF="JinChinRaiser_Sensor"/>
 
@@ -4255,16 +3515,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinChinRaiser_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script4">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinChinRaiser_Sensor" fromField="touchTime" toNode="Script4" toField="inTime"/>
+<ROUTE fromNode="JinChinRaiser_Material" fromField="diffuseColor" toNode="Script4" toField="diffuseColor"/>
+<ROUTE fromNode="Script4" fromField="diffuseColor" toNode="JinChinRaiser_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script4" fromField="checked" toNode="JinChinRaiser_Clock" toField="enabled"/>
+<ROUTE fromNode="Script4" fromField="pauseTime" toNode="JinChinRaiser_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script4" fromField="resumeTime" toNode="JinChinRaiser_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinChinRaiser_Sensor" fromField="touchTime" toNode="JinChinRaiser_Clock" toField="startTime"/>
-<ROUTE fromNode="JinChinRaiser_Sensor" fromField="isOver" toNode="JinChinRaiser_Clock" toField="enabled"/>
 <Transform translation="48 48.39999999999999 0">
 <TouchSensor description="Jin Dimpler" DEF="JinDimpler_Sensor"/>
 
@@ -4279,16 +3571,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinDimpler_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script5">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinDimpler_Sensor" fromField="touchTime" toNode="Script5" toField="inTime"/>
+<ROUTE fromNode="JinDimpler_Material" fromField="diffuseColor" toNode="Script5" toField="diffuseColor"/>
+<ROUTE fromNode="Script5" fromField="diffuseColor" toNode="JinDimpler_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script5" fromField="checked" toNode="JinDimpler_Clock" toField="enabled"/>
+<ROUTE fromNode="Script5" fromField="pauseTime" toNode="JinDimpler_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script5" fromField="resumeTime" toNode="JinDimpler_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinDimpler_Sensor" fromField="touchTime" toNode="JinDimpler_Clock" toField="startTime"/>
-<ROUTE fromNode="JinDimpler_Sensor" fromField="isOver" toNode="JinDimpler_Clock" toField="enabled"/>
 <Transform translation="48 45.39999999999999 0">
 <TouchSensor description="Jin Eyes Closed" DEF="JinEyesClosed_Sensor"/>
 
@@ -4303,16 +3627,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinEyesClosed_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script6">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinEyesClosed_Sensor" fromField="touchTime" toNode="Script6" toField="inTime"/>
+<ROUTE fromNode="JinEyesClosed_Material" fromField="diffuseColor" toNode="Script6" toField="diffuseColor"/>
+<ROUTE fromNode="Script6" fromField="diffuseColor" toNode="JinEyesClosed_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script6" fromField="checked" toNode="JinEyesClosed_Clock" toField="enabled"/>
+<ROUTE fromNode="Script6" fromField="pauseTime" toNode="JinEyesClosed_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script6" fromField="resumeTime" toNode="JinEyesClosed_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinEyesClosed_Sensor" fromField="touchTime" toNode="JinEyesClosed_Clock" toField="startTime"/>
-<ROUTE fromNode="JinEyesClosed_Sensor" fromField="isOver" toNode="JinEyesClosed_Clock" toField="enabled"/>
 <Transform translation="48 42.39999999999999 0">
 <TouchSensor description="Jin Inner Brow Raiser" DEF="JinInnerBrowRaiser_Sensor"/>
 
@@ -4327,16 +3683,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinInnerBrowRaiser_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script7">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinInnerBrowRaiser_Sensor" fromField="touchTime" toNode="Script7" toField="inTime"/>
+<ROUTE fromNode="JinInnerBrowRaiser_Material" fromField="diffuseColor" toNode="Script7" toField="diffuseColor"/>
+<ROUTE fromNode="Script7" fromField="diffuseColor" toNode="JinInnerBrowRaiser_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script7" fromField="checked" toNode="JinInnerBrowRaiser_Clock" toField="enabled"/>
+<ROUTE fromNode="Script7" fromField="pauseTime" toNode="JinInnerBrowRaiser_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script7" fromField="resumeTime" toNode="JinInnerBrowRaiser_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinInnerBrowRaiser_Sensor" fromField="touchTime" toNode="JinInnerBrowRaiser_Clock" toField="startTime"/>
-<ROUTE fromNode="JinInnerBrowRaiser_Sensor" fromField="isOver" toNode="JinInnerBrowRaiser_Clock" toField="enabled"/>
 <Transform translation="48 39.39999999999999 0">
 <TouchSensor description="Jin Jaw Drop" DEF="JinJawDrop_Sensor"/>
 
@@ -4351,16 +3739,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinJawDrop_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script8">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinJawDrop_Sensor" fromField="touchTime" toNode="Script8" toField="inTime"/>
+<ROUTE fromNode="JinJawDrop_Material" fromField="diffuseColor" toNode="Script8" toField="diffuseColor"/>
+<ROUTE fromNode="Script8" fromField="diffuseColor" toNode="JinJawDrop_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script8" fromField="checked" toNode="JinJawDrop_Clock" toField="enabled"/>
+<ROUTE fromNode="Script8" fromField="pauseTime" toNode="JinJawDrop_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script8" fromField="resumeTime" toNode="JinJawDrop_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinJawDrop_Sensor" fromField="touchTime" toNode="JinJawDrop_Clock" toField="startTime"/>
-<ROUTE fromNode="JinJawDrop_Sensor" fromField="isOver" toNode="JinJawDrop_Clock" toField="enabled"/>
 <Transform translation="48 36.39999999999999 0">
 <TouchSensor description="Jin Lid Droop" DEF="JinLidDroop_Sensor"/>
 
@@ -4375,16 +3795,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinLidDroop_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script9">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinLidDroop_Sensor" fromField="touchTime" toNode="Script9" toField="inTime"/>
+<ROUTE fromNode="JinLidDroop_Material" fromField="diffuseColor" toNode="Script9" toField="diffuseColor"/>
+<ROUTE fromNode="Script9" fromField="diffuseColor" toNode="JinLidDroop_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script9" fromField="checked" toNode="JinLidDroop_Clock" toField="enabled"/>
+<ROUTE fromNode="Script9" fromField="pauseTime" toNode="JinLidDroop_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script9" fromField="resumeTime" toNode="JinLidDroop_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinLidDroop_Sensor" fromField="touchTime" toNode="JinLidDroop_Clock" toField="startTime"/>
-<ROUTE fromNode="JinLidDroop_Sensor" fromField="isOver" toNode="JinLidDroop_Clock" toField="enabled"/>
 <Transform translation="48 33.39999999999999 0">
 <TouchSensor description="Jin Lid Tightener" DEF="JinLidTightener_Sensor"/>
 
@@ -4399,16 +3851,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinLidTightener_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script10">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinLidTightener_Sensor" fromField="touchTime" toNode="Script10" toField="inTime"/>
+<ROUTE fromNode="JinLidTightener_Material" fromField="diffuseColor" toNode="Script10" toField="diffuseColor"/>
+<ROUTE fromNode="Script10" fromField="diffuseColor" toNode="JinLidTightener_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script10" fromField="checked" toNode="JinLidTightener_Clock" toField="enabled"/>
+<ROUTE fromNode="Script10" fromField="pauseTime" toNode="JinLidTightener_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script10" fromField="resumeTime" toNode="JinLidTightener_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinLidTightener_Sensor" fromField="touchTime" toNode="JinLidTightener_Clock" toField="startTime"/>
-<ROUTE fromNode="JinLidTightener_Sensor" fromField="isOver" toNode="JinLidTightener_Clock" toField="enabled"/>
 <Transform translation="48 30.399999999999995 0">
 <TouchSensor description="Jin Lip Corner Depressor" DEF="JinLipCornerDepressor_Sensor"/>
 
@@ -4423,16 +3907,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinLipCornerDepressor_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script11">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinLipCornerDepressor_Sensor" fromField="touchTime" toNode="Script11" toField="inTime"/>
+<ROUTE fromNode="JinLipCornerDepressor_Material" fromField="diffuseColor" toNode="Script11" toField="diffuseColor"/>
+<ROUTE fromNode="Script11" fromField="diffuseColor" toNode="JinLipCornerDepressor_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script11" fromField="checked" toNode="JinLipCornerDepressor_Clock" toField="enabled"/>
+<ROUTE fromNode="Script11" fromField="pauseTime" toNode="JinLipCornerDepressor_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script11" fromField="resumeTime" toNode="JinLipCornerDepressor_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinLipCornerDepressor_Sensor" fromField="touchTime" toNode="JinLipCornerDepressor_Clock" toField="startTime"/>
-<ROUTE fromNode="JinLipCornerDepressor_Sensor" fromField="isOver" toNode="JinLipCornerDepressor_Clock" toField="enabled"/>
 <Transform translation="48 27.399999999999995 0">
 <TouchSensor description="Jin Lip Corner Puller" DEF="JinLipCornerPuller_Sensor"/>
 
@@ -4447,16 +3963,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinLipCornerPuller_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script12">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinLipCornerPuller_Sensor" fromField="touchTime" toNode="Script12" toField="inTime"/>
+<ROUTE fromNode="JinLipCornerPuller_Material" fromField="diffuseColor" toNode="Script12" toField="diffuseColor"/>
+<ROUTE fromNode="Script12" fromField="diffuseColor" toNode="JinLipCornerPuller_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script12" fromField="checked" toNode="JinLipCornerPuller_Clock" toField="enabled"/>
+<ROUTE fromNode="Script12" fromField="pauseTime" toNode="JinLipCornerPuller_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script12" fromField="resumeTime" toNode="JinLipCornerPuller_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinLipCornerPuller_Sensor" fromField="touchTime" toNode="JinLipCornerPuller_Clock" toField="startTime"/>
-<ROUTE fromNode="JinLipCornerPuller_Sensor" fromField="isOver" toNode="JinLipCornerPuller_Clock" toField="enabled"/>
 <Transform translation="48 24.399999999999995 0">
 <TouchSensor description="Jin Lip Funneler" DEF="JinLipFunneler_Sensor"/>
 
@@ -4471,16 +4019,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinLipFunneler_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script13">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinLipFunneler_Sensor" fromField="touchTime" toNode="Script13" toField="inTime"/>
+<ROUTE fromNode="JinLipFunneler_Material" fromField="diffuseColor" toNode="Script13" toField="diffuseColor"/>
+<ROUTE fromNode="Script13" fromField="diffuseColor" toNode="JinLipFunneler_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script13" fromField="checked" toNode="JinLipFunneler_Clock" toField="enabled"/>
+<ROUTE fromNode="Script13" fromField="pauseTime" toNode="JinLipFunneler_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script13" fromField="resumeTime" toNode="JinLipFunneler_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinLipFunneler_Sensor" fromField="touchTime" toNode="JinLipFunneler_Clock" toField="startTime"/>
-<ROUTE fromNode="JinLipFunneler_Sensor" fromField="isOver" toNode="JinLipFunneler_Clock" toField="enabled"/>
 <Transform translation="48 21.399999999999995 0">
 <TouchSensor description="Jin Lip Pressor" DEF="JinLipPressor_Sensor"/>
 
@@ -4495,16 +4075,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinLipPressor_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script14">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinLipPressor_Sensor" fromField="touchTime" toNode="Script14" toField="inTime"/>
+<ROUTE fromNode="JinLipPressor_Material" fromField="diffuseColor" toNode="Script14" toField="diffuseColor"/>
+<ROUTE fromNode="Script14" fromField="diffuseColor" toNode="JinLipPressor_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script14" fromField="checked" toNode="JinLipPressor_Clock" toField="enabled"/>
+<ROUTE fromNode="Script14" fromField="pauseTime" toNode="JinLipPressor_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script14" fromField="resumeTime" toNode="JinLipPressor_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinLipPressor_Sensor" fromField="touchTime" toNode="JinLipPressor_Clock" toField="startTime"/>
-<ROUTE fromNode="JinLipPressor_Sensor" fromField="isOver" toNode="JinLipPressor_Clock" toField="enabled"/>
 <Transform translation="48 18.4 0">
 <TouchSensor description="Jin Lip Puckerer" DEF="JinLipPuckerer_Sensor"/>
 
@@ -4519,16 +4131,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinLipPuckerer_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script15">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinLipPuckerer_Sensor" fromField="touchTime" toNode="Script15" toField="inTime"/>
+<ROUTE fromNode="JinLipPuckerer_Material" fromField="diffuseColor" toNode="Script15" toField="diffuseColor"/>
+<ROUTE fromNode="Script15" fromField="diffuseColor" toNode="JinLipPuckerer_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script15" fromField="checked" toNode="JinLipPuckerer_Clock" toField="enabled"/>
+<ROUTE fromNode="Script15" fromField="pauseTime" toNode="JinLipPuckerer_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script15" fromField="resumeTime" toNode="JinLipPuckerer_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinLipPuckerer_Sensor" fromField="touchTime" toNode="JinLipPuckerer_Clock" toField="startTime"/>
-<ROUTE fromNode="JinLipPuckerer_Sensor" fromField="isOver" toNode="JinLipPuckerer_Clock" toField="enabled"/>
 <Transform translation="48 15.399999999999997 0">
 <TouchSensor description="Jin Lips Part" DEF="JinLipsPart_Sensor"/>
 
@@ -4543,16 +4187,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinLipsPart_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script16">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinLipsPart_Sensor" fromField="touchTime" toNode="Script16" toField="inTime"/>
+<ROUTE fromNode="JinLipsPart_Material" fromField="diffuseColor" toNode="Script16" toField="diffuseColor"/>
+<ROUTE fromNode="Script16" fromField="diffuseColor" toNode="JinLipsPart_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script16" fromField="checked" toNode="JinLipsPart_Clock" toField="enabled"/>
+<ROUTE fromNode="Script16" fromField="pauseTime" toNode="JinLipsPart_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script16" fromField="resumeTime" toNode="JinLipsPart_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinLipsPart_Sensor" fromField="touchTime" toNode="JinLipsPart_Clock" toField="startTime"/>
-<ROUTE fromNode="JinLipsPart_Sensor" fromField="isOver" toNode="JinLipsPart_Clock" toField="enabled"/>
 <Transform translation="48 12.399999999999999 0">
 <TouchSensor description="Jin Lip Stretcher" DEF="JinLipStretcher_Sensor"/>
 
@@ -4567,16 +4243,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinLipStretcher_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script17">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinLipStretcher_Sensor" fromField="touchTime" toNode="Script17" toField="inTime"/>
+<ROUTE fromNode="JinLipStretcher_Material" fromField="diffuseColor" toNode="Script17" toField="diffuseColor"/>
+<ROUTE fromNode="Script17" fromField="diffuseColor" toNode="JinLipStretcher_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script17" fromField="checked" toNode="JinLipStretcher_Clock" toField="enabled"/>
+<ROUTE fromNode="Script17" fromField="pauseTime" toNode="JinLipStretcher_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script17" fromField="resumeTime" toNode="JinLipStretcher_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinLipStretcher_Sensor" fromField="touchTime" toNode="JinLipStretcher_Clock" toField="startTime"/>
-<ROUTE fromNode="JinLipStretcher_Sensor" fromField="isOver" toNode="JinLipStretcher_Clock" toField="enabled"/>
 <Transform translation="48 9.399999999999999 0">
 <TouchSensor description="Jin Lip Suck" DEF="JinLipSuck_Sensor"/>
 
@@ -4591,16 +4299,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinLipSuck_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script18">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinLipSuck_Sensor" fromField="touchTime" toNode="Script18" toField="inTime"/>
+<ROUTE fromNode="JinLipSuck_Material" fromField="diffuseColor" toNode="Script18" toField="diffuseColor"/>
+<ROUTE fromNode="Script18" fromField="diffuseColor" toNode="JinLipSuck_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script18" fromField="checked" toNode="JinLipSuck_Clock" toField="enabled"/>
+<ROUTE fromNode="Script18" fromField="pauseTime" toNode="JinLipSuck_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script18" fromField="resumeTime" toNode="JinLipSuck_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinLipSuck_Sensor" fromField="touchTime" toNode="JinLipSuck_Clock" toField="startTime"/>
-<ROUTE fromNode="JinLipSuck_Sensor" fromField="isOver" toNode="JinLipSuck_Clock" toField="enabled"/>
 <Transform translation="48 6.399999999999999 0">
 <TouchSensor description="Jin Lip Tightener" DEF="JinLipTightener_Sensor"/>
 
@@ -4615,16 +4355,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinLipTightener_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script19">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinLipTightener_Sensor" fromField="touchTime" toNode="Script19" toField="inTime"/>
+<ROUTE fromNode="JinLipTightener_Material" fromField="diffuseColor" toNode="Script19" toField="diffuseColor"/>
+<ROUTE fromNode="Script19" fromField="diffuseColor" toNode="JinLipTightener_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script19" fromField="checked" toNode="JinLipTightener_Clock" toField="enabled"/>
+<ROUTE fromNode="Script19" fromField="pauseTime" toNode="JinLipTightener_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script19" fromField="resumeTime" toNode="JinLipTightener_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinLipTightener_Sensor" fromField="touchTime" toNode="JinLipTightener_Clock" toField="startTime"/>
-<ROUTE fromNode="JinLipTightener_Sensor" fromField="isOver" toNode="JinLipTightener_Clock" toField="enabled"/>
 <Transform translation="48 3.399999999999995 0">
 <TouchSensor description="Jin Lower Lip Depressor" DEF="JinLowerLipDepressor_Sensor"/>
 
@@ -4639,16 +4411,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinLowerLipDepressor_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script20">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinLowerLipDepressor_Sensor" fromField="touchTime" toNode="Script20" toField="inTime"/>
+<ROUTE fromNode="JinLowerLipDepressor_Material" fromField="diffuseColor" toNode="Script20" toField="diffuseColor"/>
+<ROUTE fromNode="Script20" fromField="diffuseColor" toNode="JinLowerLipDepressor_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script20" fromField="checked" toNode="JinLowerLipDepressor_Clock" toField="enabled"/>
+<ROUTE fromNode="Script20" fromField="pauseTime" toNode="JinLowerLipDepressor_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script20" fromField="resumeTime" toNode="JinLowerLipDepressor_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinLowerLipDepressor_Sensor" fromField="touchTime" toNode="JinLowerLipDepressor_Clock" toField="startTime"/>
-<ROUTE fromNode="JinLowerLipDepressor_Sensor" fromField="isOver" toNode="JinLowerLipDepressor_Clock" toField="enabled"/>
 <Transform translation="48 0.399999999999995 0">
 <TouchSensor description="Jin Mouth Stretch" DEF="JinMouthStretch_Sensor"/>
 
@@ -4663,16 +4467,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinMouthStretch_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script21">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinMouthStretch_Sensor" fromField="touchTime" toNode="Script21" toField="inTime"/>
+<ROUTE fromNode="JinMouthStretch_Material" fromField="diffuseColor" toNode="Script21" toField="diffuseColor"/>
+<ROUTE fromNode="Script21" fromField="diffuseColor" toNode="JinMouthStretch_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script21" fromField="checked" toNode="JinMouthStretch_Clock" toField="enabled"/>
+<ROUTE fromNode="Script21" fromField="pauseTime" toNode="JinMouthStretch_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script21" fromField="resumeTime" toNode="JinMouthStretch_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinMouthStretch_Sensor" fromField="touchTime" toNode="JinMouthStretch_Clock" toField="startTime"/>
-<ROUTE fromNode="JinMouthStretch_Sensor" fromField="isOver" toNode="JinMouthStretch_Clock" toField="enabled"/>
 <Transform translation="48 -2.6000000000000085 0">
 <TouchSensor description="Jin Nasolabial Deepener" DEF="JinNasolabialDeepener_Sensor"/>
 
@@ -4687,16 +4523,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinNasolabialDeepener_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script22">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinNasolabialDeepener_Sensor" fromField="touchTime" toNode="Script22" toField="inTime"/>
+<ROUTE fromNode="JinNasolabialDeepener_Material" fromField="diffuseColor" toNode="Script22" toField="diffuseColor"/>
+<ROUTE fromNode="Script22" fromField="diffuseColor" toNode="JinNasolabialDeepener_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script22" fromField="checked" toNode="JinNasolabialDeepener_Clock" toField="enabled"/>
+<ROUTE fromNode="Script22" fromField="pauseTime" toNode="JinNasolabialDeepener_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script22" fromField="resumeTime" toNode="JinNasolabialDeepener_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinNasolabialDeepener_Sensor" fromField="touchTime" toNode="JinNasolabialDeepener_Clock" toField="startTime"/>
-<ROUTE fromNode="JinNasolabialDeepener_Sensor" fromField="isOver" toNode="JinNasolabialDeepener_Clock" toField="enabled"/>
 <Transform translation="48 -5.6000000000000085 0">
 <TouchSensor description="Jin Nose Wrinkler" DEF="JinNoseWrinkler_Sensor"/>
 
@@ -4711,16 +4579,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinNoseWrinkler_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script23">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinNoseWrinkler_Sensor" fromField="touchTime" toNode="Script23" toField="inTime"/>
+<ROUTE fromNode="JinNoseWrinkler_Material" fromField="diffuseColor" toNode="Script23" toField="diffuseColor"/>
+<ROUTE fromNode="Script23" fromField="diffuseColor" toNode="JinNoseWrinkler_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script23" fromField="checked" toNode="JinNoseWrinkler_Clock" toField="enabled"/>
+<ROUTE fromNode="Script23" fromField="pauseTime" toNode="JinNoseWrinkler_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script23" fromField="resumeTime" toNode="JinNoseWrinkler_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinNoseWrinkler_Sensor" fromField="touchTime" toNode="JinNoseWrinkler_Clock" toField="startTime"/>
-<ROUTE fromNode="JinNoseWrinkler_Sensor" fromField="isOver" toNode="JinNoseWrinkler_Clock" toField="enabled"/>
 <Transform translation="48 -8.600000000000009 0">
 <TouchSensor description="Jin Outer Brow Raiser" DEF="JinOuterBrowRaiser_Sensor"/>
 
@@ -4735,16 +4635,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinOuterBrowRaiser_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script24">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinOuterBrowRaiser_Sensor" fromField="touchTime" toNode="Script24" toField="inTime"/>
+<ROUTE fromNode="JinOuterBrowRaiser_Material" fromField="diffuseColor" toNode="Script24" toField="diffuseColor"/>
+<ROUTE fromNode="Script24" fromField="diffuseColor" toNode="JinOuterBrowRaiser_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script24" fromField="checked" toNode="JinOuterBrowRaiser_Clock" toField="enabled"/>
+<ROUTE fromNode="Script24" fromField="pauseTime" toNode="JinOuterBrowRaiser_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script24" fromField="resumeTime" toNode="JinOuterBrowRaiser_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinOuterBrowRaiser_Sensor" fromField="touchTime" toNode="JinOuterBrowRaiser_Clock" toField="startTime"/>
-<ROUTE fromNode="JinOuterBrowRaiser_Sensor" fromField="isOver" toNode="JinOuterBrowRaiser_Clock" toField="enabled"/>
 <Transform translation="48 -11.600000000000009 0">
 <TouchSensor description="Jin Slit" DEF="JinSlit_Sensor"/>
 
@@ -4759,16 +4691,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinSlit_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script25">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinSlit_Sensor" fromField="touchTime" toNode="Script25" toField="inTime"/>
+<ROUTE fromNode="JinSlit_Material" fromField="diffuseColor" toNode="Script25" toField="diffuseColor"/>
+<ROUTE fromNode="Script25" fromField="diffuseColor" toNode="JinSlit_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script25" fromField="checked" toNode="JinSlit_Clock" toField="enabled"/>
+<ROUTE fromNode="Script25" fromField="pauseTime" toNode="JinSlit_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script25" fromField="resumeTime" toNode="JinSlit_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinSlit_Sensor" fromField="touchTime" toNode="JinSlit_Clock" toField="startTime"/>
-<ROUTE fromNode="JinSlit_Sensor" fromField="isOver" toNode="JinSlit_Clock" toField="enabled"/>
 <Transform translation="48 -14.600000000000001 0">
 <TouchSensor description="Jin Squint" DEF="JinSquint_Sensor"/>
 
@@ -4783,16 +4747,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinSquint_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script26">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinSquint_Sensor" fromField="touchTime" toNode="Script26" toField="inTime"/>
+<ROUTE fromNode="JinSquint_Material" fromField="diffuseColor" toNode="Script26" toField="diffuseColor"/>
+<ROUTE fromNode="Script26" fromField="diffuseColor" toNode="JinSquint_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script26" fromField="checked" toNode="JinSquint_Clock" toField="enabled"/>
+<ROUTE fromNode="Script26" fromField="pauseTime" toNode="JinSquint_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script26" fromField="resumeTime" toNode="JinSquint_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinSquint_Sensor" fromField="touchTime" toNode="JinSquint_Clock" toField="startTime"/>
-<ROUTE fromNode="JinSquint_Sensor" fromField="isOver" toNode="JinSquint_Clock" toField="enabled"/>
 <Transform translation="48 -17.6 0">
 <TouchSensor description="Jin Upper Lid Raiser" DEF="JinUpperLidRaiser_Sensor"/>
 
@@ -4807,16 +4803,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinUpperLidRaiser_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script27">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinUpperLidRaiser_Sensor" fromField="touchTime" toNode="Script27" toField="inTime"/>
+<ROUTE fromNode="JinUpperLidRaiser_Material" fromField="diffuseColor" toNode="Script27" toField="diffuseColor"/>
+<ROUTE fromNode="Script27" fromField="diffuseColor" toNode="JinUpperLidRaiser_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script27" fromField="checked" toNode="JinUpperLidRaiser_Clock" toField="enabled"/>
+<ROUTE fromNode="Script27" fromField="pauseTime" toNode="JinUpperLidRaiser_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script27" fromField="resumeTime" toNode="JinUpperLidRaiser_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinUpperLidRaiser_Sensor" fromField="touchTime" toNode="JinUpperLidRaiser_Clock" toField="startTime"/>
-<ROUTE fromNode="JinUpperLidRaiser_Sensor" fromField="isOver" toNode="JinUpperLidRaiser_Clock" toField="enabled"/>
 <Transform translation="48 -20.6 0">
 <TouchSensor description="Jin Upper Lip Raiser" DEF="JinUpperLipRaiser_Sensor"/>
 
@@ -4831,16 +4859,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinUpperLipRaiser_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script28">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinUpperLipRaiser_Sensor" fromField="touchTime" toNode="Script28" toField="inTime"/>
+<ROUTE fromNode="JinUpperLipRaiser_Material" fromField="diffuseColor" toNode="Script28" toField="diffuseColor"/>
+<ROUTE fromNode="Script28" fromField="diffuseColor" toNode="JinUpperLipRaiser_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script28" fromField="checked" toNode="JinUpperLipRaiser_Clock" toField="enabled"/>
+<ROUTE fromNode="Script28" fromField="pauseTime" toNode="JinUpperLipRaiser_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script28" fromField="resumeTime" toNode="JinUpperLipRaiser_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinUpperLipRaiser_Sensor" fromField="touchTime" toNode="JinUpperLipRaiser_Clock" toField="startTime"/>
-<ROUTE fromNode="JinUpperLipRaiser_Sensor" fromField="isOver" toNode="JinUpperLipRaiser_Clock" toField="enabled"/>
 <Transform translation="48 -23.599999999999994 0">
 <TouchSensor description="Jin Wink" DEF="JinWink_Sensor"/>
 
@@ -4855,16 +4915,48 @@
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            <Material DEF="JinWink_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
 
              </IndexedFaceSet>
           </Shape>
+            <Script DEF="Script29">
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        <ROUTE fromNode="JinWink_Sensor" fromField="touchTime" toNode="Script29" toField="inTime"/>
+<ROUTE fromNode="JinWink_Material" fromField="diffuseColor" toNode="Script29" toField="diffuseColor"/>
+<ROUTE fromNode="Script29" fromField="diffuseColor" toNode="JinWink_Material" toField="diffuseColor" />
+<ROUTE fromNode="Script29" fromField="checked" toNode="JinWink_Clock" toField="enabled"/>
+<ROUTE fromNode="Script29" fromField="pauseTime" toNode="JinWink_Clock" toField="pauseTime"/>
+<ROUTE fromNode="Script29" fromField="resumeTime" toNode="JinWink_Clock" toField="resumeTime"/>
+
+      </Script>
         </Transform>
 <ROUTE fromNode="JinWink_Sensor" fromField="touchTime" toNode="JinWink_Clock" toField="startTime"/>
-<ROUTE fromNode="JinWink_Sensor" fromField="isOver" toNode="JinWink_Clock" toField="enabled"/>
 
     </Group>
   </Scene>

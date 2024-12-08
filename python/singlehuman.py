@@ -155,19 +155,20 @@ def process_scene_list(scene_list):
         route.set("toField", "startTime")
         group.append(route)
 
-    for t, time_sensor in enumerate(ts_list):
-        # print("Time", t)
-        for other_t, other_time_sensor in enumerate(ts_list):
-            if time_sensor != other_time_sensor:
-                route = xml.etree.ElementTree.Element('ROUTE')
-                route.text = ""
-                route.tail = "\n"
-                route.set("fromNode", time_sensor.get('DEF'))
-                route.set("fromField", "startTime")
-                route.set("toNode", other_time_sensor.get('DEF'))
-                route.set("toField", "stopTime")
-                group.append(route)
-                #print("Other", other_t)
+    # TODO we want more than one animation
+    #for t, time_sensor in enumerate(ts_list):
+    #    # print("Time", t)
+    #    for other_t, other_time_sensor in enumerate(ts_list):
+    #        if time_sensor != other_time_sensor:
+    #            route = xml.etree.ElementTree.Element('ROUTE')
+    #            route.text = ""
+    #            route.tail = "\n"
+    #            route.set("fromNode", time_sensor.get('DEF'))
+    #            route.set("fromField", "startTime")
+    #            route.set("toNode", other_time_sensor.get('DEF'))
+    #            route.set("toField", "stopTime")
+    #            group.append(route)
+    #            #print("Other", other_t)
 
     return group
 
@@ -390,7 +391,9 @@ for file_index, input_file in enumerate(files):
           </Shape>
           <Shape>
             <Appearance>
-              <Material diffuseColor="0 0 1"/>
+            '''
+        menu_str += '<Material DEF="'+findAnimation(input_file)+'_Material" diffuseColor="0 0 1"/>'
+        menu_str += '''
             </Appearance>
             <IndexedFaceSet coordIndex='0 1 2 3 -1'>
             '''
@@ -400,10 +403,46 @@ for file_index, input_file in enumerate(files):
         menu_str += '''
              </IndexedFaceSet>
           </Shape>
+            '''
+        menu_str += '<Script DEF="Script'+str(file_index)+'">'
+        menu_str += '''
+        <field name="inTime" type="SFTime" accessType="inputOnly"/>
+        <field name="resumeTime" type="SFTime" accessType="outputOnly"/>
+        <field name="pauseTime" type="SFTime" accessType="outputOnly"/>
+        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
+        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <![CDATA[
+        ecmascript:
+        function inTime(value) {
+            console.log("in", diffuseColor.g, diffuseColor.b);
+            if (value) {
+                checked = !checked;
+            }
+            if (checked) {
+                diffuseColor.g = 1;
+                diffuseColor.b = 0;
+                resumeTime = value + 1;
+            } else {
+                diffuseColor.g = 0;
+                diffuseColor.b = 1;
+                pauseTime = value + 1;
+            }
+            console.log("out", diffuseColor.g, diffuseColor.b);
+        }
+        ]]>
+        '''
+        menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Sensor" fromField="touchTime" toNode="Script'+str(file_index)+'" toField="inTime"/>\n'
+        menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Material" fromField="diffuseColor" toNode="Script'+str(file_index)+'" toField="diffuseColor"/>\n'
+        menu_str += '<ROUTE fromNode="Script'+str(file_index)+'" fromField="diffuseColor" toNode="'+findAnimation(input_file)+'_Material" toField="diffuseColor" />\n'
+        menu_str += '<ROUTE fromNode="Script'+str(file_index)+'" fromField="checked" toNode="'+findAnimation(input_file)+'_Clock" toField="enabled"/>\n'
+        menu_str += '<ROUTE fromNode="Script'+str(file_index)+'" fromField="pauseTime" toNode="'+findAnimation(input_file)+'_Clock" toField="pauseTime"/>\n'
+        menu_str += '<ROUTE fromNode="Script'+str(file_index)+'" fromField="resumeTime" toNode="'+findAnimation(input_file)+'_Clock" toField="resumeTime"/>\n'
+        menu_str += '''
+      </Script>
         </Transform>
 '''
+        # menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Sensor" fromField="isOver" toNode="'+findAnimation(input_file)+'_Clock" toField="enabled"/>\n'
         menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Sensor" fromField="touchTime" toNode="'+findAnimation(input_file)+'_Clock" toField="startTime"/>\n'
-        menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Sensor" fromField="isOver" toNode="'+findAnimation(input_file)+'_Clock" toField="enabled"/>\n'
 
     ifs_start += increment
 menu_str += '''
