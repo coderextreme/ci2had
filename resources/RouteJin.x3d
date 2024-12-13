@@ -3,7 +3,7 @@
 <head>
 <component name="HAnim" level="3" />
 <meta name="title" content="JinMultiAnimationExample.x3d" />
-<meta name="identifier" content="https://github.com/coderextreme/ci2had/edit/main/resources/RouteJin.x3d" />
+<meta name="identifier" content="https://github.com/coderextreme/ci2had/blob/main/resources/RouteJin.x3d" />
 <meta name="description" content="X3D scene with alternate facial animations controlled by a menu" />
 </head>
 <Scene>
