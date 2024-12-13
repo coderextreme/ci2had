@@ -123,27 +123,6 @@ def process_scene_list(scene_list):
                             if displacer is not None:
                                 segment.append(displacer)
 
-#    proximity_sensors = scene_element.findall(".//ProximitySensor")
-#    if len(proximity_sensors) <= 0:
-#        print(f"Could not find ProximitySensor, Adding")
-#        proximity_sensor = xml.etree.ElementTree.Element('ProximitySensor')
-#        proximity_sensor.text = ""
-#        proximity_sensor.tail = "\n"
-#        proximity_sensor.set('DEF', "Fire_"+clock_name)
-#        proximity_sensor.set("size", "10000 10000 10000")
-#        scene.insert(0, proximity_sensor)
-#        ps = proximity_sensor
-#        group.insert(0, ps)
-#        print(f"Adding {proximity_sensor.tag} {proximity_sensor.get('DEF')}")
-#        route = xml.etree.ElementTree.Element('ROUTE')
-#        route.text = ""
-#        route.tail = "\n"
-#        route.set("fromNode", ps.get('DEF'))
-#        route.set("fromField", "enterTime")
-#        route.set("toNode", clock_name)
-#        route.set("toField", "startTime")
-#        group.append(route)
-
     return group
 
 
@@ -279,12 +258,6 @@ scene.tail = "\n"
 
 animation = findAnimation(input_file)
 clock_name = "Main_Clock"
-#proximity_sensor = xml.etree.ElementTree.Element('ProximitySensor')
-#proximity_sensor.text = ""
-#proximity_sensor.tail = "\n"
-#proximity_sensor.set('DEF', "Fire_"+clock_name)
-#proximity_sensor.set("size", "10000 10000 10000")
-#scene.insert(0, proximity_sensor)
 
 time_sensor = xml.etree.ElementTree.Element('TimeSensor')
 time_sensor.text = ""
