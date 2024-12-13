@@ -6,6 +6,11 @@ import glob
 import sys
 import time
 
+
+
+# use helper scripts
+
+# test to see if a number is close to 0
 epsilon = sys.float_info.epsilon
 
 def non_zero(num):
@@ -14,35 +19,14 @@ def non_zero(num):
     else:
         return False
 
+# find the parent of a child
 def find_parent(root, child):
     for parent in root.iter():
         if child in parent:
             return parent
     return None
 
-def get_node_index(parent, cis):
-    for index, child in enumerate(parent):
-        if child == cis:
-            return index
-    return None
-
-def split_every_third(lst):
-    result = []
-    for i in range(0, len(lst), 3):
-        result.append(lst[i:i + 3])
-    return result
-
-def find_elements_by_prefix(root, prefix):
-    matched_elements = []
-    for elem in root.iter():
-        def_value = elem.get("DEF")
-        if def_value and re.match("("+prefix+"$|"+prefix+"[-_])", def_value):
-            matched_elements.append(elem)
-        def_value = elem.get("USE")
-        if def_value and re.match("("+prefix+"$|"+prefix+"[-_])", def_value):
-            matched_elements.append(elem)
-    return matched_elements
-
+# find the segments by prefix
 def find_segments_by_prefix(root, prefix):
     matched_elements = []
     for elem in root.iter():
@@ -58,12 +42,15 @@ def find_segments_by_prefix(root, prefix):
                 pass
     return matched_elements
 
+# get the animation from the input file name
 def findAnimation(input_filename):
     return input_filename.replace("../resources", "")[1:-4]
 
+# Segment prefixes for related nodes
 def_prefixes = ["Lower_teeth", "Hair", "__0", "__2", "__4", "Center_lower_vermillion_lip", "Chin", "Glabella", "Left_bulbar_conjunctiva", "Left_cheek", "Left_dorsum", "Left_ear", "Left_eyebrow", "Left_forehead", "Left_lower_eyelid", "Left_lower_vermillion_lip", "Left_nasolabial_cheek", "Left_nostril", "Left_pupil", "Left_temple", "Left_upper_cutaneous_lip", "Left_upper_eyelid", "Left_upper_vermillion_lip", "Left_upper_vermillion_lip001", "Mid_forehead", "Mid_nasal_dorsum", "Mid_upper_vermillion_lip", "Nasal_tip", "Neck", "Occipital_scalp", "Philtrum", "Right_bulbar_conjunctiva", "Right_cheek", "Right_dorsum", "Right_ear", "Right_eyebrow", "Right_forehead", "Right_lower_eyelid", "Right_lower_vermillion_lip", "Right_nasolabial_cheek", "Right_nostril", "Right_pupil", "Right_temple", "Right_upper_cutaneous_lip", "Right_upper_eyelid", "Right_upper_vermillion_lip", "Tongue", "Upper_teeth"]
 
 
+# process scenes to create a single scene
 def process_scene_list(scene_list):
     SCENE = 0
     for scene_index, scene_element in enumerate(scene_list):
@@ -126,6 +113,7 @@ def process_scene_list(scene_list):
     return group
 
 
+# prcoess elements in a scene setting good DEF and USE values
 def process_scene(scene, file):
     animation = findAnimation(file)
     for prefix in def_prefixes:
@@ -193,6 +181,7 @@ def process_scene(scene, file):
     return scene
 
 
+# create a list of scenes from Jin* files
 files = glob.glob('../resources/Jin*.x3d')
 #print(f"{files}")
 
@@ -215,6 +204,7 @@ for findex, input_file in enumerate(files):
     scene_list.append(scene)
 
 
+# produce final output
 finalX3D = xml.etree.ElementTree.Element('X3D')
 finalX3D.text = "\n"
 finalX3D.tail = "\n"
@@ -309,6 +299,7 @@ finalX3D.append(scene)
 header = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">'
 xmlstr = xml.etree.ElementTree.tostring(finalX3D, encoding='unicode')
 
+# produce menu
 menu_str = '''
     <!-- Viewpoint and any other scene setup -->
     <WorldInfo title="MultiFacialAnimationMenu.x3d"/>
