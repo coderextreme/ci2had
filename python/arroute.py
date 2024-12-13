@@ -123,26 +123,26 @@ def process_scene_list(scene_list):
                             if displacer is not None:
                                 segment.append(displacer)
 
-    proximity_sensors = scene_element.findall(".//ProximitySensor")
-    if len(proximity_sensors) <= 0:
-        print(f"Could not find ProximitySensor, Adding")
-        proximity_sensor = xml.etree.ElementTree.Element('ProximitySensor')
-        proximity_sensor.text = ""
-        proximity_sensor.tail = "\n"
-        proximity_sensor.set('DEF', "Fire_"+clock_name)
-        proximity_sensor.set("size", "10000 10000 10000")
-        scene.insert(0, proximity_sensor)
-        ps = proximity_sensor
-        group.insert(0, ps)
-        print(f"Adding {proximity_sensor.tag} {proximity_sensor.get('DEF')}")
-        route = xml.etree.ElementTree.Element('ROUTE')
-        route.text = ""
-        route.tail = "\n"
-        route.set("fromNode", ps.get('DEF'))
-        route.set("fromField", "enterTime")
-        route.set("toNode", clock_name)
-        route.set("toField", "startTime")
-        group.append(route)
+#    proximity_sensors = scene_element.findall(".//ProximitySensor")
+#    if len(proximity_sensors) <= 0:
+#        print(f"Could not find ProximitySensor, Adding")
+#        proximity_sensor = xml.etree.ElementTree.Element('ProximitySensor')
+#        proximity_sensor.text = ""
+#        proximity_sensor.tail = "\n"
+#        proximity_sensor.set('DEF', "Fire_"+clock_name)
+#        proximity_sensor.set("size", "10000 10000 10000")
+#        scene.insert(0, proximity_sensor)
+#        ps = proximity_sensor
+#        group.insert(0, ps)
+#        print(f"Adding {proximity_sensor.tag} {proximity_sensor.get('DEF')}")
+#        route = xml.etree.ElementTree.Element('ROUTE')
+#        route.text = ""
+#        route.tail = "\n"
+#        route.set("fromNode", ps.get('DEF'))
+#        route.set("fromField", "enterTime")
+#        route.set("toNode", clock_name)
+#        route.set("toField", "startTime")
+#        group.append(route)
 
     return group
 
@@ -279,12 +279,12 @@ scene.tail = "\n"
 
 animation = findAnimation(input_file)
 clock_name = "Main_Clock"
-proximity_sensor = xml.etree.ElementTree.Element('ProximitySensor')
-proximity_sensor.text = ""
-proximity_sensor.tail = "\n"
-proximity_sensor.set('DEF', "Fire_"+clock_name)
-proximity_sensor.set("size", "10000 10000 10000")
-scene.insert(0, proximity_sensor)
+#proximity_sensor = xml.etree.ElementTree.Element('ProximitySensor')
+#proximity_sensor.text = ""
+#proximity_sensor.tail = "\n"
+#proximity_sensor.set('DEF', "Fire_"+clock_name)
+#proximity_sensor.set("size", "10000 10000 10000")
+#scene.insert(0, proximity_sensor)
 
 time_sensor = xml.etree.ElementTree.Element('TimeSensor')
 time_sensor.text = ""
@@ -384,7 +384,6 @@ for file_index, input_file in enumerate(files):
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -394,24 +393,19 @@ for file_index, input_file in enumerate(files):
             if (checked) {
         '''
 
-        menu_str += "route = scene.addRoute(scene.getNamedNode(\"Main_Clock\"), 'fraction_changed', scene.getNamedNode(\"AnimationAdapter_"+findAnimation(input_file)+"\"), 'set_fraction');\n"
+        menu_str += "Browser.addRoute(scene.getNamedNode(\"Main_Clock\"), 'fraction_changed', scene.getNamedNode(\"AnimationAdapter_"+findAnimation(input_file)+"\"), 'set_fraction');\n"
         menu_str += '''
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
         '''
-        menu_str += "scene.deleteRoute(route);\n"
-        menu_str += "// scene.deleteRoute(scene.getNamedNode(\"Main_Clock\"), 'fraction_changed', scene.getNamedNode(\"AnimationAdapter_"+findAnimation(input_file)+"\"), 'set_fraction');\n"
+        menu_str += "Browser.deleteRoute(scene.getNamedNode(\"Main_Clock\"), 'fraction_changed', scene.getNamedNode(\"AnimationAdapter_"+findAnimation(input_file)+"\"), 'set_fraction');\n"
         menu_str += '''
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>

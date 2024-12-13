@@ -7,7 +7,6 @@
 <meta name="description" content="X3D scene with alternate facial animations controlled by a menu" />
 </head>
 <Scene>
-<ProximitySensor DEF="Fire_Main_Clock" size="10000 10000 10000" />
 <TimeSensor DEF="Main_Clock" cycleInterval="0.99" loop="true" enabled="true" />
 <ScalarInterpolator DEF="AnimationAdapter_JinBlink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinBrowLowerer" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
@@ -1876,7 +1875,6 @@
 <HAnimJoint USE="hanim0_humanoid_root" containerField="joints" />
 <HAnimJoint USE="hanim0_skullbase" containerField="joints" />
 </HAnimHumanoid>
-<ROUTE fromNode="Fire_Main_Clock" fromField="enterTime" toNode="Main_Clock" toField="startTime" />
 </Group>
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinBlink" toField="weight" toNode="Lower_teeth_MorphInterpolator_JinBlink" />
     <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinBlink" toField="weight" toNode="Tongue_MorphInterpolator_JinBlink" />
@@ -3243,7 +3241,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3251,23 +3248,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinBlink"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinBlink"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinBlink"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinBlink"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -3305,7 +3297,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3313,23 +3304,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinBrowLowerer"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinBrowLowerer"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinBrowLowerer"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinBrowLowerer"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -3367,7 +3353,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3375,23 +3360,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinCheekPuffer"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinCheekPuffer"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinCheekPuffer"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinCheekPuffer"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -3429,7 +3409,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3437,23 +3416,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinCheekRaiser"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinCheekRaiser"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinCheekRaiser"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinCheekRaiser"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -3491,7 +3465,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3499,23 +3472,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinChinRaiser"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinChinRaiser"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinChinRaiser"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinChinRaiser"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -3553,7 +3521,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3561,23 +3528,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinDimpler"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinDimpler"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinDimpler"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinDimpler"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -3615,7 +3577,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3623,23 +3584,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinEyesClosed"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinEyesClosed"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinEyesClosed"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinEyesClosed"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -3677,7 +3633,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3685,23 +3640,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinInnerBrowRaiser"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinInnerBrowRaiser"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinInnerBrowRaiser"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinInnerBrowRaiser"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -3739,7 +3689,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3747,23 +3696,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinJawDrop"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinJawDrop"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinJawDrop"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinJawDrop"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -3801,7 +3745,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3809,23 +3752,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLidDroop"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLidDroop"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLidDroop"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLidDroop"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -3863,7 +3801,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3871,23 +3808,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLidTightener"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLidTightener"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLidTightener"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLidTightener"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -3925,7 +3857,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3933,23 +3864,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipCornerDepressor"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipCornerDepressor"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipCornerDepressor"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipCornerDepressor"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -3987,7 +3913,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -3995,23 +3920,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipCornerPuller"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipCornerPuller"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipCornerPuller"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipCornerPuller"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4049,7 +3969,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4057,23 +3976,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipFunneler"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipFunneler"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipFunneler"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipFunneler"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4111,7 +4025,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4119,23 +4032,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipPressor"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipPressor"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipPressor"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipPressor"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4173,7 +4081,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4181,23 +4088,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipPuckerer"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipPuckerer"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipPuckerer"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipPuckerer"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4235,7 +4137,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4243,23 +4144,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipsPart"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipsPart"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipsPart"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipsPart"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4297,7 +4193,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4305,23 +4200,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipStretcher"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipStretcher"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipStretcher"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipStretcher"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4359,7 +4249,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4367,23 +4256,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipSuck"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipSuck"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipSuck"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipSuck"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4421,7 +4305,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4429,23 +4312,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipTightener"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipTightener"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipTightener"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipTightener"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4483,7 +4361,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4491,23 +4368,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLowerLipDepressor"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLowerLipDepressor"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLowerLipDepressor"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLowerLipDepressor"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4545,7 +4417,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4553,23 +4424,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinMouthStretch"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinMouthStretch"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinMouthStretch"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinMouthStretch"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4607,7 +4473,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4615,23 +4480,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinNasolabialDeepener"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinNasolabialDeepener"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinNasolabialDeepener"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinNasolabialDeepener"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4669,7 +4529,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4677,23 +4536,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinNoseWrinkler"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinNoseWrinkler"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinNoseWrinkler"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinNoseWrinkler"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4731,7 +4585,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4739,23 +4592,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinOuterBrowRaiser"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinOuterBrowRaiser"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinOuterBrowRaiser"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinOuterBrowRaiser"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4793,7 +4641,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4801,23 +4648,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinSlit"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinSlit"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinSlit"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinSlit"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4855,7 +4697,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4863,23 +4704,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinSquint"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinSquint"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinSquint"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinSquint"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4917,7 +4753,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4925,23 +4760,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinUpperLidRaiser"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinUpperLidRaiser"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinUpperLidRaiser"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinUpperLidRaiser"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -4979,7 +4809,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -4987,23 +4816,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinUpperLipRaiser"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinUpperLipRaiser"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinUpperLipRaiser"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinUpperLipRaiser"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
@@ -5041,7 +4865,6 @@
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
         <![CDATA[ecmascript:
-        var route = null;
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
@@ -5049,23 +4872,18 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        route = scene.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinWink"), 'set_fraction');
+        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinWink"), 'set_fraction');
 
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
                 fraction = 0;
             } else {
-                if (route != null) {
-        scene.deleteRoute(route);
-// scene.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinWink"), 'set_fraction');
+        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinWink"), 'set_fraction');
 
-                }
-                diffuseColor.g = 1;
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
                 fraction = 0;
             }
-            // Browser.print("out", diffuseColor.g, diffuseColor.b);
         }
         ]]>
       </Script>
