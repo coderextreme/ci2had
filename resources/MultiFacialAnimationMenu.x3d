@@ -3,12 +3,13 @@
 <head>
 <component name="HAnim" level="3" />
 <meta name="title" content="MultiFacialAnimationMenu.x3d" />
-<meta name="oldtitle" content="RouteJin.x3d" />
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/MultiFacialAnimationMenu.x3d" />
 <meta name="description" content="X3D scene with alternate facial animations controlled by a menu" />
+<meta name="created" content="12 December 2024" />
+<meta name="modified" content="13 December 2024" />
+<meta name="creator" content="Gyu Ri Cho, Hyun Ho Chu, Min Joo Lee, Yujin Jung, John Carlson, Joe Williams" />
 </head>
 <Scene>
-<TimeSensor DEF="Main_Clock" cycleInterval="0.99" loop="true" enabled="true" />
 <ScalarInterpolator DEF="AnimationAdapter_JinBlink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinBrowLowerer" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinCheekPuffer" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
@@ -46,7 +47,8 @@
 </HAnimSegment>
 <HAnimJoint DEF="hanim0_skullbase" name="skullbase">
 <HAnimSegment DEF="hanim_sacrum" name="sacrum">
-<WorldInfo title="JinFacsAu45BlinkMorpher.x3d" />
+    <WorldInfo title="MultiFacialAnimationMenu.x3d"/>
+    <Viewpoint position="0 20 110" />
     <Background skyColor="0.8 0.9 1.0" />
     <NavigationInfo type="&quot;EXAMINE&quot;" />
     </HAnimSegment>
@@ -3211,36 +3213,52 @@
     <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinWink" toField="weight" toNode="Right_upper_vermillion_lip_MorphInterpolator_JinWink" />
     <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinWink" toField="weight" toNode="__2_MorphInterpolator_JinWink" />
     
-    <!-- Viewpoint and any other scene setup -->
-    <WorldInfo title="MultiFacialAnimationMenu.x3d"/>
-    <Viewpoint position="0 20 110" />
-      <Group>
-      <Transform translation="48 63.4 0">
-<TouchSensor description="Jin Blink" DEF="JinBlink_Sensor"/>
+        <ProtoDeclare name="MenuItem">
+        <ProtoInterface>
+        <field name="translation" accessType="inputOutput" type="SFVec3f"/>
+        <field name="description" accessType="inputOutput" type="SFString"/>
+        <field name="menuItemString" accessType="inputOutput" type="MFString"/>
+        <field name="adapter" accessType="inputOutput" type="SFNode"/>
+        </ProtoInterface>
+        <ProtoBody>
+        <Group>
+<TimeSensor DEF="Main_Clock" cycleInterval="0.99" loop="true" enabled="true"/>
 
+        <Transform>
+        <IS>
+            <connect nodeField="translation" protoField="translation"/>
+        </IS>
+        <TouchSensor DEF="StartStopAnimationUnit_Sensor">
+        <IS>
+            <connect nodeField="description" protoField="description"/>
+        </IS>
+        </TouchSensor>
           <Shape>
             <Appearance>
               <Material diffuseColor="1 1 1"/>
             </Appearance>
-            <Text string='"JinBlink"'>
-
+            <Text>
+                <IS>
+                    <connect nodeField="string" protoField="menuItemString"/>
+                </IS>
               <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
             </Text>
           </Shape>
+        <Transform translation="0 0 -0.01">
           <Shape>
             <Appearance>
-            <Material DEF="JinBlink_Material" diffuseColor="0 0 1"/>
+                <Material DEF="MenuBackground_Material" diffuseColor="0 0 1"/>'
             </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
+            <Rectangle2D size="40 3"/>
           </Shape>
-            <Script DEF="Script0">
+        </Transform>
+        </Transform>
+        <Script DEF="ScriptToggle">'
         <field name="inTime" type="SFTime" accessType="inputOnly"/>
         <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <field name="adapter" type="SFNode" accessType="inputOutput"/>
         <![CDATA[ecmascript:
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
@@ -3249,1653 +3267,269 @@
             }
             scene = Browser.currentScene;
             if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinBlink"), 'set_fraction');
-
+                Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', adapter, 'set_fraction');
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
-                fraction = 0;
+                adapter.set_fraction = 0;
             } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinBlink"), 'set_fraction');
-
+                Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', adapter, 'set_fraction');
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
-                fraction = 0;
+                adapter.set_fraction = 0;
             }
         }
         ]]>
+                <IS>
+                    <connect nodeField="adapter" protoField="adapter"/>
+                </IS>
       </Script>
-        <ROUTE fromNode="JinBlink_Sensor" fromField="touchTime" toNode="Script0" toField="inTime"/>
-<ROUTE fromNode="JinBlink_Material" fromField="diffuseColor" toNode="Script0" toField="diffuseColor"/>
-<ROUTE fromNode="Script0" fromField="diffuseColor" toNode="JinBlink_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script0" fromField="fraction" toNode="AnimationAdapter_JinBlink" toField="set_fraction"/>
+        <ROUTE fromNode="StartStopAnimationUnit_Sensor" fromField="touchTime" toNode="ScriptToggle" toField="inTime"/>
+        <ROUTE fromNode="MenuBackground_Material" fromField="diffuseColor" toNode="ScriptToggle" toField="diffuseColor"/>
+        <ROUTE fromNode="ScriptToggle" fromField="diffuseColor" toNode="MenuBackground_Material" toField="diffuseColor" />
+        <ROUTE fromNode="StartStopAnimationUnit_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
+      </Group>
+      </ProtoBody>
+      </ProtoDeclare>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 63.4 0"/>
+<fieldValue name="description" value="Jin Blink"/>
+<fieldValue name="menuItemString" value='"JinBlink"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinBlink"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 60.4 0"/>
+<fieldValue name="description" value="Jin Brow Lowerer"/>
+<fieldValue name="menuItemString" value='"JinBrowLowerer"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinBrowLowerer"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 57.39999999999999 0"/>
+<fieldValue name="description" value="Jin Cheek Puffer"/>
+<fieldValue name="menuItemString" value='"JinCheekPuffer"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinCheekPuffer"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 54.39999999999999 0"/>
+<fieldValue name="description" value="Jin Cheek Raiser"/>
+<fieldValue name="menuItemString" value='"JinCheekRaiser"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinCheekRaiser"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 51.39999999999999 0"/>
+<fieldValue name="description" value="Jin Chin Raiser"/>
+<fieldValue name="menuItemString" value='"JinChinRaiser"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinChinRaiser"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 48.39999999999999 0"/>
+<fieldValue name="description" value="Jin Dimpler"/>
+<fieldValue name="menuItemString" value='"JinDimpler"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinDimpler"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 45.39999999999999 0"/>
+<fieldValue name="description" value="Jin Eyes Closed"/>
+<fieldValue name="menuItemString" value='"JinEyesClosed"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinEyesClosed"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 42.39999999999999 0"/>
+<fieldValue name="description" value="Jin Inner Brow Raiser"/>
+<fieldValue name="menuItemString" value='"JinInnerBrowRaiser"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinInnerBrowRaiser"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 39.39999999999999 0"/>
+<fieldValue name="description" value="Jin Jaw Drop"/>
+<fieldValue name="menuItemString" value='"JinJawDrop"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinJawDrop"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 36.39999999999999 0"/>
+<fieldValue name="description" value="Jin Lid Droop"/>
+<fieldValue name="menuItemString" value='"JinLidDroop"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinLidDroop"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 33.39999999999999 0"/>
+<fieldValue name="description" value="Jin Lid Tightener"/>
+<fieldValue name="menuItemString" value='"JinLidTightener"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinLidTightener"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 30.399999999999995 0"/>
+<fieldValue name="description" value="Jin Lip Corner Depressor"/>
+<fieldValue name="menuItemString" value='"JinLipCornerDepressor"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinLipCornerDepressor"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 27.399999999999995 0"/>
+<fieldValue name="description" value="Jin Lip Corner Puller"/>
+<fieldValue name="menuItemString" value='"JinLipCornerPuller"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinLipCornerPuller"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 24.399999999999995 0"/>
+<fieldValue name="description" value="Jin Lip Funneler"/>
+<fieldValue name="menuItemString" value='"JinLipFunneler"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinLipFunneler"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 21.399999999999995 0"/>
+<fieldValue name="description" value="Jin Lip Pressor"/>
+<fieldValue name="menuItemString" value='"JinLipPressor"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinLipPressor"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 18.4 0"/>
+<fieldValue name="description" value="Jin Lip Puckerer"/>
+<fieldValue name="menuItemString" value='"JinLipPuckerer"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinLipPuckerer"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 15.399999999999997 0"/>
+<fieldValue name="description" value="Jin Lips Part"/>
+<fieldValue name="menuItemString" value='"JinLipsPart"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinLipsPart"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 12.399999999999999 0"/>
+<fieldValue name="description" value="Jin Lip Stretcher"/>
+<fieldValue name="menuItemString" value='"JinLipStretcher"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinLipStretcher"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 9.399999999999999 0"/>
+<fieldValue name="description" value="Jin Lip Suck"/>
+<fieldValue name="menuItemString" value='"JinLipSuck"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinLipSuck"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 6.399999999999999 0"/>
+<fieldValue name="description" value="Jin Lip Tightener"/>
+<fieldValue name="menuItemString" value='"JinLipTightener"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinLipTightener"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 3.399999999999995 0"/>
+<fieldValue name="description" value="Jin Lower Lip Depressor"/>
+<fieldValue name="menuItemString" value='"JinLowerLipDepressor"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinLowerLipDepressor"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 0.399999999999995 0"/>
+<fieldValue name="description" value="Jin Mouth Stretch"/>
+<fieldValue name="menuItemString" value='"JinMouthStretch"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinMouthStretch"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 -2.6000000000000085 0"/>
+<fieldValue name="description" value="Jin Nasolabial Deepener"/>
+<fieldValue name="menuItemString" value='"JinNasolabialDeepener"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinNasolabialDeepener"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 -5.6000000000000085 0"/>
+<fieldValue name="description" value="Jin Nose Wrinkler"/>
+<fieldValue name="menuItemString" value='"JinNoseWrinkler"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinNoseWrinkler"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 -8.600000000000009 0"/>
+<fieldValue name="description" value="Jin Outer Brow Raiser"/>
+<fieldValue name="menuItemString" value='"JinOuterBrowRaiser"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinOuterBrowRaiser"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 -11.600000000000009 0"/>
+<fieldValue name="description" value="Jin Slit"/>
+<fieldValue name="menuItemString" value='"JinSlit"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinSlit"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 -14.600000000000001 0"/>
+<fieldValue name="description" value="Jin Squint"/>
+<fieldValue name="menuItemString" value='"JinSquint"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinSquint"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 -17.6 0"/>
+<fieldValue name="description" value="Jin Upper Lid Raiser"/>
+<fieldValue name="menuItemString" value='"JinUpperLidRaiser"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinUpperLidRaiser"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 -20.6 0"/>
+<fieldValue name="description" value="Jin Upper Lip Raiser"/>
+<fieldValue name="menuItemString" value='"JinUpperLipRaiser"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinUpperLipRaiser"/>
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="48 -23.599999999999994 0"/>
+<fieldValue name="description" value="Jin Wink"/>
+<fieldValue name="menuItemString" value='"JinWink"'/>
+<fieldValue name="adapter">
+<ScalarInterpolator USE="AnimationAdapter_JinWink"/>
+</fieldValue>
+</ProtoInstance>
 
-        </Transform>
-<ROUTE fromNode="JinBlink_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 60.4 0">
-<TouchSensor description="Jin Brow Lowerer" DEF="JinBrowLowerer_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinBrowLowerer"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinBrowLowerer_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script1">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinBrowLowerer"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinBrowLowerer"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinBrowLowerer_Sensor" fromField="touchTime" toNode="Script1" toField="inTime"/>
-<ROUTE fromNode="JinBrowLowerer_Material" fromField="diffuseColor" toNode="Script1" toField="diffuseColor"/>
-<ROUTE fromNode="Script1" fromField="diffuseColor" toNode="JinBrowLowerer_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script1" fromField="fraction" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinBrowLowerer_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 57.39999999999999 0">
-<TouchSensor description="Jin Cheek Puffer" DEF="JinCheekPuffer_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinCheekPuffer"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinCheekPuffer_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script2">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinCheekPuffer"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinCheekPuffer"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinCheekPuffer_Sensor" fromField="touchTime" toNode="Script2" toField="inTime"/>
-<ROUTE fromNode="JinCheekPuffer_Material" fromField="diffuseColor" toNode="Script2" toField="diffuseColor"/>
-<ROUTE fromNode="Script2" fromField="diffuseColor" toNode="JinCheekPuffer_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script2" fromField="fraction" toNode="AnimationAdapter_JinCheekPuffer" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinCheekPuffer_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 54.39999999999999 0">
-<TouchSensor description="Jin Cheek Raiser" DEF="JinCheekRaiser_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinCheekRaiser"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinCheekRaiser_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script3">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinCheekRaiser"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinCheekRaiser"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinCheekRaiser_Sensor" fromField="touchTime" toNode="Script3" toField="inTime"/>
-<ROUTE fromNode="JinCheekRaiser_Material" fromField="diffuseColor" toNode="Script3" toField="diffuseColor"/>
-<ROUTE fromNode="Script3" fromField="diffuseColor" toNode="JinCheekRaiser_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script3" fromField="fraction" toNode="AnimationAdapter_JinCheekRaiser" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinCheekRaiser_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 51.39999999999999 0">
-<TouchSensor description="Jin Chin Raiser" DEF="JinChinRaiser_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinChinRaiser"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinChinRaiser_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script4">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinChinRaiser"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinChinRaiser"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinChinRaiser_Sensor" fromField="touchTime" toNode="Script4" toField="inTime"/>
-<ROUTE fromNode="JinChinRaiser_Material" fromField="diffuseColor" toNode="Script4" toField="diffuseColor"/>
-<ROUTE fromNode="Script4" fromField="diffuseColor" toNode="JinChinRaiser_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script4" fromField="fraction" toNode="AnimationAdapter_JinChinRaiser" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinChinRaiser_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 48.39999999999999 0">
-<TouchSensor description="Jin Dimpler" DEF="JinDimpler_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinDimpler"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinDimpler_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script5">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinDimpler"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinDimpler"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinDimpler_Sensor" fromField="touchTime" toNode="Script5" toField="inTime"/>
-<ROUTE fromNode="JinDimpler_Material" fromField="diffuseColor" toNode="Script5" toField="diffuseColor"/>
-<ROUTE fromNode="Script5" fromField="diffuseColor" toNode="JinDimpler_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script5" fromField="fraction" toNode="AnimationAdapter_JinDimpler" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinDimpler_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 45.39999999999999 0">
-<TouchSensor description="Jin Eyes Closed" DEF="JinEyesClosed_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinEyesClosed"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinEyesClosed_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script6">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinEyesClosed"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinEyesClosed"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinEyesClosed_Sensor" fromField="touchTime" toNode="Script6" toField="inTime"/>
-<ROUTE fromNode="JinEyesClosed_Material" fromField="diffuseColor" toNode="Script6" toField="diffuseColor"/>
-<ROUTE fromNode="Script6" fromField="diffuseColor" toNode="JinEyesClosed_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script6" fromField="fraction" toNode="AnimationAdapter_JinEyesClosed" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinEyesClosed_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 42.39999999999999 0">
-<TouchSensor description="Jin Inner Brow Raiser" DEF="JinInnerBrowRaiser_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinInnerBrowRaiser"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinInnerBrowRaiser_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script7">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinInnerBrowRaiser"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinInnerBrowRaiser"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinInnerBrowRaiser_Sensor" fromField="touchTime" toNode="Script7" toField="inTime"/>
-<ROUTE fromNode="JinInnerBrowRaiser_Material" fromField="diffuseColor" toNode="Script7" toField="diffuseColor"/>
-<ROUTE fromNode="Script7" fromField="diffuseColor" toNode="JinInnerBrowRaiser_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script7" fromField="fraction" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinInnerBrowRaiser_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 39.39999999999999 0">
-<TouchSensor description="Jin Jaw Drop" DEF="JinJawDrop_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinJawDrop"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinJawDrop_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script8">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinJawDrop"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinJawDrop"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinJawDrop_Sensor" fromField="touchTime" toNode="Script8" toField="inTime"/>
-<ROUTE fromNode="JinJawDrop_Material" fromField="diffuseColor" toNode="Script8" toField="diffuseColor"/>
-<ROUTE fromNode="Script8" fromField="diffuseColor" toNode="JinJawDrop_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script8" fromField="fraction" toNode="AnimationAdapter_JinJawDrop" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinJawDrop_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 36.39999999999999 0">
-<TouchSensor description="Jin Lid Droop" DEF="JinLidDroop_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinLidDroop"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinLidDroop_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script9">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLidDroop"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLidDroop"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinLidDroop_Sensor" fromField="touchTime" toNode="Script9" toField="inTime"/>
-<ROUTE fromNode="JinLidDroop_Material" fromField="diffuseColor" toNode="Script9" toField="diffuseColor"/>
-<ROUTE fromNode="Script9" fromField="diffuseColor" toNode="JinLidDroop_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script9" fromField="fraction" toNode="AnimationAdapter_JinLidDroop" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinLidDroop_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 33.39999999999999 0">
-<TouchSensor description="Jin Lid Tightener" DEF="JinLidTightener_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinLidTightener"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinLidTightener_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script10">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLidTightener"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLidTightener"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinLidTightener_Sensor" fromField="touchTime" toNode="Script10" toField="inTime"/>
-<ROUTE fromNode="JinLidTightener_Material" fromField="diffuseColor" toNode="Script10" toField="diffuseColor"/>
-<ROUTE fromNode="Script10" fromField="diffuseColor" toNode="JinLidTightener_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script10" fromField="fraction" toNode="AnimationAdapter_JinLidTightener" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinLidTightener_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 30.399999999999995 0">
-<TouchSensor description="Jin Lip Corner Depressor" DEF="JinLipCornerDepressor_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinLipCornerDepressor"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinLipCornerDepressor_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script11">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipCornerDepressor"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipCornerDepressor"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinLipCornerDepressor_Sensor" fromField="touchTime" toNode="Script11" toField="inTime"/>
-<ROUTE fromNode="JinLipCornerDepressor_Material" fromField="diffuseColor" toNode="Script11" toField="diffuseColor"/>
-<ROUTE fromNode="Script11" fromField="diffuseColor" toNode="JinLipCornerDepressor_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script11" fromField="fraction" toNode="AnimationAdapter_JinLipCornerDepressor" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinLipCornerDepressor_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 27.399999999999995 0">
-<TouchSensor description="Jin Lip Corner Puller" DEF="JinLipCornerPuller_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinLipCornerPuller"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinLipCornerPuller_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script12">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipCornerPuller"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipCornerPuller"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinLipCornerPuller_Sensor" fromField="touchTime" toNode="Script12" toField="inTime"/>
-<ROUTE fromNode="JinLipCornerPuller_Material" fromField="diffuseColor" toNode="Script12" toField="diffuseColor"/>
-<ROUTE fromNode="Script12" fromField="diffuseColor" toNode="JinLipCornerPuller_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script12" fromField="fraction" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinLipCornerPuller_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 24.399999999999995 0">
-<TouchSensor description="Jin Lip Funneler" DEF="JinLipFunneler_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinLipFunneler"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinLipFunneler_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script13">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipFunneler"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipFunneler"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinLipFunneler_Sensor" fromField="touchTime" toNode="Script13" toField="inTime"/>
-<ROUTE fromNode="JinLipFunneler_Material" fromField="diffuseColor" toNode="Script13" toField="diffuseColor"/>
-<ROUTE fromNode="Script13" fromField="diffuseColor" toNode="JinLipFunneler_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script13" fromField="fraction" toNode="AnimationAdapter_JinLipFunneler" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinLipFunneler_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 21.399999999999995 0">
-<TouchSensor description="Jin Lip Pressor" DEF="JinLipPressor_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinLipPressor"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinLipPressor_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script14">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipPressor"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipPressor"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinLipPressor_Sensor" fromField="touchTime" toNode="Script14" toField="inTime"/>
-<ROUTE fromNode="JinLipPressor_Material" fromField="diffuseColor" toNode="Script14" toField="diffuseColor"/>
-<ROUTE fromNode="Script14" fromField="diffuseColor" toNode="JinLipPressor_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script14" fromField="fraction" toNode="AnimationAdapter_JinLipPressor" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinLipPressor_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 18.4 0">
-<TouchSensor description="Jin Lip Puckerer" DEF="JinLipPuckerer_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinLipPuckerer"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinLipPuckerer_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script15">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipPuckerer"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipPuckerer"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinLipPuckerer_Sensor" fromField="touchTime" toNode="Script15" toField="inTime"/>
-<ROUTE fromNode="JinLipPuckerer_Material" fromField="diffuseColor" toNode="Script15" toField="diffuseColor"/>
-<ROUTE fromNode="Script15" fromField="diffuseColor" toNode="JinLipPuckerer_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script15" fromField="fraction" toNode="AnimationAdapter_JinLipPuckerer" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinLipPuckerer_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 15.399999999999997 0">
-<TouchSensor description="Jin Lips Part" DEF="JinLipsPart_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinLipsPart"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinLipsPart_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script16">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipsPart"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipsPart"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinLipsPart_Sensor" fromField="touchTime" toNode="Script16" toField="inTime"/>
-<ROUTE fromNode="JinLipsPart_Material" fromField="diffuseColor" toNode="Script16" toField="diffuseColor"/>
-<ROUTE fromNode="Script16" fromField="diffuseColor" toNode="JinLipsPart_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script16" fromField="fraction" toNode="AnimationAdapter_JinLipsPart" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinLipsPart_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 12.399999999999999 0">
-<TouchSensor description="Jin Lip Stretcher" DEF="JinLipStretcher_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinLipStretcher"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinLipStretcher_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script17">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipStretcher"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipStretcher"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinLipStretcher_Sensor" fromField="touchTime" toNode="Script17" toField="inTime"/>
-<ROUTE fromNode="JinLipStretcher_Material" fromField="diffuseColor" toNode="Script17" toField="diffuseColor"/>
-<ROUTE fromNode="Script17" fromField="diffuseColor" toNode="JinLipStretcher_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script17" fromField="fraction" toNode="AnimationAdapter_JinLipStretcher" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinLipStretcher_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 9.399999999999999 0">
-<TouchSensor description="Jin Lip Suck" DEF="JinLipSuck_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinLipSuck"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinLipSuck_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script18">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipSuck"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipSuck"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinLipSuck_Sensor" fromField="touchTime" toNode="Script18" toField="inTime"/>
-<ROUTE fromNode="JinLipSuck_Material" fromField="diffuseColor" toNode="Script18" toField="diffuseColor"/>
-<ROUTE fromNode="Script18" fromField="diffuseColor" toNode="JinLipSuck_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script18" fromField="fraction" toNode="AnimationAdapter_JinLipSuck" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinLipSuck_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 6.399999999999999 0">
-<TouchSensor description="Jin Lip Tightener" DEF="JinLipTightener_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinLipTightener"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinLipTightener_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script19">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipTightener"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLipTightener"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinLipTightener_Sensor" fromField="touchTime" toNode="Script19" toField="inTime"/>
-<ROUTE fromNode="JinLipTightener_Material" fromField="diffuseColor" toNode="Script19" toField="diffuseColor"/>
-<ROUTE fromNode="Script19" fromField="diffuseColor" toNode="JinLipTightener_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script19" fromField="fraction" toNode="AnimationAdapter_JinLipTightener" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinLipTightener_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 3.399999999999995 0">
-<TouchSensor description="Jin Lower Lip Depressor" DEF="JinLowerLipDepressor_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinLowerLipDepressor"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinLowerLipDepressor_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script20">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLowerLipDepressor"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinLowerLipDepressor"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinLowerLipDepressor_Sensor" fromField="touchTime" toNode="Script20" toField="inTime"/>
-<ROUTE fromNode="JinLowerLipDepressor_Material" fromField="diffuseColor" toNode="Script20" toField="diffuseColor"/>
-<ROUTE fromNode="Script20" fromField="diffuseColor" toNode="JinLowerLipDepressor_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script20" fromField="fraction" toNode="AnimationAdapter_JinLowerLipDepressor" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinLowerLipDepressor_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 0.399999999999995 0">
-<TouchSensor description="Jin Mouth Stretch" DEF="JinMouthStretch_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinMouthStretch"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinMouthStretch_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script21">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinMouthStretch"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinMouthStretch"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinMouthStretch_Sensor" fromField="touchTime" toNode="Script21" toField="inTime"/>
-<ROUTE fromNode="JinMouthStretch_Material" fromField="diffuseColor" toNode="Script21" toField="diffuseColor"/>
-<ROUTE fromNode="Script21" fromField="diffuseColor" toNode="JinMouthStretch_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script21" fromField="fraction" toNode="AnimationAdapter_JinMouthStretch" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinMouthStretch_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 -2.6000000000000085 0">
-<TouchSensor description="Jin Nasolabial Deepener" DEF="JinNasolabialDeepener_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinNasolabialDeepener"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinNasolabialDeepener_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script22">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinNasolabialDeepener"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinNasolabialDeepener"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinNasolabialDeepener_Sensor" fromField="touchTime" toNode="Script22" toField="inTime"/>
-<ROUTE fromNode="JinNasolabialDeepener_Material" fromField="diffuseColor" toNode="Script22" toField="diffuseColor"/>
-<ROUTE fromNode="Script22" fromField="diffuseColor" toNode="JinNasolabialDeepener_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script22" fromField="fraction" toNode="AnimationAdapter_JinNasolabialDeepener" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinNasolabialDeepener_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 -5.6000000000000085 0">
-<TouchSensor description="Jin Nose Wrinkler" DEF="JinNoseWrinkler_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinNoseWrinkler"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinNoseWrinkler_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script23">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinNoseWrinkler"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinNoseWrinkler"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinNoseWrinkler_Sensor" fromField="touchTime" toNode="Script23" toField="inTime"/>
-<ROUTE fromNode="JinNoseWrinkler_Material" fromField="diffuseColor" toNode="Script23" toField="diffuseColor"/>
-<ROUTE fromNode="Script23" fromField="diffuseColor" toNode="JinNoseWrinkler_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script23" fromField="fraction" toNode="AnimationAdapter_JinNoseWrinkler" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinNoseWrinkler_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 -8.600000000000009 0">
-<TouchSensor description="Jin Outer Brow Raiser" DEF="JinOuterBrowRaiser_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinOuterBrowRaiser"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinOuterBrowRaiser_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script24">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinOuterBrowRaiser"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinOuterBrowRaiser"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinOuterBrowRaiser_Sensor" fromField="touchTime" toNode="Script24" toField="inTime"/>
-<ROUTE fromNode="JinOuterBrowRaiser_Material" fromField="diffuseColor" toNode="Script24" toField="diffuseColor"/>
-<ROUTE fromNode="Script24" fromField="diffuseColor" toNode="JinOuterBrowRaiser_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script24" fromField="fraction" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinOuterBrowRaiser_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 -11.600000000000009 0">
-<TouchSensor description="Jin Slit" DEF="JinSlit_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinSlit"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinSlit_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script25">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinSlit"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinSlit"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinSlit_Sensor" fromField="touchTime" toNode="Script25" toField="inTime"/>
-<ROUTE fromNode="JinSlit_Material" fromField="diffuseColor" toNode="Script25" toField="diffuseColor"/>
-<ROUTE fromNode="Script25" fromField="diffuseColor" toNode="JinSlit_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script25" fromField="fraction" toNode="AnimationAdapter_JinSlit" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinSlit_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 -14.600000000000001 0">
-<TouchSensor description="Jin Squint" DEF="JinSquint_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinSquint"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinSquint_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script26">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinSquint"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinSquint"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinSquint_Sensor" fromField="touchTime" toNode="Script26" toField="inTime"/>
-<ROUTE fromNode="JinSquint_Material" fromField="diffuseColor" toNode="Script26" toField="diffuseColor"/>
-<ROUTE fromNode="Script26" fromField="diffuseColor" toNode="JinSquint_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script26" fromField="fraction" toNode="AnimationAdapter_JinSquint" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinSquint_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 -17.6 0">
-<TouchSensor description="Jin Upper Lid Raiser" DEF="JinUpperLidRaiser_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinUpperLidRaiser"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinUpperLidRaiser_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script27">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinUpperLidRaiser"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinUpperLidRaiser"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinUpperLidRaiser_Sensor" fromField="touchTime" toNode="Script27" toField="inTime"/>
-<ROUTE fromNode="JinUpperLidRaiser_Material" fromField="diffuseColor" toNode="Script27" toField="diffuseColor"/>
-<ROUTE fromNode="Script27" fromField="diffuseColor" toNode="JinUpperLidRaiser_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script27" fromField="fraction" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinUpperLidRaiser_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 -20.6 0">
-<TouchSensor description="Jin Upper Lip Raiser" DEF="JinUpperLipRaiser_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinUpperLipRaiser"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinUpperLipRaiser_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script28">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinUpperLipRaiser"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinUpperLipRaiser"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinUpperLipRaiser_Sensor" fromField="touchTime" toNode="Script28" toField="inTime"/>
-<ROUTE fromNode="JinUpperLipRaiser_Material" fromField="diffuseColor" toNode="Script28" toField="diffuseColor"/>
-<ROUTE fromNode="Script28" fromField="diffuseColor" toNode="JinUpperLipRaiser_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script28" fromField="fraction" toNode="AnimationAdapter_JinUpperLipRaiser" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinUpperLipRaiser_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-<Transform translation="48 -23.599999999999994 0">
-<TouchSensor description="Jin Wink" DEF="JinWink_Sensor"/>
-
-          <Shape>
-            <Appearance>
-              <Material diffuseColor="1 1 1"/>
-            </Appearance>
-            <Text string='"JinWink"'>
-
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
-            </Text>
-          </Shape>
-          <Shape>
-            <Appearance>
-            <Material DEF="JinWink_Material" diffuseColor="0 0 1"/>
-            </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point="20 1.3833333333333333 -0.1, -20 1.3833333333333333 -0.1, -20 -1.616666666666667 -0.1, 20 -1.616666666666667 -0.1"/>
-
-             </IndexedFaceSet>
-          </Shape>
-            <Script DEF="Script29">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <![CDATA[ecmascript:
-        function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
-            if (value) {
-                checked = !checked;
-            }
-            scene = Browser.currentScene;
-            if (checked) {
-        Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinWink"), 'set_fraction');
-
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-                fraction = 0;
-            } else {
-        Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', scene.getNamedNode("AnimationAdapter_JinWink"), 'set_fraction');
-
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-                fraction = 0;
-            }
-        }
-        ]]>
-      </Script>
-        <ROUTE fromNode="JinWink_Sensor" fromField="touchTime" toNode="Script29" toField="inTime"/>
-<ROUTE fromNode="JinWink_Material" fromField="diffuseColor" toNode="Script29" toField="diffuseColor"/>
-<ROUTE fromNode="Script29" fromField="diffuseColor" toNode="JinWink_Material" toField="diffuseColor" />
-<ROUTE fromNode="Script29" fromField="fraction" toNode="AnimationAdapter_JinWink" toField="set_fraction"/>
-
-        </Transform>
-<ROUTE fromNode="JinWink_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
-
-    </Group>
   </Scene>
 </X3D>

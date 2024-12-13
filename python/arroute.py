@@ -223,6 +223,7 @@ finalX3D.set("version", "4.0")
 head = xml.etree.ElementTree.Element('head')
 head.text = "\n"
 head.tail = "\n"
+
 component = xml.etree.ElementTree.Element('component')
 component.set("name", "HAnim")
 component.set("level", "3")
@@ -250,6 +251,28 @@ meta.tail = "\n"
 meta.set("name", "description")
 meta.set("content", "X3D scene with alternate facial animations controlled by a menu")
 head.append(meta)
+
+meta = xml.etree.ElementTree.Element('meta')
+meta.text = ""
+meta.tail = "\n"
+meta.set("name", "created")
+meta.set("content", "12 December 2024")
+head.append(meta)
+
+meta = xml.etree.ElementTree.Element('meta')
+meta.text = ""
+meta.tail = "\n"
+meta.set("name", "modified")
+meta.set("content", "13 December 2024")
+head.append(meta)
+
+meta = xml.etree.ElementTree.Element('meta')
+meta.text = ""
+meta.tail = "\n"
+meta.set("name", "creator")
+meta.set("content", "Gyu Ri Cho, Hyun Ho Chu, Min Joo Lee, Yujin Jung, John Carlson, Joe Williams")
+head.append(meta)
+
 finalX3D.append(head)
 
 scene = xml.etree.ElementTree.Element('Scene')
@@ -257,16 +280,6 @@ scene.text = "\n"
 scene.tail = "\n"
 
 animation = findAnimation(input_file)
-clock_name = "Main_Clock"
-
-time_sensor = xml.etree.ElementTree.Element('TimeSensor')
-time_sensor.text = ""
-time_sensor.tail = "\n"
-time_sensor.set('DEF', clock_name)
-time_sensor.set('cycleInterval',"0.99")
-time_sensor.set('loop', "true")
-time_sensor.set('enabled', "true")
-scene.insert(1, time_sensor)
 
 for scene_element in scene_list:
     scalarInterpolators = scene_element.findall(".//ScalarInterpolator")
@@ -300,62 +313,52 @@ menu_str = '''
     <!-- Viewpoint and any other scene setup -->
     <WorldInfo title="MultiFacialAnimationMenu.x3d"/>
     <Viewpoint position="0 20 110" />
-      <Group>
-      '''
-ifs_start = 1
-increment = -1/12
-for file_index, input_file in enumerate(files):
+        <ProtoDeclare name="MenuItem">
+        <ProtoInterface>
+        <field name="translation" accessType="inputOutput" type="SFVec3f"/>
+        <field name="description" accessType="inputOutput" type="SFString"/>
+        <field name="menuItemString" accessType="inputOutput" type="MFString"/>
+        <field name="adapter" accessType="inputOutput" type="SFNode"/>
+        </ProtoInterface>
+        <ProtoBody>
+        <Group>
+<TimeSensor DEF="Main_Clock" cycleInterval="0.99" loop="true" enabled="true"/>
 
-    if input_file.endswith(".x3d"):
-#        menu_str += '''
-#    <Script DEF="Choice'''+str(file_index)+'''">
-#      <field name="touchTime" type="SFTime" accessType="inputOnly"/>
-#      <field name="choice" type="SFInt32" accessType="outputOnly"/>
-#      <![CDATA[
-#      ecmascript:
-#      function set_touchTime(value) {
-#          choice = '''+str(file_index)+''';
-#      }
-#      function touchTime(value) {
-#          choice = '''+str(file_index)+''';
-#      }
-#      ]]>
-#    </Script>
-#'''
-        menu_str += '<Transform translation="48 '+str(ifs_start*36+27.4)+' 0">\n'
-        menu_str += '<TouchSensor description="'+re.sub(r"([a-z])([A-Z])", r"\1 \2", findAnimation(input_file))+'" DEF="'+findAnimation(input_file)+'_Sensor"/>\n'
-        menu_str += '''
+        <Transform>
+        <IS>
+            <connect nodeField="translation" protoField="translation"/>
+        </IS>
+        <TouchSensor DEF="StartStopAnimationUnit_Sensor">
+        <IS>
+            <connect nodeField="description" protoField="description"/>
+        </IS>
+        </TouchSensor>
           <Shape>
             <Appearance>
               <Material diffuseColor="1 1 1"/>
             </Appearance>
-            '''
-        menu_str += '<Text string=\'"'+findAnimation(input_file)+'"\'>\n'
-        menu_str += '''
+            <Text>
+                <IS>
+                    <connect nodeField="string" protoField="menuItemString"/>
+                </IS>
               <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
             </Text>
           </Shape>
+        <Transform translation="0 0 -0.01">
           <Shape>
             <Appearance>
-            '''
-        menu_str += '<Material DEF="'+findAnimation(input_file)+'_Material" diffuseColor="0 0 1"/>'
-        menu_str += '''
+                <Material DEF="MenuBackground_Material" diffuseColor="0 0 1"/>'
             </Appearance>
-            <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            '''
-        ypos = - increment + 1.0
-        xpos = 20
-        menu_str += '<Coordinate point="'+str(xpos)+' '+str(ypos+0.3)+' -0.1, '+str(-xpos)+' '+str(ypos+0.3)+' -0.1, '+str(-xpos)+' '+str(ypos-2.7)+' -0.1, '+str(xpos)+' '+str(ypos-2.7)+' -0.1"/>\n'
-        menu_str += '''
-             </IndexedFaceSet>
+            <Rectangle2D size="40 3"/>
           </Shape>
-            '''
-        menu_str += '<Script DEF="Script'+str(file_index)+'">'
-        menu_str += '''
+        </Transform>
+        </Transform>
+        <Script DEF="ScriptToggle">'
         <field name="inTime" type="SFTime" accessType="inputOnly"/>
         <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
+        <field name="adapter" type="SFNode" accessType="inputOutput"/>
         <![CDATA[ecmascript:
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
@@ -364,37 +367,45 @@ for file_index, input_file in enumerate(files):
             }
             scene = Browser.currentScene;
             if (checked) {
-        '''
-
-        menu_str += "Browser.addRoute(scene.getNamedNode(\"Main_Clock\"), 'fraction_changed', scene.getNamedNode(\"AnimationAdapter_"+findAnimation(input_file)+"\"), 'set_fraction');\n"
-        menu_str += '''
+                Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', adapter, 'set_fraction');
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
-                fraction = 0;
+                adapter.set_fraction = 0;
             } else {
-        '''
-        menu_str += "Browser.deleteRoute(scene.getNamedNode(\"Main_Clock\"), 'fraction_changed', scene.getNamedNode(\"AnimationAdapter_"+findAnimation(input_file)+"\"), 'set_fraction');\n"
-        menu_str += '''
+                Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', adapter, 'set_fraction');
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
-                fraction = 0;
+                adapter.set_fraction = 0;
             }
         }
         ]]>
+                <IS>
+                    <connect nodeField="adapter" protoField="adapter"/>
+                </IS>
       </Script>
-        '''
-        menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Sensor" fromField="touchTime" toNode="Script'+str(file_index)+'" toField="inTime"/>\n'
-        menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Material" fromField="diffuseColor" toNode="Script'+str(file_index)+'" toField="diffuseColor"/>\n'
-        menu_str += '<ROUTE fromNode="Script'+str(file_index)+'" fromField="diffuseColor" toNode="'+findAnimation(input_file)+'_Material" toField="diffuseColor" />\n'
-        menu_str += '<ROUTE fromNode="Script'+str(file_index)+'" fromField="fraction" toNode="AnimationAdapter_'+findAnimation(input_file)+'" toField="set_fraction"/>\n'
-        menu_str += '''
-        </Transform>
+        <ROUTE fromNode="StartStopAnimationUnit_Sensor" fromField="touchTime" toNode="ScriptToggle" toField="inTime"/>
+        <ROUTE fromNode="MenuBackground_Material" fromField="diffuseColor" toNode="ScriptToggle" toField="diffuseColor"/>
+        <ROUTE fromNode="ScriptToggle" fromField="diffuseColor" toNode="MenuBackground_Material" toField="diffuseColor" />
+        <ROUTE fromNode="StartStopAnimationUnit_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>
+      </Group>
+      </ProtoBody>
+      </ProtoDeclare>
 '''
-        menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Sensor" fromField="touchTime" toNode="Main_Clock" toField="startTime"/>\n'
+ifs_start = 1
+increment = -1/12
+for file_index, input_file in enumerate(files):
+
+    menu_str += '<ProtoInstance name="MenuItem">\n'
+    menu_str += '<fieldValue name="translation" value="48 '+str(ifs_start*36+27.4)+' 0"/>\n'
+    menu_str += '<fieldValue name="description" value="'+re.sub(r"([a-z])([A-Z])", r"\1 \2", findAnimation(input_file))+'"/>\n'
+    menu_str += '<fieldValue name="menuItemString" value=\'"'+findAnimation(input_file)+'"\'/>\n'
+    menu_str += '<fieldValue name="adapter">\n'
+    menu_str += '<ScalarInterpolator USE="AnimationAdapter_'+findAnimation(input_file)+'"/>\n'
+    menu_str += '</fieldValue>\n'
+    menu_str += '</ProtoInstance>\n'
 
     ifs_start += increment
 menu_str += '''
-    </Group>
   </Scene>
 </X3D>
 '''
