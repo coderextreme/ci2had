@@ -10,6 +10,10 @@
 <meta name="creator" content="Gyu Ri Cho, Hyun Ho Chu, Min Joo Lee, Yujin Jung, John Carlson, Joe Williams" />
 </head>
 <Scene>
+    <WorldInfo title="MultiFacialAnimationMenu.x3d"/>
+    <Viewpoint position="0 20 110" />
+    <Background skyColor="0.8 0.9 1.0" />
+    <NavigationInfo type="&quot;EXAMINE&quot;" />
 <ScalarInterpolator DEF="AnimationAdapter_JinBlink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinBrowLowerer" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinCheekPuffer" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
@@ -47,10 +51,6 @@
 </HAnimSegment>
 <HAnimJoint DEF="hanim0_skullbase" name="skullbase">
 <HAnimSegment DEF="hanim_sacrum" name="sacrum">
-    <WorldInfo title="MultiFacialAnimationMenu.x3d"/>
-    <Viewpoint position="0 20 110" />
-    <Background skyColor="0.8 0.9 1.0" />
-    <NavigationInfo type="&quot;EXAMINE&quot;" />
     </HAnimSegment>
 <HAnimSegment DEF="hanim_Lower_teeth" name="lower_teeth">
 <Transform DEF="Lower_teeth_JinBlink" translation="0 8.43 11.43">
