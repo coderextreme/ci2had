@@ -234,14 +234,14 @@ meta = xml.etree.ElementTree.Element('meta')
 meta.text = ""
 meta.tail = "\n"
 meta.set("name", "title")
-meta.set("content", "SingleMenuJin.x3d")
+meta.set("content", "MultiFacialAnimationMenu.x3d")
 head.append(meta)
 
 meta = xml.etree.ElementTree.Element('meta')
 meta.text = ""
 meta.tail = "\n"
 meta.set("name", "identifier")
-meta.set("content", "https://coderextreme.net/X3DJSONLD/src/main/data/SingleMenuJin.x3d")
+meta.set("content", "https://coderextreme.net/X3DJSONLD/src/main/data/MultiFacialAnimationMenu.x3d")
 head.append(meta)
 
 meta = xml.etree.ElementTree.Element('meta')
@@ -298,7 +298,7 @@ xmlstr = xml.etree.ElementTree.tostring(finalX3D, encoding='unicode')
 
 menu_str = '''
     <!-- Viewpoint and any other scene setup -->
-    <WorldInfo title="SingleMenuJin.x3d"/>
+    <WorldInfo title="MultiFacialAnimationMenu.x3d"/>
     <Viewpoint position="0 20 110" />
       <Group>
       '''
@@ -399,6 +399,6 @@ menu_str += '''
 </X3D>
 '''
 xmlString = f"{header}{xmlstr[:-16]}{menu_str}"
-file_output = os.path.join("../resources/",os.path.basename("RouteJin.x3d"))
+file_output = os.path.join("../resources/",os.path.basename("MultiFacialAnimationMenu.x3d"))
 with open(file_output, "w") as output_file:
     output_file.write(xmlString)
