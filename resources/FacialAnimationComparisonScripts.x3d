@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd"><X3D profile="Immersive" version="4.0">
 <head>
 <component name="HAnim" level="3" />
-<meta name="title" content="CleanedMultiFacialAnimationMenu.x3d" />
+<meta name="title" content="MultiFacialAnimationMenu.x3d" />
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/MultiFacialAnimationMenu.x3d" />
 <meta name="description" content="X3D scene with multiple facial animations controlled by a multi-selection menu" />
 <meta name="created" content="12 December 2024" />
@@ -47,7 +47,7 @@
 </HAnimSegment>
 <HAnimJoint DEF="hanim0_skullbase" name="skullbase">
 <HAnimSegment DEF="hanim_sacrum" name="sacrum">
-<WorldInfo title="CleanedMultiFacialAnimationMenu.x3d" />
+<WorldInfo title="FacialAnimationComparisonScripts.x3d" />
     <Background skyColor="0.8 0.9 1.0" />
     <NavigationInfo type="&quot;EXAMINE&quot;" />
     </HAnimSegment>
@@ -1207,7 +1207,7 @@
     <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinUpperLipRaiser" toField="weight" toNode="Right_upper_vermillion_lip_MorphInterpolator_JinUpperLipRaiser" />
     <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinWink" toField="weight" toNode="Left_upper_eyelid_MorphInterpolator_JinWink" />
     <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinWink" toField="weight" toNode="Left_lower_eyelid_MorphInterpolator_JinWink" />
-    <WorldInfo title="CleanedMultiFacialAnimationMenu.x3d" />
+    <WorldInfo title="FacialAnimationComparisonScripts.x3d" />
     <Viewpoint position="0 20 110" />
         <ProtoDeclare name="MenuItem">
         <ProtoInterface>

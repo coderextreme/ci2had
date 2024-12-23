@@ -239,7 +239,7 @@ meta = xml.etree.ElementTree.Element('meta')
 meta.text = ""
 meta.tail = "\n"
 meta.set("name", "description")
-meta.set("content", "X3D scene with alternate facial animations controlled by a menu")
+meta.set("content", "X3D scene with multiple facial animations controlled by a multi-selection menu")
 head.append(meta)
 
 meta = xml.etree.ElementTree.Element('meta')
@@ -260,7 +260,7 @@ meta = xml.etree.ElementTree.Element('meta')
 meta.text = ""
 meta.tail = "\n"
 meta.set("name", "creator")
-meta.set("content", "Gyu Ri Cho, Hyun Ho Chu, Min Joo Lee, Yujin Jung, John Carlson, Joe Williams")
+meta.set("content", "John Carlson, Joe Williams, Gyu Ri Cho, Hyun Ho Chu, Min Joo Lee, Yujin Jung")
 head.append(meta)
 
 finalX3D.append(head)
