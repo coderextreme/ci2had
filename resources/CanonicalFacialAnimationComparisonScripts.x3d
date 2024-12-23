@@ -3,8 +3,8 @@
 <X3D profile='Immersive' version='4.0'>
   <head>
     <component level='3' name='HAnim'/>
-    <meta content='CanonicalMultiFacialAnimationMenu.x3d' name='title'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/CanonicalMultiFacialAnimationMenu.x3d' name='identifier'/>
+    <meta content='CanonicalFacialAnimationComparisonScripts.x3d' name='title'/>
+    <meta content='https://github.com/coderextreme/ci2had/CanonicalFacialAnimationComparisonScripts.x3d' name='identifier'/>
     <meta content='X3D scene with multiple facial animations controlled by a multi-selection menu' name='description'/>
     <meta content='12 December 2024' name='created'/>
     <meta content='22 December 2024' name='modified'/>
