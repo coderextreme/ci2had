@@ -338,13 +338,13 @@ menu_str = '''
         <Transform translation="0 0 -0.01">
           <Shape>
             <Appearance>
-                <Material DEF="MenuBackground_Material" diffuseColor="0 0 1"/>'
+                <Material DEF="MenuBackground_Material" diffuseColor="0 0 1"/>
             </Appearance>
             <Rectangle2D size="40 3"/>
           </Shape>
         </Transform>
         </Transform>
-        <Script DEF="ScriptToggle">'
+        <Script DEF="ScriptToggle">
         <field name="inTime" type="SFTime" accessType="inputOnly"/>
         <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>

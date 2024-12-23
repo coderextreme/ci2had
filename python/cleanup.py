@@ -21,7 +21,7 @@ root = X3D.getroot()
 scene = root.find("Scene")
 displacers = scene.findall(".//HAnimDisplacer")
 for displacer in displacers:
-    if not displacer.get('coordIndex') or not displacer.get('displacements'):
+    if displacer.get('DEF') and (not displacer.get('coordIndex') or not displacer.get('displacements')):
         routes = scene.findall(".//ROUTE[@fromNode='"+displacer.get('DEF')+"']")
         for route in routes:
             par = find_parent(scene, route)
@@ -30,6 +30,10 @@ for displacer in displacers:
         for route in routes:
             par = find_parent(scene, route)
             par.remove(route)
+        uses = scene.findall(".//HAnimDisplacer[@USE='"+displacer.get('DEF')+"']")
+        for use in uses:
+            par = find_parent(scene, use)
+            par.remove(use)
         par = find_parent(scene, displacer)
         par.remove(displacer)
         print(f"Removed Displacer")

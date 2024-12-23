@@ -10,10 +10,6 @@
 <meta name="creator" content="Gyu Ri Cho, Hyun Ho Chu, Min Joo Lee, Yujin Jung, John Carlson, Joe Williams" />
 </head>
 <Scene>
-    <WorldInfo title="CleanedMultiFacialAnimationMenu.x3d" />
-    <Viewpoint position="0 20 110" />
-    <Background skyColor="0.8 0.9 1.0" />
-    <NavigationInfo type="&quot;EXAMINE&quot;" />
 <ScalarInterpolator DEF="AnimationAdapter_JinBlink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinBrowLowerer" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinCheekPuffer" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
@@ -51,6 +47,9 @@
 </HAnimSegment>
 <HAnimJoint DEF="hanim0_skullbase" name="skullbase">
 <HAnimSegment DEF="hanim_sacrum" name="sacrum">
+<WorldInfo title="CleanedMultiFacialAnimationMenu.x3d" />
+    <Background skyColor="0.8 0.9 1.0" />
+    <NavigationInfo type="&quot;EXAMINE&quot;" />
     </HAnimSegment>
 <HAnimSegment DEF="hanim_Lower_teeth" name="lower_teeth">
 <Transform DEF="Lower_teeth_JinBlink" translation="0 8.43 11.43">
@@ -1208,7 +1207,9 @@
     <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinUpperLipRaiser" toField="weight" toNode="Right_upper_vermillion_lip_MorphInterpolator_JinUpperLipRaiser" />
     <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinWink" toField="weight" toNode="Left_upper_eyelid_MorphInterpolator_JinWink" />
     <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinWink" toField="weight" toNode="Left_lower_eyelid_MorphInterpolator_JinWink" />
-    <ProtoDeclare name="MenuItem">
+    <WorldInfo title="CleanedMultiFacialAnimationMenu.x3d" />
+    <Viewpoint position="0 20 110" />
+        <ProtoDeclare name="MenuItem">
         <ProtoInterface>
         <field name="translation" accessType="inputOutput" type="SFVec3f" />
         <field name="description" accessType="inputOutput" type="SFString" />
@@ -1242,18 +1243,19 @@
         <Transform translation="0 0 -0.01">
           <Shape>
             <Appearance>
-                <Material DEF="MenuBackground_Material" diffuseColor="0 0 1" />'
+                <Material DEF="MenuBackground_Material" diffuseColor="0 0 1" />
             </Appearance>
             <Rectangle2D size="40 3" />
           </Shape>
         </Transform>
         </Transform>
-        <Script DEF="ScriptToggle">'
+        <Script DEF="ScriptToggle">
         <field name="inTime" type="SFTime" accessType="inputOnly" />
         <field name="fraction" type="SFFloat" accessType="inputOutput" value="0" />
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1" />
         <field name="checked" type="SFBool" accessType="inputOutput" value="false" />
-        <field name="adapter" type="SFNode" accessType="inputOutput" /><![CDATA[ecmascript:
+        <field name="adapter" type="SFNode" accessType="inputOutput" /><![CDATA[
+        ecmascript:
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
