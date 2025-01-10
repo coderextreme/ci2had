@@ -55,15 +55,18 @@ def process_scene_list(scene_list):
     SCENE = 0
     for scene_index, scene_element in enumerate(scene_list):
         if scene_index == SCENE:
-            group = xml.etree.ElementTree.Element('Group')
-            group.text = "\n"
-            group.tail = "\n"
+            # This is the trasform for the head
+            transform = xml.etree.ElementTree.Element('Transform')
+            transform.text = "\n"
+            transform.tail = "\n"
+            transform.set("translation", "-37 -20 0")
+            transform.set("scale", "2 2 2")
             humanoid = xml.etree.ElementTree.Element('HAnimHumanoid')
             humanoid.text = "\n"
             humanoid.tail = "\n"
             humanoid.set('DEF', "hanim"+str(scene_index)+"_humanoid")
             humanoid.set('name', "humanoid")
-            group.insert(0, humanoid)
+            transform.insert(0, humanoid)
             humanoid_root = xml.etree.ElementTree.Element('HAnimJoint')
             humanoid_root.set("DEF", "hanim"+str(scene_index)+"_humanoid_root")
             humanoid_root.set("name", "humanoid_root")
@@ -110,7 +113,7 @@ def process_scene_list(scene_list):
                             if displacer is not None:
                                 segment.append(displacer)
 
-    return group
+    return transform
 
 
 # prcoess elements in a scene setting good DEF and USE values
@@ -307,23 +310,31 @@ menu_str = '''
         <ProtoDeclare name="MenuItem">
         <ProtoInterface>
         <field name="translation" accessType="inputOutput" type="SFVec3f"/>
+        <field name="textTranslation" accessType="inputOutput" type="SFVec3f"/>
         <field name="description" accessType="inputOutput" type="SFString"/>
         <field name="menuItemString" accessType="inputOutput" type="MFString"/>
         <field name="adapter" accessType="inputOutput" type="SFNode"/>
+        <field name="size" accessType="initializeOnly" type="SFVec2f" value="40.0 3.0"/>
+        <field name="fontSize" accessType="inputOutput" type="SFFloat" value="2.4"/>
+        <field name="spacing" accessType="initializeOnly" type="SFFloat" value="1.2"/>
         </ProtoInterface>
         <ProtoBody>
         <Group>
 <TimeSensor DEF="Main_Clock" cycleInterval="0.99" loop="true" enabled="true"/>
 
         <Transform>
-        <IS>
-            <connect nodeField="translation" protoField="translation"/>
-        </IS>
-        <TouchSensor DEF="StartStopAnimationUnit_Sensor">
-        <IS>
-            <connect nodeField="description" protoField="description"/>
-        </IS>
-        </TouchSensor>
+          <IS>
+              <connect nodeField="translation" protoField="translation"/>
+          </IS>
+          <TouchSensor DEF="StartStopAnimationUnit_Sensor">
+            <IS>
+              <connect nodeField="description" protoField="description"/>
+            </IS>
+          </TouchSensor>
+        <Transform translation="0 0 0">
+          <IS>
+              <connect nodeField="translation" protoField="textTranslation"/>
+          </IS>
           <Shape>
             <Appearance>
               <Material diffuseColor="1 1 1"/>
@@ -332,15 +343,25 @@ menu_str = '''
                 <IS>
                     <connect nodeField="string" protoField="menuItemString"/>
                 </IS>
-              <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/>
+              <FontStyle justify='"MIDDLE" "MIDDLE"'>
+                <IS>
+                    <connect nodeField="size" protoField="fontSize"/>
+                    <connect nodeField="spacing" protoField="spacing"/>
+                </IS>
+              </FontStyle>
             </Text>
           </Shape>
+        </Transform>
         <Transform translation="0 0 -0.01">
           <Shape>
             <Appearance>
                 <Material DEF="MenuBackground_Material" diffuseColor="0 0 1"/>
             </Appearance>
-            <Rectangle2D size="40 3"/>
+            <Rectangle2D size="40.0 3.0">
+                <IS>
+                    <connect nodeField="size" protoField="size"/>
+                </IS>
+            </Rectangle2D>
           </Shape>
         </Transform>
         </Transform>
@@ -387,15 +408,39 @@ increment = -1/12
 for file_index, input_file in enumerate(files):
 
     menu_str += '<ProtoInstance name="MenuItem">\n'
-    menu_str += '<fieldValue name="translation" value="48 '+str(ifs_start*36+27.4)+' 0"/>\n'
+    menu_str += '<fieldValue name="translation" value="24 '+str(ifs_start*36+27.4)+' 0"/>\n'
+    menu_str += '<fieldValue name="textTranslation" value="0 0 0"/>\n'
     menu_str += '<fieldValue name="description" value="'+re.sub(r"([a-z])([A-Z])", r"\1 \2", findAnimation(input_file))+'"/>\n'
     menu_str += '<fieldValue name="menuItemString" value=\'"'+findAnimation(input_file)+'"\'/>\n'
+    menu_str += '<fieldValue name="size" value="40.0 3.0"/>\n'
+    menu_str += '<fieldValue name="fontSize" value="2.4"/>\n'
+    menu_str += '<fieldValue name="spacing" value="1.2"/>\n'
     menu_str += '<fieldValue name="adapter">\n'
     menu_str += '<ScalarInterpolator USE="AnimationAdapter_'+findAnimation(input_file)+'"/>\n'
     menu_str += '</fieldValue>\n'
     menu_str += '</ProtoInstance>\n'
 
     ifs_start += increment
+
+ifs_start = 1
+increment = -1/18
+for geoindex, geometry in enumerate(def_prefixes):
+
+    menu_str += '<ProtoInstance name="MenuItem">\n'
+    menu_str += '<fieldValue name="translation" value="65 '+str(ifs_start*33.4+30)+' 0"/>\n'
+    menu_str += '<fieldValue name="textTranslation" value="0 -0.070 0"/>\n'
+    menu_str += '<fieldValue name="description" value="'+geometry+'"/>\n'
+    menu_str += '<fieldValue name="menuItemString" value=\'"'+geometry+'"\'/>\n'
+    menu_str += '<fieldValue name="size" value="40.0 2.0"/>\n'
+    menu_str += '<fieldValue name="fontSize" value="1.6"/>\n'
+    menu_str += '<fieldValue name="spacing" value="0.8"/>\n'
+    menu_str += '<fieldValue name="adapter">\n'
+    menu_str += '<ScalarInterpolator DEF="AnimationAdapter_'+geometry+'"/>\n'
+    menu_str += '</fieldValue>\n'
+    menu_str += '</ProtoInstance>\n'
+
+    ifs_start += increment
+
 menu_str += '''
   </Scene>
 </X3D>

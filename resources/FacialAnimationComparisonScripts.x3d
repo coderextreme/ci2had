@@ -40,7 +40,7 @@
     <ScalarInterpolator DEF="AnimationAdapter_JinUpperLidRaiser" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinUpperLipRaiser" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <ScalarInterpolator DEF="AnimationAdapter_JinWink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
-    <Group>
+    <Transform translation="-37 -20 0" scale="2 2 2">
 <HAnimHumanoid DEF="hanim0_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim0_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim0_sacrum" name="sacrum">
@@ -893,7 +893,7 @@
 <HAnimJoint USE="hanim0_humanoid_root" containerField="joints" />
 <HAnimJoint USE="hanim0_skullbase" containerField="joints" />
 </HAnimHumanoid>
-</Group>
+</Transform>
 <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinBlink" toField="weight" toNode="Upper_teeth_MorphInterpolator_JinBlink" />
     <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinBlink" toField="weight" toNode="Left_upper_eyelid_MorphInterpolator_JinBlink" />
     <ROUTE fromField="value_changed" fromNode="AnimationAdapter_JinBlink" toField="weight" toNode="Left_lower_eyelid_MorphInterpolator_JinBlink" />
@@ -1212,23 +1212,31 @@
         <ProtoDeclare name="MenuItem">
         <ProtoInterface>
         <field name="translation" accessType="inputOutput" type="SFVec3f" />
+        <field name="textTranslation" accessType="inputOutput" type="SFVec3f" />
         <field name="description" accessType="inputOutput" type="SFString" />
         <field name="menuItemString" accessType="inputOutput" type="MFString" />
         <field name="adapter" accessType="inputOutput" type="SFNode" />
+        <field name="size" accessType="inputOutput" type="SFVec2f" value="40.0 3.0" />
+        <field name="fontSize" accessType="inputOutput" type="SFFloat" value="2.4" />
+        <field name="spacing" accessType="inputOutput" type="SFFloat" value="1.2" />
         </ProtoInterface>
         <ProtoBody>
         <Group>
 <TimeSensor DEF="Main_Clock" cycleInterval="0.99" loop="true" enabled="true" />
 
         <Transform>
-        <IS>
-            <connect nodeField="translation" protoField="translation" />
-        </IS>
-        <TouchSensor DEF="StartStopAnimationUnit_Sensor">
-        <IS>
-            <connect nodeField="description" protoField="description" />
-        </IS>
-        </TouchSensor>
+          <IS>
+              <connect nodeField="translation" protoField="translation" />
+          </IS>
+          <TouchSensor DEF="StartStopAnimationUnit_Sensor">
+            <IS>
+              <connect nodeField="description" protoField="description" />
+            </IS>
+          </TouchSensor>
+        <Transform translation="0 0 0">
+          <IS>
+              <connect nodeField="translation" protoField="textTranslation" />
+          </IS>
           <Shape>
             <Appearance>
               <Material diffuseColor="1 1 1" />
@@ -1237,15 +1245,25 @@
                 <IS>
                     <connect nodeField="string" protoField="menuItemString" />
                 </IS>
-              <FontStyle size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" />
+              <FontStyle justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;">
+                <IS>
+                    <connect nodeField="size" protoField="fontSize" />
+                    <connect nodeField="spacing" protoField="spacing" />
+                </IS>
+              </FontStyle>
             </Text>
           </Shape>
+        </Transform>
         <Transform translation="0 0 -0.01">
           <Shape>
             <Appearance>
                 <Material DEF="MenuBackground_Material" diffuseColor="0 0 1" />
             </Appearance>
-            <Rectangle2D size="40 3" />
+            <Rectangle2D size="40.0 3.0">
+                <IS>
+                    <connect nodeField="size" protoField="size" />
+                </IS>
+            </Rectangle2D>
           </Shape>
         </Transform>
         </Transform>
@@ -1287,243 +1305,939 @@
       </ProtoBody>
       </ProtoDeclare>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 63.4 0" />
+<fieldValue name="translation" value="24 63.4 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Blink" />
 <fieldValue name="menuItemString" value="&quot;JinBlink&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinBlink" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 60.4 0" />
+<fieldValue name="translation" value="24 60.4 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Brow Lowerer" />
 <fieldValue name="menuItemString" value="&quot;JinBrowLowerer&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinBrowLowerer" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 57.39999999999999 0" />
+<fieldValue name="translation" value="24 57.39999999999999 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Cheek Puffer" />
 <fieldValue name="menuItemString" value="&quot;JinCheekPuffer&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinCheekPuffer" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 54.39999999999999 0" />
+<fieldValue name="translation" value="24 54.39999999999999 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Cheek Raiser" />
 <fieldValue name="menuItemString" value="&quot;JinCheekRaiser&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinCheekRaiser" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 51.39999999999999 0" />
+<fieldValue name="translation" value="24 51.39999999999999 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Chin Raiser" />
 <fieldValue name="menuItemString" value="&quot;JinChinRaiser&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinChinRaiser" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 48.39999999999999 0" />
+<fieldValue name="translation" value="24 48.39999999999999 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Dimpler" />
 <fieldValue name="menuItemString" value="&quot;JinDimpler&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinDimpler" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 45.39999999999999 0" />
+<fieldValue name="translation" value="24 45.39999999999999 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Eyes Closed" />
 <fieldValue name="menuItemString" value="&quot;JinEyesClosed&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinEyesClosed" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 42.39999999999999 0" />
+<fieldValue name="translation" value="24 42.39999999999999 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Inner Brow Raiser" />
 <fieldValue name="menuItemString" value="&quot;JinInnerBrowRaiser&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinInnerBrowRaiser" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 39.39999999999999 0" />
+<fieldValue name="translation" value="24 39.39999999999999 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Jaw Drop" />
 <fieldValue name="menuItemString" value="&quot;JinJawDrop&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinJawDrop" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 36.39999999999999 0" />
+<fieldValue name="translation" value="24 36.39999999999999 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Lid Droop" />
 <fieldValue name="menuItemString" value="&quot;JinLidDroop&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinLidDroop" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 33.39999999999999 0" />
+<fieldValue name="translation" value="24 33.39999999999999 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Lid Tightener" />
 <fieldValue name="menuItemString" value="&quot;JinLidTightener&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinLidTightener" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 30.399999999999995 0" />
+<fieldValue name="translation" value="24 30.399999999999995 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Lip Corner Depressor" />
 <fieldValue name="menuItemString" value="&quot;JinLipCornerDepressor&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinLipCornerDepressor" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 27.399999999999995 0" />
+<fieldValue name="translation" value="24 27.399999999999995 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Lip Corner Puller" />
 <fieldValue name="menuItemString" value="&quot;JinLipCornerPuller&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinLipCornerPuller" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 24.399999999999995 0" />
+<fieldValue name="translation" value="24 24.399999999999995 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Lip Funneler" />
 <fieldValue name="menuItemString" value="&quot;JinLipFunneler&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinLipFunneler" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 21.399999999999995 0" />
+<fieldValue name="translation" value="24 21.399999999999995 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Lip Pressor" />
 <fieldValue name="menuItemString" value="&quot;JinLipPressor&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinLipPressor" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 18.4 0" />
+<fieldValue name="translation" value="24 18.4 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Lip Puckerer" />
 <fieldValue name="menuItemString" value="&quot;JinLipPuckerer&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinLipPuckerer" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 15.399999999999997 0" />
+<fieldValue name="translation" value="24 15.399999999999997 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Lips Part" />
 <fieldValue name="menuItemString" value="&quot;JinLipsPart&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinLipsPart" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 12.399999999999999 0" />
+<fieldValue name="translation" value="24 12.399999999999999 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Lip Stretcher" />
 <fieldValue name="menuItemString" value="&quot;JinLipStretcher&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinLipStretcher" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 9.399999999999999 0" />
+<fieldValue name="translation" value="24 9.399999999999999 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Lip Suck" />
 <fieldValue name="menuItemString" value="&quot;JinLipSuck&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinLipSuck" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 6.399999999999999 0" />
+<fieldValue name="translation" value="24 6.399999999999999 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Lip Tightener" />
 <fieldValue name="menuItemString" value="&quot;JinLipTightener&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinLipTightener" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 3.399999999999995 0" />
+<fieldValue name="translation" value="24 3.399999999999995 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Lower Lip Depressor" />
 <fieldValue name="menuItemString" value="&quot;JinLowerLipDepressor&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinLowerLipDepressor" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 0.399999999999995 0" />
+<fieldValue name="translation" value="24 0.399999999999995 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Mouth Stretch" />
 <fieldValue name="menuItemString" value="&quot;JinMouthStretch&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinMouthStretch" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 -2.6000000000000085 0" />
+<fieldValue name="translation" value="24 -2.6000000000000085 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Nasolabial Deepener" />
 <fieldValue name="menuItemString" value="&quot;JinNasolabialDeepener&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinNasolabialDeepener" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 -5.6000000000000085 0" />
+<fieldValue name="translation" value="24 -5.6000000000000085 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Nose Wrinkler" />
 <fieldValue name="menuItemString" value="&quot;JinNoseWrinkler&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinNoseWrinkler" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 -8.600000000000009 0" />
+<fieldValue name="translation" value="24 -8.600000000000009 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Outer Brow Raiser" />
 <fieldValue name="menuItemString" value="&quot;JinOuterBrowRaiser&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinOuterBrowRaiser" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 -11.600000000000009 0" />
+<fieldValue name="translation" value="24 -11.600000000000009 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Slit" />
 <fieldValue name="menuItemString" value="&quot;JinSlit&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinSlit" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 -14.600000000000001 0" />
+<fieldValue name="translation" value="24 -14.600000000000001 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Squint" />
 <fieldValue name="menuItemString" value="&quot;JinSquint&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinSquint" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 -17.6 0" />
+<fieldValue name="translation" value="24 -17.6 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Upper Lid Raiser" />
 <fieldValue name="menuItemString" value="&quot;JinUpperLidRaiser&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinUpperLidRaiser" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 -20.6 0" />
+<fieldValue name="translation" value="24 -20.6 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Upper Lip Raiser" />
 <fieldValue name="menuItemString" value="&quot;JinUpperLipRaiser&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinUpperLipRaiser" />
 </fieldValue>
 </ProtoInstance>
 <ProtoInstance name="MenuItem">
-<fieldValue name="translation" value="48 -23.599999999999994 0" />
+<fieldValue name="translation" value="24 -23.599999999999994 0" />
+<fieldValue name="textTranslation" value="0 0 0" />
 <fieldValue name="description" value="Jin Wink" />
 <fieldValue name="menuItemString" value="&quot;JinWink&quot;" />
+<fieldValue name="size" value="40.0 3.0" />
+<fieldValue name="fontSize" value="2.4" />
+<fieldValue name="spacing" value="1.2" />
 <fieldValue name="adapter">
 <ScalarInterpolator USE="AnimationAdapter_JinWink" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 63.4 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Lower_teeth" />
+<fieldValue name="menuItemString" value="&quot;Lower_teeth&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Lower_teeth" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 61.54444444444444 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Hair" />
+<fieldValue name="menuItemString" value="&quot;Hair&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Hair" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 59.68888888888888 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="__0" />
+<fieldValue name="menuItemString" value="&quot;__0&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter___0" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 57.83333333333333 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="__2" />
+<fieldValue name="menuItemString" value="&quot;__2&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter___2" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 55.977777777777774 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="__4" />
+<fieldValue name="menuItemString" value="&quot;__4&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter___4" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 54.12222222222222 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Center_lower_vermillion_lip" />
+<fieldValue name="menuItemString" value="&quot;Center_lower_vermillion_lip&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Center_lower_vermillion_lip" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 52.266666666666666 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Chin" />
+<fieldValue name="menuItemString" value="&quot;Chin&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Chin" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 50.411111111111104 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Glabella" />
+<fieldValue name="menuItemString" value="&quot;Glabella&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Glabella" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 48.55555555555554 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_bulbar_conjunctiva" />
+<fieldValue name="menuItemString" value="&quot;Left_bulbar_conjunctiva&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_bulbar_conjunctiva" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 46.69999999999999 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_cheek" />
+<fieldValue name="menuItemString" value="&quot;Left_cheek&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_cheek" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 44.844444444444434 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_dorsum" />
+<fieldValue name="menuItemString" value="&quot;Left_dorsum&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_dorsum" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 42.98888888888888 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_ear" />
+<fieldValue name="menuItemString" value="&quot;Left_ear&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_ear" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 41.133333333333326 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_eyebrow" />
+<fieldValue name="menuItemString" value="&quot;Left_eyebrow&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_eyebrow" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 39.277777777777764 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_forehead" />
+<fieldValue name="menuItemString" value="&quot;Left_forehead&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_forehead" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 37.42222222222221 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_lower_eyelid" />
+<fieldValue name="menuItemString" value="&quot;Left_lower_eyelid&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_lower_eyelid" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 35.566666666666656 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_lower_vermillion_lip" />
+<fieldValue name="menuItemString" value="&quot;Left_lower_vermillion_lip&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_lower_vermillion_lip" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 33.7111111111111 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_nasolabial_cheek" />
+<fieldValue name="menuItemString" value="&quot;Left_nasolabial_cheek&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_nasolabial_cheek" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 31.855555555555544 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_nostril" />
+<fieldValue name="menuItemString" value="&quot;Left_nostril&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_nostril" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 29.99999999999999 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_pupil" />
+<fieldValue name="menuItemString" value="&quot;Left_pupil&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_pupil" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 28.144444444444435 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_temple" />
+<fieldValue name="menuItemString" value="&quot;Left_temple&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_temple" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 26.288888888888877 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_upper_cutaneous_lip" />
+<fieldValue name="menuItemString" value="&quot;Left_upper_cutaneous_lip&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_upper_cutaneous_lip" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 24.433333333333323 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_upper_eyelid" />
+<fieldValue name="menuItemString" value="&quot;Left_upper_eyelid&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_upper_eyelid" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 22.57777777777777 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_upper_vermillion_lip" />
+<fieldValue name="menuItemString" value="&quot;Left_upper_vermillion_lip&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_upper_vermillion_lip" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 20.722222222222214 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Left_upper_vermillion_lip001" />
+<fieldValue name="menuItemString" value="&quot;Left_upper_vermillion_lip001&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Left_upper_vermillion_lip001" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 18.86666666666666 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Mid_forehead" />
+<fieldValue name="menuItemString" value="&quot;Mid_forehead&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Mid_forehead" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 17.011111111111102 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Mid_nasal_dorsum" />
+<fieldValue name="menuItemString" value="&quot;Mid_nasal_dorsum&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Mid_nasal_dorsum" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 15.155555555555546 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Mid_upper_vermillion_lip" />
+<fieldValue name="menuItemString" value="&quot;Mid_upper_vermillion_lip&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Mid_upper_vermillion_lip" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 13.29999999999999 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Nasal_tip" />
+<fieldValue name="menuItemString" value="&quot;Nasal_tip&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Nasal_tip" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 11.444444444444432 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Neck" />
+<fieldValue name="menuItemString" value="&quot;Neck&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Neck" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 9.588888888888878 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Occipital_scalp" />
+<fieldValue name="menuItemString" value="&quot;Occipital_scalp&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Occipital_scalp" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 7.73333333333332 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Philtrum" />
+<fieldValue name="menuItemString" value="&quot;Philtrum&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Philtrum" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 5.877777777777766 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_bulbar_conjunctiva" />
+<fieldValue name="menuItemString" value="&quot;Right_bulbar_conjunctiva&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_bulbar_conjunctiva" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 4.022222222222208 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_cheek" />
+<fieldValue name="menuItemString" value="&quot;Right_cheek&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_cheek" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 2.16666666666665 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_dorsum" />
+<fieldValue name="menuItemString" value="&quot;Right_dorsum&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_dorsum" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 0.3111111111110958 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_ear" />
+<fieldValue name="menuItemString" value="&quot;Right_ear&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_ear" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -1.544444444444462 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_eyebrow" />
+<fieldValue name="menuItemString" value="&quot;Right_eyebrow&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_eyebrow" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -3.400000000000013 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_forehead" />
+<fieldValue name="menuItemString" value="&quot;Right_forehead&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_forehead" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -5.255555555555567 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_lower_eyelid" />
+<fieldValue name="menuItemString" value="&quot;Right_lower_eyelid&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_lower_eyelid" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -7.1111111111111285 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_lower_vermillion_lip" />
+<fieldValue name="menuItemString" value="&quot;Right_lower_vermillion_lip&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_lower_vermillion_lip" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -8.966666666666683 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_nasolabial_cheek" />
+<fieldValue name="menuItemString" value="&quot;Right_nasolabial_cheek&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_nasolabial_cheek" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -10.822222222222237 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_nostril" />
+<fieldValue name="menuItemString" value="&quot;Right_nostril&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_nostril" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -12.677777777777798 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_pupil" />
+<fieldValue name="menuItemString" value="&quot;Right_pupil&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_pupil" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -14.533333333333353 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_temple" />
+<fieldValue name="menuItemString" value="&quot;Right_temple&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_temple" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -16.388888888888907 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_upper_cutaneous_lip" />
+<fieldValue name="menuItemString" value="&quot;Right_upper_cutaneous_lip&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_upper_cutaneous_lip" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -18.24444444444446 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_upper_eyelid" />
+<fieldValue name="menuItemString" value="&quot;Right_upper_eyelid&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_upper_eyelid" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -20.100000000000023 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Right_upper_vermillion_lip" />
+<fieldValue name="menuItemString" value="&quot;Right_upper_vermillion_lip&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Right_upper_vermillion_lip" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -21.955555555555577 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Tongue" />
+<fieldValue name="menuItemString" value="&quot;Tongue&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Tongue" />
+</fieldValue>
+</ProtoInstance>
+<ProtoInstance name="MenuItem">
+<fieldValue name="translation" value="65 -23.81111111111113 0" />
+<fieldValue name="textTranslation" value="0 0.4 0" />
+<fieldValue name="description" value="Upper_teeth" />
+<fieldValue name="menuItemString" value="&quot;Upper_teeth&quot;" />
+<fieldValue name="size" value="40.0 2.0" />
+<fieldValue name="fontSize" value="1.6" />
+<fieldValue name="spacing" value="0.8" />
+<fieldValue name="adapter">
+<ScalarInterpolator DEF="AnimationAdapter_Upper_teeth" />
 </fieldValue>
 </ProtoInstance>
 
