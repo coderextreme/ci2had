@@ -313,7 +313,7 @@ menu_str = '''
         <field name="textTranslation" accessType="inputOutput" type="SFVec3f"/>
         <field name="description" accessType="inputOutput" type="SFString"/>
         <field name="menuItemString" accessType="inputOutput" type="MFString"/>
-        <field name="adapter" accessType="inputOutput" type="SFNode"/>
+        <field name="adapters" accessType="inputOutput" type="MFNode"/>
         <field name="size" accessType="initializeOnly" type="SFVec2f" value="40.0 3.0"/>
         <field name="fontSize" accessType="inputOutput" type="SFFloat" value="2.4"/>
         <field name="spacing" accessType="initializeOnly" type="SFFloat" value="1.2"/>
@@ -370,29 +370,36 @@ menu_str = '''
         <field name="fraction" type="SFFloat" accessType="inputOutput" value="0"/>
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
         <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <field name="adapter" type="SFNode" accessType="inputOutput"/>
+        <field name="adapters" type="MFNode" accessType="inputOutput"/>
         <![CDATA[ecmascript:
         function inTime(value) {
-            // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {
                 checked = !checked;
             }
             scene = Browser.currentScene;
+            var num_adapters = adapters.length;
+            Browser.print("in", checked, num_adapters, diffuseColor.g, diffuseColor.b);
+            for (var adapter = 0; adapter < num_adapters; adapter++) {
+                Browser.print("adapter", adapter, adapters[adapter].metadata)
+            }
             if (checked) {
-                Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', adapter, 'set_fraction');
+                for (var adapter = 0; adapter < num_adapters; adapter++) {
+                    Browser.addRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', adapters[adapter], 'set_fraction');
+                    adapters[adapter].set_fraction = 0;
+                }
                 diffuseColor.g = 1;
                 diffuseColor.b = 0;
-                adapter.set_fraction = 0;
             } else {
-                Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', adapter, 'set_fraction');
+                for (var adapter = 0; adapter < num_adapters; adapter++) {
+                    Browser.deleteRoute(scene.getNamedNode("Main_Clock"), 'fraction_changed', adapters[adapter], 'set_fraction');
+                    adapters[adapter].set_fraction = 0;
+                }
                 diffuseColor.g = 0;
                 diffuseColor.b = 1;
-                adapter.set_fraction = 0;
-            }
-        }
+            }                                                                                                                                                                                 }
         ]]>
                 <IS>
-                    <connect nodeField="adapter" protoField="adapter"/>
+                    <connect nodeField="adapters" protoField="adapters"/>
                 </IS>
       </Script>
         <ROUTE fromNode="StartStopAnimationUnit_Sensor" fromField="touchTime" toNode="ScriptToggle" toField="inTime"/>
@@ -415,27 +422,37 @@ for file_index, input_file in enumerate(files):
     menu_str += '<fieldValue name="size" value="40.0 3.0"/>\n'
     menu_str += '<fieldValue name="fontSize" value="2.4"/>\n'
     menu_str += '<fieldValue name="spacing" value="1.2"/>\n'
-    menu_str += '<fieldValue name="adapter">\n'
+    menu_str += '<fieldValue name="adapters">\n'
     menu_str += '<ScalarInterpolator USE="AnimationAdapter_'+findAnimation(input_file)+'"/>\n'
     menu_str += '</fieldValue>\n'
     menu_str += '</ProtoInstance>\n'
 
     ifs_start += increment
 
-ifs_start = 1
-increment = -1/18
-for geoindex, geometry in enumerate(def_prefixes):
+emotions = {
+  'Happiness/Joy': ["CheekRaiser", "LipCornerPuller"],
+  'Sadness': ["InnerBrowRaiser", "BrowLowerer", "LipCornerDepressor"],
+  'Surprise': ["InnerBrowRaiser", "OuterBrowRaiser", "UpperLidRaiser", "JawDrop"],
+  'Fear': ["InnerBrowRaiser", "OuterBrowRaiser", "BrowLowerer", "UpperLidRaiser", "LidTightener", "LipStretcher", "JawDrop"],
+  'Anger': ["BrowLowerer", "UpperLidRaiser", "LidTightener", "LipTightener"],
+  'Disgust': ["NoseWrinkler", "LipCornerDepressor", "LowerLipDepressor"],
+  'Contempt': ["LipCornerPuller", "Dimpler"]
+}
 
+ifs_start = 1
+increment = -1/12
+for emotion, aus in emotions.items():
     menu_str += '<ProtoInstance name="MenuItem">\n'
     menu_str += '<fieldValue name="translation" value="65 '+str(ifs_start*33.4+30)+' 0"/>\n'
-    menu_str += '<fieldValue name="textTranslation" value="0 -0.070 0"/>\n'
-    menu_str += '<fieldValue name="description" value="'+geometry+'"/>\n'
-    menu_str += '<fieldValue name="menuItemString" value=\'"'+geometry+'"\'/>\n'
-    menu_str += '<fieldValue name="size" value="40.0 2.0"/>\n'
-    menu_str += '<fieldValue name="fontSize" value="1.6"/>\n'
-    menu_str += '<fieldValue name="spacing" value="0.8"/>\n'
-    menu_str += '<fieldValue name="adapter">\n'
-    menu_str += '<ScalarInterpolator DEF="AnimationAdapter_'+geometry+'"/>\n'
+    menu_str += '<fieldValue name="textTranslation" value="0 0 0"/>\n'
+    menu_str += '<fieldValue name="description" value="'+emotion+'"/>\n'
+    menu_str += '<fieldValue name="menuItemString" value=\'"'+emotion+'"\'/>\n'
+    menu_str += '<fieldValue name="size" value="40.0 3.0"/>\n'
+    menu_str += '<fieldValue name="fontSize" value="2.4"/>\n'
+    menu_str += '<fieldValue name="spacing" value="1.2"/>\n'
+    menu_str += '<fieldValue name="adapters">\n'
+    for au in aus:
+        menu_str += '<ScalarInterpolator USE="AnimationAdapter_Jin'+au+'"/>\n'
     menu_str += '</fieldValue>\n'
     menu_str += '</ProtoInstance>\n'
 
