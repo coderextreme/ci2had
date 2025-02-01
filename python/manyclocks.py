@@ -350,13 +350,6 @@ menu_str = '''
         </ProtoInterface>
         <ProtoBody>
         <Group>
-        <TimeSensor DEF="standin_clock" cycleInterval="0.99" loop="true" enabled="true">
-                <IS>
-                    <connect nodeField="startTime" protoField="startTime"/>
-                    <connect nodeField="stopTime" protoField="stopTime"/>
-                    <connect nodeField="enabled" protoField="enabled"/>
-                </IS>
-        </TimeSensor>
         <Transform>
           <IS>
               <connect nodeField="translation" protoField="translation"/>
@@ -414,17 +407,17 @@ menu_str = '''
         </Transform>
       <TimeTrigger DEF='startTime'>
             <IS>
-              <connect nodeField='triggerTime' protoField='startTime'/>
+            <connect nodeField='triggerTime' protoField='startTime'/>
             </IS>
       </TimeTrigger>
       <TimeTrigger DEF='stopTime'>
             <IS>
-              <connect nodeField='triggerTime' protoField='stopTime'/>
+            <connect nodeField='triggerTime' protoField='stopTime'/>
             </IS>
       </TimeTrigger>
       <BooleanFilter DEF='veryTrue'>
             <IS>
-              <connect nodeField='inputTrue' protoField='enabled'/>
+            <connect nodeField='inputTrue' protoField='enabled'/>
             </IS>
       </BooleanFilter>
       <BooleanFilter DEF='veryFalse' />
