@@ -91,8 +91,28 @@ Replace occurences of C:/Users/jcarl/Downloads/Jin_Facs_au_x3d_240219-20240909T0
 Debug program "ci2had.py"
 
 ```
+cd python
 python ci2had.py
 ```
 Or install Python extensions in VS Code.
 
 Pick up output in the resources folder, Menu.x3d and associated FACS .x3d files. Follow instructions in previous sections.
+
+
+Debug program "arroute.py"
+
+```
+cd python
+python arroute.py
+```
+Or install Python extensions in VS Code.
+
+Pick up output in the resources folder, Menu.x3d and associated FACS .x3d files. Follow instructions in previous sections.
+
+# Running schematron
+
+Run:
+```
+ant
+```
+Pickup output in current folder

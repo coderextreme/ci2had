@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ci2had-schematron" default="run" basedir=".">
+	<description>Validates X3D With schematron</description>
+	<taskdef name="schematron" classname="com.schematron.ant.SchematronTask" classpath="ant-schematron/test/lib/ant-schematron.jar:ant-schematron/test/lib/resolver.jar:ant-schematron/test/lib/saxon9he.jar"/>
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+	  <classpath>
+	    <pathelement location="C:/Users/jcarl/Downloads/apache-ant-1.10.14-bin/apache-ant-1.10.14/ib/ant-contrib-1.0b3.jar"/>
+	  </classpath>
+	</taskdef>
+
+	<target name="run">
+	  <foreach target="runone" param="theFile">
+            <path>
+	      <fileset dir="resources" casesensitive="yes">
+		    <include name="**/*.x3d"/>
+	     </fileset>
+            </path>
+	  </foreach>
+	</target>
+
+	<target name="runone">
+		<echo message="Validate ${theFile} with classpath ${classpath}"/>
+		<schematron
+		    file="${theFile}"
+		    schema="C:/Users/jcarl/www.web3d.org/x3d/tools/schematron/X3dSchematronValidityChecks.sch"
+		    failonerror="true" />
+  	</target>
+</project>
+
+
