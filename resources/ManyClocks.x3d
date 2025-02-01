@@ -3288,9 +3288,9 @@
         <field name="textTranslation" accessType="inputOutput" type="SFVec3f"/>
         <field name="description" accessType="inputOutput" type="SFString"/>
         <field name="menuItemString" accessType="inputOutput" type="MFString"/>
-        <field name="startTime" accessType="inputOutput" type="SFTime"/>
-        <field name="stopTime" accessType="inputOutput" type="SFTime"/>
-        <field name="enabled" accessType="inputOutput" type="SFBool"/>
+        <field name="startTime" accessType="outputOnly" type="SFTime"/>
+        <field name="stopTime" accessType="outputOnly" type="SFTime"/>
+        <field name="enabled" accessType="outputOnly" type="SFBool"/>
         <field name="size" accessType="initializeOnly" type="SFVec2f" value="40.0 3.0"/>
         <field name="fontSize" accessType="inputOutput" type="SFFloat" value="2.4"/>
         <field name="spacing" accessType="initializeOnly" type="SFFloat" value="1.2"/>
@@ -3335,9 +3335,10 @@
           </Shape>
         </Transform>
         <Transform translation="0 0 -0.01">
+          <Switch DEF="itemMaterial" whichChoice="0">
           <Shape>
             <Appearance>
-                <Material DEF="MenuBackground_Material" diffuseColor="0 0 1"/>
+                <Material diffuseColor="0 0 1"/>
             </Appearance>
             <Rectangle2D size="40.0 3.0">
                 <IS>
@@ -3345,38 +3346,46 @@
                 </IS>
             </Rectangle2D>
           </Shape>
+          <Shape>
+            <Appearance>
+                <Material diffuseColor="0 1 0"/>
+            </Appearance>
+            <Rectangle2D size="40.0 3.0">
+                <IS>
+                    <connect nodeField="size" protoField="size"/>
+                </IS>
+            </Rectangle2D>
+          </Shape>
+          </Switch>
         </Transform>
         </Transform>
-        <Script DEF="ScriptToggle">
-        <field name="inTime" type="SFTime" accessType="inputOnly"/>
-        <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1"/>
-        <field name="checked" type="SFBool" accessType="inputOutput" value="false"/>
-        <field name="startTime" accessType="inputOutput" type="SFTime"/>
-        <field name="stopTime" accessType="inputOutput" type="SFTime"/>
-        <![CDATA[ecmascript:
-        function inTime(value, tm) {
-            if (value) {
-                checked = !checked;
-            }
-            Browser.print("in", checked, diffuseColor.g, diffuseColor.b);
-            if (checked) {
-                startTime = tm;
-                diffuseColor.g = 1;
-                diffuseColor.b = 0;
-            } else {
-                stopTime = tm;
-                diffuseColor.g = 0;
-                diffuseColor.b = 1;
-            }
-        }
-        ]]>
-      </Script>
-      <ROUTE fromNode="StartStopAnimationUnit_Sensor" fromField="touchTime" toNode="ScriptToggle" toField="inTime"/>
-      <ROUTE fromNode="ScriptToggle" fromField="startTime" toNode="standin_clock" toField="startTime"/>
-      <ROUTE fromNode="ScriptToggle" fromField="stopTime" toNode="standin_clock" toField="stopTime"/>
-      <ROUTE fromNode="ScriptToggle" fromField="checked" toNode="standin_clock" toField="enabled"/>
-      <ROUTE fromNode="MenuBackground_Material" fromField="diffuseColor" toNode="ScriptToggle" toField="diffuseColor"/>
-      <ROUTE fromNode="ScriptToggle" fromField="diffuseColor" toNode="MenuBackground_Material" toField="diffuseColor" />
+      <TimeTrigger DEF='startTime'>
+            <IS>
+              <connect nodeField='triggerTime' protoField='startTime'/>
+            </IS>
+      </TimeTrigger>
+      <TimeTrigger DEF='stopTime'>
+            <IS>
+              <connect nodeField='triggerTime' protoField='stopTime'/>
+            </IS>
+      </TimeTrigger>
+      <BooleanFilter DEF='veryTrue'>
+            <IS>
+              <connect nodeField='inputTrue' protoField='enabled'/>
+            </IS>
+      </BooleanFilter>
+      <BooleanFilter DEF='veryFalse' />
+      <BooleanSequencer DEF='clickBetweenStates' key='0 1' keyValue='true false'/>
+      <ROUTE fromNode='clickBetweenStates' fromField='value_changed' toNode='veryTrue' toField='set_boolean'></ROUTE>
+      <ROUTE fromNode='veryTrue' fromField='inputTrue' toNode='startTime' toField='set_boolean'></ROUTE>
+      <ROUTE fromNode='clickBetweenStates' fromField='value_changed' toNode='veryFalse' toField='set_boolean'></ROUTE>
+      <ROUTE fromNode='veryFalse' fromField='inputFalse' toNode='stopTime' toField='set_boolean'></ROUTE>
+
+      <IntegerSequencer DEF='toggler' key='0 1' keyValue='1 0' />
+      <ROUTE fromNode='StartStopAnimationUnit_Sensor' fromField='isActive' toNode='toggler' toField='next'></ROUTE>
+      <ROUTE fromNode='toggler' fromField='value_changed' toNode='itemMaterial' toField='whichChoice'></ROUTE>
+
+      <ROUTE fromNode='StartStopAnimationUnit_Sensor' fromField='isActive' toNode='clickBetweenStates' toField='next'></ROUTE>
       </Group>
       </ProtoBody>
       </ProtoDeclare>
