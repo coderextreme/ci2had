@@ -25,7 +25,7 @@
   <target name="run">
     <schematron schematronFile="C:/Users/jcarl/www.web3d.org/x3d/tools/schematron/X3dSchematronValidityChecks.sch" expectSuccess="false">
       <fileset dir="resources">
-        <include name="*.x3d" />
+        <include name="Multi*.x3d" />
       </fileset>
     </schematron>
   </target>

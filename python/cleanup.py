@@ -13,7 +13,7 @@ def find_parent(root, child):
             return parent
     return None
 
-input_file = '../resources/MultiFacialAnimationMenu.x3d'
+input_file = '../resources/ManyClocks.x3d'
 print(f"Input file: {input_file}")
 
 X3D = xml.etree.ElementTree.parse(input_file)
@@ -39,7 +39,7 @@ for displacer in displacers:
         print(f"Removed Displacer")
 
 def createdCDATA(element):
-    child = element[-2]
+    child = element[-1]
     if child.tail:
         child.tail = '<![CDATA['+child.tail+']]>'
 
@@ -49,7 +49,7 @@ for script in scripts:
 
 world_info = scene.findall(".//WorldInfo")
 for wi in world_info:
-    wi.set('title', "FacialAnimationComparisonScripts.x3d")
+    wi.set('title', "CleanedYouClocks.x3d")
 
 header = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">'
 xmlstr = xml.etree.ElementTree.tostring(root, encoding='unicode')
@@ -62,6 +62,6 @@ wi_str = '''
 '''
 
 xmlString = f"{header}{xmlstr[:-16]}{wi_str}"
-file_output = os.path.join("../resources/",os.path.basename("FacialAnimationComparisonScripts.x3d"))
+file_output = os.path.join("../resources/",os.path.basename("CleanedYouClocks.x3d"))
 with open(file_output, "w") as output_file:
     output_file.write(xmlString)
