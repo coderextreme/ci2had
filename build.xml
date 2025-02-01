@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ci2had-schematron" default="run" basedir=".">
+	<description>Validates X3D With schematron</description>
+  	<path id="phsch.path">
+  	<fileset dir=".">
+  		<include name="ph-schematron-ant-task-8.0.5-jar-with-dependencies.jar"/>
+    	</fileset>
+  	</path>
+  	<taskdef name="schematron" classname="com.helger.schematron.ant.Schematron" classpathref="phsch.path" />
+
+	<!--
+	<target name="run">
+	  <apply executable="java">
+	    <arg value="-cp"/>
+	    <arg value="ph-schematron-ant-task-8.0.5-jar-with-dependencies.jar"/>
+	    <arg value="com.helger.schematron.ant.Schematron"/>
+	    <arg value="C:/Users/jcarl/www.web3d.org/x3d/tools/schematron/X3dSchematronValidityChecks.sch"/>
+	    <srcfile/>
+	    <fileset dir="${examples}" casesensitive="yes">
+		<include name="**/*.x3d"/>
+	    </fileset>
+	  </apply>
+	</target>
+	-->
+  <target name="run">
+    <schematron schematronFile="C:/Users/jcarl/www.web3d.org/x3d/tools/schematron/X3dSchematronValidityChecks.sch" expectSuccess="false">
+      <fileset dir="resources">
+        <include name="*.x3d" />
+      </fileset>
+    </schematron>
+  </target>
+</project>
