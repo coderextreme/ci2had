@@ -3369,12 +3369,12 @@
       </BooleanFilter>
       <BooleanFilter DEF='veryFalse' />
       <BooleanSequencer DEF='clickBetweenStates' key='0 1' keyValue='true false'/>
+      <IntegerSequencer DEF='toggler' key='0 1' keyValue='1 0' />
+
       <ROUTE fromNode='clickBetweenStates' fromField='value_changed' toNode='veryTrue' toField='set_boolean'></ROUTE>
       <ROUTE fromNode='veryTrue' fromField='inputTrue' toNode='startTime' toField='set_boolean'></ROUTE>
       <ROUTE fromNode='clickBetweenStates' fromField='value_changed' toNode='veryFalse' toField='set_boolean'></ROUTE>
       <ROUTE fromNode='veryFalse' fromField='inputFalse' toNode='stopTime' toField='set_boolean'></ROUTE>
-
-      <IntegerSequencer DEF='toggler' key='0 1' keyValue='1 0' />
       <ROUTE fromNode='StartStopAnimationUnit_Sensor' fromField='isActive' toNode='toggler' toField='next'></ROUTE>
       <ROUTE fromNode='toggler' fromField='value_changed' toNode='itemMaterial' toField='whichChoice'></ROUTE>
 
