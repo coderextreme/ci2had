@@ -10,6 +10,7 @@
 <meta name="creator" content="John Carlson, Joe Williams, Gyu Ri Cho, Hyun Ho Chu, Min Joo Lee, Yujin Jung" />
 </head>
 <Scene>
+<TimeSensor DEF="Reset_Clock" cycleInterval="0.01" loop="false" enabled="true" />
 <TimeSensor DEF="Contempt_Clock" cycleInterval="0.99" loop="true" enabled="false" />
 <TimeSensor DEF="Disgust_Clock" cycleInterval="0.99" loop="true" enabled="false" />
 <TimeSensor DEF="Anger_Clock" cycleInterval="0.99" loop="true" enabled="false" />
@@ -3382,488 +3383,8 @@
       </Group>
       </ProtoBody>
       </ProtoDeclare>
-<ProtoInstance DEF="AUJinBlink" name="MenuItem">
-<fieldValue name="translation" value="24 63.4 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Blink"/>
-<fieldValue name="menuItemString" value='"JinBlink"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinBlink_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBlink" toField="set_fraction"/>
-<ROUTE fromNode="AUJinBlink" fromField="startTime" toNode="JinBlink_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinBlink" fromField="stopTime" toNode="JinBlink_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinBlink" fromField="enabled" toNode="JinBlink_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinBrowLowerer" name="MenuItem">
-<fieldValue name="translation" value="24 60.4 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Brow Lowerer"/>
-<fieldValue name="menuItemString" value='"JinBrowLowerer"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinBrowLowerer_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
-<ROUTE fromNode="AUJinBrowLowerer" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinBrowLowerer" fromField="stopTime" toNode="JinBrowLowerer_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinBrowLowerer" fromField="enabled" toNode="JinBrowLowerer_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinCheekPuffer" name="MenuItem">
-<fieldValue name="translation" value="24 57.39999999999999 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Cheek Puffer"/>
-<fieldValue name="menuItemString" value='"JinCheekPuffer"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinCheekPuffer_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinCheekPuffer" toField="set_fraction"/>
-<ROUTE fromNode="AUJinCheekPuffer" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinCheekPuffer" fromField="stopTime" toNode="JinCheekPuffer_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinCheekPuffer" fromField="enabled" toNode="JinCheekPuffer_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinCheekRaiser" name="MenuItem">
-<fieldValue name="translation" value="24 54.39999999999999 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Cheek Raiser"/>
-<fieldValue name="menuItemString" value='"JinCheekRaiser"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinCheekRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinCheekRaiser" toField="set_fraction"/>
-<ROUTE fromNode="AUJinCheekRaiser" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinCheekRaiser" fromField="stopTime" toNode="JinCheekRaiser_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinCheekRaiser" fromField="enabled" toNode="JinCheekRaiser_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinChinRaiser" name="MenuItem">
-<fieldValue name="translation" value="24 51.39999999999999 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Chin Raiser"/>
-<fieldValue name="menuItemString" value='"JinChinRaiser"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinChinRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinChinRaiser" toField="set_fraction"/>
-<ROUTE fromNode="AUJinChinRaiser" fromField="startTime" toNode="JinChinRaiser_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinChinRaiser" fromField="stopTime" toNode="JinChinRaiser_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinChinRaiser" fromField="enabled" toNode="JinChinRaiser_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinDimpler" name="MenuItem">
-<fieldValue name="translation" value="24 48.39999999999999 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Dimpler"/>
-<fieldValue name="menuItemString" value='"JinDimpler"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinDimpler_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinDimpler" toField="set_fraction"/>
-<ROUTE fromNode="AUJinDimpler" fromField="startTime" toNode="JinDimpler_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinDimpler" fromField="stopTime" toNode="JinDimpler_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinDimpler" fromField="enabled" toNode="JinDimpler_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinEyesClosed" name="MenuItem">
-<fieldValue name="translation" value="24 45.39999999999999 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Eyes Closed"/>
-<fieldValue name="menuItemString" value='"JinEyesClosed"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinEyesClosed_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinEyesClosed" toField="set_fraction"/>
-<ROUTE fromNode="AUJinEyesClosed" fromField="startTime" toNode="JinEyesClosed_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinEyesClosed" fromField="stopTime" toNode="JinEyesClosed_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinEyesClosed" fromField="enabled" toNode="JinEyesClosed_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinInnerBrowRaiser" name="MenuItem">
-<fieldValue name="translation" value="24 42.39999999999999 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Inner Brow Raiser"/>
-<fieldValue name="menuItemString" value='"JinInnerBrowRaiser"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
-<ROUTE fromNode="AUJinInnerBrowRaiser" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinInnerBrowRaiser" fromField="stopTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinInnerBrowRaiser" fromField="enabled" toNode="JinInnerBrowRaiser_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinJawDrop" name="MenuItem">
-<fieldValue name="translation" value="24 39.39999999999999 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Jaw Drop"/>
-<fieldValue name="menuItemString" value='"JinJawDrop"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinJawDrop_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinJawDrop" toField="set_fraction"/>
-<ROUTE fromNode="AUJinJawDrop" fromField="startTime" toNode="JinJawDrop_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinJawDrop" fromField="stopTime" toNode="JinJawDrop_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinJawDrop" fromField="enabled" toNode="JinJawDrop_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinLidDroop" name="MenuItem">
-<fieldValue name="translation" value="24 36.39999999999999 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Lid Droop"/>
-<fieldValue name="menuItemString" value='"JinLidDroop"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinLidDroop_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLidDroop" toField="set_fraction"/>
-<ROUTE fromNode="AUJinLidDroop" fromField="startTime" toNode="JinLidDroop_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinLidDroop" fromField="stopTime" toNode="JinLidDroop_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinLidDroop" fromField="enabled" toNode="JinLidDroop_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinLidTightener" name="MenuItem">
-<fieldValue name="translation" value="24 33.39999999999999 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Lid Tightener"/>
-<fieldValue name="menuItemString" value='"JinLidTightener"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinLidTightener_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLidTightener" toField="set_fraction"/>
-<ROUTE fromNode="AUJinLidTightener" fromField="startTime" toNode="JinLidTightener_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinLidTightener" fromField="stopTime" toNode="JinLidTightener_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinLidTightener" fromField="enabled" toNode="JinLidTightener_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinLipCornerDepressor" name="MenuItem">
-<fieldValue name="translation" value="24 30.399999999999995 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Lip Corner Depressor"/>
-<fieldValue name="menuItemString" value='"JinLipCornerDepressor"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerDepressor" toField="set_fraction"/>
-<ROUTE fromNode="AUJinLipCornerDepressor" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinLipCornerDepressor" fromField="stopTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinLipCornerDepressor" fromField="enabled" toNode="JinLipCornerDepressor_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinLipCornerPuller" name="MenuItem">
-<fieldValue name="translation" value="24 27.399999999999995 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Lip Corner Puller"/>
-<fieldValue name="menuItemString" value='"JinLipCornerPuller"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
-<ROUTE fromNode="AUJinLipCornerPuller" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinLipCornerPuller" fromField="stopTime" toNode="JinLipCornerPuller_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinLipCornerPuller" fromField="enabled" toNode="JinLipCornerPuller_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinLipFunneler" name="MenuItem">
-<fieldValue name="translation" value="24 24.399999999999995 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Lip Funneler"/>
-<fieldValue name="menuItemString" value='"JinLipFunneler"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinLipFunneler_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipFunneler" toField="set_fraction"/>
-<ROUTE fromNode="AUJinLipFunneler" fromField="startTime" toNode="JinLipFunneler_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinLipFunneler" fromField="stopTime" toNode="JinLipFunneler_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinLipFunneler" fromField="enabled" toNode="JinLipFunneler_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinLipPressor" name="MenuItem">
-<fieldValue name="translation" value="24 21.399999999999995 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Lip Pressor"/>
-<fieldValue name="menuItemString" value='"JinLipPressor"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinLipPressor_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipPressor" toField="set_fraction"/>
-<ROUTE fromNode="AUJinLipPressor" fromField="startTime" toNode="JinLipPressor_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinLipPressor" fromField="stopTime" toNode="JinLipPressor_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinLipPressor" fromField="enabled" toNode="JinLipPressor_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinLipPuckerer" name="MenuItem">
-<fieldValue name="translation" value="24 18.4 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Lip Puckerer"/>
-<fieldValue name="menuItemString" value='"JinLipPuckerer"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinLipPuckerer_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipPuckerer" toField="set_fraction"/>
-<ROUTE fromNode="AUJinLipPuckerer" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinLipPuckerer" fromField="stopTime" toNode="JinLipPuckerer_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinLipPuckerer" fromField="enabled" toNode="JinLipPuckerer_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinLipsPart" name="MenuItem">
-<fieldValue name="translation" value="24 15.399999999999997 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Lips Part"/>
-<fieldValue name="menuItemString" value='"JinLipsPart"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinLipsPart_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipsPart" toField="set_fraction"/>
-<ROUTE fromNode="AUJinLipsPart" fromField="startTime" toNode="JinLipsPart_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinLipsPart" fromField="stopTime" toNode="JinLipsPart_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinLipsPart" fromField="enabled" toNode="JinLipsPart_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinLipStretcher" name="MenuItem">
-<fieldValue name="translation" value="24 12.399999999999999 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Lip Stretcher"/>
-<fieldValue name="menuItemString" value='"JinLipStretcher"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinLipStretcher_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipStretcher" toField="set_fraction"/>
-<ROUTE fromNode="AUJinLipStretcher" fromField="startTime" toNode="JinLipStretcher_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinLipStretcher" fromField="stopTime" toNode="JinLipStretcher_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinLipStretcher" fromField="enabled" toNode="JinLipStretcher_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinLipSuck" name="MenuItem">
-<fieldValue name="translation" value="24 9.399999999999999 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Lip Suck"/>
-<fieldValue name="menuItemString" value='"JinLipSuck"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinLipSuck_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipSuck" toField="set_fraction"/>
-<ROUTE fromNode="AUJinLipSuck" fromField="startTime" toNode="JinLipSuck_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinLipSuck" fromField="stopTime" toNode="JinLipSuck_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinLipSuck" fromField="enabled" toNode="JinLipSuck_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinLipTightener" name="MenuItem">
-<fieldValue name="translation" value="24 6.399999999999999 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Lip Tightener"/>
-<fieldValue name="menuItemString" value='"JinLipTightener"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinLipTightener_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipTightener" toField="set_fraction"/>
-<ROUTE fromNode="AUJinLipTightener" fromField="startTime" toNode="JinLipTightener_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinLipTightener" fromField="stopTime" toNode="JinLipTightener_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinLipTightener" fromField="enabled" toNode="JinLipTightener_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinLowerLipDepressor" name="MenuItem">
-<fieldValue name="translation" value="24 3.399999999999995 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Lower Lip Depressor"/>
-<fieldValue name="menuItemString" value='"JinLowerLipDepressor"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLowerLipDepressor" toField="set_fraction"/>
-<ROUTE fromNode="AUJinLowerLipDepressor" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinLowerLipDepressor" fromField="stopTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinLowerLipDepressor" fromField="enabled" toNode="JinLowerLipDepressor_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinMouthStretch" name="MenuItem">
-<fieldValue name="translation" value="24 0.399999999999995 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Mouth Stretch"/>
-<fieldValue name="menuItemString" value='"JinMouthStretch"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinMouthStretch_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinMouthStretch" toField="set_fraction"/>
-<ROUTE fromNode="AUJinMouthStretch" fromField="startTime" toNode="JinMouthStretch_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinMouthStretch" fromField="stopTime" toNode="JinMouthStretch_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinMouthStretch" fromField="enabled" toNode="JinMouthStretch_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinNasolabialDeepener" name="MenuItem">
-<fieldValue name="translation" value="24 -2.6000000000000085 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Nasolabial Deepener"/>
-<fieldValue name="menuItemString" value='"JinNasolabialDeepener"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinNasolabialDeepener" toField="set_fraction"/>
-<ROUTE fromNode="AUJinNasolabialDeepener" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinNasolabialDeepener" fromField="stopTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinNasolabialDeepener" fromField="enabled" toNode="JinNasolabialDeepener_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinNoseWrinkler" name="MenuItem">
-<fieldValue name="translation" value="24 -5.6000000000000085 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Nose Wrinkler"/>
-<fieldValue name="menuItemString" value='"JinNoseWrinkler"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinNoseWrinkler" toField="set_fraction"/>
-<ROUTE fromNode="AUJinNoseWrinkler" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinNoseWrinkler" fromField="stopTime" toNode="JinNoseWrinkler_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinNoseWrinkler" fromField="enabled" toNode="JinNoseWrinkler_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinOuterBrowRaiser" name="MenuItem">
-<fieldValue name="translation" value="24 -8.600000000000009 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Outer Brow Raiser"/>
-<fieldValue name="menuItemString" value='"JinOuterBrowRaiser"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction"/>
-<ROUTE fromNode="AUJinOuterBrowRaiser" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinOuterBrowRaiser" fromField="stopTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinOuterBrowRaiser" fromField="enabled" toNode="JinOuterBrowRaiser_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinSlit" name="MenuItem">
-<fieldValue name="translation" value="24 -11.600000000000009 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Slit"/>
-<fieldValue name="menuItemString" value='"JinSlit"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinSlit_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinSlit" toField="set_fraction"/>
-<ROUTE fromNode="AUJinSlit" fromField="startTime" toNode="JinSlit_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinSlit" fromField="stopTime" toNode="JinSlit_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinSlit" fromField="enabled" toNode="JinSlit_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinSquint" name="MenuItem">
-<fieldValue name="translation" value="24 -14.600000000000001 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Squint"/>
-<fieldValue name="menuItemString" value='"JinSquint"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinSquint_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinSquint" toField="set_fraction"/>
-<ROUTE fromNode="AUJinSquint" fromField="startTime" toNode="JinSquint_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinSquint" fromField="stopTime" toNode="JinSquint_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinSquint" fromField="enabled" toNode="JinSquint_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinUpperLidRaiser" name="MenuItem">
-<fieldValue name="translation" value="24 -17.6 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Upper Lid Raiser"/>
-<fieldValue name="menuItemString" value='"JinUpperLidRaiser"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
-<ROUTE fromNode="AUJinUpperLidRaiser" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinUpperLidRaiser" fromField="stopTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinUpperLidRaiser" fromField="enabled" toNode="JinUpperLidRaiser_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinUpperLipRaiser" name="MenuItem">
-<fieldValue name="translation" value="24 -20.6 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Upper Lip Raiser"/>
-<fieldValue name="menuItemString" value='"JinUpperLipRaiser"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLipRaiser" toField="set_fraction"/>
-<ROUTE fromNode="AUJinUpperLipRaiser" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinUpperLipRaiser" fromField="stopTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinUpperLipRaiser" fromField="enabled" toNode="JinUpperLipRaiser_Clock" toField="enabled"/>
-<ProtoInstance DEF="AUJinWink" name="MenuItem">
-<fieldValue name="translation" value="24 -23.599999999999994 0"/>
-<fieldValue name="textTranslation" value="0 0 0"/>
-<fieldValue name="description" value="Jin Wink"/>
-<fieldValue name="menuItemString" value='"JinWink"'/>
-<fieldValue name="size" value="40.0 3.0"/>
-<fieldValue name="fontSize" value="2.4"/>
-<fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
-</ProtoInstance>
-<ROUTE fromNode="JinWink_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinWink" toField="set_fraction"/>
-<ROUTE fromNode="AUJinWink" fromField="startTime" toNode="JinWink_Clock" toField="startTime"/>
-<ROUTE fromNode="AUJinWink" fromField="stopTime" toNode="JinWink_Clock" toField="stopTime"/>
-<ROUTE fromNode="AUJinWink" fromField="enabled" toNode="JinWink_Clock" toField="enabled"/>
 <ProtoInstance DEF="HappinessJoy" name="MenuItem">
-<fieldValue name="translation" value="65 63.4 0"/>
+<fieldValue name="translation" value="24 63.4 0"/>
 <fieldValue name="textTranslation" value="0 0 0"/>
 <fieldValue name="description" value="HappinessJoy"/>
 <fieldValue name="menuItemString" value='"HappinessJoy"'/>
@@ -3880,7 +3401,7 @@
 <ROUTE fromNode="HappinessJoy" fromField="stopTime" toNode="HappinessJoy_Clock" toField="stopTime"/>
 <ROUTE fromNode="HappinessJoy" fromField="enabled" toNode="HappinessJoy_Clock" toField="enabled"/>
 <ProtoInstance DEF="Sadness" name="MenuItem">
-<fieldValue name="translation" value="65 60.61666666666666 0"/>
+<fieldValue name="translation" value="24 60.61666666666666 0"/>
 <fieldValue name="textTranslation" value="0 0 0"/>
 <fieldValue name="description" value="Sadness"/>
 <fieldValue name="menuItemString" value='"Sadness"'/>
@@ -3898,7 +3419,7 @@
 <ROUTE fromNode="Sadness" fromField="stopTime" toNode="Sadness_Clock" toField="stopTime"/>
 <ROUTE fromNode="Sadness" fromField="enabled" toNode="Sadness_Clock" toField="enabled"/>
 <ProtoInstance DEF="Surprise" name="MenuItem">
-<fieldValue name="translation" value="65 57.83333333333333 0"/>
+<fieldValue name="translation" value="24 57.83333333333333 0"/>
 <fieldValue name="textTranslation" value="0 0 0"/>
 <fieldValue name="description" value="Surprise"/>
 <fieldValue name="menuItemString" value='"Surprise"'/>
@@ -3917,7 +3438,7 @@
 <ROUTE fromNode="Surprise" fromField="stopTime" toNode="Surprise_Clock" toField="stopTime"/>
 <ROUTE fromNode="Surprise" fromField="enabled" toNode="Surprise_Clock" toField="enabled"/>
 <ProtoInstance DEF="Fear" name="MenuItem">
-<fieldValue name="translation" value="65 55.05 0"/>
+<fieldValue name="translation" value="24 55.05 0"/>
 <fieldValue name="textTranslation" value="0 0 0"/>
 <fieldValue name="description" value="Fear"/>
 <fieldValue name="menuItemString" value='"Fear"'/>
@@ -3939,7 +3460,7 @@
 <ROUTE fromNode="Fear" fromField="stopTime" toNode="Fear_Clock" toField="stopTime"/>
 <ROUTE fromNode="Fear" fromField="enabled" toNode="Fear_Clock" toField="enabled"/>
 <ProtoInstance DEF="Anger" name="MenuItem">
-<fieldValue name="translation" value="65 52.266666666666666 0"/>
+<fieldValue name="translation" value="24 52.266666666666666 0"/>
 <fieldValue name="textTranslation" value="0 0 0"/>
 <fieldValue name="description" value="Anger"/>
 <fieldValue name="menuItemString" value='"Anger"'/>
@@ -3958,7 +3479,7 @@
 <ROUTE fromNode="Anger" fromField="stopTime" toNode="Anger_Clock" toField="stopTime"/>
 <ROUTE fromNode="Anger" fromField="enabled" toNode="Anger_Clock" toField="enabled"/>
 <ProtoInstance DEF="Disgust" name="MenuItem">
-<fieldValue name="translation" value="65 49.48333333333333 0"/>
+<fieldValue name="translation" value="24 49.48333333333333 0"/>
 <fieldValue name="textTranslation" value="0 0 0"/>
 <fieldValue name="description" value="Disgust"/>
 <fieldValue name="menuItemString" value='"Disgust"'/>
@@ -3976,7 +3497,7 @@
 <ROUTE fromNode="Disgust" fromField="stopTime" toNode="Disgust_Clock" toField="stopTime"/>
 <ROUTE fromNode="Disgust" fromField="enabled" toNode="Disgust_Clock" toField="enabled"/>
 <ProtoInstance DEF="Contempt" name="MenuItem">
-<fieldValue name="translation" value="65 46.69999999999999 0"/>
+<fieldValue name="translation" value="24 46.69999999999999 0"/>
 <fieldValue name="textTranslation" value="0 0 0"/>
 <fieldValue name="description" value="Contempt"/>
 <fieldValue name="menuItemString" value='"Contempt"'/>
@@ -3992,6 +3513,556 @@
 <ROUTE fromNode="Contempt" fromField="startTime" toNode="Contempt_Clock" toField="startTime"/>
 <ROUTE fromNode="Contempt" fromField="stopTime" toNode="Contempt_Clock" toField="stopTime"/>
 <ROUTE fromNode="Contempt" fromField="enabled" toNode="Contempt_Clock" toField="enabled"/>
+<ProtoInstance DEF="Reset" name="MenuItem">
+<fieldValue name="translation" value="24 43.91666666666666 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Reset"/>
+<fieldValue name="menuItemString" value='"Reset"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinCheekRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerDepressor" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinJawDrop" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLidTightener" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipStretcher" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinJawDrop" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLidTightener" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipTightener" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinNoseWrinkler" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerDepressor" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLowerLipDepressor" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinDimpler" toField="set_fraction"/>
+<ROUTE fromNode="Reset" fromField="startTime" toNode="Reset_Clock" toField="startTime"/>
+<ROUTE fromNode="Reset" fromField="stopTime" toNode="Reset_Clock" toField="stopTime"/>
+<ROUTE fromNode="Reset" fromField="enabled" toNode="Reset_Clock" toField="enabled"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBlink" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinCheekPuffer" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinCheekRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinChinRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinDimpler" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinEyesClosed" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinJawDrop" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLidDroop" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLidTightener" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerDepressor" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipFunneler" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipPressor" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipPuckerer" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipsPart" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipStretcher" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipSuck" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipTightener" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLowerLipDepressor" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinMouthStretch" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinNasolabialDeepener" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinNoseWrinkler" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinSlit" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinSquint" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLipRaiser" toField="set_fraction"/>
+<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinWink" toField="set_fraction"/>
+<ProtoInstance DEF="AUJinBlink" name="MenuItem">
+<fieldValue name="translation" value="65 63.4 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Blink"/>
+<fieldValue name="menuItemString" value='"JinBlink"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinBlink_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBlink" toField="set_fraction"/>
+<ROUTE fromNode="AUJinBlink" fromField="startTime" toNode="JinBlink_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinBlink" fromField="stopTime" toNode="JinBlink_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinBlink" fromField="enabled" toNode="JinBlink_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinBrowLowerer" name="MenuItem">
+<fieldValue name="translation" value="65 60.4 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Brow Lowerer"/>
+<fieldValue name="menuItemString" value='"JinBrowLowerer"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinBrowLowerer_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
+<ROUTE fromNode="AUJinBrowLowerer" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinBrowLowerer" fromField="stopTime" toNode="JinBrowLowerer_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinBrowLowerer" fromField="enabled" toNode="JinBrowLowerer_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinCheekPuffer" name="MenuItem">
+<fieldValue name="translation" value="65 57.39999999999999 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Cheek Puffer"/>
+<fieldValue name="menuItemString" value='"JinCheekPuffer"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinCheekPuffer_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinCheekPuffer" toField="set_fraction"/>
+<ROUTE fromNode="AUJinCheekPuffer" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinCheekPuffer" fromField="stopTime" toNode="JinCheekPuffer_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinCheekPuffer" fromField="enabled" toNode="JinCheekPuffer_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinCheekRaiser" name="MenuItem">
+<fieldValue name="translation" value="65 54.39999999999999 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Cheek Raiser"/>
+<fieldValue name="menuItemString" value='"JinCheekRaiser"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinCheekRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinCheekRaiser" toField="set_fraction"/>
+<ROUTE fromNode="AUJinCheekRaiser" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinCheekRaiser" fromField="stopTime" toNode="JinCheekRaiser_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinCheekRaiser" fromField="enabled" toNode="JinCheekRaiser_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinChinRaiser" name="MenuItem">
+<fieldValue name="translation" value="65 51.39999999999999 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Chin Raiser"/>
+<fieldValue name="menuItemString" value='"JinChinRaiser"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinChinRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinChinRaiser" toField="set_fraction"/>
+<ROUTE fromNode="AUJinChinRaiser" fromField="startTime" toNode="JinChinRaiser_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinChinRaiser" fromField="stopTime" toNode="JinChinRaiser_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinChinRaiser" fromField="enabled" toNode="JinChinRaiser_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinDimpler" name="MenuItem">
+<fieldValue name="translation" value="65 48.39999999999999 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Dimpler"/>
+<fieldValue name="menuItemString" value='"JinDimpler"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinDimpler_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinDimpler" toField="set_fraction"/>
+<ROUTE fromNode="AUJinDimpler" fromField="startTime" toNode="JinDimpler_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinDimpler" fromField="stopTime" toNode="JinDimpler_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinDimpler" fromField="enabled" toNode="JinDimpler_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinEyesClosed" name="MenuItem">
+<fieldValue name="translation" value="65 45.39999999999999 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Eyes Closed"/>
+<fieldValue name="menuItemString" value='"JinEyesClosed"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinEyesClosed_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinEyesClosed" toField="set_fraction"/>
+<ROUTE fromNode="AUJinEyesClosed" fromField="startTime" toNode="JinEyesClosed_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinEyesClosed" fromField="stopTime" toNode="JinEyesClosed_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinEyesClosed" fromField="enabled" toNode="JinEyesClosed_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinInnerBrowRaiser" name="MenuItem">
+<fieldValue name="translation" value="65 42.39999999999999 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Inner Brow Raiser"/>
+<fieldValue name="menuItemString" value='"JinInnerBrowRaiser"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
+<ROUTE fromNode="AUJinInnerBrowRaiser" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinInnerBrowRaiser" fromField="stopTime" toNode="JinInnerBrowRaiser_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinInnerBrowRaiser" fromField="enabled" toNode="JinInnerBrowRaiser_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinJawDrop" name="MenuItem">
+<fieldValue name="translation" value="65 39.39999999999999 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Jaw Drop"/>
+<fieldValue name="menuItemString" value='"JinJawDrop"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinJawDrop_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinJawDrop" toField="set_fraction"/>
+<ROUTE fromNode="AUJinJawDrop" fromField="startTime" toNode="JinJawDrop_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinJawDrop" fromField="stopTime" toNode="JinJawDrop_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinJawDrop" fromField="enabled" toNode="JinJawDrop_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinLidDroop" name="MenuItem">
+<fieldValue name="translation" value="65 36.39999999999999 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Lid Droop"/>
+<fieldValue name="menuItemString" value='"JinLidDroop"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinLidDroop_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLidDroop" toField="set_fraction"/>
+<ROUTE fromNode="AUJinLidDroop" fromField="startTime" toNode="JinLidDroop_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinLidDroop" fromField="stopTime" toNode="JinLidDroop_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinLidDroop" fromField="enabled" toNode="JinLidDroop_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinLidTightener" name="MenuItem">
+<fieldValue name="translation" value="65 33.39999999999999 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Lid Tightener"/>
+<fieldValue name="menuItemString" value='"JinLidTightener"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinLidTightener_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLidTightener" toField="set_fraction"/>
+<ROUTE fromNode="AUJinLidTightener" fromField="startTime" toNode="JinLidTightener_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinLidTightener" fromField="stopTime" toNode="JinLidTightener_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinLidTightener" fromField="enabled" toNode="JinLidTightener_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinLipCornerDepressor" name="MenuItem">
+<fieldValue name="translation" value="65 30.399999999999995 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Lip Corner Depressor"/>
+<fieldValue name="menuItemString" value='"JinLipCornerDepressor"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerDepressor" toField="set_fraction"/>
+<ROUTE fromNode="AUJinLipCornerDepressor" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinLipCornerDepressor" fromField="stopTime" toNode="JinLipCornerDepressor_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinLipCornerDepressor" fromField="enabled" toNode="JinLipCornerDepressor_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinLipCornerPuller" name="MenuItem">
+<fieldValue name="translation" value="65 27.399999999999995 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Lip Corner Puller"/>
+<fieldValue name="menuItemString" value='"JinLipCornerPuller"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinLipCornerPuller_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
+<ROUTE fromNode="AUJinLipCornerPuller" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinLipCornerPuller" fromField="stopTime" toNode="JinLipCornerPuller_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinLipCornerPuller" fromField="enabled" toNode="JinLipCornerPuller_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinLipFunneler" name="MenuItem">
+<fieldValue name="translation" value="65 24.399999999999995 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Lip Funneler"/>
+<fieldValue name="menuItemString" value='"JinLipFunneler"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinLipFunneler_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipFunneler" toField="set_fraction"/>
+<ROUTE fromNode="AUJinLipFunneler" fromField="startTime" toNode="JinLipFunneler_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinLipFunneler" fromField="stopTime" toNode="JinLipFunneler_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinLipFunneler" fromField="enabled" toNode="JinLipFunneler_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinLipPressor" name="MenuItem">
+<fieldValue name="translation" value="65 21.399999999999995 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Lip Pressor"/>
+<fieldValue name="menuItemString" value='"JinLipPressor"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinLipPressor_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipPressor" toField="set_fraction"/>
+<ROUTE fromNode="AUJinLipPressor" fromField="startTime" toNode="JinLipPressor_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinLipPressor" fromField="stopTime" toNode="JinLipPressor_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinLipPressor" fromField="enabled" toNode="JinLipPressor_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinLipPuckerer" name="MenuItem">
+<fieldValue name="translation" value="65 18.4 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Lip Puckerer"/>
+<fieldValue name="menuItemString" value='"JinLipPuckerer"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinLipPuckerer_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipPuckerer" toField="set_fraction"/>
+<ROUTE fromNode="AUJinLipPuckerer" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinLipPuckerer" fromField="stopTime" toNode="JinLipPuckerer_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinLipPuckerer" fromField="enabled" toNode="JinLipPuckerer_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinLipsPart" name="MenuItem">
+<fieldValue name="translation" value="65 15.399999999999997 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Lips Part"/>
+<fieldValue name="menuItemString" value='"JinLipsPart"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinLipsPart_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipsPart" toField="set_fraction"/>
+<ROUTE fromNode="AUJinLipsPart" fromField="startTime" toNode="JinLipsPart_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinLipsPart" fromField="stopTime" toNode="JinLipsPart_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinLipsPart" fromField="enabled" toNode="JinLipsPart_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinLipStretcher" name="MenuItem">
+<fieldValue name="translation" value="65 12.399999999999999 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Lip Stretcher"/>
+<fieldValue name="menuItemString" value='"JinLipStretcher"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinLipStretcher_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipStretcher" toField="set_fraction"/>
+<ROUTE fromNode="AUJinLipStretcher" fromField="startTime" toNode="JinLipStretcher_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinLipStretcher" fromField="stopTime" toNode="JinLipStretcher_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinLipStretcher" fromField="enabled" toNode="JinLipStretcher_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinLipSuck" name="MenuItem">
+<fieldValue name="translation" value="65 9.399999999999999 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Lip Suck"/>
+<fieldValue name="menuItemString" value='"JinLipSuck"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinLipSuck_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipSuck" toField="set_fraction"/>
+<ROUTE fromNode="AUJinLipSuck" fromField="startTime" toNode="JinLipSuck_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinLipSuck" fromField="stopTime" toNode="JinLipSuck_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinLipSuck" fromField="enabled" toNode="JinLipSuck_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinLipTightener" name="MenuItem">
+<fieldValue name="translation" value="65 6.399999999999999 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Lip Tightener"/>
+<fieldValue name="menuItemString" value='"JinLipTightener"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinLipTightener_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipTightener" toField="set_fraction"/>
+<ROUTE fromNode="AUJinLipTightener" fromField="startTime" toNode="JinLipTightener_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinLipTightener" fromField="stopTime" toNode="JinLipTightener_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinLipTightener" fromField="enabled" toNode="JinLipTightener_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinLowerLipDepressor" name="MenuItem">
+<fieldValue name="translation" value="65 3.399999999999995 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Lower Lip Depressor"/>
+<fieldValue name="menuItemString" value='"JinLowerLipDepressor"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLowerLipDepressor" toField="set_fraction"/>
+<ROUTE fromNode="AUJinLowerLipDepressor" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinLowerLipDepressor" fromField="stopTime" toNode="JinLowerLipDepressor_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinLowerLipDepressor" fromField="enabled" toNode="JinLowerLipDepressor_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinMouthStretch" name="MenuItem">
+<fieldValue name="translation" value="65 0.399999999999995 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Mouth Stretch"/>
+<fieldValue name="menuItemString" value='"JinMouthStretch"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinMouthStretch_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinMouthStretch" toField="set_fraction"/>
+<ROUTE fromNode="AUJinMouthStretch" fromField="startTime" toNode="JinMouthStretch_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinMouthStretch" fromField="stopTime" toNode="JinMouthStretch_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinMouthStretch" fromField="enabled" toNode="JinMouthStretch_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinNasolabialDeepener" name="MenuItem">
+<fieldValue name="translation" value="65 -2.6000000000000085 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Nasolabial Deepener"/>
+<fieldValue name="menuItemString" value='"JinNasolabialDeepener"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinNasolabialDeepener" toField="set_fraction"/>
+<ROUTE fromNode="AUJinNasolabialDeepener" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinNasolabialDeepener" fromField="stopTime" toNode="JinNasolabialDeepener_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinNasolabialDeepener" fromField="enabled" toNode="JinNasolabialDeepener_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinNoseWrinkler" name="MenuItem">
+<fieldValue name="translation" value="65 -5.6000000000000085 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Nose Wrinkler"/>
+<fieldValue name="menuItemString" value='"JinNoseWrinkler"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinNoseWrinkler_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinNoseWrinkler" toField="set_fraction"/>
+<ROUTE fromNode="AUJinNoseWrinkler" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinNoseWrinkler" fromField="stopTime" toNode="JinNoseWrinkler_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinNoseWrinkler" fromField="enabled" toNode="JinNoseWrinkler_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinOuterBrowRaiser" name="MenuItem">
+<fieldValue name="translation" value="65 -8.600000000000009 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Outer Brow Raiser"/>
+<fieldValue name="menuItemString" value='"JinOuterBrowRaiser"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction"/>
+<ROUTE fromNode="AUJinOuterBrowRaiser" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinOuterBrowRaiser" fromField="stopTime" toNode="JinOuterBrowRaiser_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinOuterBrowRaiser" fromField="enabled" toNode="JinOuterBrowRaiser_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinSlit" name="MenuItem">
+<fieldValue name="translation" value="65 -11.600000000000009 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Slit"/>
+<fieldValue name="menuItemString" value='"JinSlit"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinSlit_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinSlit" toField="set_fraction"/>
+<ROUTE fromNode="AUJinSlit" fromField="startTime" toNode="JinSlit_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinSlit" fromField="stopTime" toNode="JinSlit_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinSlit" fromField="enabled" toNode="JinSlit_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinSquint" name="MenuItem">
+<fieldValue name="translation" value="65 -14.600000000000001 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Squint"/>
+<fieldValue name="menuItemString" value='"JinSquint"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinSquint_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinSquint" toField="set_fraction"/>
+<ROUTE fromNode="AUJinSquint" fromField="startTime" toNode="JinSquint_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinSquint" fromField="stopTime" toNode="JinSquint_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinSquint" fromField="enabled" toNode="JinSquint_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinUpperLidRaiser" name="MenuItem">
+<fieldValue name="translation" value="65 -17.6 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Upper Lid Raiser"/>
+<fieldValue name="menuItemString" value='"JinUpperLidRaiser"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
+<ROUTE fromNode="AUJinUpperLidRaiser" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinUpperLidRaiser" fromField="stopTime" toNode="JinUpperLidRaiser_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinUpperLidRaiser" fromField="enabled" toNode="JinUpperLidRaiser_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinUpperLipRaiser" name="MenuItem">
+<fieldValue name="translation" value="65 -20.6 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Upper Lip Raiser"/>
+<fieldValue name="menuItemString" value='"JinUpperLipRaiser"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLipRaiser" toField="set_fraction"/>
+<ROUTE fromNode="AUJinUpperLipRaiser" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinUpperLipRaiser" fromField="stopTime" toNode="JinUpperLipRaiser_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinUpperLipRaiser" fromField="enabled" toNode="JinUpperLipRaiser_Clock" toField="enabled"/>
+<ProtoInstance DEF="AUJinWink" name="MenuItem">
+<fieldValue name="translation" value="65 -23.599999999999994 0"/>
+<fieldValue name="textTranslation" value="0 0 0"/>
+<fieldValue name="description" value="Jin Wink"/>
+<fieldValue name="menuItemString" value='"JinWink"'/>
+<fieldValue name="size" value="40.0 3.0"/>
+<fieldValue name="fontSize" value="2.4"/>
+<fieldValue name="spacing" value="1.2"/>
+<fieldValue name="startTime"/>
+<fieldValue name="stopTime"/>
+<fieldValue name="enabled"/>
+</ProtoInstance>
+<ROUTE fromNode="JinWink_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinWink" toField="set_fraction"/>
+<ROUTE fromNode="AUJinWink" fromField="startTime" toNode="JinWink_Clock" toField="startTime"/>
+<ROUTE fromNode="AUJinWink" fromField="stopTime" toNode="JinWink_Clock" toField="stopTime"/>
+<ROUTE fromNode="AUJinWink" fromField="enabled" toNode="JinWink_Clock" toField="enabled"/>
 
   </Scene>
 </X3D>

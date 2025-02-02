@@ -302,6 +302,16 @@ for emotion in emotions:
     print(f"Inserted TimeSensor")
     scene.insert(0, time_sensor)
 
+time_sensor = xml.etree.ElementTree.Element('TimeSensor')
+time_sensor.text = ""
+time_sensor.tail = "\n"
+time_sensor.set("DEF", "Reset_Clock")
+time_sensor.set("cycleInterval", "0.01")
+time_sensor.set("loop", "false")
+time_sensor.set("enabled", "true")
+print(f"Inserted TimeSensor")
+scene.insert(0, time_sensor)
+
 for scene_element in scene_list:
     scalarInterpolators = scene_element.findall(".//ScalarInterpolator")
     if len(scalarInterpolators) <= 0:
@@ -438,32 +448,9 @@ menu_str = '''
 '''
 ifs_start = 1
 increment = -1/12
-for file_index, input_file in enumerate(files):
-
-    menu_str += '<ProtoInstance DEF="AU'+findAnimation(input_file)+'" name="MenuItem">\n'
-    menu_str += '<fieldValue name="translation" value="24 '+str(ifs_start*36+27.4)+' 0"/>\n'
-    menu_str += '<fieldValue name="textTranslation" value="0 0 0"/>\n'
-    menu_str += '<fieldValue name="description" value="'+re.sub(r"([a-z])([A-Z])", r"\1 \2", findAnimation(input_file))+'"/>\n'
-    menu_str += '<fieldValue name="menuItemString" value=\'"'+findAnimation(input_file)+'"\'/>\n'
-    menu_str += '<fieldValue name="size" value="40.0 3.0"/>\n'
-    menu_str += '<fieldValue name="fontSize" value="2.4"/>\n'
-    menu_str += '<fieldValue name="spacing" value="1.2"/>\n'
-    menu_str += '<fieldValue name="startTime"/>\n'
-    menu_str += '<fieldValue name="stopTime"/>\n'
-    menu_str += '<fieldValue name="enabled"/>\n'
-    menu_str += '</ProtoInstance>\n'
-    menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Clock" fromField="fraction_changed" toNode="AnimationAdapter_'+findAnimation(input_file)+'" toField="set_fraction"/>\n'
-    menu_str += '<ROUTE fromNode="AU'+findAnimation(input_file)+'" fromField="startTime" toNode="'+findAnimation(input_file)+'_Clock" toField="startTime"/>\n'
-    menu_str += '<ROUTE fromNode="AU'+findAnimation(input_file)+'" fromField="stopTime" toNode="'+findAnimation(input_file)+'_Clock" toField="stopTime"/>\n'
-    menu_str += '<ROUTE fromNode="AU'+findAnimation(input_file)+'" fromField="enabled" toNode="'+findAnimation(input_file)+'_Clock" toField="enabled"/>\n'
-
-    ifs_start += increment
-
-ifs_start = 1
-increment = -1/12
 for emotion, aus in emotions.items():
     menu_str += '<ProtoInstance DEF="'+emotion+'" name="MenuItem">\n'
-    menu_str += '<fieldValue name="translation" value="65 '+str(ifs_start*33.4+30)+' 0"/>\n'
+    menu_str += '<fieldValue name="translation" value="24 '+str(ifs_start*33.4+30)+' 0"/>\n'
     menu_str += '<fieldValue name="textTranslation" value="0 0 0"/>\n'
     menu_str += '<fieldValue name="description" value="'+emotion+'"/>\n'
     menu_str += '<fieldValue name="menuItemString" value=\'"'+emotion+'"\'/>\n'
@@ -479,6 +466,51 @@ for emotion, aus in emotions.items():
     menu_str += '<ROUTE fromNode="'+emotion+'" fromField="startTime" toNode="'+emotion+'_Clock" toField="startTime"/>\n'
     menu_str += '<ROUTE fromNode="'+emotion+'" fromField="stopTime" toNode="'+emotion+'_Clock" toField="stopTime"/>\n'
     menu_str += '<ROUTE fromNode="'+emotion+'" fromField="enabled" toNode="'+emotion+'_Clock" toField="enabled"/>\n'
+
+    ifs_start += increment
+
+menu_str += '<ProtoInstance DEF="Reset" name="MenuItem">\n'
+menu_str += '<fieldValue name="translation" value="24 '+str(ifs_start*33.4+30)+' 0"/>\n'
+menu_str += '<fieldValue name="textTranslation" value="0 0 0"/>\n'
+menu_str += '<fieldValue name="description" value="Reset"/>\n'
+menu_str += '<fieldValue name="menuItemString" value=\'"Reset"\'/>\n'
+menu_str += '<fieldValue name="size" value="40.0 3.0"/>\n'
+menu_str += '<fieldValue name="fontSize" value="2.4"/>\n'
+menu_str += '<fieldValue name="spacing" value="1.2"/>\n'
+menu_str += '<fieldValue name="startTime"/>\n'
+menu_str += '<fieldValue name="stopTime"/>\n'
+menu_str += '<fieldValue name="enabled"/>\n'
+menu_str += '</ProtoInstance>\n'
+for emotion, aus in emotions.items():
+    for au in aus:
+        menu_str += '<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_Jin'+au+'" toField="set_fraction"/>\n'
+menu_str += '<ROUTE fromNode="Reset" fromField="startTime" toNode="Reset_Clock" toField="startTime"/>\n'
+menu_str += '<ROUTE fromNode="Reset" fromField="stopTime" toNode="Reset_Clock" toField="stopTime"/>\n'
+menu_str += '<ROUTE fromNode="Reset" fromField="enabled" toNode="Reset_Clock" toField="enabled"/>\n'
+
+for file_index, input_file in enumerate(files):
+    menu_str += '<ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_'+findAnimation(input_file)+'" toField="set_fraction"/>\n'
+
+ifs_start = 1
+increment = -1/12
+for file_index, input_file in enumerate(files):
+
+    menu_str += '<ProtoInstance DEF="AU'+findAnimation(input_file)+'" name="MenuItem">\n'
+    menu_str += '<fieldValue name="translation" value="65 '+str(ifs_start*36+27.4)+' 0"/>\n'
+    menu_str += '<fieldValue name="textTranslation" value="0 0 0"/>\n'
+    menu_str += '<fieldValue name="description" value="'+re.sub(r"([a-z])([A-Z])", r"\1 \2", findAnimation(input_file))+'"/>\n'
+    menu_str += '<fieldValue name="menuItemString" value=\'"'+findAnimation(input_file)+'"\'/>\n'
+    menu_str += '<fieldValue name="size" value="40.0 3.0"/>\n'
+    menu_str += '<fieldValue name="fontSize" value="2.4"/>\n'
+    menu_str += '<fieldValue name="spacing" value="1.2"/>\n'
+    menu_str += '<fieldValue name="startTime"/>\n'
+    menu_str += '<fieldValue name="stopTime"/>\n'
+    menu_str += '<fieldValue name="enabled"/>\n'
+    menu_str += '</ProtoInstance>\n'
+    menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Clock" fromField="fraction_changed" toNode="AnimationAdapter_'+findAnimation(input_file)+'" toField="set_fraction"/>\n'
+    menu_str += '<ROUTE fromNode="AU'+findAnimation(input_file)+'" fromField="startTime" toNode="'+findAnimation(input_file)+'_Clock" toField="startTime"/>\n'
+    menu_str += '<ROUTE fromNode="AU'+findAnimation(input_file)+'" fromField="stopTime" toNode="'+findAnimation(input_file)+'_Clock" toField="stopTime"/>\n'
+    menu_str += '<ROUTE fromNode="AU'+findAnimation(input_file)+'" fromField="enabled" toNode="'+findAnimation(input_file)+'_Clock" toField="enabled"/>\n'
 
     ifs_start += increment
 
