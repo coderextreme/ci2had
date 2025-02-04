@@ -1285,9 +1285,9 @@
         <field name="textTranslation" accessType="inputOutput" type="SFVec3f" />
         <field name="description" accessType="inputOutput" type="SFString" />
         <field name="menuItemString" accessType="inputOutput" type="MFString" />
-        <field name="startTime" accessType="outputOnly" type="SFTime" />
-        <field name="stopTime" accessType="outputOnly" type="SFTime" />
-        <field name="enabled" accessType="outputOnly" type="SFBool" />
+        <field name="startTime" accessType="outputOnly" type="SFTime" value="-1" />
+        <field name="stopTime" accessType="outputOnly" type="SFTime" value="-1" />
+        <field name="enabled" accessType="outputOnly" type="SFBool" value="false" />
         <field name="size" accessType="initializeOnly" type="SFVec2f" value="40.0 3.0" />
         <field name="fontSize" accessType="inputOutput" type="SFFloat" value="2.4" />
         <field name="spacing" accessType="initializeOnly" type="SFFloat" value="1.2" />
