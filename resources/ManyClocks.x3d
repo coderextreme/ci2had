@@ -3391,9 +3391,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="HappinessJoy_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinCheekRaiser" toField="set_fraction"/>
 <ROUTE fromNode="HappinessJoy_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
@@ -3408,9 +3405,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="Sadness_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
 <ROUTE fromNode="Sadness_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
@@ -3426,9 +3420,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="Surprise_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
 <ROUTE fromNode="Surprise_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction"/>
@@ -3445,9 +3436,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="Fear_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
 <ROUTE fromNode="Fear_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction"/>
@@ -3467,9 +3455,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="Anger_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
 <ROUTE fromNode="Anger_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
@@ -3486,9 +3471,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="Disgust_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinNoseWrinkler" toField="set_fraction"/>
 <ROUTE fromNode="Disgust_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerDepressor" toField="set_fraction"/>
@@ -3504,9 +3486,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="Contempt_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
 <ROUTE fromNode="Contempt_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinDimpler" toField="set_fraction"/>
@@ -3521,9 +3500,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinCheekRaiser" toField="set_fraction"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
@@ -3591,9 +3567,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinBlink_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBlink" toField="set_fraction"/>
 <ROUTE fromNode="AUJinBlink" fromField="startTime" toNode="JinBlink_Clock" toField="startTime"/>
@@ -3607,9 +3580,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinBrowLowerer_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
 <ROUTE fromNode="AUJinBrowLowerer" fromField="startTime" toNode="JinBrowLowerer_Clock" toField="startTime"/>
@@ -3623,9 +3593,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinCheekPuffer_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinCheekPuffer" toField="set_fraction"/>
 <ROUTE fromNode="AUJinCheekPuffer" fromField="startTime" toNode="JinCheekPuffer_Clock" toField="startTime"/>
@@ -3639,9 +3606,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinCheekRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinCheekRaiser" toField="set_fraction"/>
 <ROUTE fromNode="AUJinCheekRaiser" fromField="startTime" toNode="JinCheekRaiser_Clock" toField="startTime"/>
@@ -3655,9 +3619,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinChinRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinChinRaiser" toField="set_fraction"/>
 <ROUTE fromNode="AUJinChinRaiser" fromField="startTime" toNode="JinChinRaiser_Clock" toField="startTime"/>
@@ -3671,9 +3632,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinDimpler_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinDimpler" toField="set_fraction"/>
 <ROUTE fromNode="AUJinDimpler" fromField="startTime" toNode="JinDimpler_Clock" toField="startTime"/>
@@ -3687,9 +3645,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinEyesClosed_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinEyesClosed" toField="set_fraction"/>
 <ROUTE fromNode="AUJinEyesClosed" fromField="startTime" toNode="JinEyesClosed_Clock" toField="startTime"/>
@@ -3703,9 +3658,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinInnerBrowRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
 <ROUTE fromNode="AUJinInnerBrowRaiser" fromField="startTime" toNode="JinInnerBrowRaiser_Clock" toField="startTime"/>
@@ -3719,9 +3671,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinJawDrop_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinJawDrop" toField="set_fraction"/>
 <ROUTE fromNode="AUJinJawDrop" fromField="startTime" toNode="JinJawDrop_Clock" toField="startTime"/>
@@ -3735,9 +3684,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinLidDroop_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLidDroop" toField="set_fraction"/>
 <ROUTE fromNode="AUJinLidDroop" fromField="startTime" toNode="JinLidDroop_Clock" toField="startTime"/>
@@ -3751,9 +3697,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinLidTightener_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLidTightener" toField="set_fraction"/>
 <ROUTE fromNode="AUJinLidTightener" fromField="startTime" toNode="JinLidTightener_Clock" toField="startTime"/>
@@ -3767,9 +3710,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinLipCornerDepressor_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerDepressor" toField="set_fraction"/>
 <ROUTE fromNode="AUJinLipCornerDepressor" fromField="startTime" toNode="JinLipCornerDepressor_Clock" toField="startTime"/>
@@ -3783,9 +3723,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinLipCornerPuller_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
 <ROUTE fromNode="AUJinLipCornerPuller" fromField="startTime" toNode="JinLipCornerPuller_Clock" toField="startTime"/>
@@ -3799,9 +3736,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinLipFunneler_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipFunneler" toField="set_fraction"/>
 <ROUTE fromNode="AUJinLipFunneler" fromField="startTime" toNode="JinLipFunneler_Clock" toField="startTime"/>
@@ -3815,9 +3749,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinLipPressor_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipPressor" toField="set_fraction"/>
 <ROUTE fromNode="AUJinLipPressor" fromField="startTime" toNode="JinLipPressor_Clock" toField="startTime"/>
@@ -3831,9 +3762,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinLipPuckerer_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipPuckerer" toField="set_fraction"/>
 <ROUTE fromNode="AUJinLipPuckerer" fromField="startTime" toNode="JinLipPuckerer_Clock" toField="startTime"/>
@@ -3847,9 +3775,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinLipsPart_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipsPart" toField="set_fraction"/>
 <ROUTE fromNode="AUJinLipsPart" fromField="startTime" toNode="JinLipsPart_Clock" toField="startTime"/>
@@ -3863,9 +3788,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinLipStretcher_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipStretcher" toField="set_fraction"/>
 <ROUTE fromNode="AUJinLipStretcher" fromField="startTime" toNode="JinLipStretcher_Clock" toField="startTime"/>
@@ -3879,9 +3801,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinLipSuck_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipSuck" toField="set_fraction"/>
 <ROUTE fromNode="AUJinLipSuck" fromField="startTime" toNode="JinLipSuck_Clock" toField="startTime"/>
@@ -3895,9 +3814,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinLipTightener_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipTightener" toField="set_fraction"/>
 <ROUTE fromNode="AUJinLipTightener" fromField="startTime" toNode="JinLipTightener_Clock" toField="startTime"/>
@@ -3911,9 +3827,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinLowerLipDepressor_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLowerLipDepressor" toField="set_fraction"/>
 <ROUTE fromNode="AUJinLowerLipDepressor" fromField="startTime" toNode="JinLowerLipDepressor_Clock" toField="startTime"/>
@@ -3927,9 +3840,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinMouthStretch_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinMouthStretch" toField="set_fraction"/>
 <ROUTE fromNode="AUJinMouthStretch" fromField="startTime" toNode="JinMouthStretch_Clock" toField="startTime"/>
@@ -3943,9 +3853,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinNasolabialDeepener_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinNasolabialDeepener" toField="set_fraction"/>
 <ROUTE fromNode="AUJinNasolabialDeepener" fromField="startTime" toNode="JinNasolabialDeepener_Clock" toField="startTime"/>
@@ -3959,9 +3866,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinNoseWrinkler_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinNoseWrinkler" toField="set_fraction"/>
 <ROUTE fromNode="AUJinNoseWrinkler" fromField="startTime" toNode="JinNoseWrinkler_Clock" toField="startTime"/>
@@ -3975,9 +3879,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinOuterBrowRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction"/>
 <ROUTE fromNode="AUJinOuterBrowRaiser" fromField="startTime" toNode="JinOuterBrowRaiser_Clock" toField="startTime"/>
@@ -3991,9 +3892,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinSlit_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinSlit" toField="set_fraction"/>
 <ROUTE fromNode="AUJinSlit" fromField="startTime" toNode="JinSlit_Clock" toField="startTime"/>
@@ -4007,9 +3905,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinSquint_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinSquint" toField="set_fraction"/>
 <ROUTE fromNode="AUJinSquint" fromField="startTime" toNode="JinSquint_Clock" toField="startTime"/>
@@ -4023,9 +3918,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinUpperLidRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
 <ROUTE fromNode="AUJinUpperLidRaiser" fromField="startTime" toNode="JinUpperLidRaiser_Clock" toField="startTime"/>
@@ -4039,9 +3931,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinUpperLipRaiser_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLipRaiser" toField="set_fraction"/>
 <ROUTE fromNode="AUJinUpperLipRaiser" fromField="startTime" toNode="JinUpperLipRaiser_Clock" toField="startTime"/>
@@ -4055,9 +3944,6 @@
 <fieldValue name="size" value="40.0 3.0"/>
 <fieldValue name="fontSize" value="2.4"/>
 <fieldValue name="spacing" value="1.2"/>
-<fieldValue name="startTime"/>
-<fieldValue name="stopTime"/>
-<fieldValue name="enabled"/>
 </ProtoInstance>
 <ROUTE fromNode="JinWink_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinWink" toField="set_fraction"/>
 <ROUTE fromNode="AUJinWink" fromField="startTime" toNode="JinWink_Clock" toField="startTime"/>
