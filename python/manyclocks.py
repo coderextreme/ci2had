@@ -224,6 +224,34 @@ component.text = ""
 component.tail = "\n"
 head.append(component)
 
+component = xml.etree.ElementTree.Element('component')
+component.set("name", "Core")
+component.set("level", "1")
+component.text = ""
+component.tail = "\n"
+head.append(component)
+
+component = xml.etree.ElementTree.Element('component')
+component.set("name", "Grouping")
+component.set("level", "1")
+component.text = ""
+component.tail = "\n"
+head.append(component)
+
+component = xml.etree.ElementTree.Element('component')
+component.set("name", "Layering")
+component.set("level", "1")
+component.text = ""
+component.tail = "\n"
+head.append(component)
+
+component = xml.etree.ElementTree.Element('component')
+component.set("name", "Text")
+component.set("level", "1")
+component.text = ""
+component.tail = "\n"
+head.append(component)
+
 meta = xml.etree.ElementTree.Element('meta')
 meta.text = ""
 meta.tail = "\n"
@@ -334,6 +362,30 @@ for scene_element in scene_list:
         scene.append(route)
         # print(f"Adding {route.tag}")
 
+layerset = xml.etree.ElementTree.Element('LayerSet')
+layerset.text = ""
+layerset.tail = "\n"
+layerset.set("activeLayer", "1")
+layerset.set("order", "1, 2")
+
+
+layer = xml.etree.ElementTree.Element('Layer')
+layer.text = ""
+layer.tail = "\n"
+layer.set("activeLayer", "1")
+layer.set("order", "1, 2")
+layer.set("DEF", "Model")
+layerset.append(layer)
+
+
+viewpoint = xml.etree.ElementTree.Element('Viewpoint')
+viewpoint.text = ""
+viewpoint.tail = "\n"
+viewpoint.set("description", "Initial View")
+viewpoint.set("position", "0 20 110")
+layer.append(viewpoint)
+scene.insert(0, layerset)
+
 finalX3D.append(scene)
 
 
@@ -344,6 +396,8 @@ xmlstr = xml.etree.ElementTree.tostring(finalX3D, encoding='unicode')
 menu_str = '''
     <!-- Viewpoint and any other scene setup -->
     <WorldInfo title="ManyClocks.x3d"/>
+    </Layer>
+    <Layer>
     <Viewpoint position="0 20 110" />
         <ProtoDeclare name="MenuItem">
         <ProtoInterface>
@@ -445,7 +499,9 @@ menu_str = '''
       </Group>
       </ProtoBody>
       </ProtoDeclare>
+      <ProximitySensor DEF='HudProx' size='50 50 50'/>
 '''
+
 ifs_start = 1
 increment = -1/12
 for emotion, aus in emotions.items():
@@ -457,9 +513,6 @@ for emotion, aus in emotions.items():
     menu_str += '<fieldValue name="size" value="40.0 3.0"/>\n'
     menu_str += '<fieldValue name="fontSize" value="2.4"/>\n'
     menu_str += '<fieldValue name="spacing" value="1.2"/>\n'
-    #menu_str += '<fieldValue name="startTime"/>\n'
-    #menu_str += '<fieldValue name="stopTime"/>\n'
-    #menu_str += '<fieldValue name="enabled"/>\n'
     menu_str += '</ProtoInstance>\n'
     for au in aus:
         menu_str += '<ROUTE fromNode="'+emotion+'_Clock" fromField="fraction_changed" toNode="AnimationAdapter_Jin'+au+'" toField="set_fraction"/>\n'
@@ -477,9 +530,6 @@ menu_str += '<fieldValue name="menuItemString" value=\'"Reset"\'/>\n'
 menu_str += '<fieldValue name="size" value="40.0 3.0"/>\n'
 menu_str += '<fieldValue name="fontSize" value="2.4"/>\n'
 menu_str += '<fieldValue name="spacing" value="1.2"/>\n'
-#menu_str += '<fieldValue name="startTime"/>\n'
-#menu_str += '<fieldValue name="stopTime"/>\n'
-#menu_str += '<fieldValue name="enabled"/>\n'
 menu_str += '</ProtoInstance>\n'
 for emotion, aus in emotions.items():
     for au in aus:
@@ -503,9 +553,6 @@ for file_index, input_file in enumerate(files):
     menu_str += '<fieldValue name="size" value="40.0 3.0"/>\n'
     menu_str += '<fieldValue name="fontSize" value="2.4"/>\n'
     menu_str += '<fieldValue name="spacing" value="1.2"/>\n'
-    #menu_str += '<fieldValue name="startTime"/>\n'
-    #menu_str += '<fieldValue name="stopTime"/>\n'
-    #menu_str += '<fieldValue name="enabled"/>\n'
     menu_str += '</ProtoInstance>\n'
     menu_str += '<ROUTE fromNode="'+findAnimation(input_file)+'_Clock" fromField="fraction_changed" toNode="AnimationAdapter_'+findAnimation(input_file)+'" toField="set_fraction"/>\n'
     menu_str += '<ROUTE fromNode="AU'+findAnimation(input_file)+'" fromField="startTime" toNode="'+findAnimation(input_file)+'_Clock" toField="startTime"/>\n'
@@ -515,10 +562,13 @@ for file_index, input_file in enumerate(files):
     ifs_start += increment
 
 menu_str += '''
+    </Layer>
+    </LayerSet>
   </Scene>
 </X3D>
 '''
-xmlString = f"{header}{xmlstr[:-16]}{menu_str}"
+
+xmlString = f"{header}{xmlstr[:879]}{xmlstr[900:-16]}{menu_str}"
 file_output = os.path.join("../resources/",os.path.basename("ManyClocks.x3d"))
 with open(file_output, "w") as output_file:
     output_file.write(xmlString)
