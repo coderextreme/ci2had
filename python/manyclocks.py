@@ -372,8 +372,6 @@ layerset.set("order", "1, 2")
 layer = xml.etree.ElementTree.Element('Layer')
 layer.text = ""
 layer.tail = "\n"
-layer.set("activeLayer", "1")
-layer.set("order", "1, 2")
 layer.set("DEF", "Model")
 layerset.append(layer)
 
@@ -397,7 +395,7 @@ menu_str = '''
     <!-- Viewpoint and any other scene setup -->
     <WorldInfo title="ManyClocks.x3d"/>
     </Layer>
-    <Layer>
+    <Layer DEF="Menu">
     <Viewpoint position="0 20 110" />
         <ProtoDeclare name="MenuItem">
         <ProtoInterface>
@@ -568,7 +566,7 @@ menu_str += '''
 </X3D>
 '''
 
-xmlString = f"{header}{xmlstr[:879]}{xmlstr[900:-16]}{menu_str}"
+xmlString = f"{header}{xmlstr[:850]}{xmlstr[871:-16]}{menu_str}"
 file_output = os.path.join("../resources/",os.path.basename("ManyClocks.x3d"))
 with open(file_output, "w") as output_file:
     output_file.write(xmlString)

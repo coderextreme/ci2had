@@ -4,7 +4,6 @@
 <component name="HAnim" level="3" />
 <component name="Core" level="1" />
 <component name="Grouping" level="1" />
-<component name="Layering" level="1" />
 <component name="Text" level="1" />
 <meta name="title" content="ManyClocks.x3d" />
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/ManyClocks.x3d" />
@@ -14,7 +13,6 @@
 <meta name="creator" content="John Carlson, Joe Williams, Gyu Ri Cho, Hyun Ho Chu, Min Joo Lee, Yujin Jung" />
 </head>
 <Scene>
-<LayerSet activeLayer="1" order="1, 2"><Layer activeLayer="1" order="1, 2" DEF="Model"><Viewpoint description="Initial View" position="0 20 110" />
 <TimeSensor DEF="Reset_Clock" cycleInterval="0.01" loop="false" enabled="true" />
 <TimeSensor DEF="Contempt_Clock" cycleInterval="0.99" loop="true" enabled="false" />
 <TimeSensor DEF="Disgust_Clock" cycleInterval="0.99" loop="true" enabled="false" />
@@ -3287,8 +3285,6 @@
 
     <!-- Viewpoint and any other scene setup -->
     <WorldInfo title="ManyClocks.x3d"/>
-    </Layer>
-    <Layer>
     <Viewpoint position="0 20 110" />
         <ProtoDeclare name="MenuItem">
         <ProtoInterface>
@@ -3391,6 +3387,9 @@
       </ProtoBody>
       </ProtoDeclare>
       <ProximitySensor DEF='HudProx' size='50 50 50'/>
+      <Transform DEF='HudXform'>
+        <Transform DEF='Menu'>
+            <Viewpoint position="0 20 110" />
 <ProtoInstance DEF="HappinessJoy" name="MenuItem">
 <fieldValue name="translation" value="24 63.4 0"/>
 <fieldValue name="textTranslation" value="0 0 0"/>
@@ -3958,7 +3957,9 @@
 <ROUTE fromNode="AUJinWink" fromField="stopTime" toNode="JinWink_Clock" toField="stopTime"/>
 <ROUTE fromNode="AUJinWink" fromField="enabled" toNode="JinWink_Clock" toField="enabled"/>
 
-    </Layer>
-    </LayerSet>
+      </Transform>
+      </Transform>
+    <ROUTE fromField='position_changed' fromNode='HudProx' toField='set_translation' toNode='HudXform'/>
+    <ROUTE fromField='orientation_changed' fromNode='HudProx' toField='set_rotation' toNode='HudXform'/>
   </Scene>
 </X3D>
