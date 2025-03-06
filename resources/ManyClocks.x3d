@@ -3378,7 +3378,8 @@
       </BooleanFilter>
       <BooleanFilter DEF='veryFalse' />
       <BooleanSequencer DEF='clickBetweenStates' key='0 1' keyValue='true false'/>
-      <IntegerSequencer DEF='toggler' key='0 1' keyValue='1 0'>
+      <IntegerSequencer DEF='toggler' key='0 1' keyValue='1 0'/>
+      <IntegerSequencer DEF='untoggler' key='0 1' keyValue='0 0'>
             <IS>
             <connect nodeField='next' protoField='untoggle'/>
             </IS>
@@ -3390,6 +3391,7 @@
       <ROUTE fromNode='veryFalse' fromField='inputFalse' toNode='stopTime' toField='set_boolean'></ROUTE>
       <ROUTE fromNode='StartStopAnimationUnit_Sensor' fromField='isActive' toNode='toggler' toField='next'></ROUTE>
       <ROUTE fromNode='toggler' fromField='value_changed' toNode='itemMaterial' toField='whichChoice'></ROUTE>
+      <ROUTE fromNode='untoggler' fromField='value_changed' toNode='itemMaterial' toField='whichChoice'></ROUTE>
 
       <ROUTE fromNode='StartStopAnimationUnit_Sensor' fromField='isActive' toNode='clickBetweenStates' toField='next'></ROUTE>
       </Group>
@@ -3896,7 +3898,7 @@
 <ROUTE fromNode="Contempt" fromField="stopTime" toNode="Contempt_Clock" toField="stopTime"/>
 <ROUTE fromNode="Contempt" fromField="enabled" toNode="Contempt_Clock" toField="enabled"/>
 <ProtoInstance DEF="Reset" name="MenuItem">
-<fieldValue name="translation" value="24 43.91666666666666 0"/>
+<fieldValue name="translation" value="24 41.133333333333326 0"/>
 <fieldValue name="textTranslation" value="0 0 0"/>
 <fieldValue name="description" value="Reset"/>
 <fieldValue name="menuItemString" value='"Reset"'/>
@@ -3905,55 +3907,44 @@
 <fieldValue name="spacing" value="1.2"/>
 </ProtoInstance>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinCheekRaiser" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="HappinessJoy" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
 <ROUTE fromNode="Reset" fromField="enabled" toNode="HappinessJoy" toField="untoggle"/>
+<ROUTE fromNode="Reset_Clock" fromField="startTime" toNode="HappinessJoy_Clock" toField="stopTime"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Sadness" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Sadness" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerDepressor" toField="set_fraction"/>
 <ROUTE fromNode="Reset" fromField="enabled" toNode="Sadness" toField="untoggle"/>
+<ROUTE fromNode="Reset_Clock" fromField="startTime" toNode="Sadness_Clock" toField="stopTime"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Surprise" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Surprise" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Surprise" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinJawDrop" toField="set_fraction"/>
 <ROUTE fromNode="Reset" fromField="enabled" toNode="Surprise" toField="untoggle"/>
+<ROUTE fromNode="Reset_Clock" fromField="startTime" toNode="Surprise_Clock" toField="stopTime"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinInnerBrowRaiser" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Fear" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinOuterBrowRaiser" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Fear" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Fear" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Fear" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLidTightener" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Fear" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipStretcher" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Fear" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinJawDrop" toField="set_fraction"/>
 <ROUTE fromNode="Reset" fromField="enabled" toNode="Fear" toField="untoggle"/>
+<ROUTE fromNode="Reset_Clock" fromField="startTime" toNode="Fear_Clock" toField="stopTime"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinBrowLowerer" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Anger" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinUpperLidRaiser" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Anger" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLidTightener" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Anger" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipTightener" toField="set_fraction"/>
 <ROUTE fromNode="Reset" fromField="enabled" toNode="Anger" toField="untoggle"/>
+<ROUTE fromNode="Reset_Clock" fromField="startTime" toNode="Anger_Clock" toField="stopTime"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinNoseWrinkler" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Disgust" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerDepressor" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Disgust" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLowerLipDepressor" toField="set_fraction"/>
 <ROUTE fromNode="Reset" fromField="enabled" toNode="Disgust" toField="untoggle"/>
+<ROUTE fromNode="Reset_Clock" fromField="startTime" toNode="Disgust_Clock" toField="stopTime"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinLipCornerPuller" toField="set_fraction"/>
-<ROUTE fromNode="Reset" fromField="enabled" toNode="Contempt" toField="untoggle"/>
 <ROUTE fromNode="Reset_Clock" fromField="fraction_changed" toNode="AnimationAdapter_JinDimpler" toField="set_fraction"/>
 <ROUTE fromNode="Reset" fromField="enabled" toNode="Contempt" toField="untoggle"/>
+<ROUTE fromNode="Reset_Clock" fromField="startTime" toNode="Contempt_Clock" toField="stopTime"/>
 <ROUTE fromNode="Reset" fromField="startTime" toNode="Reset_Clock" toField="startTime"/>
 <ROUTE fromNode="Reset" fromField="stopTime" toNode="Reset_Clock" toField="stopTime"/>
 <ROUTE fromNode="Reset" fromField="enabled" toNode="Reset_Clock" toField="enabled"/>
