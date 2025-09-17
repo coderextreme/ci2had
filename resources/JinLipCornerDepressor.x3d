@@ -8,7 +8,7 @@
     <meta content="Chul Hee Jung" name="translator" />
     <meta content="Myeong Won Lee" name="translator" />
     <meta content="4 September 2022" name="created" />
-    <meta content="27 October 2024" name="modified" />
+    <meta content="14 July 2025" name="modified" />
     <meta content="Don Brutzman" name="translator" />
     <meta content="Joe D. Williams" name="translator" />
     <meta content="originals/README.html" name="reference" />
@@ -18,7 +18,7 @@
     <meta content="Bryn Farnsworth, FACS Visual Guidebook https://imotions.com/blog/learning/research-fundamentals/facial-action-coding-system" name="reference" />
     <meta content="Suwon VRLAB X3D Converter" name="generator" />
     <meta content="originals/SuwonHAnimFacialMotionConverter.mp4" name="MovingImage" />
-    <meta content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit" name="generator" />
+    <meta content="X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit" name="generator" />
     <meta content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/FacialAnimation/JinFacsAu15LipCornerDepressorMorpher.x3d" name="identifier" />
     <meta content="../license.html" name="license" />
   </head>
@@ -31,7 +31,7 @@
     <HAnimHumanoid DEF="hanim_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim_sacrum" name="sacrum">
-<WorldInfo title=".x3d" />
+<WorldInfo title="JinFacsAu15LipCornerDepressorMorpher.x3d" />
     <Background skyColor="0.8 0.9 1.0" />
     <NavigationInfo type="&quot;EXAMINE&quot;" />
     </HAnimSegment>

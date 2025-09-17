@@ -1,21 +1,29 @@
+// --- START OF FILE app.js ---
+
 var port = process.env.PORT || 3000;
 
-var path = require('path');
-var express = require('express');
-var http = require('http');
-var fs = require('fs');
+import { dirname } from 'path';
+import path from 'path';
+import express from 'express';
+import fs from 'fs';
+import http from 'http';
+import { globSync } from 'node:fs';
+import { glob } from 'node:fs/promises';
+import { fileURLToPath } from 'url';
+
+// import { runAndSend } from './src/main/node/runAndSend';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 var app = express();
-
-
 app.use(express.static(__dirname));
 
-function send(res, data, type, next) {
-	sendNoNext(res, data, type);
+function send(res, data, type, next, outfile) {
+	sendNoNext(res, data, type, outfile);
 	next();
 }
 
-function sendNoNext(res, data, type) {
+function sendNoNext(res, data, type, outfile) {
 	// console.error("Type", type);
 	try {
 		if (!type.startsWith("image/")) {
@@ -25,33 +33,35 @@ function sendNoNext(res, data, type) {
 	} catch (e) {
 		console.error(e);
 	}
+	console.log("    Replied with File", outfile);
 	res.send(data);
 }
 
 function magic(path, type) {
-    query = path.indexOf("?");
-    if (query >= 0) {
-	    path = path.substr(query);
-    }
-    var hash = path.indexOf("#");
-    if (hash > 0) {
-		path = path.substr(hash);
-    }
+    // The path argument to magic() is now a regular expression, so string operations are not needed.
     app.get(path, async function(req, res, next) {
-	var url = req._parsedUrl.pathname;
+	res.setHeader('Content-Type', type);
+	var url = req.path;
 	try {
 		while (url.startsWith("/")) {
 			url = url.substr(1);
 		}
-		console.error(req.ip+":  Requested", url);
-		url = __dirname+"/"+ url;
+		console.log(req.ip+":  Requested", url);
+		var wind = url.indexOf("www.web3d.org");
+		if (wind >= 0) {
+			url = url.substring(wind);
+			var cwind = config.examples().indexOf("www.web3d.org");
+			url = config.examples().substr(0, cwind) + url;
+		} else {
+			url = __dirname+"/"+ url;
+		}
 		if (fs.existsSync(url)) {
-			console.error("Reading", url);
+			console.log("Reading", url);
 			var data = await fs.promises.readFile(url);
 			if (type.startsWith("image") || type.startsWith("audio") || type.startsWith("video")) {
-				sendNoNext(res, data, type);
+				sendNoNext(res, data, type, url);
 			} else {
-				sendNoNext(res, data.toString(), type);
+				sendNoNext(res, data.toString(), type, url);
 			}
 		} else {
 			console.error("File does not exist", url);
@@ -63,48 +73,45 @@ function magic(path, type) {
     });
 }
 
-magic("*.gif", "image/gif");
-magic("*.jpg", "image/jpeg");
-magic("*.JPG", "image/jpeg");
-magic("*.jpeg", "image/jpeg");
-magic("*.png", "image/png");
-magic("*.mpg", "video/mpeg");
-magic("*.mp4", "video/mp4");
-magic("*.ogv", "video/ogg");
-magic("*.wav", "audio/wav");
-magic("*.mp3", "audio/mpeg3");
-magic("*.ply", "application/octet-stream");
-magic("*.stl", "application/octet-stream");
-magic("*.vs", "x-shader/x-vertex");
-magic("*.fs", "x-shader/x-fragment");
-// magic("*.vs", "text/plain");//"x-shader/x-vertex");
-// magic("*.fs", "text/plain");//"x-shader/x-fragment");
-magic("*.js", "text/javascript");
-magic("*.py", "text/python");
-magic("/dist/*.mjs", "text/javascript");
-magic("/src/main/node/*.mjs", "text/javascript");
-magic("*.js.map", "application/json");
-magic("*.csv", "text/csv");
-magic("/*.xhtml", "application/xhtml+xml");
-magic("/*.xsd", "application/xml");
-magic("/*.html", "text/html");
-magic("*.xslt", "text/xsl");
-magic("*.css", "text/css");
-magic("*.swf", "application/x-shockwave-flash");
-magic("/**/schema/*.json", "text/json");
-magic("*.x3d", "model/x3d+xml");
-magic("*.x3dv", "model/x3d+vrml");
-magic("*.wrl", "model/vrml");
-magic("*.gltf", "text/json");
-magic("*.glb", "application/octet-stream");
-magic("*.bin", "application/octet-stream");
-/*
-magic("*.xml", "text/xml");
-*/
+// EXPRESS 5 FIX: All 'magic' calls and app.get calls below now use Regular Expressions for routing.
+magic(/.*\.gif$/i, "image/gif");
+magic(/.*\.jpg$/i, "image/jpeg");
+magic(/.*\.jpeg$/i, "image/jpeg");
+magic(/.*\.png$/i, "image/png");
+magic(/.*\.mpg$/i, "video/mpeg");
+magic(/.*\.mp4$/i, "video/mp4");
+magic(/.*\.ogv$/i, "video/ogg");
+magic(/.*\.wav$/i, "audio/wav");
+magic(/.*\.mp3$/i, "audio/mpeg3");
+magic(/.*\.ply$/i, "application/octet-stream");
+magic(/.*\.stl$/i, "application/octet-stream");
+magic(/.*\.rb$/i, "application/octet-stream");
+magic(/.*\.clj$/i, "application/octet-stream");
+magic(/.*\.vs$/i, "x-shader/x-vertex");
+magic(/.*\.fs$/i, "x-shader/x-fragment");
+magic(/.*\.js$/i, "text/javascript");
+magic(/.*\.py$/i, "text/python");
+magic(/\/dist\/.*\.mjs$/i, "text/javascript");
+magic(/\/src\/main\/node\/.*\.mjs$/i, "text/javascript");
+magic(/.*\.js\.map$/i, "application/json");
+magic(/.*\.csv$/i, "text/csv");
+magic(/.*\.xhtml$/i, "application/xhtml+xml");
+magic(/.*\.xsd$/i, "application/xml");
+magic(/.*\.html$/i, "text/html");
+magic(/.*\.xslt$/i, "text/xsl");
+magic(/.*\.css$/i, "text/css");
+magic(/.*\.swf$/i, "application/x-shockwave-flash");
+magic(/.*\/schema\/.*\.json$/i, "text/json");
+magic(/.*\.x3d$/i, "model/x3d+xml");
+magic(/.*\.x3dv$/i, "model/x3d+vrml");
+magic(/.*\.wrl$/i, "model/vrml");
+magic(/.*\.gltf$/i, "text/json");
+magic(/.*\.glb$/i, "application/octet-stream");
+magic(/.*\.bin$/i, "application/octet-stream");
+magic(/.*\.zip$/i, "application/zip");
+magic(/.*\.wasm$/i, "application/octet-stream");
 
 
-http.createServer({
-}, app)
-.listen(port, '127.0.0.1', function () {
+http.createServer({}, app) .listen(port, '127.0.0.1', function () {
   console.log('Example app listening on port', port, "! Go to http://localhost:"+port+"/ in your browser.  CTRL-Click on the previous link, or copy and paste the link.  Hint.  Only FreeWRL works right now.  See README.md");
 });
