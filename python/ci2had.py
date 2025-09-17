@@ -229,7 +229,6 @@ def process_file(file_input, file_output):
     route.tail = "\n"
     route.set("fromNode", findAnimation(file_output)+"_Clock")
     route.set("fromField", "fraction_changed")
-    route.set("toNode", DEF+"_"+findAnimation(file_output))
     route.set("toNode", "AnimationAdapter_"+findAnimation(file_output))
     route.set("toField", "set_fraction")
     scene.append(route)
@@ -342,6 +341,15 @@ def process_file(file_input, file_output):
 #        scene.append(route)
 
 
+    def clean_xml_tree(element):
+        if element.attrib:
+            element.attrib = {k: str(v) if v is not None else ""
+                            for k, v in element.attrib.items()}
+        for child in element:
+            clean_xml_tree(child)
+
+    clean_xml_tree(root)
+
     header = '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">'
     xmlstr = xml.etree.ElementTree.tostring(root, encoding='unicode')
     xmlString = f"{header}{xmlstr}"
@@ -418,7 +426,7 @@ with open("../resources/Menu.x3d", "w") as menu_file:
     item = 1
     menu = ""
     for input_file in files:
-        if input_file.endswith(".x3d"):
+        if input_file.endswith(".x3d") and input_file.startswith("Jin"):
             output_file = processAFile(input_file, menu_file, item)
             item += 1
             menu += '"'+output_file.replace("../resources/", "")+'" '
