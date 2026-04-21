@@ -7,13 +7,17 @@
 <component name="Layering" level="1" />
 <component name="Text" level="1" />
 <meta name="title" content="ManyClocks.x3d" />
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/ManyClocks.x3d" />
+<meta name="identifier" content="https://raw.githubusercontent.com/coderextreme/ci2had/refs/heads/main/resources/ManyClocks.x3d" />
 <meta name="description" content="X3D scene with multiple facial animations controlled by a multi-selection menu" />
 <meta name="created" content="12 December 2024" />
 <meta name="modified" content="13 December 2024" />
 <meta name="creator" content="John Carlson, Joe Williams, Gyu Ri Cho, Hyun Ho Chu, Min Joo Lee, Yujin Jung" />
+<meta content="../license.html" name="license" /> <!-- Web3D Consortium License -->
 </head>
 <Scene>
+    <WorldInfo title="ManyClocks.x3d" />
+    <Background skyColor="0.8 0.9 1.0" />
+    <NavigationInfo type="&quot;EXAMINE&quot;" />
 <LayerSet activeLayer="1" order="1, 2"><Layer DEF="Model"><Viewpoint description="Initial View" position="0 20 110" />
 <TimeSensor DEF="Reset_Clock" cycleInterval="0.01" loop="false" enabled="true" />
 <TimeSensor DEF="Contempt_Clock" cycleInterval="0.99" loop="true" enabled="false" />
@@ -90,9 +94,6 @@
 </HAnimSegment>
 <HAnimJoint DEF="hanim0_skullbase" name="skullbase">
 <HAnimSegment DEF="hanim_sacrum" name="sacrum">
-<WorldInfo title="JinFacsAu45BlinkMorpher.x3d" />
-    <Background skyColor="0.8 0.9 1.0" />
-    <NavigationInfo type="&quot;EXAMINE&quot;" />
     </HAnimSegment>
 <HAnimSegment DEF="hanim_Lower_teeth" name="lower_teeth">
 <Transform DEF="Lower_teeth_JinBlink" translation="0 8.43 11.43">
