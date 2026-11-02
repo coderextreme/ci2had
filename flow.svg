@@ -1,0 +1,291 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 1090" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bg-radial" cx="50%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#141e33" />
+      <stop offset="100%" stop-color="#090d16" />
+    </radialGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="grad-input" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    
+    <linearGradient id="grad-python" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#162c46" />
+      <stop offset="100%" stop-color="#0d1b2d" />
+    </linearGradient>
+
+    <linearGradient id="grad-resource" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#231c3d" />
+      <stop offset="100%" stop-color="#131024" />
+    </linearGradient>
+
+    <linearGradient id="grad-side" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#182334" />
+      <stop offset="100%" stop-color="#0e1724" />
+    </linearGradient>
+
+    <linearGradient id="grad-target" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#122b2b" />
+      <stop offset="100%" stop-color="#0a1a1b" />
+    </linearGradient>
+
+    <!-- Marker Arrowheads -->
+    <marker id="arr-main" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#38bdf8" />
+    </marker>
+    <marker id="arr-branch" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#818cf8" />
+    </marker>
+    <marker id="arr-route" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#fbbf24" />
+    </marker>
+
+    <!-- Filters -->
+    <filter id="shadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+    
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Background Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.6" />
+    </pattern>
+  </defs>
+
+  <style>
+    text {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      fill: #f8fafc;
+    }
+    .code-font {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    }
+    .card-desc {
+      font-size: 12px;
+      fill: #94a3b8;
+    }
+    .step-num {
+      font-size: 11px;
+      font-weight: 700;
+      fill: #38bdf8;
+    }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="920" height="1090" fill="url(#bg-radial)" />
+  <rect width="920" height="1090" fill="url(#grid)" />
+
+  <!-- HEADER -->
+  <g transform="translate(90, 36)">
+    <rect x="-10" y="0" width="760" height="74" rx="8" fill="#131d31" fill-opacity="0.5" stroke="#1e293b" />
+    <text x="16" y="28" fill="#f8fafc" font-size="20" font-weight="700">ci2had Dataflow &amp; Processing Architecture</text>
+    <text x="16" y="48" fill="#64748b" font-size="13">CoordinateInterpolator to HAnimDisplacer transformation &amp; event routing pipeline</text>
+    
+    <!-- Legend Chips -->
+    <g transform="translate(470, 16)">
+      <rect x="0" y="0" width="82" height="20" rx="4" fill="#0369a1" fill-opacity="0.25" stroke="#38bdf8" stroke-width="0.8" />
+      <text x="41" y="14" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="600">SCRIPT</text>
+
+      <rect x="92" y="0" width="86" height="20" rx="4" fill="#6d28d9" fill-opacity="0.25" stroke="#c084fc" stroke-width="0.8" />
+      <text x="135" y="14" text-anchor="middle" fill="#c084fc" font-size="10" font-weight="600">.X3D FILE</text>
+
+      <rect x="188" y="0" width="74" height="20" rx="4" fill="#047857" fill-opacity="0.25" stroke="#34d399" stroke-width="0.8" />
+      <text x="225" y="14" text-anchor="middle" fill="#34d399" font-size="10" font-weight="600">OUTPUT</text>
+    </g>
+  </g>
+
+  <!-- TIMELINE / CONNECTOR SPINE -->
+  <!-- Left Step Rail -->
+  <line x1="52" y1="174" x2="52" y2="990" stroke="#1e293b" stroke-width="2" stroke-dasharray="4 4" />
+
+  <!-- Step Flow Markers on Spine -->
+  <g id="step-indicators">
+    <circle cx="52" cy="174" r="14" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="52" y="178" text-anchor="middle" class="step-num">01</text>
+
+    <circle cx="52" cy="288" r="14" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="52" y="292" text-anchor="middle" class="step-num">02</text>
+
+    <circle cx="52" cy="406" r="14" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="52" y="410" text-anchor="middle" class="step-num">03</text>
+
+    <circle cx="52" cy="524" r="14" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="52" y="528" text-anchor="middle" class="step-num">04</text>
+
+    <circle cx="52" cy="640" r="14" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="52" y="644" text-anchor="middle" class="step-num">05</text>
+
+    <circle cx="52" cy="756" r="14" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="52" y="760" text-anchor="middle" class="step-num">06</text>
+
+    <circle cx="52" cy="874" r="14" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="52" y="878" text-anchor="middle" class="step-num">07</text>
+
+    <circle cx="52" cy="990" r="14" fill="#0f172a" stroke="#34d399" stroke-width="1.5" />
+    <text x="52" y="994" text-anchor="middle" class="step-num" fill="#34d399">08</text>
+  </g>
+
+  <!-- PIPELINE ARROWS (Vertical Center = 310) -->
+  <!-- 1 -> 2 -->
+  <path d="M 310 208 L 310 244" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arr-main)" />
+  <!-- 2 -> 3 -->
+  <path d="M 310 328 L 310 364" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arr-main)" />
+  <!-- 3 -> 4 -->
+  <path d="M 310 444 L 310 480" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arr-main)" />
+  <!-- 4 -> 5 -->
+  <path d="M 310 564 L 310 600" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arr-main)" />
+  <!-- 5 -> 6 -->
+  <path d="M 310 676 L 310 712" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arr-main)" />
+  <!-- 6 -> 7 -->
+  <path d="M 310 796 L 310 832" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arr-main)" />
+  <!-- 7 -> 8 -->
+  <path d="M 310 912 L 310 948" stroke="#34d399" stroke-width="2" fill="none" marker-end="url(#arr-main)" />
+
+  <!-- BRANCH ARROWS (To Lateral Cards) -->
+  <!-- ci2had.py branch to FACS_AU*_Output.x3d -->
+  <path d="M 530 288 L 566 288" stroke="#818cf8" stroke-width="2" fill="none" marker-end="url(#arr-branch)" />
+  <!-- arroute.py branch to Rewire action -->
+  <path d="M 530 524 L 566 524" stroke="#fbbf24" stroke-width="2" stroke-dasharray="3 3" fill="none" marker-end="url(#arr-route)" />
+
+
+  <!-- ==================== STAGE CARDS ==================== -->
+
+  <!-- STEP 1: RAW SOURCE FILES -->
+  <g transform="translate(90, 140)" filter="url(#shadow)">
+    <rect width="440" height="68" rx="8" fill="url(#grad-input)" stroke="#475569" stroke-width="1.2" />
+    <circle cx="28" cy="34" r="14" fill="#1e293b" stroke="#64748b" />
+    <!-- 3D / Database Icon -->
+    <path d="M 22 29 L 28 26 L 34 29 L 28 32 Z M 22 33 L 28 36 L 34 33 M 22 37 L 28 40 L 34 37" 
+          stroke="#94a3b8" stroke-width="1.3" fill="none" stroke-linejoin="round" />
+    <rect x="52" y="12" width="76" height="16" rx="3" fill="#334155" />
+    <text x="90" y="24" text-anchor="middle" fill="#cbd5e1" class="badge">Source Data</text>
+    <text x="52" y="44" class="card-title code-font">Raw Jin FACS AU .x3d Files</text>
+    <text x="52" y="58" class="card-desc">Action Unit keyframes using CoordinateInterpolator arrays</text>
+  </g>
+
+  <!-- STEP 2: PYTHON/CI2HAD.PY -->
+  <g transform="translate(90, 248)" filter="url(#shadow)">
+    <rect width="440" height="80" rx="8" fill="url(#grad-python)" stroke="#0284c7" stroke-width="1.5" />
+    <circle cx="28" cy="40" r="14" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" />
+    <!-- Code brackets icon -->
+    <path d="M 25 35 L 21 40 L 25 45 M 31 35 L 35 40 L 31 45" stroke="#38bdf8" stroke-width="1.6" fill="none" stroke-linecap="round" />
+    <rect x="52" y="14" width="98" height="16" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="101" y="26" text-anchor="middle" fill="#38bdf8" class="badge">Conversion Core</text>
+    <text x="52" y="48" class="card-title code-font" fill="#bae6fd">python/ci2had.py</text>
+    <text x="52" y="66" class="card-desc">Diffs coordinates vs. neutral face; outputs HAnimDisplacers</text>
+  </g>
+
+  <!-- STEP 2 - BRANCH LATERAL: FACS_AU*_OUTPUT.X3D -->
+  <g transform="translate(570, 258)" filter="url(#shadow)">
+    <rect width="310" height="60" rx="6" fill="url(#grad-side)" stroke="#6366f1" stroke-width="1.2" />
+    <rect x="14" y="10" width="76" height="15" rx="3" fill="#4338ca" fill-opacity="0.3" />
+    <text x="52" y="21" text-anchor="middle" fill="#a5b4fc" class="badge">Morph Target</text>
+    <text x="14" y="38" font-size="13" font-weight="600" class="code-font" fill="#e0e7ff">resources/FACS_AU*_Output.x3d</text>
+    <text x="14" y="50" font-size="11" fill="#94a3b8">HAnimDisplacer coordIndex &amp; displacements</text>
+  </g>
+
+  <!-- STEP 3: MENU.X3D & MULTIFACIALANIMATIONMENU.X3D -->
+  <g transform="translate(90, 368)" filter="url(#shadow)">
+    <rect width="440" height="76" rx="8" fill="url(#grad-resource)" stroke="#7c3aed" stroke-width="1.3" />
+    <circle cx="28" cy="38" r="14" fill="#5b21b6" fill-opacity="0.3" stroke="#a78bfa" />
+    <!-- Menu / Grid icon -->
+    <path d="M 23 33 H 33 M 23 38 H 33 M 23 43 H 33" stroke="#c4b5fd" stroke-width="1.5" stroke-linecap="round" />
+    <rect x="52" y="14" width="86" height="16" rx="3" fill="#5b21b6" fill-opacity="0.4" />
+    <text x="95" y="26" text-anchor="middle" fill="#c4b5fd" class="badge">X3D Resource</text>
+    <text x="52" y="47" class="card-title code-font" fill="#ddd6fe">resources/Menu.x3d</text>
+    <text x="52" y="63" class="card-desc">&amp; MultiFacialAnimationMenu.x3d (Composite scene scaffold)</text>
+  </g>
+
+  <!-- STEP 4: PYTHON/ARROUTE.PY -->
+  <g transform="translate(90, 484)" filter="url(#shadow)">
+    <rect width="440" height="80" rx="8" fill="url(#grad-python)" stroke="#0284c7" stroke-width="1.5" />
+    <circle cx="28" cy="40" r="14" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" />
+    <!-- Network routing icon -->
+    <path d="M 22 43 L 26 35 L 34 43 M 26 35 V 45" stroke="#38bdf8" stroke-width="1.5" fill="none" stroke-linecap="round" />
+    <rect x="52" y="14" width="94" height="16" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="99" y="26" text-anchor="middle" fill="#38bdf8" class="badge">Route Manager</text>
+    <text x="52" y="48" class="card-title code-font" fill="#bae6fd">python/arroute.py</text>
+    <text x="52" y="66" class="card-desc">Rewires event chains to drive HAnimDisplacer scalar weights</text>
+  </g>
+
+  <!-- STEP 4 - BRANCH LATERAL: ROUTE ACTION NOTE -->
+  <g transform="translate(570, 494)" filter="url(#shadow)">
+    <rect width="310" height="60" rx="6" fill="#1c1917" stroke="#d97706" stroke-width="1.2" />
+    <rect x="14" y="10" width="80" height="15" rx="3" fill="#b45309" fill-opacity="0.3" />
+    <text x="54" y="21" text-anchor="middle" fill="#fde68a" class="badge">Event Rewiring</text>
+    <text x="14" y="38" font-size="12" font-weight="600" class="code-font" fill="#fef3c7">&lt;ROUTE&gt; Reconfiguration</text>
+    <text x="14" y="50" font-size="11" fill="#cbd5e1">TimeSensor → ScalarInterpolator → Displacer.weight</text>
+  </g>
+
+  <!-- STEP 5: MANYCLOCKS.X3D / UPDATED MENUS -->
+  <g transform="translate(90, 604)" filter="url(#shadow)">
+    <rect width="440" height="72" rx="8" fill="url(#grad-resource)" stroke="#7c3aed" stroke-width="1.3" />
+    <circle cx="28" cy="36" r="14" fill="#5b21b6" fill-opacity="0.3" stroke="#a78bfa" />
+    <!-- Clock icon -->
+    <circle cx="28" cy="36" r="6" stroke="#c4b5fd" stroke-width="1.4" fill="none" />
+    <path d="M 28 33 V 36 L 30 38" stroke="#c4b5fd" stroke-width="1.4" fill="none" stroke-linecap="round" />
+    <rect x="52" y="12" width="102" height="16" rx="3" fill="#5b21b6" fill-opacity="0.4" />
+    <text x="103" y="24" text-anchor="middle" fill="#c4b5fd" class="badge">Composite Scene</text>
+    <text x="52" y="45" class="card-title code-font" fill="#ddd6fe">resources/ManyClocks.x3d</text>
+    <text x="52" y="60" class="card-desc">Multi-clock choreography &amp; routed touch trigger definitions</text>
+  </g>
+
+  <!-- STEP 6: PYTHON/CLEANUP.PY -->
+  <g transform="translate(90, 716)" filter="url(#shadow)">
+    <rect width="440" height="80" rx="8" fill="url(#grad-python)" stroke="#0284c7" stroke-width="1.5" />
+    <circle cx="28" cy="40" r="14" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" />
+    <!-- Broom / Clean spark icon -->
+    <path d="M 23 45 L 32 36 M 29 33 L 34 38 M 22 33 L 24 35 M 32 43 L 34 45" stroke="#38bdf8" stroke-width="1.4" stroke-linecap="round" />
+    <rect x="52" y="14" width="88" height="16" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="96" y="26" text-anchor="middle" fill="#38bdf8" class="badge">Optimization</text>
+    <text x="52" y="48" class="card-title code-font" fill="#bae6fd">python/cleanup.py</text>
+    <text x="52" y="66" class="card-desc">Sanitizes &lt;Script&gt; CDATA sections &amp; purges residual nodes</text>
+  </g>
+
+  <!-- STEP 7: CLEANED MULTIFACIAL ANIMATION MENU -->
+  <g transform="translate(90, 836)" filter="url(#shadow)">
+    <rect width="440" height="76" rx="8" fill="url(#grad-resource)" stroke="#10b981" stroke-width="1.4" />
+    <circle cx="28" cy="38" r="14" fill="#065f46" fill-opacity="0.3" stroke="#34d399" />
+    <!-- Checkmark file icon -->
+    <path d="M 23 37 L 27 41 L 34 33" stroke="#34d399" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <rect x="52" y="14" width="108" height="16" rx="3" fill="#065f46" fill-opacity="0.5" />
+    <text x="106" y="26" text-anchor="middle" fill="#a7f3d0" class="badge">Production Scene</text>
+    <text x="52" y="47" class="card-title code-font" font-size="14" fill="#a7f3d0">CleanedMultiFacialAnimationMenu.x3d</text>
+    <text x="52" y="63" class="card-desc">Validated, standalone interactive H-Anim blendshape test menu</text>
+  </g>
+
+  <!-- STEP 8: TARGET RUNTIME / TEST -->
+  <g transform="translate(90, 952)" filter="url(#shadow)">
+    <rect width="440" height="76" rx="8" fill="url(#grad-target)" stroke="#059669" stroke-width="1.8" />
+    <circle cx="28" cy="38" r="14" fill="#047857" fill-opacity="0.4" stroke="#6ee7b7" />
+    <!-- Display / Monitor icon -->
+    <rect x="22" y="30" width="12" height="10" rx="1" stroke="#a7f3d0" stroke-width="1.4" fill="none" />
+    <path d="M 26 44 H 30 M 28 40 V 44" stroke="#a7f3d0" stroke-width="1.4" />
+    <rect x="52" y="14" width="116" height="16" rx="3" fill="#047857" fill-opacity="0.5" />
+    <text x="110" y="26" text-anchor="middle" fill="#6ee7b7" class="badge">Target Runtime &amp; QA</text>
+    <text x="52" y="47" class="card-title" fill="#ecfdf5">Render &amp; Test in FreeWRL / Sunrize</text>
+    <text x="52" y="63" class="card-desc code-font" font-size="11" fill="#6ee7b7">freeWRL -J DUK Menu.x3d | Ant Schematron Validation</text>
+  </g>
+
+  <!-- FOOTER NOTICE -->
+  <text x="460" y="1060" text-anchor="middle" fill="#475569" font-size="11" font-weight="500">
+    ci2had pipeline • ISO/IEC 19774 Humanoid Animation (H-Anim) Architecture
+  </text>
+</svg>

@@ -1,0 +1,456 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 1020" width="100%" height="100%">
+  <defs>
+    <!-- Background Canvas Gradients -->
+    <radialGradient id="bg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#05080e" />
+    </radialGradient>
+
+    <!-- Zone Backgrounds -->
+    <linearGradient id="g-py-lane" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0e2338" />
+      <stop offset="100%" stop-color="#0a1726" />
+    </linearGradient>
+
+    <linearGradient id="g-res-lane" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1d1333" />
+      <stop offset="100%" stop-color="#100b1e" />
+    </linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="g-card-py" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#132f4c" />
+      <stop offset="100%" stop-color="#0a1c2e" />
+    </linearGradient>
+
+    <linearGradient id="g-card-res" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a1d47" />
+      <stop offset="100%" stop-color="#171029" />
+    </linearGradient>
+
+    <linearGradient id="g-card-qa" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f3830" />
+      <stop offset="100%" stop-color="#09211c" />
+    </linearGradient>
+
+    <!-- Arrow Markers -->
+    <marker id="m-down" markerWidth="8" markerHeight="8" refX="4" refY="5" orient="auto">
+      <path d="M 1 1 L 4 7 L 7 1 Z" fill="#38bdf8" />
+    </marker>
+    <marker id="m-up" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto">
+      <path d="M 1 7 L 4 1 L 7 7 Z" fill="#c084fc" />
+    </marker>
+    <marker id="m-right-blue" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#38bdf8" />
+    </marker>
+    <marker id="m-right-green" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#34d399" />
+    </marker>
+    <marker id="m-pink" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto">
+      <path d="M 1 7 L 4 1 L 7 7 Z" fill="#fb7185" />
+    </marker>
+
+    <!-- Shadows -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+
+    <!-- Blueprint Grid -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.3" />
+    </pattern>
+  </defs>
+
+  <style>
+    text {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, sans-serif;
+    }
+    .lane-label {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .card-title {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .badge {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .code {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 10.5px;
+    }
+    .desc {
+      font-size: 11px;
+      fill: #94a3b8;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1680" height="1020" fill="url(#bg)" />
+  <rect width="1680" height="1020" fill="url(#grid)" />
+
+  <!-- HEADER -->
+  <g transform="translate(40, 20)">
+    <rect width="1600" height="64" rx="8" fill="#131e33" fill-opacity="0.8" stroke="#1e293b" />
+    <text x="24" y="27" fill="#f8fafc" font-size="18" font-weight="800">ci2had Architecture: Python Scripts &amp; ../resources/ File Flow</text>
+    <text x="24" y="47" fill="#64748b" font-size="12">Shows execution context (cd python) with ET.parse() reading from and open() writing to ../resources/ (ISO/IEC 19774 H-Anim)</text>
+
+    <!-- Legend -->
+    <g transform="translate(1120, 20)">
+      <rect x="0" y="0" width="100" height="24" rx="4" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="0.8" />
+      <text x="50" y="16" text-anchor="middle" fill="#38bdf8" class="badge">cd python (10)</text>
+
+      <rect x="110" y="0" width="115" height="24" rx="4" fill="#6b21a8" fill-opacity="0.3" stroke="#c084fc" stroke-width="0.8" />
+      <text x="167" y="16" text-anchor="middle" fill="#c084fc" class="badge">../resources .X3D</text>
+
+      <rect x="235" y="0" width="95" height="24" rx="4" fill="#065f46" fill-opacity="0.3" stroke="#34d399" stroke-width="0.8" />
+      <text x="282" y="16" text-anchor="middle" fill="#34d399" class="badge">VERIFICATION</text>
+    </g>
+  </g>
+
+  <!-- ==================== HORIZONTAL LANES ==================== -->
+  <!-- Top Lane: Execution Directory (python/) -->
+  <g transform="translate(40, 100)">
+    <rect width="1600" height="395" rx="8" fill="url(#g-py-lane)" stroke="#0369a1" stroke-width="1.2" stroke-dasharray="6 3" />
+    <rect x="16" y="14" width="165" height="22" rx="4" fill="#0369a1" fill-opacity="0.4" />
+    <text x="98" y="29" text-anchor="middle" fill="#38bdf8" class="lane-label">Directory: python/</text>
+    <text x="195" y="29" class="desc" font-size="11">Working directory for script execution; all resources are addressed via relative paths: ../resources/&lt;file&gt;.x3d</text>
+  </g>
+
+  <!-- Bottom Lane: Target Storage Directory (resources/) -->
+  <g transform="translate(40, 520)">
+    <rect width="1600" height="460" rx="8" fill="url(#g-res-lane)" stroke="#6b21a8" stroke-width="1.2" stroke-dasharray="6 3" />
+    <rect x="16" y="14" width="185" height="22" rx="4" fill="#581c87" fill-opacity="0.5" />
+    <text x="108" y="29" text-anchor="middle" fill="#c084fc" class="lane-label">Directory: resources/</text>
+    <text x="215" y="29" class="desc" font-size="11">Houses all generated, routed, and cleaned .x3d models, UI menus, and leaf morph outputs</text>
+  </g>
+
+
+  <!-- ==================== STAGE 1: INGESTION & CONVERSION ==================== -->
+  <!-- External FACS Source (Left of Lane 1) -->
+  <g transform="translate(56, 150)" filter="url(#shadow)">
+    <rect width="180" height="120" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1.2" />
+    <rect x="8" y="8" width="80" height="15" rx="3" fill="#334155" />
+    <text x="48" y="19" text-anchor="middle" fill="#cbd5e1" class="badge">INPUT DATASET</text>
+    <text x="8" y="38" class="code" fill="#f8fafc" font-size="10">Jin_Facs_au_x3d_...</text>
+    <text x="8" y="52" class="desc" font-size="9.5">Raw Jin FACS action units</text>
+    <text x="8" y="70" class="code" fill="#f43f5e" font-size="9.5">&lt;CoordinateInterpolator&gt;</text>
+    <text x="8" y="86" class="code" fill="#fbbf24" font-size="9.5">&lt;Coordinate point="..."/&gt;</text>
+    <text x="8" y="104" class="desc" font-size="9.5">Dense point animation</text>
+  </g>
+
+  <!-- Script 1: ci2had.py -->
+  <g transform="translate(250, 150)" filter="url(#shadow)">
+    <rect width="220" height="155" rx="6" fill="url(#g-card-py)" stroke="#0284c7" stroke-width="1.4" />
+    <rect x="10" y="8" width="90" height="15" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="55" y="19" text-anchor="middle" fill="#38bdf8" class="badge">CONVERTER</text>
+    <text x="10" y="38" class="card-title" fill="#e0f2fe">ci2had.py</text>
+    <text x="10" y="54" class="code" fill="#fbbf24">ET.parse(facs_input)</text>
+    <text x="10" y="70" class="desc">delta = AU_pt - Neutral_pt</text>
+    <text x="10" y="86" class="desc">Extracts &lt;HAnimDisplacer&gt;</text>
+    <line x1="10" y1="94" x2="210" y2="94" stroke="#1e3a5f" />
+    <text x="10" y="108" class="code" fill="#38bdf8">open("../resources/Menu.x3d")</text>
+    <text x="10" y="124" class="code" fill="#38bdf8">open("../resources/FACS_...")</text>
+    <text x="10" y="140" class="code" fill="#38bdf8">open("../resources/Multi...")</text>
+  </g>
+
+  <!-- Script 2: cleanwink.py -->
+  <g transform="translate(250, 320)" filter="url(#shadow)">
+    <rect width="220" height="110" rx="6" fill="url(#g-card-py)" stroke="#0284c7" stroke-width="1.2" />
+    <rect x="10" y="8" width="94" height="15" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="57" y="19" text-anchor="middle" fill="#38bdf8" class="badge">WINK ISOLATOR</text>
+    <text x="10" y="38" class="card-title" fill="#e0f2fe">cleanwink.py</text>
+    <text x="10" y="54" class="desc">Isolates AU46 (blink/wink)</text>
+    <text x="10" y="70" class="code" fill="#fbbf24">ET.parse(".../AU46.x3d")</text>
+    <text x="10" y="88" class="code" fill="#38bdf8">open("../resources/</text>
+    <text x="40" y="102" class="code" fill="#38bdf8">CleanWink.x3d", "w")</text>
+  </g>
+
+  <!-- Script 3: had2ci.py (Roundtrip Reverse) -->
+  <g transform="translate(56, 320)" filter="url(#shadow)">
+    <rect width="180" height="125" rx="6" fill="url(#g-card-py)" stroke="#f43f5e" stroke-width="1.3" stroke-dasharray="3 2" />
+    <rect x="8" y="8" width="98" height="15" rx="3" fill="#881337" fill-opacity="0.4" />
+    <text x="57" y="19" text-anchor="middle" fill="#fb7185" class="badge">ROUNDTRIP TEST</text>
+    <text x="8" y="38" class="card-title" fill="#ffe4e6">had2ci.py</text>
+    <text x="8" y="54" class="code" fill="#fb7185">HAD → CI synthesis</text>
+    <text x="8" y="70" class="code" fill="#fbbf24">ET.parse("../resources/</text>
+    <text x="18" y="84" class="code" fill="#fbbf24">FACS_AU*_Output.x3d")</text>
+    <text x="8" y="100" class="desc">Verifies delta fidelity</text>
+    <text x="8" y="114" class="desc">&amp; non-displacer fallback</text>
+  </g>
+
+
+  <!-- ==================== STAGE 2: INITIAL GENERATED RESOURCES ==================== -->
+  <!-- Resource: FACS_AU*_Output.x3d -->
+  <g transform="translate(250, 565)" filter="url(#shadow)">
+    <rect width="220" height="95" rx="6" fill="url(#g-card-res)" stroke="#6366f1" stroke-width="1.2" />
+    <rect x="10" y="8" width="80" height="15" rx="3" fill="#3730a3" fill-opacity="0.4" />
+    <text x="50" y="19" text-anchor="middle" fill="#c7d2fe" class="badge">LEAF TARGET</text>
+    <text x="10" y="38" class="card-title" fill="#e0e7ff" font-size="11.5">../resources/</text>
+    <text x="10" y="52" class="card-title" fill="#a5b4fc" font-size="11.5">FACS_AU*_Output.x3d</text>
+    <text x="10" y="70" class="desc">Individual HAnimDisplacer units</text>
+    <text x="10" y="86" class="code" fill="#818cf8">&lt;HAnimDisplacer weight="0"/&gt;</text>
+  </g>
+
+  <!-- Resource: Menu.x3d -->
+  <g transform="translate(250, 680)" filter="url(#shadow)">
+    <rect width="220" height="95" rx="6" fill="url(#g-card-res)" stroke="#a855f7" stroke-width="1.3" />
+    <rect x="10" y="8" width="80" height="15" rx="3" fill="#6b21a8" fill-opacity="0.4" />
+    <text x="50" y="19" text-anchor="middle" fill="#f3e8ff" class="badge">PRIMARY MENU</text>
+    <text x="10" y="38" class="card-title" fill="#f3e8ff" font-size="12">../resources/Menu.x3d</text>
+    <text x="10" y="56" class="desc">Composite face model scaffold</text>
+    <text x="10" y="72" class="desc">All action units loaded</text>
+    <text x="10" y="88" class="code" fill="#c084fc">Launch target in FreeWRL</text>
+  </g>
+
+  <!-- Resource: MultiFacialAnimationMenu.x3d -->
+  <g transform="translate(250, 795)" filter="url(#shadow)">
+    <rect width="220" height="95" rx="6" fill="url(#g-card-res)" stroke="#a855f7" stroke-width="1.3" />
+    <rect x="10" y="8" width="84" height="15" rx="3" fill="#6b21a8" fill-opacity="0.4" />
+    <text x="52" y="19" text-anchor="middle" fill="#f3e8ff" class="badge">COMPOSITE AU</text>
+    <text x="10" y="38" class="card-title" fill="#f3e8ff" font-size="11">../resources/</text>
+    <text x="10" y="52" class="card-title" fill="#e9d5ff" font-size="11">MultiFacialAnimationMenu.x3d</text>
+    <text x="10" y="70" class="desc">Multi-expression face scene</text>
+    <text x="10" y="86" class="code" fill="#fca5a5">Pending route wiring &amp; cleanup</text>
+  </g>
+
+  <!-- Resource: CleanWink.x3d -->
+  <g transform="translate(250, 905)" filter="url(#shadow)">
+    <rect width="220" height="60" rx="6" fill="url(#g-card-res)" stroke="#0ea5e9" stroke-width="1.1" />
+    <text x="10" y="24" class="card-title" fill="#bae6fd" font-size="11.5">../resources/CleanWink.x3d</text>
+    <text x="10" y="44" class="desc" font-size="10.5">Isolated AU46 test model with displacers</text>
+  </g>
+
+
+  <!-- ==================== STAGE 3: CLOCKS, ROUTING & SWITCHING ==================== -->
+  <!-- Script 4: arroute.py -->
+  <g transform="translate(540, 150)" filter="url(#shadow)">
+    <rect width="240" height="145" rx="6" fill="url(#g-card-py)" stroke="#0284c7" stroke-width="1.4" />
+    <rect x="10" y="8" width="94" height="15" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="57" y="19" text-anchor="middle" fill="#38bdf8" class="badge">AUTO ROUTER</text>
+    <text x="10" y="38" class="card-title" fill="#e0f2fe">arroute.py</text>
+    <text x="10" y="54" class="code" fill="#fbbf24">ET.parse("../resources/Menu.x3d")</text>
+    <text x="10" y="70" class="desc">Rewires routes for weights:</text>
+    <text x="10" y="86" class="code" fill="#38bdf8">TimeSensor → ScalarInterp</text>
+    <text x="10" y="100" class="code" fill="#34d399">ScalarInterp → Displacer.weight</text>
+    <text x="10" y="116" class="desc">Strips legacy Coordinate.point</text>
+    <text x="10" y="132" class="code" fill="#38bdf8">open("../resources/Menu.x3d", "w")</text>
+  </g>
+
+  <!-- Script 5 & 6: manyclocks.py / manyclocks2.py -->
+  <g transform="translate(540, 310)" filter="url(#shadow)">
+    <rect width="240" height="165" rx="6" fill="url(#g-card-py)" stroke="#0284c7" stroke-width="1.5" />
+    <rect x="10" y="8" width="96" height="15" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="58" y="19" text-anchor="middle" fill="#38bdf8" class="badge">CLOCK ENGINE</text>
+    <text x="10" y="38" class="card-title" fill="#e0f2fe">manyclocks.py / 2.py</text>
+    <text x="10" y="54" class="code" fill="#fbbf24">ET.parse("../resources/Multi...")</text>
+    <text x="10" y="70" class="desc">Generates dedicated TimeSensors</text>
+    <text x="10" y="86" class="desc">Builds LayerSet HUD &amp; MenuItem</text>
+    <text x="10" y="102" class="desc">Enables simultaneous AU toggle</text>
+    <line x1="10" y1="110" x2="230" y2="110" stroke="#1e3a5f" />
+    <text x="10" y="126" class="code" fill="#38bdf8">open("../resources/</text>
+    <text x="40" y="142" class="code" fill="#38bdf8">ManyClocks.x3d", "w")</text>
+  </g>
+
+  <!-- Resource: ManyClocks.x3d -->
+  <g transform="translate(540, 680)" filter="url(#shadow)">
+    <rect width="240" height="120" rx="6" fill="url(#g-card-res)" stroke="#a855f7" stroke-width="1.3" />
+    <rect x="10" y="8" width="100" height="15" rx="3" fill="#6b21a8" fill-opacity="0.4" />
+    <text x="60" y="19" text-anchor="middle" fill="#f3e8ff" class="badge">ROUTED CLOCKS</text>
+    <text x="10" y="38" class="card-title" fill="#f3e8ff" font-size="12">../resources/</text>
+    <text x="10" y="54" class="card-title" fill="#ddd6fe" font-size="12">ManyClocks.x3d</text>
+    <text x="10" y="72" class="desc">Individual clocks &amp; touch toggles</text>
+    <text x="10" y="88" class="desc">Simultaneous animation HUD</text>
+    <text x="10" y="106" class="code" fill="#fca5a5">Requires CDATA cleanup</text>
+  </g>
+
+
+  <!-- ==================== STAGE 4: AVATAR INTEGRATION & SWITCHING ==================== -->
+  <!-- Script 7: bigswitch.py -->
+  <g transform="translate(850, 150)" filter="url(#shadow)">
+    <rect width="230" height="135" rx="6" fill="url(#g-card-py)" stroke="#0284c7" stroke-width="1.3" />
+    <rect x="10" y="8" width="94" height="15" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="57" y="19" text-anchor="middle" fill="#38bdf8" class="badge">SWITCH MAKER</text>
+    <text x="10" y="38" class="card-title" fill="#e0f2fe">bigswitch.py</text>
+    <text x="10" y="54" class="code" fill="#fbbf24">ET.parse("../resources/...")</text>
+    <text x="10" y="70" class="desc">Embeds models into &lt;Switch&gt;</text>
+    <text x="10" y="86" class="desc">Routes touch to whichChoice</text>
+    <text x="10" y="104" class="code" fill="#38bdf8">open("../resources/</text>
+    <text x="40" y="118" class="code" fill="#38bdf8">BigSwitch.x3d", "w")</text>
+  </g>
+
+  <!-- Script 8 & 9: singlehuman.py & multihuman.py -->
+  <g transform="translate(850, 310)" filter="url(#shadow)">
+    <rect width="230" height="165" rx="6" fill="url(#g-card-py)" stroke="#0891b2" stroke-width="1.4" />
+    <rect x="10" y="8" width="104" height="15" rx="3" fill="#155e75" fill-opacity="0.4" />
+    <text x="62" y="19" text-anchor="middle" fill="#67e8f9" class="badge">AVATAR BUILDER</text>
+    <text x="10" y="38" class="card-title" fill="#cffafe">singlehuman / multi...</text>
+    <text x="10" y="54" class="code" fill="#fbbf24">ET.parse("../resources/...")</text>
+    <text x="10" y="70" class="desc">Mounts displacers to skeleton</text>
+    <text x="10" y="86" class="code" fill="#22d3ee">&lt;HAnimHumanoid name="Jin"&gt;</text>
+    <text x="10" y="102" class="desc">Composites side-by-side avatars</text>
+    <line x1="10" y1="110" x2="220" y2="110" stroke="#164e63" />
+    <text x="10" y="126" class="code" fill="#38bdf8">open("../resources/Single...")</text>
+    <text x="10" y="142" class="code" fill="#38bdf8">open("../resources/Multi...")</text>
+  </g>
+
+  <!-- Resource: SingleHuman / MultiHuman / BigSwitch -->
+  <g transform="translate(850, 680)" filter="url(#shadow)">
+    <rect width="230" height="120" rx="6" fill="url(#g-card-res)" stroke="#0891b2" stroke-width="1.3" />
+    <rect x="10" y="8" width="88" height="15" rx="3" fill="#155e75" fill-opacity="0.4" />
+    <text x="54" y="19" text-anchor="middle" fill="#67e8f9" class="badge">AVATAR MODELS</text>
+    <text x="10" y="38" class="card-title" fill="#cffafe" font-size="11.5">../resources/SingleHuman.x3d</text>
+    <text x="10" y="54" class="card-title" fill="#cffafe" font-size="11.5">../resources/MultiHuman.x3d</text>
+    <text x="10" y="70" class="card-title" fill="#cffafe" font-size="11.5">../resources/BigSwitch.x3d</text>
+    <text x="10" y="90" class="desc">Integrated Jin character hierarchy</text>
+    <text x="10" y="106" class="desc">&amp; comparative side-by-side scenes</text>
+  </g>
+
+
+  <!-- ==================== STAGE 5: SANITIZATION & FINAL PRODUCTION ==================== -->
+  <!-- Script 10: cleanup.py -->
+  <g transform="translate(1140, 230)" filter="url(#shadow)">
+    <rect width="240" height="185" rx="6" fill="url(#g-card-py)" stroke="#10b981" stroke-width="1.6" />
+    <rect x="10" y="8" width="108" height="15" rx="3" fill="#065f46" fill-opacity="0.4" />
+    <text x="64" y="19" text-anchor="middle" fill="#6ee7b7" class="badge">SANITIZER &amp; QA</text>
+    <text x="10" y="38" class="card-title" fill="#d1fae5">cleanup.py</text>
+    <text x="10" y="54" class="code" fill="#fbbf24">ET.parse("../resources/Multi...")</text>
+    <text x="10" y="70" class="code" fill="#fbbf24">ET.parse("../resources/Many...")</text>
+    <text x="10" y="88" class="desc">Preserves &lt;Script&gt; CDATA block:</text>
+    <text x="10" y="104" class="code" fill="#34d399">&lt;Script&gt; &lt;![CDATA[ ... ]]&gt; &lt;/Script&gt;</text>
+    <text x="10" y="120" class="desc">Fixes FreeWRL / Sunrize JS errors</text>
+    <text x="10" y="136" class="desc">Purges orphaned interpolators</text>
+    <line x1="10" y1="144" x2="230" y2="144" stroke="#065f46" />
+    <text x="10" y="160" class="code" fill="#a7f3d0">open("../resources/Cleaned...</text>
+    <text x="40" y="174" class="code" fill="#a7f3d0">AnimationMenu.x3d", "w")</text>
+  </g>
+
+  <!-- Final Cleaned Resource Output -->
+  <g transform="translate(1140, 680)" filter="url(#shadow)">
+    <rect width="240" height="135" rx="6" fill="url(#g-card-qa)" stroke="#10b981" stroke-width="1.6" />
+    <rect x="10" y="8" width="112" height="15" rx="3" fill="#065f46" fill-opacity="0.4" />
+    <text x="66" y="19" text-anchor="middle" fill="#a7f3d0" class="badge">VALIDATED OUTPUT</text>
+    <text x="10" y="38" class="card-title" fill="#ecfdf5" font-size="11">../resources/</text>
+    <text x="10" y="52" class="card-title" fill="#a7f3d0" font-size="11">CleanedMultiFacialAnimationMenu.x3d</text>
+    <text x="10" y="72" class="desc">✓ Verified Script CDATA blocks</text>
+    <text x="10" y="88" class="desc">✓ Working interactive touch triggers</text>
+    <text x="10" y="104" class="desc">✓ 100% HAnimDisplacer compliance</text>
+    <text x="10" y="120" class="code" fill="#6ee7b7">&amp; CleanedManyClocks.x3d</text>
+  </g>
+
+
+  <!-- ==================== STAGE 6: RUNTIME & QA TARGETS ==================== -->
+  <g transform="translate(1440, 150)" filter="url(#shadow)">
+    <rect width="180" height="665" rx="8" fill="#0a141c" stroke="#059669" stroke-width="1.4" />
+    <rect x="10" y="12" width="115" height="18" rx="3" fill="#047857" fill-opacity="0.4" />
+    <text x="67" y="25" text-anchor="middle" fill="#6ee7b7" class="badge">EXECUTION / QA</text>
+
+    <!-- FreeWRL -->
+    <g transform="translate(10, 48)">
+      <text x="0" y="16" font-size="12" font-weight="700" fill="#f8fafc">FreeWRL 6.7</text>
+      <rect x="0" y="24" width="160" height="95" rx="4" fill="#05191b" stroke="#134e4a" />
+      <text x="6" y="42" class="code" fill="#38bdf8" font-size="9.5">freeWRL -J DUK \</text>
+      <text x="6" y="56" class="code" fill="#34d399" font-size="9.5">resources/Menu.x3d</text>
+      <text x="6" y="74" class="desc" font-size="9">Evaluates displacers</text>
+      <text x="6" y="88" class="desc" font-size="9">via Duktape JS engine</text>
+      <text x="6" y="102" class="desc" font-size="9">Hardware blendshapes</text>
+    </g>
+
+    <!-- Sunrize -->
+    <g transform="translate(10, 185)">
+      <text x="0" y="16" font-size="12" font-weight="700" fill="#f8fafc">Sunrize Browser</text>
+      <rect x="0" y="24" width="160" height="85" rx="4" fill="#05191b" stroke="#134e4a" />
+      <text x="6" y="42" class="desc" font-size="9">Validates strict CDATA</text>
+      <text x="6" y="56" class="desc" font-size="9">DOM &amp; shader execution</text>
+      <text x="6" y="74" class="code" fill="#a7f3d0" font-size="9.5">CleanedMultiFacial...</text>
+      <text x="6" y="90" class="desc" font-size="9">Interactive testing</text>
+    </g>
+
+    <!-- Ant Schematron -->
+    <g transform="translate(10, 310)">
+      <text x="0" y="16" font-size="12" font-weight="700" fill="#f8fafc">Ant Schematron</text>
+      <rect x="0" y="24" width="160" height="75" rx="4" fill="#05191b" stroke="#134e4a" />
+      <text x="6" y="42" class="code" fill="#fbbf24" font-size="10">ant</text>
+      <text x="6" y="60" class="desc" font-size="9">X3D DTD &amp; Schematron</text>
+      <text x="6" y="76" class="desc" font-size="9">ISO/IEC 19774-2 rules</text>
+    </g>
+
+    <!-- Output summary badge -->
+    <g transform="translate(10, 430)">
+      <rect x="0" y="0" width="160" height="210" rx="4" fill="#022c22" fill-opacity="0.4" stroke="#10b981" />
+      <circle cx="18" cy="20" r="7" fill="#10b981" />
+      <path d="M 14 20 L 17 23 L 23 17" stroke="#022c22" stroke-width="1.8" fill="none" stroke-linecap="round" />
+      <text x="32" y="24" font-size="10" font-weight="700" fill="#a7f3d0">All 10 Programs</text>
+      <text x="32" y="38" font-size="10" font-weight="700" fill="#a7f3d0">Fully Mapped</text>
+      <text x="8" y="60" class="desc" font-size="8.5">• ci2had.py</text>
+      <text x="8" y="74" class="desc" font-size="8.5">• arroute.py</text>
+      <text x="8" y="88" class="desc" font-size="8.5">• cleanup.py</text>
+      <text x="8" y="102" class="desc" font-size="8.5">• cleanwink.py</text>
+      <text x="8" y="116" class="desc" font-size="8.5">• had2ci.py</text>
+      <text x="8" y="130" class="desc" font-size="8.5">• manyclocks.py</text>
+      <text x="8" y="144" class="desc" font-size="8.5">• manyclocks2.py</text>
+      <text x="8" y="158" class="desc" font-size="8.5">• bigswitch.py</text>
+      <text x="8" y="172" class="desc" font-size="8.5">• singlehuman.py</text>
+      <text x="8" y="186" class="desc" font-size="8.5">• multihuman.py</text>
+    </g>
+  </g>
+
+
+  <!-- ==================== CROSS-ZONE ARROWS (WRITES & READS) ==================== -->
+  <!-- 1. Source -> ci2had.py -->
+  <path d="M 236 210 L 248 210" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#m-right-blue)" />
+
+  <!-- 2. ci2had.py -> ../resources/FACS_AU*_Output.x3d (WRITE DOWN) -->
+  <path d="M 320 305 V 560" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#m-down)" />
+
+  <!-- 3. ci2had.py -> ../resources/Menu.x3d (WRITE DOWN) -->
+  <path d="M 360 305 V 675" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#m-down)" />
+
+  <!-- 4. ci2had.py -> ../resources/MultiFacialAnimationMenu.x3d (WRITE DOWN) -->
+  <path d="M 400 305 V 790" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#m-down)" />
+
+  <!-- 5. cleanwink.py -> ../resources/CleanWink.x3d (WRITE DOWN) -->
+  <path d="M 440 430 V 900" stroke="#38bdf8" stroke-width="1.8" fill="none" marker-end="url(#m-down)" />
+
+  <!-- 6. FACS_AU*_Output.x3d -> had2ci.py (READ UP) -->
+  <path d="M 270 565 V 450" stroke="#fb7185" stroke-width="1.8" stroke-dasharray="4 3" fill="none" marker-end="url(#m-pink)" />
+
+  <!-- 7. ../resources/Menu.x3d -> arroute.py (READ UP) -->
+  <path d="M 470 700 H 510 V 220 H 535" stroke="#c084fc" stroke-width="2" fill="none" marker-end="url(#m-right-blue)" />
+
+  <!-- 8. arroute.py -> ../resources/Menu.x3d (WRITE DOWN REWIRED) -->
+  <path d="M 570 295 V 675" stroke="#38bdf8" stroke-width="2" stroke-dasharray="3 2" fill="none" marker-end="url(#m-down)" />
+
+  <!-- 9. ../resources/MultiFacialAnimationMenu.x3d -> manyclocks.py (READ UP) -->
+  <path d="M 470 820 H 520 V 420 H 535" stroke="#c084fc" stroke-width="2" fill="none" marker-end="url(#m-right-blue)" />
+
+  <!-- 10. manyclocks.py -> ../resources/ManyClocks.x3d (WRITE DOWN) -->
+  <path d="M 660 475 V 675" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#m-down)" />
+
+  <!-- 11. ../resources/Menu.x3d & FACS -> bigswitch.py (READ UP) -->
+  <path d="M 470 730 H 820 V 220 H 845" stroke="#c084fc" stroke-width="1.8" fill="none" marker-end="url(#m-right-blue)" />
+
+  <!-- 12. bigswitch.py & single/multi -> ../resources/ models (WRITE DOWN) -->
+  <path d="M 960 475 V 675" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#m-down)" />
+
+  <!-- 13. ../resources/ManyClocks.x3d -> cleanup.py (READ UP) -->
+  <path d="M 780 730 H 1110 V 330 H 1135" stroke="#c084fc" stroke-width="2" fill="none" marker-end="url(#m-right-blue)" />
+
+  <!-- 14. cleanup.py -> ../resources/CleanedMultiFacialAnimationMenu.x3d (WRITE DOWN) -->
+  <path d="M 1260 415 V 675" stroke="#34d399" stroke-width="2.2" fill="none" marker-end="url(#m-down)" />
+
+  <!-- 15. Cleaned scene -> QA Runtimes (RIGHT) -->
+  <path d="M 1380 730 H 1435" stroke="#34d399" stroke-width="2.5" fill="none" marker-end="url(#m-right-green)" />
+
+  <!-- FOOTER -->
+  <text x="840" y="1005" text-anchor="middle" fill="#475569" font-size="11">
+    ci2had complete directory interaction model • python/ scripts executing with ../resources/ relative addressing
+  </text>
+</svg>

@@ -1,0 +1,432 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 980" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#06090f" />
+    </radialGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="g-script" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#132742" />
+      <stop offset="100%" stop-color="#0b1a2d" />
+    </linearGradient>
+
+    <linearGradient id="g-res" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#241b3d" />
+      <stop offset="100%" stop-color="#141026" />
+    </linearGradient>
+
+    <linearGradient id="g-qa" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#13332c" />
+      <stop offset="100%" stop-color="#0a1f1b" />
+    </linearGradient>
+
+    <!-- Arrow Markers -->
+    <marker id="m-blue" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#38bdf8" />
+    </marker>
+    <marker id="m-purple" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#a855f7" />
+    </marker>
+    <marker id="m-green" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#34d399" />
+    </marker>
+    <marker id="m-amber" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#fbbf24" />
+    </marker>
+    <marker id="m-pink" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#f43f5e" />
+    </marker>
+
+    <!-- Drop Shadows -->
+    <filter id="drop-shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+
+    <!-- Background Blueprint Grid -->
+    <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.35" />
+    </pattern>
+  </defs>
+
+  <style>
+    text {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, sans-serif;
+    }
+    .col-title {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .card-name {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 13.5px;
+      font-weight: 700;
+    }
+    .badge {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .code-txt {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 10.5px;
+    }
+    .desc-txt {
+      font-size: 11px;
+      fill: #94a3b8;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1560" height="980" fill="url(#bg)" />
+  <rect width="1560" height="980" fill="url(#grid-pattern)" />
+
+  <!-- HEADER -->
+  <g transform="translate(40, 24)">
+    <rect width="1480" height="66" rx="8" fill="#131d31" fill-opacity="0.7" stroke="#1e293b" />
+    <text x="24" y="28" fill="#f8fafc" font-size="19" font-weight="800">ci2had Comprehensive Python Workflow &amp; File Interconnection Map</text>
+    <text x="24" y="48" fill="#64748b" font-size="12">Flow of all 10 Python programs interconnecting through .x3d models in resources/ (ISO/IEC 19774 H-Anim)</text>
+
+    <!-- Legend -->
+    <g transform="translate(970, 20)">
+      <rect x="0" y="0" width="104" height="24" rx="4" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="0.8" />
+      <text x="52" y="16" text-anchor="middle" fill="#38bdf8" class="badge">PYTHON SCRIPT (10)</text>
+
+      <rect x="114" y="0" width="112" height="24" rx="4" fill="#6b21a8" fill-opacity="0.3" stroke="#c084fc" stroke-width="0.8" />
+      <text x="170" y="16" text-anchor="middle" fill="#c084fc" class="badge">RESOURCES .X3D</text>
+
+      <rect x="236" y="0" width="94" height="24" rx="4" fill="#065f46" fill-opacity="0.3" stroke="#34d399" stroke-width="0.8" />
+      <text x="283" y="16" text-anchor="middle" fill="#34d399" class="badge">VERIFICATION</text>
+    </g>
+  </g>
+
+  <!-- ==================== COLUMN HEADERS ==================== -->
+  <g transform="translate(40, 106)">
+    <!-- Col 1 -->
+    <rect x="0" y="0" width="260" height="26" rx="4" fill="#1e293b" />
+    <text x="130" y="17" text-anchor="middle" fill="#94a3b8" class="col-title">1. Ingestion &amp; Conversion</text>
+
+    <!-- Col 2 -->
+    <rect x="300" y="0" width="280" height="26" rx="4" fill="#2e1065" fill-opacity="0.6" stroke="#581c87" />
+    <text x="440" y="17" text-anchor="middle" fill="#c084fc" class="col-title">2. Generated Resources</text>
+
+    <!-- Col 3 -->
+    <rect x="620" y="0" width="280" height="26" rx="4" fill="#0c4a6e" fill-opacity="0.6" stroke="#0369a1" />
+    <text x="760" y="17" text-anchor="middle" fill="#38bdf8" class="col-title">3. Clocks, Routing &amp; Switching</text>
+
+    <!-- Col 4 -->
+    <rect x="940" y="0" width="280" height="26" rx="4" fill="#164e63" fill-opacity="0.6" stroke="#0891b2" />
+    <text x="1080" y="17" text-anchor="middle" fill="#22d3ee" class="col-title">4. Assembly &amp; Sanitization</text>
+
+    <!-- Col 5 -->
+    <rect x="1260" y="0" width="260" height="26" rx="4" fill="#064e3b" fill-opacity="0.6" stroke="#059669" />
+    <text x="1390" y="17" text-anchor="middle" fill="#34d399" class="col-title">5. Production &amp; QA</text>
+  </g>
+
+
+  <!-- ==================== COLUMN 1: INGESTION & CONVERSION ==================== -->
+  <!-- Raw Input Files -->
+  <g transform="translate(40, 145)" filter="url(#drop-shadow)">
+    <rect width="260" height="110" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.2" />
+    <rect x="12" y="10" width="84" height="16" rx="3" fill="#334155" />
+    <text x="54" y="22" text-anchor="middle" fill="#cbd5e1" class="badge">INPUT DATASET</text>
+    <text x="12" y="44" class="card-name" fill="#f8fafc">Jin_Facs_au_x3d_240219</text>
+    <text x="12" y="60" class="desc-txt">Source FACS AU files (AU1, AU2, AU46...)</text>
+    <text x="12" y="78" class="code-txt" fill="#f43f5e">&lt;CoordinateInterpolator&gt;</text>
+    <text x="12" y="94" class="desc-txt">Neutral face mesh &amp; animated keyframes</text>
+  </g>
+
+  <!-- Script 1: ci2had.py -->
+  <g transform="translate(40, 280)" filter="url(#drop-shadow)">
+    <rect width="260" height="160" rx="8" fill="url(#g-script)" stroke="#0284c7" stroke-width="1.6" />
+    <rect x="12" y="10" width="94" height="16" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="59" y="22" text-anchor="middle" fill="#38bdf8" class="badge">CONVERSION CORE</text>
+    <text x="12" y="44" class="card-name" fill="#e0f2fe">ci2had.py</text>
+    <text x="12" y="62" class="code-txt" fill="#fbbf24">tree = ET.parse(input_file)</text>
+    <text x="12" y="78" class="desc-txt">Diffs AU keypoints vs neutral mesh</text>
+    <text x="12" y="94" class="code-txt" fill="#34d399">delta = AU_pt - Neutral_pt</text>
+    <text x="12" y="110" class="desc-txt">Extracts coordIndex &amp; displacements</text>
+    <text x="12" y="128" class="code-txt" fill="#38bdf8">open("FACS_AU*_Output.x3d", "w")</text>
+    <text x="12" y="144" class="code-txt" fill="#a855f7">open("Menu.x3d", "w")</text>
+  </g>
+
+  <!-- Script 2: had2ci.py (Roundtrip Reverse) -->
+  <g transform="translate(40, 465)" filter="url(#drop-shadow)">
+    <rect width="260" height="135" rx="8" fill="url(#g-script)" stroke="#f43f5e" stroke-width="1.4" stroke-dasharray="4 2" />
+    <rect x="12" y="10" width="112" height="16" rx="3" fill="#881337" fill-opacity="0.4" />
+    <text x="68" y="22" text-anchor="middle" fill="#fb7185" class="badge">REVERSE / ROUNDTRIP</text>
+    <text x="12" y="44" class="card-name" fill="#ffe4e6">had2ci.py</text>
+    <text x="12" y="62" class="desc-txt">Displacer → CoordinateInterpolator</text>
+    <text x="12" y="80" class="code-txt" fill="#fbbf24">tree = ET.parse(displacer_file)</text>
+    <text x="12" y="96" class="desc-txt">Synthesizes back full vertex arrays</text>
+    <text x="12" y="116" class="code-txt" fill="#fb7185">Verifies delta fidelity / backward compat</text>
+  </g>
+
+  <!-- Script 3: cleanwink.py -->
+  <g transform="translate(40, 625)" filter="url(#drop-shadow)">
+    <rect width="260" height="130" rx="8" fill="url(#g-script)" stroke="#0ea5e9" stroke-width="1.3" />
+    <rect x="12" y="10" width="102" height="16" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="63" y="22" text-anchor="middle" fill="#38bdf8" class="badge">AU TEST ISOLATOR</text>
+    <text x="12" y="44" class="card-name" fill="#e0f2fe">cleanwink.py</text>
+    <text x="12" y="62" class="desc-txt">Specialized blink/wink (AU46) cleaner</text>
+    <text x="12" y="80" class="code-txt" fill="#fbbf24">ET.parse("FACS_AU46.x3d")</text>
+    <text x="12" y="98" class="desc-txt">Isolates eyelid vertex deformation</text>
+    <text x="12" y="116" class="code-txt" fill="#38bdf8">open("CleanWink.x3d", "w")</text>
+  </g>
+
+
+  <!-- ==================== COLUMN 2: GENERATED RESOURCES ==================== -->
+  <!-- Leaf Morpher Outputs -->
+  <g transform="translate(340, 180)" filter="url(#drop-shadow)">
+    <rect width="240" height="110" rx="8" fill="url(#g-res)" stroke="#6366f1" stroke-width="1.3" />
+    <rect x="12" y="10" width="88" height="16" rx="3" fill="#3730a3" fill-opacity="0.4" />
+    <text x="56" y="22" text-anchor="middle" fill="#c7d2fe" class="badge">LEAF TARGETS</text>
+    <text x="12" y="44" class="card-name" fill="#e0e7ff" font-size="12">resources/</text>
+    <text x="12" y="60" class="card-name" fill="#a5b4fc" font-size="12">FACS_AU*_Output.x3d</text>
+    <text x="12" y="78" class="desc-txt">Individual HAnimDisplacer units</text>
+    <text x="12" y="94" class="code-txt" fill="#818cf8">&lt;HAnimDisplacer weight="0"/&gt;</text>
+  </g>
+
+  <!-- Scaffold Menu -->
+  <g transform="translate(340, 320)" filter="url(#drop-shadow)">
+    <rect width="240" height="135" rx="8" fill="url(#g-res)" stroke="#a855f7" stroke-width="1.4" />
+    <rect x="12" y="10" width="80" height="16" rx="3" fill="#6b21a8" fill-opacity="0.4" />
+    <text x="52" y="22" text-anchor="middle" fill="#f3e8ff" class="badge">MENU BASE</text>
+    <text x="12" y="44" class="card-name" fill="#f3e8ff">resources/Menu.x3d</text>
+    <text x="12" y="62" class="desc-txt">&amp; MultiFacialAnimationMenu.x3d</text>
+    <line x1="12" y1="72" x2="228" y2="72" stroke="#581c87" />
+    <text x="12" y="90" class="desc-txt">Composite humanoid face model</text>
+    <text x="12" y="106" class="desc-txt">Contains all converted displacers</text>
+    <text x="12" y="122" class="code-txt" fill="#e9d5ff">Pending clock &amp; route wiring</text>
+  </g>
+
+  <!-- CleanWink.x3d -->
+  <g transform="translate(340, 635)" filter="url(#drop-shadow)">
+    <rect width="240" height="95" rx="8" fill="url(#g-res)" stroke="#0ea5e9" stroke-width="1.3" />
+    <rect x="12" y="10" width="78" height="16" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="51" y="22" text-anchor="middle" fill="#bae6fd" class="badge">AU46 TEST</text>
+    <text x="12" y="44" class="card-name" fill="#bae6fd">CleanWink.x3d</text>
+    <text x="12" y="62" class="desc-txt">Isolated wink morpher model</text>
+    <text x="12" y="80" class="code-txt" fill="#38bdf8">Standalone single-AU scene</text>
+  </g>
+
+
+  <!-- ==================== COLUMN 3: CLOCKS, ROUTING & SWITCHING ==================== -->
+  <!-- Script 4: arroute.py -->
+  <g transform="translate(620, 145)" filter="url(#drop-shadow)">
+    <rect width="280" height="145" rx="8" fill="url(#g-script)" stroke="#0284c7" stroke-width="1.5" />
+    <rect x="12" y="10" width="94" height="16" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="59" y="22" text-anchor="middle" fill="#38bdf8" class="badge">ROUTE ENGINE</text>
+    <text x="12" y="44" class="card-name" fill="#e0f2fe">arroute.py</text>
+    <text x="12" y="62" class="code-txt" fill="#fbbf24">ET.parse("Menu.x3d")</text>
+    <text x="12" y="78" class="desc-txt">Rewires event pathways:</text>
+    <text x="12" y="96" class="code-txt" fill="#38bdf8">TimeSensor → ScalarInterpolator</text>
+    <text x="12" y="112" class="code-txt" fill="#34d399">ScalarInterp.value → Displacer.weight</text>
+    <text x="12" y="130" class="desc-txt">Strips legacy Coordinate.point routes</text>
+  </g>
+
+  <!-- Script 5 & 6: manyclocks.py & manyclocks2.py -->
+  <g transform="translate(620, 310)" filter="url(#drop-shadow)">
+    <rect width="280" height="195" rx="8" fill="url(#g-script)" stroke="#0284c7" stroke-width="1.6" />
+    <rect x="12" y="10" width="102" height="16" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="63" y="22" text-anchor="middle" fill="#38bdf8" class="badge">CLOCK ENGINES</text>
+    <text x="12" y="44" class="card-name" fill="#e0f2fe">manyclocks.py / manyclocks2.py</text>
+    <text x="12" y="64" class="code-txt" fill="#fbbf24">manyclocks.py:</text>
+    <text x="24" y="80" class="desc-txt">Generates dedicated TimeSensors per AU</text>
+    <text x="24" y="96" class="desc-txt">Allows simultaneous AU toggle &amp; layering</text>
+    <text x="12" y="118" class="code-txt" fill="#38bdf8">manyclocks2.py:</text>
+    <text x="24" y="134" class="desc-txt">Upgraded touch toggle logic &amp; loop safety</text>
+    <text x="24" y="150" class="desc-txt">Builds LayerSet HUD &amp; MenuItem Protos</text>
+    <text x="12" y="174" class="code-txt" fill="#a855f7">open("resources/ManyClocks.x3d", "w")</text>
+  </g>
+
+  <!-- Script 7: bigswitch.py -->
+  <g transform="translate(620, 530)" filter="url(#drop-shadow)">
+    <rect width="280" height="145" rx="8" fill="url(#g-script)" stroke="#0284c7" stroke-width="1.4" />
+    <rect x="12" y="10" width="98" height="16" rx="3" fill="#0369a1" fill-opacity="0.4" />
+    <text x="61" y="22" text-anchor="middle" fill="#38bdf8" class="badge">SWITCH SELECTOR</text>
+    <text x="12" y="44" class="card-name" fill="#e0f2fe">bigswitch.py</text>
+    <text x="12" y="62" class="desc-txt">Assembles models into an X3D Switch</text>
+    <text x="12" y="80" class="code-txt" fill="#f59e0b">&lt;Switch whichChoice="0"&gt;</text>
+    <text x="24" y="96" class="desc-txt">Toggles choices: CI vs HAD vs AUs</text>
+    <text x="12" y="116" class="desc-txt">Routes touch trigger to whichChoice</text>
+    <text x="12" y="132" class="code-txt" fill="#a855f7">open("BigSwitch.x3d", "w")</text>
+  </g>
+
+  <!-- Intermediate Resource: ManyClocks.x3d -->
+  <g transform="translate(620, 700)" filter="url(#drop-shadow)">
+    <rect width="280" height="120" rx="8" fill="url(#g-res)" stroke="#a855f7" stroke-width="1.3" />
+    <rect x="12" y="10" width="108" height="16" rx="3" fill="#6b21a8" fill-opacity="0.4" />
+    <text x="66" y="22" text-anchor="middle" fill="#f3e8ff" class="badge">ROUTED CLOCKS</text>
+    <text x="12" y="44" class="card-name" fill="#f3e8ff">resources/ManyClocks.x3d</text>
+    <text x="12" y="62" class="desc-txt">Multi-clock interactive facial scene</text>
+    <text x="12" y="80" class="desc-txt">Independent AU buttons &amp; LayerSet HUD</text>
+    <text x="12" y="98" class="code-txt" fill="#fca5a5">Contains embedded uncleaned Script CDATA</text>
+  </g>
+
+
+  <!-- ==================== COLUMN 4: ASSEMBLY & SANITIZATION ==================== -->
+  <!-- Script 8: singlehuman.py -->
+  <g transform="translate(940, 145)" filter="url(#drop-shadow)">
+    <rect width="280" height="145" rx="8" fill="url(#g-script)" stroke="#0891b2" stroke-width="1.4" />
+    <rect x="12" y="10" width="104" height="16" rx="3" fill="#155e75" fill-opacity="0.4" />
+    <text x="64" y="22" text-anchor="middle" fill="#67e8f9" class="badge">AVATAR INTEGRATOR</text>
+    <text x="12" y="44" class="card-name" fill="#cffafe">singlehuman.py</text>
+    <text x="12" y="62" class="desc-txt">Mounts facial displacers onto Jin skeleton</text>
+    <text x="12" y="80" class="code-txt" fill="#22d3ee">&lt;HAnimHumanoid name="Jin"&gt;</text>
+    <text x="24" y="96" class="desc-txt">Binds to skull/head joint &amp; skin coord</text>
+    <text x="12" y="116" class="desc-txt">Integrates single character with AUs</text>
+    <text x="12" y="132" class="code-txt" fill="#a855f7">open("SingleHuman.x3d", "w")</text>
+  </g>
+
+  <!-- Script 9: multihuman.py -->
+  <g transform="translate(940, 310)" filter="url(#drop-shadow)">
+    <rect width="280" height="145" rx="8" fill="url(#g-script)" stroke="#0891b2" stroke-width="1.4" />
+    <rect x="12" y="10" width="102" height="16" rx="3" fill="#155e75" fill-opacity="0.4" />
+    <text x="63" y="22" text-anchor="middle" fill="#67e8f9" class="badge">MULTI-AVATAR</text>
+    <text x="12" y="44" class="card-name" fill="#cffafe">multihuman.py</text>
+    <text x="12" y="62" class="desc-txt">Composes multiple humanoids in one scene</text>
+    <text x="12" y="80" class="code-txt" fill="#22d3ee">&lt;Transform translation="..."&gt;</text>
+    <text x="24" y="96" class="desc-txt">Side-by-side comparison of humanoids</text>
+    <text x="12" y="116" class="desc-txt">Neutral vs Active FACS expressions</text>
+    <text x="12" y="132" class="code-txt" fill="#a855f7">open("MultiHuman.x3d", "w")</text>
+  </g>
+
+  <!-- Script 10: cleanup.py -->
+  <g transform="translate(940, 480)" filter="url(#drop-shadow)">
+    <rect width="280" height="175" rx="8" fill="url(#g-script)" stroke="#10b981" stroke-width="1.7" />
+    <rect x="12" y="10" width="112" height="16" rx="3" fill="#065f46" fill-opacity="0.4" />
+    <text x="68" y="22" text-anchor="middle" fill="#6ee7b7" class="badge">SANITIZER &amp; QA</text>
+    <text x="12" y="44" class="card-name" fill="#d1fae5">cleanup.py</text>
+    <text x="12" y="62" class="code-txt" fill="#fbbf24">ET.parse("MultiFacial...Menu.x3d")</text>
+    <text x="12" y="80" class="desc-txt">Script CDATA Preservation Magic:</text>
+    <text x="12" y="98" class="code-txt" fill="#34d399">&lt;Script&gt; &lt;![CDATA[ ... ]]&gt; &lt;/Script&gt;</text>
+    <text x="12" y="114" class="desc-txt">Strips XML entity corruption (&amp;lt; / &amp;gt;)</text>
+    <text x="12" y="130" class="desc-txt">Purges orphaned CoordinateInterpolators</text>
+    <text x="12" y="152" class="code-txt" fill="#a7f3d0">open("CleanedMultiFacial...Menu.x3d", "w")</text>
+  </g>
+
+  <!-- Cleaned MultiFacial Resource Output -->
+  <g transform="translate(940, 680)" filter="url(#drop-shadow)">
+    <rect width="280" height="140" rx="8" fill="url(#g-qa)" stroke="#10b981" stroke-width="1.5" />
+    <rect x="12" y="10" width="114" height="16" rx="3" fill="#065f46" fill-opacity="0.4" />
+    <text x="69" y="22" text-anchor="middle" fill="#a7f3d0" class="badge">PRODUCTION SCENE</text>
+    <text x="12" y="44" class="card-name" fill="#ecfdf5" font-size="12.5">CleanedMultiFacial...</text>
+    <text x="12" y="60" class="card-name" fill="#6ee7b7" font-size="12.5">AnimationMenu.x3d</text>
+    <text x="12" y="80" class="desc-txt">✓ Strict XML CDATA compliant</text>
+    <text x="12" y="96" class="desc-txt">✓ Interactive blendshape touch triggers</text>
+    <text x="12" y="112" class="desc-txt">✓ Zero orphaned CI remnants</text>
+  </g>
+
+
+  <!-- ==================== COLUMN 5: PRODUCTION & QA ==================== -->
+  <g transform="translate(1260, 145)" filter="url(#drop-shadow)">
+    <rect width="260" height="675" rx="8" fill="#0d1821" stroke="#059669" stroke-width="1.5" />
+    <rect x="14" y="14" width="124" height="18" rx="3" fill="#047857" fill-opacity="0.4" />
+    <text x="76" y="27" text-anchor="middle" fill="#6ee7b7" class="badge">RUNTIME &amp; VALIDATION</text>
+
+    <!-- Runtime 1: FreeWRL -->
+    <g transform="translate(14, 52)">
+      <text x="0" y="16" font-size="13" font-weight="700" fill="#f8fafc">1. FreeWRL Player</text>
+      <rect x="0" y="24" width="232" height="110" rx="5" fill="#061a1c" stroke="#134e4a" />
+      <text x="10" y="44" class="code-txt" fill="#38bdf8">freeWRL -J DUK \</text>
+      <text x="10" y="60" class="code-txt" fill="#34d399">resources/Menu.x3d</text>
+      <text x="10" y="78" class="desc-txt">Duktape JavaScript engine</text>
+      <text x="10" y="94" class="desc-txt">Hardware vertex displacement</text>
+      <text x="10" y="110" class="desc-txt">Primary reference H-Anim viewer</text>
+    </g>
+
+    <!-- Runtime 2: Sunrize -->
+    <g transform="translate(14, 205)">
+      <text x="0" y="16" font-size="13" font-weight="700" fill="#f8fafc">2. Sunrize Browser</text>
+      <rect x="0" y="24" width="232" height="100" rx="5" fill="#061a1c" stroke="#134e4a" />
+      <text x="10" y="44" class="desc-txt">Validates XML DOM compliance</text>
+      <text x="10" y="62" class="desc-txt">Parses strict CDATA sections</text>
+      <text x="10" y="80" class="code-txt" fill="#a7f3d0">CleanedMultiFacial...</text>
+      <text x="10" y="96" class="desc-txt">Shader blendshape evaluation</text>
+    </g>
+
+    <!-- Validation 3: Ant / Schematron -->
+    <g transform="translate(14, 350)">
+      <text x="0" y="16" font-size="13" font-weight="700" fill="#f8fafc">3. Standards Validation</text>
+      <rect x="0" y="24" width="232" height="85" rx="5" fill="#061a1c" stroke="#134e4a" />
+      <text x="10" y="44" class="code-txt" fill="#fbbf24">ant</text>
+      <text x="10" y="62" class="desc-txt">Runs X3D Schematron QA</text>
+      <text x="10" y="78" class="desc-txt">Validates ISO/IEC 19774-2</text>
+      <text x="10" y="94" class="desc-txt">H-Anim 2.0 structure rules</text>
+    </g>
+
+    <!-- Produced Targets Checklist -->
+    <g transform="translate(14, 490)">
+      <rect x="0" y="0" width="232" height="160" rx="6" fill="#042f2e" fill-opacity="0.4" stroke="#10b981" stroke-width="1.2" />
+      <text x="12" y="22" font-size="11.5" font-weight="700" fill="#a7f3d0">Verified Output Library:</text>
+      <text x="12" y="44" class="desc-txt">✓ Menu.x3d</text>
+      <text x="12" y="62" class="desc-txt">✓ CleanedMultiFacialAnimationMenu.x3d</text>
+      <text x="12" y="80" class="desc-txt">✓ ManyClocks.x3d</text>
+      <text x="12" y="98" class="desc-txt">✓ SingleHuman.x3d / MultiHuman.x3d</text>
+      <text x="12" y="116" class="desc-txt">✓ BigSwitch.x3d</text>
+      <text x="12" y="134" class="desc-txt">✓ CleanWink.x3d</text>
+      <text x="12" y="150" class="code-txt" fill="#6ee7b7">All 10 scripts interconnected</text>
+    </g>
+  </g>
+
+
+  <!-- ==================== FLOW ARROWS & INTERCONNECTIONS ==================== -->
+  <!-- 1. Raw FACS -> ci2had.py -->
+  <path d="M 170 255 V 272" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#m-blue)" />
+
+  <!-- 2. ci2had.py -> FACS_AU*_Output.x3d -->
+  <path d="M 300 320 H 320 V 235 H 332" stroke="#818cf8" stroke-width="2" fill="none" marker-end="url(#m-purple)" />
+
+  <!-- 3. ci2had.py -> Menu.x3d -->
+  <path d="M 300 380 H 332" stroke="#a855f7" stroke-width="2.2" fill="none" marker-end="url(#m-purple)" />
+
+  <!-- 4. FACS_AU*_Output.x3d -> had2ci.py (Roundtrip loopback) -->
+  <path d="M 460 290 V 520 H 308" stroke="#fb7185" stroke-width="1.8" stroke-dasharray="4 3" fill="none" marker-end="url(#m-pink)" />
+
+  <!-- 5. Raw FACS -> cleanwink.py -->
+  <path d="M 60 255 V 620" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="3 3" fill="none" marker-end="url(#m-blue)" />
+
+  <!-- 6. cleanwink.py -> CleanWink.x3d -->
+  <path d="M 300 680 H 332" stroke="#0ea5e9" stroke-width="2" fill="none" marker-end="url(#m-blue)" />
+
+  <!-- 7. Menu.x3d -> arroute.py -->
+  <path d="M 580 370 H 600 V 220 H 612" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#m-blue)" />
+
+  <!-- 8. Menu.x3d -> manyclocks.py / manyclocks2.py -->
+  <path d="M 580 395 H 612" stroke="#38bdf8" stroke-width="2.2" fill="none" marker-end="url(#m-blue)" />
+
+  <!-- 9. Menu.x3d & FACS outputs -> bigswitch.py -->
+  <path d="M 580 430 H 600 V 600 H 612" stroke="#fbbf24" stroke-width="1.8" fill="none" marker-end="url(#m-amber)" />
+
+  <!-- 10. manyclocks.py -> ManyClocks.x3d -->
+  <path d="M 760 505 V 692" stroke="#a855f7" stroke-width="2.2" fill="none" marker-end="url(#m-purple)" />
+
+  <!-- 11. Menu.x3d -> singlehuman.py -->
+  <path d="M 580 345 H 600 V 130 H 920 V 210 H 932" stroke="#22d3ee" stroke-width="1.8" fill="none" marker-end="url(#m-blue)" />
+
+  <!-- 12. singlehuman.py -> multihuman.py -->
+  <path d="M 1080 290 V 302" stroke="#22d3ee" stroke-width="2" fill="none" marker-end="url(#m-blue)" />
+
+  <!-- 13. ManyClocks.x3d -> cleanup.py -->
+  <path d="M 900 740 H 920 V 570 H 932" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#m-green)" />
+
+  <!-- 14. cleanup.py -> CleanedMultiFacialAnimationMenu.x3d -->
+  <path d="M 1080 655 V 672" stroke="#10b981" stroke-width="2.2" fill="none" marker-end="url(#m-green)" />
+
+  <!-- 15. Cleaned scene -> Runtimes (Column 5) -->
+  <path d="M 1220 750 H 1252" stroke="#34d399" stroke-width="2.5" fill="none" marker-end="url(#m-green)" />
+
+  <!-- 16. Direct launcher line from Menu.x3d to FreeWRL -->
+  <path d="M 460 455 V 900 H 1390 V 828" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 4" fill="none" marker-end="url(#m-blue)" />
+  <text x="925" y="892" text-anchor="middle" class="code-txt" fill="#38bdf8">Direct launch bypass: freeWRL -J DUK resources/Menu.x3d</text>
+
+  <!-- FOOTER -->
+  <text x="780" y="960" text-anchor="middle" fill="#475569" font-size="11">
+    ci2had pipeline architecture • ISO/IEC 19774-1 / 19774-2 H-Anim Displacer standard
+  </text>
+</svg>
